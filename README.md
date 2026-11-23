@@ -1,7 +1,7 @@
 # COAL Docs
 
-**Computer Organization & Assembly Language** — a course-style documentation site: 42 lessons in
-8 chapters, 53 diagrams and a calculator workbench with 11 tools, from computer generations to 8086 assembly programming.
+**Computer Organization & Assembly Language** — a course-style documentation site: 48 lessons in
+9 chapters, 53 diagrams, a calculator workbench with 16 tools that show their working step by step, and a chapter of solved problems, from computer generations to 8086 assembly programming.
 
 🔗 **Live site:** https://hammadhanif67.github.io/assembly-language-docs/
 
@@ -22,6 +22,7 @@ the core.
 | 06 | Assembly Basics | Program structure, assembler/linker/loader, directives, addressing modes |
 | 07 | The Instruction Set | Data transfer, arithmetic, logic/shift/rotate, jumps & loops |
 | 08 | Advanced Assembly | Stack & procedures, arrays & number I/O, strings, interrupts & I/O, macros, debugging |
+| 09 | Solved Problems | Formula sheet, number conversions, memory/units/performance, addressing, tracing code, writing programs — every question solved step by step |
 
 Lessons marked **Researched topic** were written to complete the curriculum and end with a References
 section. See [`CONTENT_MAP.md`](CONTENT_MAP.md) and [`MISSING_TOPICS.md`](MISSING_TOPICS.md).
@@ -35,6 +36,11 @@ section. See [`CONTENT_MAP.md`](CONTENT_MAP.md) and [`MISSING_TOPICS.md`](MISSIN
 | Numbers | number converter (8/16/32-bit, clickable bits) · two’s complement step by step · IEEE 754 float ⇄ bits · ASCII ⇄ codes |
 | Instructions | ALU & flags (ADD, ADC, SUB, SBB, CMP, AND, OR, XOR, TEST, INC, DEC, NEG → CF ZF SF OF PF AF) · shift & rotate with CF per step · MUL/IMUL/DIV/IDIV registers and overflow |
 | Memory & addressing | segment:offset ⇄ physical · effective address for every 8086 mode · address lines ⇄ memory size · cache tag/index/offset split |
+| Data units & performance | bits/nibbles/bytes/KB/MB/GB/TB/PB (1024 or 1000) · transfer time · CPU time, CPI & MIPS · pipeline speed-up · cache hit ratio & average access time |
+
+Every calculator prints a **Step-by-step working** block: division tables for base conversion, place-value
+sums, the column addition and the reason for every flag, the IEEE 754 normalisation, the unit ladder
+(× 1024 / ÷ 1024) and each formula with the numbers substituted.
 
 Inputs accept `200`, `-56`, `0C8h`, `0xC8`, `11001000b`, `310o` or `'A'`. The code is in `src/js/tools.js`.
 
@@ -43,7 +49,7 @@ Inputs accept `200`, `-56`, `0C8h`, `0xC8`, `11001000b`, `310o` or `'A'`. The co
 **Swiss design** (International Typographic Style): white space, a strict 12-column grid, one red accent
 (`#E30613`), Inter / Inter Tight type, and no decoration that does not carry information.
 
-- **No sidebar.** Navigation is an **Index** menu in the header (every chapter and lesson), a page per
+- **No sidebar.** On phones a menu button (☰) opens quick links and the full index. Navigation is an **Index** menu in the header (every chapter and lesson), a page per
   chapter, a lesson strip at the top of each lesson, “On this page” in the left margin and large
   Previous / Next links.
 - Search everything with **Ctrl K** or **/** (Fuse.js).
@@ -109,8 +115,8 @@ src/
    Markdown, tables and ```asm code fences.
    ```
 
-2. Optional blocks: `:::diagram name` (an SVG in `src/diagrams/`), `:::figure photo.jpg`,
-   `:::note` / `:::tip` / `:::warning`, and ```` ```mermaid ```` fences. A `## Sources` section is shown as
+2. Optional blocks: `:::diagram name` (an SVG in `src/diagrams/`), `:::figure photo.jpg` (add `side` to
+   float it beside the text), `:::note` / `:::tip` / `:::warning` / `:::answer`, and ```` ```mermaid ```` fences. A `## Sources` section is shown as
    “References”.
 3. For a new diagram, add a spec to `scripts/diagrams/specs-*.mjs`.
 4. Run `npm run check`, commit and push — GitHub Actions deploys automatically.
@@ -125,6 +131,8 @@ Their text was transcribed into `content/`; diagrams were redrawn.
 - Libraries (CDN): [Prism.js](https://prismjs.com) (MIT), [Fuse.js](https://fusejs.io) (Apache-2.0),
   [Lucide](https://lucide.dev) (ISC), [Mermaid](https://mermaid.js.org) (MIT); [marked](https://marked.js.org) (MIT, build time).
 - Fonts: Inter, Inter Tight, JetBrains Mono (Google Fonts, SIL OFL).
+- Photos: Wikimedia Commons contributors — public domain, CC BY or CC BY-SA, credited under each photo and
+  listed in `scripts/image-credits.json`.
 - Researched lessons cite Intel’s 8086 manuals, Microsoft Learn (MASM), Stallings, Patterson & Hennessy,
   Irvine and others in their References sections.
 

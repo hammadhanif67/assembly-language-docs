@@ -16,6 +16,10 @@ description: The components of a microcomputer system, the CPU, the Execution Un
 
 ## CPU
 
+:::figure img-80486.jpg side
+Intel 80486DX2 — a later member of the x86 family that began with the 8086
+:::
+
 - Brain of Computer; controls all operations
   - Uses Memory Circuits to store information
   - Uses I/O Circuits to communicate with I/O Devices

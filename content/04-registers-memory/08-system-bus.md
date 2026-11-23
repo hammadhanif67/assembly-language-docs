@@ -5,6 +5,10 @@ description: What a bus is, data bus, address bus, control bus, types of transfe
 
 ## What is a Bus?
 
+:::figure img-motherboard.jpg side
+A motherboard — the copper traces between CPU socket, memory slots and expansion slots are the buses
+:::
+
 - A communication pathway connecting two or more devices
 - Often grouped
   - A number of channels in one bus

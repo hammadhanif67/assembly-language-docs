@@ -1,0 +1,98 @@
+{
+  "img-computer.jpg": {
+    "title": "Ibm pc 5150.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Ibm_pc_5150.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Ruben de Rijcke"
+  },
+  "img-eniac.jpg": {
+    "title": "Two women operating ENIAC (full resolution).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Two_women_operating_ENIAC_(full_resolution).jpg",
+    "license": "Public domain",
+    "artist": "Unidentified U.S. Army photographer"
+  },
+  "img-vacuum-tubes.jpg": {
+    "title": "Elektronenroehren-auswahl.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Elektronenroehren-auswahl.jpg",
+    "license": "CC BY-SA 2.0 de",
+    "artist": "Stefan Riepl (Quark48)"
+  },
+  "img-ibm-1401.jpg": {
+    "title": "IBM1401 729Tape 1405Disk 1407Console COLOR.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:IBM1401_729Tape_1405Disk_1407Console_COLOR.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Lucaseverini66"
+  },
+  "img-transistor-card.jpg": {
+    "title": "SMScard.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:SMScard.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Marcin Wichary"
+  },
+  "img-ibm-360.jpg": {
+    "title": "IBM System360 Model 30.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:IBM_System360_Model_30.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Dave Ross"
+  },
+  "img-slt-chip.jpg": {
+    "title": "IBM SLT chip, side view.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:IBM_SLT_chip,_side_view.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Jud McCranie"
+  },
+  "img-intel-4004.jpg": {
+    "title": "Intel C4004.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Intel_C4004.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Thomas Nguyen"
+  },
+  "img-blue-gene.jpg": {
+    "title": "IBM Blue Gene P supercomputer.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:IBM_Blue_Gene_P_supercomputer.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Argonne National Laboratory"
+  },
+  "img-raspberry-pi.jpg": {
+    "title": "Raspberry Pi 4 Model B - Top.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Raspberry_Pi_4_Model_B_-_Top.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Laserlicht"
+  },
+  "img-8085.jpg": {
+    "title": "KL Intel P8085AH.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:KL_Intel_P8085AH.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Konstantin Lanzet"
+  },
+  "img-8086.jpg": {
+    "title": "Intel C8086.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Intel_C8086.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Thomas Nguyen"
+  },
+  "img-ram-module.jpg": {
+    "title": "Memory module DDRAM 20-03-2006.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Elixir_M2U51264DS8HC3G-5T_20060320.jpg",
+    "license": "Public domain",
+    "artist": "Cyberdex"
+  },
+  "img-core-memory.jpg": {
+    "title": "IBM magnetic core.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:IBM_magnetic_core.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Jud McCranie"
+  },
+  "img-motherboard.jpg": {
+    "title": "A790GXH-128M-Motherboard.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:A790GXH-128M-Motherboard.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Evan-Amos"
+  },
+  "img-80486.jpg": {
+    "title": "Intel 80486DX2 top.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Intel_80486DX2_top.jpg",
+    "license": "CC BY-SA 2.0",
+    "artist": "Wikimedia Commons contributor"
+  }
+}

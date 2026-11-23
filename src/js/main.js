@@ -35,29 +35,27 @@
 
   /* ---------- Index menu (replaces the sidebar) & lesson strip ---------- */
   function setupNav() {
-    const toggle = $('.index-toggle'), panel = $('#index-panel');
-    if (toggle && panel) {
-      const set = (open) => {
+    const toggles = $$('.index-toggle, .menu-toggle'), panel = $('#index-panel');
+    if (toggles.length && panel) {
+      let opener = toggles[0];
+      const set = (open, from) => {
         panel.hidden = !open;
-        toggle.setAttribute('aria-expanded', String(open));
+        toggles.forEach((t) => t.setAttribute('aria-expanded', String(open)));
+        const mt = $('.menu-toggle'); if (mt) mt.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
         document.body.classList.toggle('index-open', open);
-        if (open) {
-          const cur = $('[aria-current="page"]', panel) || $('a', panel);
-          if (cur) { cur.focus({ preventScroll: true }); cur.scrollIntoView({ block: 'nearest' }); }
-        }
+        if (open) { if (from) opener = from; const cur = $('[aria-current="page"]', panel) || $('a', panel); if (cur) { cur.focus({ preventScroll: true }); cur.scrollIntoView({ block: 'nearest' }); } }
       };
-      toggle.addEventListener('click', (e) => { e.stopPropagation(); set(panel.hidden); });
-      $('.index-close', panel)?.addEventListener('click', () => { set(false); toggle.focus(); });
-      document.addEventListener('click', (e) => { if (!panel.hidden && !panel.contains(e.target) && e.target !== toggle) set(false); });
-      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden) { set(false); toggle.focus(); } });
-      panel.addEventListener('click', (e) => { if (e.target.closest('a')) set(false); });
+      toggles.forEach((t) => t.addEventListener('click', (e) => { e.stopPropagation(); set(panel.hidden, t); }));
+      const close = $('.index-close', panel); if (close) close.addEventListener('click', () => { set(false); opener.focus(); });
+      document.addEventListener('click', (e) => { if (!panel.hidden && !panel.contains(e.target) && !toggles.some((t) => t.contains(e.target))) set(false); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden) { set(false); opener.focus(); } });
+      panel.addEventListener('click', (e) => { if (e.target.closest('a, [data-search-open]')) set(false); });
     }
     // keep the current lesson visible in the horizontal lesson strip
     const strip = $('.lesson-strip ol'), cur = $('.lesson-strip [aria-current="page"]');
     if (strip && cur) strip.scrollLeft = cur.offsetLeft - strip.clientWidth / 2 + cur.clientWidth / 2;
     // close the mobile TOC after choosing a section
-    const det = $('.toc-mobile');
-    if (det) det.addEventListener('click', (e) => { if (e.target.closest('a')) det.open = false; });
+    $$('.toc-mobile, .tools-jump').forEach((d) => d.addEventListener('click', (e) => { if (e.target.closest('a')) d.open = false; }));
   }
 
   /* ---------- Progress, back to top, TOC scrollspy ---------- */

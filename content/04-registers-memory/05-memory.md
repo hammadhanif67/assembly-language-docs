@@ -33,6 +33,10 @@ Figure: Two bytes form a word — 0 0 1 0 0 1 1 0 · 0 1 1 0 1 0 1 0
 
 ## Memory
 
+:::figure img-core-memory.jpg side
+Magnetic-core memory plane — each tiny ring stored one bit
+:::
+
 - Information processed by the computer is stored in its memory.
   - Program
   - Data
@@ -59,6 +63,10 @@ Figure: Auxiliary memory ↔ I/O processor ↔ Main Memory ↔ CPU, with Cache b
 :::
 
 ## Main Memory
+
+:::figure img-ram-module.jpg side
+RAM modules — main memory is built from RAM integrated circuits
+:::
 
 - Most of the main memory in a general purpose computer is made up of RAM integrated circuits chips, but a portion of the memory may be constructed with ROM chips
 - Memory Circuits:

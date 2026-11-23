@@ -30,14 +30,15 @@ Processor, RISC and CISC, Register & Memory — 117 pages); their text was trans
 | 8085 Microprocessor | `microprocessors/8085.html` | 8085.pptx, slides 1–15 |
 | 8086 Microprocessor | `microprocessors/8086.html` | 8086.pptx, slides 1–14 |
 
-## Researched lessons (23)
+## Researched lessons (29)
 
 `data-representation/`: number-systems, data-representation, floating-point, logic-gates ·
 `processor/`: instruction-encoding, pipelining · `registers-memory/`: cache-mapping, io-techniques ·
 `microprocessors/`: 8086-pins-and-modes · `assembly-basics/`: program-structure, assembler-linker-loader,
 directives-and-data, addressing-modes · `instruction-set/`: data-transfer, arithmetic, logic-shift-rotate,
 jumps-and-loops · `advanced/`: stack-and-procedures, arrays-and-number-io, string-instructions,
-interrupts-and-io, macros, debugging. Each ends with a References section. See
+interrupts-and-io, macros, debugging · `solved-problems/`: formula-sheet, number-conversions,
+memory-and-performance, addressing, tracing-code, writing-programs. Each ends with a References section. See
 [MISSING_TOPICS.md](MISSING_TOPICS.md).
 
 ## Overlaps kept
@@ -61,5 +62,5 @@ interrupts-and-io, macros, debugging. Each ends with a References section. See
 
 - **53 generated SVG diagrams** (`scripts/diagrams/specs-*.mjs` → `src/diagrams/`), redrawn from the
   slides plus new ones for the researched lessons.
-- **12 photos**, shown in uniform 4:3 frames (generation photos paired side by side), from Computer Generation.pdf and RISC and CISC.pdf (`src/assets/img/`).
-- **4 in-lesson widgets** (program-execution stepper, segment:offset calculator, number converter, stack simulator) and an **11-calculator workbench** at `tools/index.html`.
+- **16 photos** from Wikimedia Commons (public domain or Creative Commons; author and licence under each photo, list in `scripts/image-credits.json`), cropped to 4:3 and floated beside the text (`src/assets/img/`). They replace the low-resolution scans from Computer Generation.pdf and RISC and CISC.pdf; the language-generation screenshots became short code examples.
+- **4 in-lesson widgets** (program-execution stepper, segment:offset calculator, number converter, stack simulator) and a **16-calculator workbench** at `tools/index.html`, each with step-by-step working.

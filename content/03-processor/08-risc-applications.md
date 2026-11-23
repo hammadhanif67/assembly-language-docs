@@ -13,9 +13,11 @@ description: RISC applications, ARM architecture and products, the performance e
 
 ## ARM Based Products
 
-:::figure rc-arm-products.jpg
-ARM based products — Apple iPhone (ARM11), Lego Mindstrome Robot (ARM7), Paison Series game consoles (ARM7TDMI)
+:::figure img-raspberry-pi.jpg side
+Raspberry Pi 4 — a credit-card computer built around a 64-bit ARM Cortex-A72 processor
 :::
+
+ARM based products — Apple iPhone (ARM11), Lego Mindstrome Robot (ARM7), Paison Series game consoles (ARM7TDMI).
 
 ## ARM Architecture
 

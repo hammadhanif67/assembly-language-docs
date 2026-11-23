@@ -35,6 +35,12 @@ site. Every page below carries a **“Researched topic”** tag and ends with a 
 | 21 | 8086 pins & minimum/maximum mode | Hardware side of the 8086 | `microprocessors/8086-pins-and-modes.html` |
 | 22 | Assembler, linker & loader; .COM vs .EXE | How the toolchain works internally | `assembly-basics/assembler-linker-loader.html` |
 | 23 | Arrays & number input/output | Needed for practical programs | `advanced/arrays-and-number-io.html` |
+| 24 | Formula sheet & how to solve | Formulas were spread over many decks | `solved-problems/formula-sheet.html` |
+| 25 | Number conversions — solved | Worked numericals for exam practice | `solved-problems/number-conversions.html` |
+| 26 | Memory, units & performance — solved | bits…TB, address lines, chips, cache, CPU time, pipelines | `solved-problems/memory-and-performance.html` |
+| 27 | Segments & addressing — solved | Physical/effective address exercises | `solved-problems/addressing.html` |
+| 28 | Tracing code — solved | Register/flag trace tables | `solved-problems/tracing-code.html` |
+| 29 | Writing programs — solved | Complete programs built step by step | `solved-problems/writing-programs.html` |
 
 ## Topics the PDFs already cover (no research page needed)
 

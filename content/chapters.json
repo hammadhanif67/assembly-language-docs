@@ -6,5 +6,6 @@
   { "dir": "05-microprocessors", "title": "Microprocessors", "icon": "microchip", "summary": "The Intel 8085 and 8086: architecture, registers, buses, pins and operating modes." },
   { "dir": "06-assembly-basics", "title": "Assembly Basics", "icon": "file-code", "summary": "Writing a first program: structure, the assembler–linker–loader toolchain, directives and addressing modes." },
   { "dir": "07-instruction-set", "title": "The Instruction Set", "icon": "terminal", "summary": "The 8086 instruction groups: data transfer, arithmetic, logic, shifts, jumps and loops." },
-  { "dir": "08-advanced", "title": "Advanced Assembly", "icon": "rocket", "summary": "Procedures and the stack, arrays and number I/O, strings, interrupts, macros and debugging." }
+  { "dir": "08-advanced", "title": "Advanced Assembly", "icon": "rocket", "summary": "Procedures and the stack, arrays and number I/O, strings, interrupts, macros and debugging." },
+  { "dir": "09-solved-problems", "title": "Solved Problems", "icon": "pencil-ruler", "summary": "Exam-style questions solved step by step: the formula sheet, number conversions, memory and performance, addressing, tracing code and writing complete programs." }
 ]

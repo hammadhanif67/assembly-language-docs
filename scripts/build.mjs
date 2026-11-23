@@ -10,6 +10,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const CONTENT = path.join(ROOT, 'content');
 const SRC = path.join(ROOT, 'src');
 const DIST = path.join(ROOT, 'dist');
+// photo credits (Wikimedia Commons): file → { title, page, license, artist }
+const IMAGE_CREDITS = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts', 'image-credits.json'), 'utf8'));
 const SITE = {
   name: 'COAL Docs',
   full: 'Computer Organization & Assembly Language',
@@ -119,18 +121,22 @@ function preprocess(body, prefix, raws) {
   const keep = (html) => `\n\nCOALRAW${raws.push(html) - 1}X\n\n`;
   const photo = (file, caption) =>
     `<figure class="photo"><button class="photo-zoom" type="button" data-src="${prefix}assets/img/${esc(file)}" data-caption="${esc(caption)}" aria-label="Enlarge image: ${esc(caption)}"><img src="${prefix}assets/img/${esc(file)}" alt="${esc(caption)}" loading="lazy" decoding="async"></button><figcaption>${esc(caption)}</figcaption></figure>`;
-  return body.replace(/^:::(diagram|figures|figure|widget|note|tip|warning)(?:[ \t]+([^\n]+))?\n([\s\S]*?)\n:::[ \t]*$/gm, (_, kind, arg = '', text) => {
+  return body.replace(/^:::(diagram|figures|figure|widget|note|tip|warning|answer)(?:[ \t]+([^\n]+))?\n([\s\S]*?)\n:::[ \t]*$/gm, (_, kind, arg = '', text) => {
     const caption = text.trim().replace(/^Figure:\s*/, '');
     arg = arg.trim();
     // :::figures — one row of photos, each line "file.jpg | caption"
     if (kind === 'figures')
       return keep(`<div class="photo-row">${caption.split('\n').map((l) => l.split('|').map((x) => x.trim())).map(([f, c]) => photo(f, c || '')).join('')}</div>`);
     if (kind === 'diagram') return keep(renderDiagram(arg, caption));
-    if (kind === 'figure')
-      return keep(`<figure class="photo"><button class="photo-zoom" type="button" data-src="${prefix}assets/img/${esc(arg)}" data-caption="${esc(caption)}" aria-label="Enlarge image: ${esc(caption)}"><img src="${prefix}assets/img/${esc(arg)}" alt="${esc(caption)}" loading="lazy" decoding="async"></button><figcaption>${esc(caption)}</figcaption></figure>`);
+    if (kind === 'figure') {
+      const [file, mode] = arg.split(/\s+/);
+      const cr = IMAGE_CREDITS[file];
+      const credit = cr ? `<span class="photo-credit">Photo: <a href="${esc(cr.page)}" target="_blank" rel="noopener">${esc(cr.artist || 'Wikimedia Commons')}</a> · ${esc(cr.license)} · cropped</span>` : '';
+      return keep(`<figure class="photo${mode === 'side' ? ' photo--side' : ''}"><button class="photo-zoom" type="button" data-src="${prefix}assets/img/${esc(file)}" data-caption="${esc(caption)}" aria-label="Enlarge image: ${esc(caption)}"><img src="${prefix}assets/img/${esc(file)}" alt="${esc(caption)}" width="880" height="660" loading="lazy" decoding="async"></button><figcaption>${esc(caption)}${credit}</figcaption></figure>`);
+    }
     if (kind === 'widget') return keep(`<figure class="widget-figure"><div class="widget" data-widget="${esc(arg)}"></div><figcaption>${esc(caption)}</figcaption></figure>`);
-    const icon = { note: 'info', tip: 'lightbulb', warning: 'triangle-alert' }[kind];
-    const label = { note: 'Note', tip: 'Tip', warning: 'Watch out' }[kind];
+    const icon = { note: 'info', tip: 'lightbulb', warning: 'triangle-alert', answer: 'circle-check' }[kind];
+    const label = { note: 'Note', tip: 'Tip', warning: 'Watch out', answer: 'Answer' }[kind];
     return `\n<div class="callout callout--${kind}"><p class="callout-label"><i data-lucide="${icon}" aria-hidden="true"></i>${label}</p><div class="callout-body">\n\n${text.trim()}\n\n</div></div>\n`;
   });
 }
@@ -208,6 +214,7 @@ function indexPanel(prefix, current) {
     .join('');
   return `<div class="index-panel" id="index-panel" hidden>
   <div class="index-inner">
+    <nav class="ix-quick" aria-label="Quick links"><a href="${prefix}index.html"><i data-lucide="house"></i>Home</a><a href="${prefix}index.html#chapters"><i data-lucide="list"></i>Chapters</a><a href="${prefix}tools/index.html"><i data-lucide="calculator"></i>Calculators</a><a href="${prefix}solved-problems/index.html"><i data-lucide="pencil-ruler"></i>Solved problems</a><button type="button" data-search-open><i data-lucide="search"></i>Search</button></nav>
     <div class="index-top"><p class="eyebrow">Index · ${chs.length} chapters · ${pages.length} lessons</p><button class="index-close" type="button" aria-label="Close index"><i data-lucide="x"></i></button></div>
     <div class="index-grid">${cols}</div>
   </div>
@@ -224,10 +231,12 @@ function header(prefix, current = null) {
       <button class="index-toggle" type="button" aria-expanded="false" aria-controls="index-panel"><span>Index</span><i data-lucide="chevron-down" aria-hidden="true"></i></button>
       <a class="hdr-link" href="${prefix}index.html#chapters">Chapters</a>
       <a class="hdr-link" href="${prefix}tools/index.html">Tools</a>
+      <a class="hdr-link" href="${prefix}solved-problems/index.html">Solved</a>
       <a class="hdr-link" href="${prefix}${pages[0].url}">Start</a>
     </nav>
     <button class="search-trigger" type="button" aria-label="Search" data-search-open><i data-lucide="search" aria-hidden="true"></i><span class="search-trigger-text">Search</span><kbd>Ctrl K</kbd></button>
-    <a class="icon-btn" href="${SITE.repo}" target="_blank" rel="noopener" aria-label="GitHub repository"><i data-lucide="github"></i></a>
+    <a class="icon-btn hdr-gh" href="${SITE.repo}" target="_blank" rel="noopener" aria-label="GitHub repository"><i data-lucide="github"></i></a>
+    <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="index-panel" aria-label="Open menu"><i data-lucide="menu" class="mi-open"></i><i data-lucide="x" class="mi-close"></i></button>
   </div>
   ${indexPanel(prefix, current)}
 </header>`;
@@ -381,6 +390,13 @@ const TOOL_GROUPS = [
     ['memory', 'tool-memory', 'Address bus & memory size', 'How much memory n address lines can reach, and how many lines a memory needs.', 'memory-stick'],
     ['cache', 'tool-cache', 'Cache address split', 'Break an address into tag, index and offset for any cache size and mapping.', 'layers'],
   ]],
+  ['Data units & performance', [
+    ['units', 'tool-units', 'Data units: bits to TB', 'Bits, nibbles, bytes, KB, MB, GB, TB and PB — binary (1024) or decimal (1000), with every multiply and divide shown.', 'ruler'],
+    ['transfer', 'tool-transfer', 'Transfer time', 'How long a file takes at a given speed: size in bits ÷ bits per second, step by step.', 'timer'],
+    ['perf', 'tool-perf', 'CPU time, CPI & MIPS', 'The CPU performance equation from clock rate, instruction count and CPI or an instruction mix.', 'gauge'],
+    ['pipeline', 'tool-pipeline', 'Pipeline speed-up', 'Time with and without a k-stage pipeline, speed-up, efficiency and throughput.', 'git-commit-horizontal'],
+    ['amat', 'tool-amat', 'Cache access time', 'Hit ratio and average memory access time for hierarchical or simultaneous access.', 'zap'],
+  ]],
 ];
 
 function renderTools() {
@@ -411,7 +427,7 @@ ${header(prefix)}
     </header>
     <div class="tools-layout">
       <aside class="tools-nav" aria-label="Tools"><nav>${nav}</nav></aside>
-      <div class="tools-main">${panels}</div>
+      <div class="tools-main"><details class="tools-jump"><summary><i data-lucide="list" aria-hidden="true"></i>Jump to a calculator</summary><nav aria-label="Calculators">${nav}</nav></details>${panels}</div>
     </div>
   </div>
 </main>

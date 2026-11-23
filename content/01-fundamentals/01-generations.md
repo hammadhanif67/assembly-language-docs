@@ -5,11 +5,11 @@ description: What a computer is, and the five generations of computers — techn
 
 ## Computer
 
-A computer is a machine that manipulates data according to a set of instructions. A computer is a programmable machine that receives input, stores and provides output in a useful format, they can be constructed out of almost anything.
-
-:::figure cg-computer.jpg
-An early electronic computer
+:::figure img-computer.jpg side
+IBM Personal Computer 5150 (1981) — screen, system unit and keyboard
 :::
+
+A computer is a machine that manipulates data according to a set of instructions. A computer is a programmable machine that receives input, stores and provides output in a useful format, they can be constructed out of almost anything.
 
 ## Generations of Computer
 
@@ -25,17 +25,19 @@ There are Five Generations of computers:-
 The five generations of computers and the technology behind each
 :::
 
-
 ## First Generation (1946–1955)
+
+:::figure img-eniac.jpg side
+ENIAC — programmers at work on the first generation computer (U.S. Army photo)
+:::
 
 First generation computer uses Vacuum tubes, Magnetic tape drives and magnetic core memories were developed. ENIAC (Electronic Numeric Integrator And Calculator ) was the first electronic digital computer. It uses about 18,000 vacuum tubes. Its size was too much large. This was very hard to read and write programs by every person. The first generation computer produces too much heat.
 
-:::figures
-cg-eniac.jpg | ENIAC — first generation computer
-cg-1gl.jpg | Machine language written as 1's and 0's
-:::
-
 ### Material Used
+
+:::figure img-vacuum-tubes.jpg side
+Vacuum tubes — the switching element of first generation computers
+:::
 
 - Vacuum Tubes
 - Magnetic Drum
@@ -45,6 +47,12 @@ cg-1gl.jpg | Machine language written as 1's and 0's
 ### First generation languages (abbreviated as 1GL)
 
 Represent the very early, primitive computer languages that consisted entirely of 1's and 0's - the actual language that the computer understands (machine language). This Language is also known as Binary language.
+
+The same instruction in each generation of language:
+
+```text
+10110000 01100001     ; machine code: load the value 61h into register AL
+```
 
 ### Advantages
 
@@ -61,17 +69,19 @@ The disadvantages are:-
 - They contained thousands of valves (vacuum tubes) making them unreliable.
 - The major limitations for early computers was that memory was practically non-existant , only punched tape, delay line memory and mercury memory were available.
 
-
 ## Second Generation (1956–1965)
+
+:::figure img-ibm-1401.jpg side
+IBM 1401 — a transistorised second generation computer with tape drives
+:::
 
 Second generation computer uses a new electronic device called Transistor in the place of Vacuum tube. Storage capacity of computer also increase during this generation. Second generation computers also started showing the characteristics of modern day computers with utilities such as printers, disk storage and operating systems. Many financial information was processed using these computers.
 
-:::figures
-cg-gen2.jpg | A second generation computer
-cg-2gl.jpg | Assembly language source code
-:::
-
 ### Material Used
+
+:::figure img-transistor-card.jpg side
+An IBM SMS circuit card: discrete transistors, resistors and diodes
+:::
 
 - Transistors
 - Magnetic Cores
@@ -81,6 +91,10 @@ cg-2gl.jpg | Assembly language source code
 ### Second generation languages (2GL)
 
 Represent a step up from the first generation languages. Allow for the use of symbolic names instead of just numbers. Second generation languages are known as assembly languages. Code written in an assembly language is converted into machine language (1GL).
+
+```asm
+MOV AL, 61h           ; 2GL — assembly: a symbolic name instead of 10110000
+```
 
 ### Advantages
 
@@ -99,17 +113,19 @@ Represent a step up from the first generation languages. Allow for the use of sy
 - Manual assembly of individual components into a functioning unit was required.
 - Commercial production was difficult and costly.
 
-
 ## Third Generation (1966–1975)
+
+:::figure img-ibm-360.jpg side
+IBM System/360 Model 30 — a third generation computer family
+:::
 
 In third generation computer transistor were replaced with Integrated Circuit (IC) which is a combination of number of transistor and other electronic components fused together on single crystal. This generation machine uses magnetic tape and magnetic disk as secondary storage device.
 
-:::figures
-cg-gen3.jpg | A desktop computer
-cg-3gl.jpg | C / C++
-:::
-
 ### Material Used
+
+:::figure img-slt-chip.jpg side
+IBM SLT module — early integrated (hybrid) circuit used in the System/360
+:::
 
 - Silicon Chips
 - Cores, IC's
@@ -119,6 +135,10 @@ cg-3gl.jpg | C / C++
 ### Third generation languages (3GL)
 
 With the languages introduced by the third generation of computer programming, words and commands (instead of just symbols and numbers) were being used. These languages therefore, had syntax that was much easier to understand. Third generation languages are known as "high level languages" and include C, C++, Java, and Javascript, among others.
+
+```c
+char c = 'a';         /* 3GL — C: the compiler produces the MOV for you */
+```
 
 ### Advantages
 
@@ -136,15 +156,13 @@ With the languages introduced by the third generation of computer programming, w
 - Air-conditioning required in many cases.
 - Highly sophisticated technology required for the manufacture of IC chips.
 
-
 ## Fourth Generation (1976–1985)
 
-In fourth generation computer IC were replaced with Microprocessors. A microprocessor chip consist of entire central processing unit in a single chip. Computing speed increased. Due to the reduction of cost and the availability of the computers power at a small place allowed everyday user to benefit.
-
-:::figures
-cg-gen4.jpg | A fourth generation personal computer
-cg-4gl.jpg | SQL
+:::figure img-intel-4004.jpg side
+Intel 4004 — the first single-chip microprocessor
 :::
+
+In fourth generation computer IC were replaced with Microprocessors. A microprocessor chip consist of entire central processing unit in a single chip. Computing speed increased. Due to the reduction of cost and the availability of the computers power at a small place allowed everyday user to benefit.
 
 ### Material Used
 
@@ -156,6 +174,10 @@ cg-4gl.jpg | SQL
 ### Fourth generation languages (4GL)
 
 The syntax used in 4GL is very close to human language, an improvement from the pervious generation of languages. 4GL languages are typically used to access databases and include SQL and ColdFusion, among others
+
+```sql
+SELECT name FROM students WHERE marks > 80;   -- 4GL: say WHAT you want, not how
+```
 
 ### Advantages
 
@@ -171,19 +193,22 @@ The syntax used in 4GL is very close to human language, an improvement from the 
 
 - Highly sophisticated technology required for the manufacture of LSI chips.
 
-
 ## Fifth Generation (1986–onward)
 
-In fifth generation computer VLSI technology were replaced by Ultra large Scale Integration (ULSI) technology. This technology helped to developed very small but extremely powerful and fast computers which come to be known as ROBOTS. The fifth generation computers will be under Artificial-Intelligence. The idea of fifth generation computer was introduced by Japan's Ministry of International Trade and Industry in 1982.
-
-:::figures
-cg-gen5.jpg | A fifth generation device
-cg-5gl.jpg | Artificial intelligence
+:::figure img-blue-gene.jpg side
+IBM Blue Gene/P — massively parallel fifth generation supercomputer
 :::
+
+In fifth generation computer VLSI technology were replaced by Ultra large Scale Integration (ULSI) technology. This technology helped to developed very small but extremely powerful and fast computers which come to be known as ROBOTS. The fifth generation computers will be under Artificial-Intelligence. The idea of fifth generation computer was introduced by Japan's Ministry of International Trade and Industry in 1982.
 
 ### Fifth generation languages (5GL)
 
 Fifth generation languages are currently being used for neural networks. A nueral network is a form of artifical intelligence that attempts to imitate how the human mind works.
+
+```prolog
+parent(ali, sara).
+grandparent(X, Z) :- parent(X, Y), parent(Y, Z).   % 5GL style: facts and rules, the system finds the answer
+```
 
 ### Advantages
 
@@ -207,7 +232,6 @@ Fifth generation computing devices, based on artificial intelligence, are still 
 - Natural Language
 - Neural Networks
 - Robotics
-
 
 ## Difference Between Generations
 
