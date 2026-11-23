@@ -516,6 +516,7 @@ function renderHome() {
 ${header(prefix)}
 <main id="main" tabindex="-1">
   <section class="hv hv-a">
+    <svg class="hv-circuit" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path class="tr" d="M0 120 H260 V60 H520"/><path class="tr-p" d="M0 120 H260 V60 H520" pathLength="1000" style="--k:0"/><path class="tr" d="M1440 90 H1180 V200 H980"/><path class="tr-p" d="M1440 90 H1180 V200 H980" pathLength="1000" style="--k:1"/><path class="tr" d="M0 520 H180 V420 H420 V470"/><path class="tr-p" d="M0 520 H180 V420 H420 V470" pathLength="1000" style="--k:2"/><path class="tr" d="M1440 600 H1260 V500 H1060"/><path class="tr-p" d="M1440 600 H1260 V500 H1060" pathLength="1000" style="--k:3"/><path class="tr" d="M640 0 V80 H760"/><path class="tr-p" d="M640 0 V80 H760" pathLength="1000" style="--k:4"/><path class="tr" d="M860 700 V610 H1000 V560"/><path class="tr-p" d="M860 700 V610 H1000 V560" pathLength="1000" style="--k:5"/><path class="tr" d="M0 330 H120"/><path class="tr-p" d="M0 330 H120" pathLength="1000" style="--k:6"/><path class="tr" d="M1440 360 H1320 V300"/><path class="tr-p" d="M1440 360 H1320 V300" pathLength="1000" style="--k:7"/></svg>
     <div class="wrap hv-grid">
       <div class="hv-main">
         <p class="hv-eyebrow">Computer Organization &amp; Assembly Language</p>
@@ -524,7 +525,13 @@ ${header(prefix)}
         <div class="hv-cta"><a class="btn btn--primary" href="${prefix}${pages[0].url}">Start learning<i data-lucide="arrow-right"></i></a><a class="btn hv-btn2" href="${prefix}${solved ? solved.url : 'tools/index.html'}">Solved problems</a></div>
         <dl class="hv-stats"><div><dt>Chapters</dt><dd>${chs.length}</dd></div><div><dt>Lessons</dt><dd>${pages.length}</dd></div><div><dt>Diagrams</dt><dd>${usedDiagrams.size}</dd></div><div><dt>Calculators</dt><dd>${allTools.length}</dd></div></dl>
       </div>
-      <figure class="hv-img"><img src="${prefix}assets/img/img-computer.jpg" alt="A modern desktop computer with a glass side panel, liquid cooling and a graphics card" width="880" height="660" decoding="async"><figcaption>Photo: ${esc(IMAGE_CREDITS['img-computer.jpg'].artist)}, ${esc(IMAGE_CREDITS['img-computer.jpg'].license)}</figcaption></figure>
+      <div class="cpu-demo" role="img" aria-label="Animation: an 8086 loop adds 5 + 4 + 3 + 2 + 1 into AX, one instruction at a time">
+        <div class="cd-bar"><span class="cd-dots"><i></i><i></i><i></i></span><span class="cd-file">sum.asm · 8086</span><span class="cd-live"><i></i>Running</span></div>
+        <ol class="cd-code"><li class="cd-line"><span class="cd-addr">0000</span><span class="cd-bytes">B9 05 00</span><code><b>mov</b>  cx, <em>5</em></code></li><li class="cd-line"><span class="cd-addr">0003</span><span class="cd-bytes">B8 00 00</span><code><b>mov</b>  ax, <em>0</em></code></li><li class="cd-line"><span class="cd-addr">0006</span><span class="cd-bytes">01 C8</span><code><u>L1:</u> <b>add</b>  ax, cx</code></li><li class="cd-line"><span class="cd-addr">0008</span><span class="cd-bytes">E2 FC</span><code>    <b>loop</b> L1</code></li><li class="cd-line"><span class="cd-addr">000A</span><span class="cd-bytes">F4</span><code><b>hlt</b></code></li></ol>
+        <div class="cd-pipe"><span class="cd-stage" style="--d:0">Fetch</span><i class="cd-arrow"></i><span class="cd-stage" style="--d:1">Decode</span><i class="cd-arrow"></i><span class="cd-stage" style="--d:2">Execute</span><i class="cd-arrow"></i><span class="cd-stage" style="--d:3">Write back</span></div>
+        <div class="cd-regs"><div class="cd-reg"><span>AX</span><b data-reg="AX">0000</b></div><div class="cd-reg"><span>CX</span><b data-reg="CX">0000</b></div><div class="cd-reg"><span>IP</span><b data-reg="IP">0000</b></div><div class="cd-reg"><span>Cycles</span><b data-reg="cyc">0</b></div></div>
+        <p class="cd-result">AX = 000Fh = 5 + 4 + 3 + 2 + 1 = 15</p>
+      </div>
     </div>
   </section>
 

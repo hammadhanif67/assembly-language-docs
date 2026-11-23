@@ -269,6 +269,70 @@
     renderMermaid();
   }
 
+  /* ---------- Tools page: side nav highlights the calculator on screen ---------- */
+  function setupToolsSpy() {
+    const nav = $('.tools-nav nav');
+    if (!nav || !('IntersectionObserver' in window)) return;
+    const links = $$('a[href^="#"]', nav);
+    const map = new Map(links.map((a) => [a.getAttribute('href').slice(1), a]));
+    const panels = $$('.tool-panel').filter((p) => map.has(p.id));
+    const seen = new Set();
+    const pick = () => {
+      let cur = panels.find((p) => seen.has(p));
+      if (!cur) cur = panels.filter((p) => p.getBoundingClientRect().top < 160).pop() || panels[0];
+      links.forEach((a) => a.classList.toggle('active', map.get(cur.id) === a));
+      const a = map.get(cur.id);
+      if (a && nav.scrollHeight > nav.clientHeight) {
+        const r = a.getBoundingClientRect(), n = nav.getBoundingClientRect();
+        if (r.top < n.top + 40 || r.bottom > n.bottom - 40) nav.scrollTo({ top: a.offsetTop - nav.clientHeight / 2, behavior: 'smooth' });
+      }
+    };
+    const io = new IntersectionObserver((es) => { es.forEach((e) => (e.isIntersecting ? seen.add(e.target) : seen.delete(e.target))); pick(); }, { rootMargin: '-90px 0px -55% 0px' });
+    panels.forEach((p) => io.observe(p));
+    pick();
+  }
+
+  /* ---------- Home hero: an 8086 program that runs on screen ---------- */
+  function setupHeroDemo() {
+    const demo = $('.cpu-demo');
+    if (!demo) return;
+    const lines = $$('.cd-line', demo), stages = $$('.cd-stage', demo);
+    const reg = (n) => $(`[data-reg="${n}"]`, demo);
+    const hex = (n) => n.toString(16).toUpperCase().padStart(4, '0');
+    // trace of: mov cx,5 / mov ax,0 / L1: add ax,cx / loop L1 / hlt
+    const steps = [[0, { CX: 5, IP: 0x0000 }], [1, { AX: 0, IP: 0x0003 }]];
+    let ax = 0;
+    for (let cx = 5; cx >= 1; cx--) { ax += cx; steps.push([2, { AX: ax, IP: 0x0006 }]); steps.push([3, { CX: cx - 1, IP: 0x0008 }]); }
+    steps.push([4, { IP: 0x000a }]);
+    const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const state = { AX: 0, CX: 0, IP: 0, cyc: 0 };
+    const show = (k) => { const el = reg(k); if (!el) return; el.textContent = k === 'cyc' ? String(state.cyc) : hex(state[k]); };
+    const flash = (k) => { const el = reg(k); if (!el) return; const box = el.closest('.cd-reg'); box.classList.remove('flash'); void box.offsetWidth; box.classList.add('flash'); };
+    if (still) { // final state, no motion
+      Object.assign(state, { AX: 15, CX: 0, IP: 0x000a, cyc: steps.length }); ['AX', 'CX', 'IP', 'cyc'].forEach(show);
+      lines[4].classList.add('on'); demo.classList.add('done'); return;
+    }
+    let i = 0, timer = null, visible = true;
+    const tick = () => {
+      if (i >= steps.length) { // pause on the result, then run again
+        demo.classList.add('done');
+        timer = setTimeout(() => { demo.classList.remove('done'); i = 0; Object.assign(state, { AX: 0, CX: 0, IP: 0, cyc: 0 }); ['AX', 'CX', 'IP', 'cyc'].forEach(show); tick(); }, 2600);
+        return;
+      }
+      const [ln, regs] = steps[i++];
+      lines.forEach((l, k) => l.classList.toggle('on', k === ln));
+      stages.forEach((s) => { s.classList.remove('run'); void s.offsetWidth; s.classList.add('run'); });
+      Object.entries(regs).forEach(([k, v]) => { const changed = state[k] !== v; state[k] = v; show(k); if (changed && k !== 'IP') flash(k); });
+      state.cyc++; show('cyc'); show('IP');
+      timer = setTimeout(tick, 1150);
+    };
+    const start = () => { if (!timer && visible && !document.hidden) tick(); };
+    const stop = () => { clearTimeout(timer); timer = null; };
+    if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => { visible = e.isIntersecting; visible ? start() : stop(); }).observe(demo);
+    document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
+    start();
+  }
+
   /* ---------- Boot ---------- */
   document.addEventListener('DOMContentLoaded', () => {
     setupPrism();
@@ -279,6 +343,8 @@
     setupCopy();
     setupSearch();
     setupLightbox();
+    setupToolsSpy();
+    setupHeroDemo();
     renderMermaid();
     if (window.COAL_WIDGETS) window.COAL_WIDGETS.init();
     icons();
