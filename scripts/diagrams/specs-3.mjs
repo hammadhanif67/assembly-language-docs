@@ -41,7 +41,7 @@ const gate = (d, x, y, type) => {
 };
 specs['logic-gates'] = () => {
   const d = new Diagram(760, 330, { minw: 620 });
-  const g = [['AND', 'A · B'], ['OR', 'A + B'], ['NOT', 'A̅'], ['NAND', '(A · B)̅'], ['NOR', '(A + B)̅'], ['XOR', 'A ⊕ B']];
+  const g = [['AND', 'A · B'], ['OR', 'A + B'], ['NOT', 'NOT A'], ['NAND', 'NOT (A · B)'], ['NOR', 'NOT (A + B)'], ['XOR', 'A ⊕ B']];
   g.forEach(([t, f], i) => {
     const x = 60 + (i % 3) * 250, y = 40 + Math.floor(i / 3) * 150;
     gate(d, x, y, t);
@@ -70,7 +70,7 @@ specs['half-adder'] = () => {
 // ---------- 8086 instruction encoding ----------
 specs['x86-encoding'] = () => {
   const d = new Diagram(780, 330, { minw: 640 });
-  const parts = [['Prefix', 'optional, 0–4 bytes', 'box', 90], ['Opcode', '1–2 bytes', 'red', 120], ['ModR/M', '0–1 byte', 'tint', 120], ['Displacement', '0, 1 or 2 bytes', 'alt', 160], ['Immediate data', '0, 1 or 2 bytes', 'alt', 160]];
+  const parts = [['Prefix', '0–4 bytes', 'box', 90], ['Opcode', '1–2 bytes', 'red', 120], ['ModR/M', '0–1 byte', 'tint', 120], ['Displacement', '0, 1 or 2 bytes', 'alt', 160], ['Immediate data', '0, 1 or 2 bytes', 'alt', 160]];
   let x = 40;
   const pos = {};
   parts.forEach(([t, s, k, w]) => { pos[t] = d.box(x, 30, w, 54, { label: t, sub: s, kind: k, r: 0 }); x += w; });
@@ -88,8 +88,6 @@ specs['x86-encoding'] = () => {
   d.text(460, 196, '2 bits', { cls: 'd-small' }); d.text(560, 196, '3 bits', { cls: 'd-small' }); d.text(680, 196, '3 bits', { cls: 'd-small' });
   d.text(420, 220, 'mod: 11 = register, 00/01/10 = memory (+0/8/16-bit disp.)', { cls: 'd-small', anchor: 'start' });
   d.text(420, 238, 'reg: a register · r/m: register or memory operand', { cls: 'd-small', anchor: 'start' });
-  d.path([pos['Opcode'].bottom, [200, 140]], { cls: 'd-line-mut', dash: true });
-  d.path([pos['ModR/M'].bottom, [580, 140]], { cls: 'd-line-mut', dash: true });
   d.text(40, 290, 'Example:  MOV AX, BX  →  89 D8   (opcode 100010 0 1 = 89h · ModR/M 11 011 000 = D8h)', { cls: 'd-mono', anchor: 'start' });
   return d;
 };
@@ -117,27 +115,27 @@ specs['pipeline-hazard'] = () => {
 
 // ---------- Direct-mapped cache ----------
 specs['cache-direct'] = () => {
-  const d = new Diagram(780, 380, { minw: 640 });
+  const d = new Diagram(780, 440, { minw: 640 });
   d.text(40, 24, '16-BIT ADDRESS  =  3A7Ch', { cls: 'd-caps', anchor: 'start' });
   const t = d.box(40, 40, 160, 50, { label: 'Tag · 4 bits', sub: '0011 = 3', kind: 'red', r: 0 });
   const ix = d.box(200, 40, 320, 50, { label: 'Line (index) · 8 bits', sub: '1010 0111 = A7h = 167', kind: 'tint', r: 0 });
   const of = d.box(520, 40, 160, 50, { label: 'Offset · 4 bits', sub: '1100 = 12', kind: 'alt', r: 0 });
   // cache table
   d.text(200, 132, 'CACHE — 256 LINES × 16 BYTES = 4 KB', { cls: 'd-caps', anchor: 'start' });
-  const hdr = [['V', 40], ['Tag', 70], ['Data block (16 bytes)', 270]];
-  let x = 200; hdr.forEach(([h, w]) => { d.box(x, 146, w, 30, { label: h, kind: 'dark', r: 0 }); x += w; });
-  const rows = [['0', '—', '—', ''], ['⋮', '', '', ''], ['166', '1', '7', '…'], ['167', '1', '3', 'byte 0 … byte 12 … byte 15'], ['168', '0', '—', '—'], ['⋮', '', '', ''], ['255', '1', '0', '…']];
+  const cols = [['Line', 60], ['V', 40], ['Tag', 70], ['Data block (16 bytes)', 250]];
+  let x = 200; cols.forEach(([h, w]) => { d.box(x, 146, w, 30, { label: h, kind: 'dark', r: 0 }); x += w; });
+  const rows = [['0', '0', '—', '—'], ['⋮', '', '', ''], ['166', '1', '7', '…'], ['167', '1', '3', 'byte 0 … byte 12 … byte 15'], ['168', '0', '—', '—'], ['⋮', '', '', ''], ['255', '1', '0', '…']];
   rows.forEach(([n, v, tg, data], i) => {
     const y = 176 + i * 28, hl = n === '167';
-    d.text(188, y + 14, n, { cls: 'd-mono', anchor: 'end' });
-    d.box(200, y, 40, 28, { label: v, mono: true, r: 0, kind: hl ? 'tint' : 'box' });
-    d.box(240, y, 70, 28, { label: tg, mono: true, r: 0, kind: hl ? 'red' : 'box' });
-    d.box(310, y, 270, 28, { label: data, mono: true, r: 0, kind: hl ? 'tint' : 'box' });
+    d.box(200, y, 60, 28, { label: n, mono: true, r: 0, kind: hl ? 'tint' : 'alt' });
+    d.box(260, y, 40, 28, { label: v, mono: true, r: 0, kind: hl ? 'tint' : 'box' });
+    d.box(300, y, 70, 28, { label: tg, mono: true, r: 0, kind: hl ? 'red' : 'box' });
+    d.box(370, y, 250, 28, { label: data, mono: true, r: 0, kind: hl ? 'tint' : 'box' });
   });
-  d.path([ix.bottom, [360, 120], [150, 120], [150, 274], [200, 274]], { cls: 'd-line-acc', label: 'selects line 167', labelAt: [150, 200] });
-  d.path([t.bottom, [120, 104], [100, 104], [100, 360], [275, 360], [275, 288]], { cls: 'd-line-mut', label: 'compare tags', labelAt: [190, 360] });
-  d.path([of.bottom, [600, 120], [640, 120], [640, 274], [580, 274]], { cls: 'd-line-mut', label: 'picks byte 12', labelAt: [690, 200] });
-  d.text(620, 330, ['V = 1 and tags equal', '→ cache hit'], { cls: 'd-label', anchor: 'start' });
+  d.path([ix.bottom, [360, 116], [170, 116], [170, 274], [200, 274]], { cls: 'd-line-acc', label: 'index selects line 167', labelAt: [265, 116] });
+  d.path([of.bottom, [600, 116], [660, 116], [660, 274], [620, 274]], { cls: 'd-line-mut', label: 'offset picks byte 12', labelAt: [700, 200] });
+  d.box(200, 386, 420, 40, { kind: 'alt', label: 'stored tag 3 = address tag 3 and V = 1  →  cache HIT' });
+  d.path([t.bottom, [120, 406], [200, 406]], { cls: 'd-line-mut', label: 'compare tags', labelAt: [120, 300] });
   return d;
 };
 
@@ -152,11 +150,11 @@ specs['dma'] = () => {
   d.path([[560, 64], [460, 64]], { arrow: 'end' }); d.text(510, 54, 'DREQ', { cls: 'd-mono' });
   d.path([[460, 86], [560, 86]], { arrow: 'end' }); d.text(510, 100, 'DACK', { cls: 'd-mono' });
   d.path([[20, 200], [740, 200]], { cls: 'd-bus', arrow: null });
-  d.text(30, 186, 'SYSTEM BUS (ADDRESS · DATA · CONTROL)', { cls: 'd-caps', anchor: 'start' });
+  d.text(30, 216, 'SYSTEM BUS (ADDRESS · DATA · CONTROL)', { cls: 'd-caps', anchor: 'start' });
   const mem = d.box(300, 240, 160, 60, { title: 'Memory', kind: 'alt' });
   [cpu, dma, dev].forEach((b) => d.path([b.bottom, [b.cx, 196]], { arrow: 'both' }));
   d.path([[mem.cx, 204], mem.top], { arrow: 'both' });
-  d.text(560, 270, ['1  device raises DREQ', '2  DMA asks CPU with HOLD', '3  CPU frees the bus, answers HLDA', '4  DMA moves the block, then drops HOLD'], { cls: 'd-small', anchor: 'start' });
+  d.text(490, 270, ['1  device raises DREQ', '2  DMA asks CPU with HOLD', '3  CPU frees the bus, answers HLDA', '4  DMA moves the block, then drops HOLD'], { cls: 'd-small', anchor: 'start' });
   return d;
 };
 
@@ -178,18 +176,18 @@ specs['i8086-pins'] = () => {
 
 // ---------- Arrays in memory ----------
 specs['array-layout'] = () => {
-  const d = new Diagram(760, 300, { minw: 620 });
+  const d = new Diagram(760, 320, { minw: 620 });
   d.text(40, 24, 'WORD ARRAY   nums dw 10, 20, 30, 40', { cls: 'd-caps', anchor: 'start' });
   const bytes = ['0A', '00', '14', '00', '1E', '00', '28', '00'];
-  bytes.forEach((b, i) => { d.box(40 + i * 60, 40, 60, 40, { label: b, mono: true, r: 0, kind: i % 2 ? 'alt' : 'tint' }); d.text(70 + i * 60, 96, `+${i}`, { cls: 'd-small' }); });
-  [0, 1, 2, 3].forEach((k) => d.dim(40 + k * 120, 160 + k * 120, 118, `nums[${k}]`));
+  bytes.forEach((b, i) => { d.box(40 + i * 60, 40, 60, 40, { label: b, mono: true, r: 0, kind: i % 2 ? 'alt' : 'tint' }); d.text(70 + i * 60, 94, `+${i}`, { cls: 'd-small' }); });
+  [0, 1, 2, 3].forEach((k) => d.dim(40 + k * 120, 160 + k * 120, 136, `nums[${k}]`));
   d.text(560, 60, ['element k is at', 'offset nums + k × 2'], { cls: 'd-label', anchor: 'start' });
-  d.text(40, 170, '2-D ARRAY  3 × 4 BYTES, ROW-MAJOR', { cls: 'd-caps', anchor: 'start' });
+  d.text(40, 182, '2-D ARRAY  3 × 4 BYTES, ROW-MAJOR', { cls: 'd-caps', anchor: 'start' });
   for (let r = 0; r < 3; r++) for (let c = 0; c < 4; c++) {
     const i = r * 4 + c;
-    d.box(40 + i * 50, 188, 50, 40, { label: `${r},${c}`, mono: true, r: 0, kind: r === 1 ? 'tint' : 'alt' });
+    d.box(40 + i * 50, 200, 50, 40, { label: `${r},${c}`, mono: true, r: 0, kind: r === 1 ? 'tint' : 'alt' });
   }
-  d.text(40, 250, 'address of [row][col] = base + (row × columns + col) × element size', { cls: 'd-mono', anchor: 'start' });
-  d.text(40, 272, 'example: [1][2] = base + (1 × 4 + 2) × 1 = base + 6', { cls: 'd-small', anchor: 'start' });
+  d.text(40, 264, 'address of [row][col] = base + (row × columns + col) × element size', { cls: 'd-mono', anchor: 'start' });
+  d.text(40, 288, 'example: [1][2] = base + (1 × 4 + 2) × 1 = base + 6', { cls: 'd-small', anchor: 'start' });
   return d;
 };

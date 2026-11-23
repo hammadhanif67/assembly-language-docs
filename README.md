@@ -1,54 +1,54 @@
-# COAL Documentation
+# COAL Docs
 
-**Computer Organization & Assembly Language** as a static documentation site, built from the
-course's lecture PDFs and slides and extended with researched assembly-programming chapters.
+**Computer Organization & Assembly Language** — a course-style documentation site: 42 lessons in
+8 chapters, 46 diagrams and 4 interactive tools, from computer generations to 8086 assembly programming.
 
 🔗 **Live site:** https://hammadhanif67.github.io/assembly-language-docs/
 
-<p align="center"><img src="src/assets/favicon.svg" width="96" alt="COAL Docs logo: a black block with an orange offset shadow holding a CPU chip with an orange C"></p>
+<p align="center"><img src="src/assets/favicon.svg" width="88" alt="COAL Docs logo: a 3×3 grid of squares forming a C, with a red centre square"></p>
 
-The logo is a black square block with a hard orange offset shadow, holding a paper-colored CPU chip
-with an orange **C**. The wordmark is **COAL DOCS**, with “DOCS” on an orange block.
+The logo is a 3×3 grid of cells, like memory cells: the black cells form a **C** and the centre cell is red —
+the core.
 
-## What's inside
+## Chapters
 
-| Chapter | Pages | Source |
+| # | Chapter | Lessons |
 |---|---|---|
-| 1. Foundations | generations of computers, architecture vs. organization, structure & function, von Neumann vs. Harvard | course PDFs |
-| 2. Processor Basics | machine instructions, clock & PC, instruction cycle, RISC, CISC vs RISC | course PDFs |
-| 3. Registers & Memory | CPU (EU/BIU), 8086 registers, memory, segmentation, system bus, CPU registers, register types | course PDF + PPTX |
-| 4. Microprocessors | 8085, 8086 | course PPTX |
-| 5. Assembly Basics | number systems, data representation, program structure, directives, addressing modes | 🔬 researched |
-| 6. Instruction Set | data transfer, arithmetic, logic/shift/rotate, jumps & loops | 🔬 researched |
-| 7. Advanced Assembly | stack & procedures, interrupts & I/O, string instructions, macros, debugging | 🔬 researched |
+| 01 | Computer Fundamentals | Generations of computers, architecture vs organization, structure & function, von Neumann & Harvard |
+| 02 | Data Representation | Number systems, signed numbers & characters, floating point (IEEE 754), logic gates & Boolean algebra |
+| 03 | The Processor | Machine instructions, clock & PC, instruction cycle, instruction encoding, pipelining & hazards, RISC, CISC vs RISC |
+| 04 | Registers, Memory & I/O | CPU (EU/BIU), 8086 registers, CPU registers, memory, cache mapping, segmentation, system bus, I/O techniques & DMA |
+| 05 | Microprocessors | 8085, 8086, 8086 pins & operating modes |
+| 06 | Assembly Basics | Program structure, assembler/linker/loader, directives, addressing modes |
+| 07 | The Instruction Set | Data transfer, arithmetic, logic/shift/rotate, jumps & loops |
+| 08 | Advanced Assembly | Stack & procedures, arrays & number I/O, strings, interrupts & I/O, macros, debugging |
 
-- **38 pages** (24 from the course material, 14 marked *Added by research* with cited sources)
-- **37 SVG diagrams** drawn with the site palette, each linked to the original slide image
-- Interactive widgets: program-execution stepper, segment:offset calculator, number converter, stack visualizer
-- See [`CONTENT_MAP.md`](CONTENT_MAP.md) (source → page mapping, OCR notes, overlaps) and [`MISSING_TOPICS.md`](MISSING_TOPICS.md)
-
-## Features
-
-- Collapsible sidebar grouped by chapter, current page highlighted
-- “On this page” table of contents with scroll-spy
-- Breadcrumbs, previous/next links, reading-progress bar, back-to-top button
-- Full-text search (Fuse.js), opened with **Ctrl K** or **/**
-- Syntax highlighting (Prism.js) with x86 mnemonics, line numbers and copy buttons
-- Mermaid flowcharts on the researched pages, styled to match the site
-- Smooth scrolling for “On this page” links; hard “press-down” button motion instead of fades
-- Responsive from 320 px phones to wide desktops; keyboard navigable; alt text on all images; skip link
+Lessons marked **Researched topic** were written to complete the curriculum and end with a References
+section. See [`CONTENT_MAP.md`](CONTENT_MAP.md) and [`MISSING_TOPICS.md`](MISSING_TOPICS.md).
 
 ## Design
 
-**Brutalist Editorial.** Newsprint paper with a faint grid, black ink, thick black rules and hard
-offset shadows (no blur, no rounded corners), plus a signal-orange accent (`#FF4D00`). Researched
-lessons use blue instead of orange.
+**Swiss design** (International Typographic Style): white space, a strict 12-column grid, one red accent
+(`#E30613`), Inter / Inter Tight type, and no decoration that does not carry information.
 
-- **Type:** condensed uppercase **Archivo** headlines, **Newsreader** serif for reading, **JetBrains Mono** for labels and metadata
-- **Sidebar:** a “Course map” with numbered chapter blocks, square lesson nodes on a rail, a progress bar and a lesson filter
-- **Lesson pages:** a framed headline block (chapter / lesson strip, reading time, sections), a drop cap, outlined section numbers, “FIG.01” captions and a black “Up next” slab
+- **No sidebar.** Navigation is an **Index** menu in the header (every chapter and lesson), a page per
+  chapter, a lesson strip at the top of each lesson, “On this page” in the left margin and large
+  Previous / Next links.
+- Search everything with **Ctrl K** or **/** (Fuse.js).
+- Code blocks with x86 syntax highlighting, line numbers and a Copy button (Prism.js).
+- Smooth scrolling, reading-progress bar, back-to-top button, keyboard support and skip link.
+- Responsive from 320 px phones to wide screens; wide diagrams scroll inside their frame.
 
-All colors are CSS variables at the top of `src/css/main.css`, and the diagrams use the same variables.
+## Diagrams
+
+All diagrams are **generated** SVG, so they share one visual language and use the CSS colour variables.
+Each diagram is a short spec in `scripts/diagrams/specs-*.mjs` built with a small toolkit
+(`scripts/diagrams/lib.mjs`): boxes, cell rows, orthogonal connectors routed between box edges, labels
+with a white backing so lines never cut through text.
+
+```bash
+npm run diagrams   # regenerate src/diagrams/*.svg
+```
 
 ## Run locally
 
@@ -56,96 +56,65 @@ Requires Node.js 18+.
 
 ```bash
 npm install
-npm run dev        # build + serve at http://localhost:4173
-npm run check      # build + check every internal link, anchor, image and alt text
+npm run dev        # build (diagrams + site) and serve at http://localhost:4173
+npm run check      # build, then check every link, anchor, image and alt text
 ```
-
-The output is plain static files in `dist/`. Opening `dist/index.html` directly also works.
 
 ## Project structure
 
 ```text
 content/
-  chapters.json            chapter order, titles, icons
-  01-foundations/*.md      one Markdown file per page (front matter + body)
+  chapters.json            chapter order, titles, summaries
+  01-fundamentals/*.md     one Markdown file per lesson
   …
-  07-advanced/*.md
-src/
-  css/main.css             layout + design tokens
-  js/main.js               sidebar, TOC, search, copy, lightbox, animations
-  js/widgets.js            interactive widgets
-  diagrams/*.svg           diagrams (+ _meta.json: original slide, “illustration” flag)
-  assets/img/              photos extracted from the PDFs
-  assets/originals/        original slide images for “View original slide”
-  logo.svg
+  08-advanced/*.md
 scripts/
-  build.mjs                Markdown → HTML static site generator
-  serve.mjs                tiny dev server
+  build.mjs                Markdown → static HTML (home, chapter pages, lessons, 404)
+  diagrams/                diagram toolkit + specs → src/diagrams/*.svg
   check.mjs                link / anchor / alt-text checker
-.github/workflows/pages.yml  build + deploy to GitHub Pages
+  serve.mjs                dev server
+src/
+  css/main.css             Swiss design (tokens at the top)
+  js/main.js               index menu, search, TOC, copy, lightbox, Mermaid
+  js/widgets.js            interactive tools
+  assets/                  logo, favicons, photos
+.github/workflows/pages.yml  build + deploy to GitHub Pages on every push to main
 ```
 
-## Add a new topic
+## Add a lesson
 
-1. Create `content/<chapter-folder>/NN-my-topic.md` (the number sets the order):
+1. Create `content/<chapter>/NN-my-topic.md` (the number sets the order):
 
    ```markdown
    ---
    title: My Topic
-   description: One-sentence summary used for SEO and search.
-   source: My Lecture.pdf — pages 3–7
-   ocr: false          # true if transcribed from scanned images
-   research: false     # true adds the “Added by research” badge (then add a ## Sources section)
+   description: One sentence shown under the title, in search and on the chapter page.
+   research: false      # true shows the “Researched topic” tag
    ---
 
    ## First section
-   Normal Markdown, tables, and ```asm code fences.
+   Markdown, tables and ```asm code fences.
    ```
 
-2. Optional blocks:
-
-   ```text
-   :::diagram my-diagram        → inlines src/diagrams/my-diagram.svg (register it in _meta.json)
-   Figure: caption
-   :::
-
-   :::figure photo.jpg          → image from src/assets/img/
-   Caption / alt text
-   :::
-
-   :::note | :::tip | :::warning
-   Callout text
-   :::
-   ```
-
-   A ` ```mermaid ` fence renders a Mermaid diagram.
-3. For a new chapter, add a folder and an entry in `content/chapters.json`.
-4. Run `npm run check`, commit, push. GitHub Actions rebuilds and deploys.
-
-Diagrams should use the `d-*` classes (`d-box`, `d-text`, `d-line d-arrow`, …) instead of hard-coded
-colors, so they match the site palette.
+2. Optional blocks: `:::diagram name` (an SVG in `src/diagrams/`), `:::figure photo.jpg`,
+   `:::note` / `:::tip` / `:::warning`, and ```` ```mermaid ```` fences. A `## Sources` section is shown as
+   “References”.
+3. For a new diagram, add a spec to `scripts/diagrams/specs-*.mjs`.
+4. Run `npm run check`, commit and push — GitHub Actions deploys automatically.
 
 ## Source material
 
-The lecture PDFs/PPTX files are used as the content source but are **not committed** (`.gitignore`),
-since they are course material that may not be yours to redistribute. The extracted text, transcriptions
-and figures live in `content/` and `src/assets/`. To commit the originals as well, remove the
-`/*.pdf` and `/*.pptx` lines from `.gitignore`.
+The original lecture PDFs/PPTX are **not** committed (`.gitignore`) and are not referenced on the site.
+Their text was transcribed into `content/`; diagrams were redrawn.
 
 ## Credits
 
-- Content: CSC 222 / COAL lecture slides (Computer Organization & Assembly Language). The slides
-  themselves cite W. Stallings, *Computer Organization and Architecture*, techtarget.com,
-  stanford.edu (RISC project) and embeddedcraft.org.
-- Researched chapters cite Intel's *8086 Family User's Manual*, Microsoft Learn (MASM), R. Hyde's
-  *Art of Assembly*, UMBC CMSC 211 notes, R. Duncan's *MS-DOS Functions* and Wikipedia. Each page has
-  its own Sources section.
-- Libraries (all via CDN): [Prism.js](https://prismjs.com) (MIT), [Fuse.js](https://fusejs.io) (Apache-2.0),
-  [Lucide](https://lucide.dev) (ISC),
-  [Mermaid](https://mermaid.js.org) (MIT), [marked](https://marked.js.org) (MIT, build-time).
-- Fonts: Archivo, Newsreader, JetBrains Mono (Google Fonts, SIL OFL).
-- Layout ideas inspired by open-source docs sites such as Docusaurus and VitePress. No code was copied.
+- Libraries (CDN): [Prism.js](https://prismjs.com) (MIT), [Fuse.js](https://fusejs.io) (Apache-2.0),
+  [Lucide](https://lucide.dev) (ISC), [Mermaid](https://mermaid.js.org) (MIT); [marked](https://marked.js.org) (MIT, build time).
+- Fonts: Inter, Inter Tight, JetBrains Mono (Google Fonts, SIL OFL).
+- Researched lessons cite Intel’s 8086 manuals, Microsoft Learn (MASM), Stallings, Patterson & Hennessy,
+  Irvine and others in their References sections.
 
 ## License
 
-Site code: MIT. Lecture-derived content belongs to its original authors and is reproduced for educational use.
+Site code: MIT. Lecture-derived content belongs to its original authors and is used for education.

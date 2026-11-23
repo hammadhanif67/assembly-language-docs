@@ -39,17 +39,17 @@
 <text class="d-small" x="530" y="60.0" text-anchor="end" dominant-baseline="central">A</text>
 <text class="d-small" x="660" y="60.0" text-anchor="start" dominant-baseline="central">Y</text>
 <text class="d-title" x="590" y="110.0" text-anchor="middle" dominant-baseline="central">NOT</text>
-<text class="d-mono" x="590" y="132.0" text-anchor="middle" dominant-baseline="central">Y = A̅</text>
+<text class="d-mono" x="590" y="132.0" text-anchor="middle" dominant-baseline="central">Y = NOT A</text>
 <text class="d-small" x="30" y="202.0" text-anchor="end" dominant-baseline="central">A</text>
 <text class="d-small" x="30" y="218.0" text-anchor="end" dominant-baseline="central">B</text>
 <text class="d-small" x="160" y="210.0" text-anchor="start" dominant-baseline="central">Y</text>
 <text class="d-title" x="90" y="260.0" text-anchor="middle" dominant-baseline="central">NAND</text>
-<text class="d-mono" x="90" y="282.0" text-anchor="middle" dominant-baseline="central">Y = (A · B)̅</text>
+<text class="d-mono" x="90" y="282.0" text-anchor="middle" dominant-baseline="central">Y = NOT (A · B)</text>
 <text class="d-small" x="280" y="202.0" text-anchor="end" dominant-baseline="central">A</text>
 <text class="d-small" x="280" y="218.0" text-anchor="end" dominant-baseline="central">B</text>
 <text class="d-small" x="410" y="210.0" text-anchor="start" dominant-baseline="central">Y</text>
 <text class="d-title" x="340" y="260.0" text-anchor="middle" dominant-baseline="central">NOR</text>
-<text class="d-mono" x="340" y="282.0" text-anchor="middle" dominant-baseline="central">Y = (A + B)̅</text>
+<text class="d-mono" x="340" y="282.0" text-anchor="middle" dominant-baseline="central">Y = NOT (A + B)</text>
 <text class="d-small" x="530" y="202.0" text-anchor="end" dominant-baseline="central">A</text>
 <text class="d-small" x="530" y="218.0" text-anchor="end" dominant-baseline="central">B</text>
 <text class="d-small" x="660" y="210.0" text-anchor="start" dominant-baseline="central">Y</text>

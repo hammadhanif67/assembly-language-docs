@@ -8,12 +8,12 @@ segmentation, buses, and the 8085/8086 processors.
 It does **not** teach how to *write* assembly programs. Compared with a standard Assembly Language
 curriculum (e.g. Irvine, *Assembly Language for x86 Processors*; Intel *8086 Family User's Manual*;
 typical CSC/COAL course outlines), these topics were missing and were researched and written for the
-site. Every page below carries an **“Added by research”** badge and a *Sources* section.
+site. Every page below carries a **“Researched topic”** tag and ends with a *References* section.
 
 | # | Missing topic | Why it is needed | Site page |
 |---|---|---|---|
-| 1 | Number systems (binary, octal, hex, conversions) | Every listing, address and register value is in hex/binary | `assembly-basics/number-systems.html` |
-| 2 | Data representation (signed numbers, two's complement, ranges, ASCII, BCD) | Needed to understand flags, MUL/IMUL, CMP and character I/O | `assembly-basics/data-representation.html` |
+| 1 | Number systems (binary, octal, hex, conversions) | Every listing, address and register value is in hex/binary | `data-representation/number-systems.html` |
+| 2 | Data representation (signed numbers, two's complement, ranges, ASCII, BCD) | Needed to understand flags, MUL/IMUL, CMP and character I/O | `data-representation/data-representation.html` |
 | 3 | Assembly program structure & toolchain (assembler, linker, .MODEL, segments, first program) | The PDFs never show a complete program | `assembly-basics/program-structure.html` |
 | 4 | Assembler directives & data definition (DB, DW, DD, DUP, EQU, OFFSET, PTR, PROC) | Required to declare variables and procedures | `assembly-basics/directives-and-data.html` |
 | 5 | Addressing modes | Only mentioned in passing (CISC vs RISC slide) | `assembly-basics/addressing-modes.html` |
@@ -26,6 +26,15 @@ site. Every page below carries an **“Added by research”** badge and a *Sourc
 | 12 | String instructions (MOVS, CMPS, SCAS, LODS, STOS, REP) | Mentioned with SI/DI/ES but never explained | `advanced/string-instructions.html` |
 | 13 | Macros | Standard curriculum topic, absent | `advanced/macros.html` |
 | 14 | Debugging & tools (DEBUG, emu8086, DOSBox, common errors) | Needed to actually run the examples | `advanced/debugging.html` |
+| 15 | Floating-point numbers (IEEE 754) | Standard data-representation topic | `data-representation/floating-point.html` |
+| 16 | Logic gates & Boolean algebra | Foundation of the ALU and the logic instructions | `data-representation/logic-gates.html` |
+| 17 | Instruction encoding (8086 machine code) | Connects instruction formats to real bytes | `processor/instruction-encoding.html` |
+| 18 | Pipelining & hazards | Pipelining was only introduced by analogy | `processor/pipelining.html` |
+| 19 | Cache memory & mapping | Cache was named but its organization was not covered | `registers-memory/cache-mapping.html` |
+| 20 | I/O techniques — polling, interrupts, DMA | Standard COA topic, absent | `registers-memory/io-techniques.html` |
+| 21 | 8086 pins & minimum/maximum mode | Hardware side of the 8086 | `microprocessors/8086-pins-and-modes.html` |
+| 22 | Assembler, linker & loader; .COM vs .EXE | How the toolchain works internally | `assembly-basics/assembler-linker-loader.html` |
+| 23 | Arrays & number input/output | Needed for practical programs | `advanced/arrays-and-number-io.html` |
 
 ## Topics the PDFs already cover (no research page needed)
 

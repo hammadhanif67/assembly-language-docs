@@ -22,10 +22,10 @@
 <text class="d-mono" x="250" y="100.0" text-anchor="middle" dominant-baseline="central">HOLD</text>
 <text class="d-mono" x="510" y="54.0" text-anchor="middle" dominant-baseline="central">DREQ</text>
 <text class="d-mono" x="510" y="100.0" text-anchor="middle" dominant-baseline="central">DACK</text>
-<text class="d-caps" x="30" y="186.0" text-anchor="start" dominant-baseline="central">SYSTEM BUS (ADDRESS · DATA · CONTROL)</text>
+<text class="d-caps" x="30" y="216.0" text-anchor="start" dominant-baseline="central">SYSTEM BUS (ADDRESS · DATA · CONTROL)</text>
 <text class="d-title" x="380" y="270.0" text-anchor="middle" dominant-baseline="central">Memory</text>
-<text class="d-small" x="560" y="249.0" text-anchor="start" dominant-baseline="central">1  device raises DREQ</text>
-<text class="d-small" x="560" y="263.0" text-anchor="start" dominant-baseline="central">2  DMA asks CPU with HOLD</text>
-<text class="d-small" x="560" y="277.0" text-anchor="start" dominant-baseline="central">3  CPU frees the bus, answers HLDA</text>
-<text class="d-small" x="560" y="291.0" text-anchor="start" dominant-baseline="central">4  DMA moves the block, then drops HOLD</text>
+<text class="d-small" x="490" y="249.0" text-anchor="start" dominant-baseline="central">1  device raises DREQ</text>
+<text class="d-small" x="490" y="263.0" text-anchor="start" dominant-baseline="central">2  DMA asks CPU with HOLD</text>
+<text class="d-small" x="490" y="277.0" text-anchor="start" dominant-baseline="central">3  CPU frees the bus, answers HLDA</text>
+<text class="d-small" x="490" y="291.0" text-anchor="start" dominant-baseline="central">4  DMA moves the block, then drops HOLD</text>
 </svg>

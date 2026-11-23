@@ -1,102 +1,65 @@
 # Content Map
 
-Every source file, every topic extracted from it, and the page it became.
-Page paths are relative to the site root (`dist/` when built, the GitHub Pages URL when deployed).
+Where every lesson on the site came from. Paths are relative to the site root.
 
-**Legend:** OCR = the source pages were scanned images with no text layer; their text was transcribed
-from the rendered page images (no Tesseract was available, so transcription was done visually and
-proof-read against the slides).
+The course material (7 PDFs and 3 PowerPoint decks in the project root) is **not** published and is not
+referenced on the site. Four PDFs were scanned images with no text layer (Computer Generation, Basic
+Processor, RISC and CISC, Register & Memory — 117 pages); their text was transcribed from the page images.
 
-## Source files
+## Lessons from the course material
 
-| # | File | Type | Pages / slides | Text layer? |
-|---|---|---|---|---|
-| 1 | `Computer Generation.pdf` | PDF | 34 | ❌ scanned — **all 34 pages OCR** |
-| 2 | `Computer Architecture.pdf` | PDF | 17 | ✅ |
-| 3 | `Sturuture and Function.pdf` | PDF | 12 | ✅ (pages 5 and 11 are figure-only images) |
-| 4 | `Von Neumann,s.pdf` | PDF | 10 | ✅ (pages 4 and 7 are figure-only images) |
-| 5 | `Basic Processor.pdf` | PDF | 20 | ❌ scanned — **all 20 pages OCR** |
-| 6 | `RISC and CISC.pdf` | PDF | 23 | ❌ scanned — **all 23 pages OCR** |
-| 7 | `Register & Memory.pdf` | PDF | 40 | ❌ scanned — **all 40 pages OCR** |
-| 8 | `CPU Register.pptx` | PowerPoint | 24 | ✅ (slides 4, 5, 7, 15, 17, 23 are images) |
-| 9 | `8085.pptx` | PowerPoint | 15 | ✅ (slides 5, 9 contain images; slide 9's image is text, transcribed) |
-| 10 | `8086.pptx` | PowerPoint | 14 | ✅ (slides 5, 11 are images) |
+| Lesson | Site page | Source |
+|---|---|---|
+| Generations of Computers | `fundamentals/generations.html` | Computer Generation.pdf, p. 1–34 (six slide sections merged into one lesson) |
+| Architecture vs. Organization | `fundamentals/architecture-vs-organization.html` | Computer Architecture.pdf, p. 1–17 |
+| Structure and Function | `fundamentals/structure-and-function.html` | Sturuture and Function.pdf, p. 1–12 |
+| Von Neumann & Harvard | `fundamentals/von-neumann-harvard.html` | Von Neumann,s.pdf, p. 1–10 |
+| Machine Instruction Elements | `processor/machine-instructions.html` | Basic Processor.pdf, p. 1–9 |
+| Processor Clock & Program Counter | `processor/processor-clock.html` | Basic Processor.pdf, p. 10–12 |
+| Instruction Cycle | `processor/instruction-cycle.html` | Basic Processor.pdf, p. 13–20 |
+| What is RISC? | `processor/risc.html` | RISC and CISC.pdf, p. 1–11 |
+| CISC vs. RISC | `processor/cisc-vs-risc.html` | RISC and CISC.pdf, p. 12–16 |
+| RISC Applications & Convergence | `processor/risc-applications.html` | RISC and CISC.pdf, p. 17–23 |
+| The CPU — EU, BIU & Internal Bus | `registers-memory/the-cpu.html` | Register & Memory.pdf, p. 1–8 |
+| Registers (8086) | `registers-memory/registers.html` | Register & Memory.pdf, p. 9–15 |
+| CPU Register — What, Why & How | `registers-memory/cpu-register.html` | CPU Register.pptx, slides 1–8 |
+| Types of Registers | `registers-memory/types-of-registers.html` | CPU Register.pptx, slides 9–24 |
+| Memory | `registers-memory/memory.html` | Register & Memory.pdf, p. 16–24 |
+| Memory Organization & Segmentation | `registers-memory/memory-segmentation.html` | Register & Memory.pdf, p. 25–31 |
+| System Bus | `registers-memory/system-bus.html` | Register & Memory.pdf, p. 32–40 |
+| 8085 Microprocessor | `microprocessors/8085.html` | 8085.pptx, slides 1–15 |
+| 8086 Microprocessor | `microprocessors/8086.html` | 8086.pptx, slides 1–14 |
 
-The files were found in the project root (not in `./pdfs/`); they were read in place and were **not modified**.
-They are excluded from the Git repository by `.gitignore` (see README → *Source material*).
+## Researched lessons (23)
 
-## Topic → page mapping
+`data-representation/`: number-systems, data-representation, floating-point, logic-gates ·
+`processor/`: instruction-encoding, pipelining · `registers-memory/`: cache-mapping, io-techniques ·
+`microprocessors/`: 8086-pins-and-modes · `assembly-basics/`: program-structure, assembler-linker-loader,
+directives-and-data, addressing-modes · `instruction-set/`: data-transfer, arithmetic, logic-shift-rotate,
+jumps-and-loops · `advanced/`: stack-and-procedures, arrays-and-number-io, string-instructions,
+interrupts-and-io, macros, debugging. Each ends with a References section. See
+[MISSING_TOPICS.md](MISSING_TOPICS.md).
 
-### Chapter 1 — Foundations
+## Overlaps kept
 
-| Source | Pages | Topics | Site page |
-|---|---|---|---|
-| Computer Generation.pdf | 1–3, 33 | Computer definition, five generations list, Difference table | `foundations/generations-overview.html` |
-| Computer Generation.pdf | 4–9 | 1st gen, ENIAC, material used, 1GL, advantages, disadvantages | `foundations/first-generation.html` |
-| Computer Generation.pdf | 10–15 | 2nd gen, material, 2GL (assembly), advantages, disadvantages | `foundations/second-generation.html` |
-| Computer Generation.pdf | 16–21 | 3rd gen, ICs, material, 3GL, advantages, disadvantages | `foundations/third-generation.html` |
-| Computer Generation.pdf | 22–27 | 4th gen, microprocessors, material, 4GL, advantages, disadvantages | `foundations/fourth-generation.html` |
-| Computer Generation.pdf | 28–32, 34 | 5th gen, ULSI, 5GL, advantages, disadvantages, Artificial Intelligence | `foundations/fifth-generation.html` |
-| Computer Architecture.pdf | 1–17 | Architecture vs organization, attributes, multiply instruction, IBM System/370, compatibility, microcomputers | `foundations/architecture-vs-organization.html` |
-| Sturuture and Function.pdf | 1–12 | Hierarchical system, structure vs function, top-down approach, Fig 1.4, four basic functions, Fig 1.2 | `foundations/structure-and-function.html` |
-| Von Neumann,s.pdf | 1–10 | Von Neumann architecture, bottleneck causes, Harvard architecture, comparison table | `foundations/von-neumann-harvard.html` |
+| Topic | Appears in | Handling |
+|---|---|---|
+| 8086 registers | Registers (8086), CPU Register, Types of Registers, 8086 Microprocessor | all kept; each adds detail the others lack |
+| EU / BIU / queue | The CPU, 8086 Microprocessor | both kept |
+| Fetch–decode–execute | Instruction Cycle, CPU Register | both kept |
+| Pipelining | What is RISC?, 8086 Microprocessor, Pipelining & Hazards | intro, 8086 case and full treatment |
 
-### Chapter 2 — Processor Basics
+## Editorial changes
 
-| Source | Pages | Topics | Site page |
-|---|---|---|---|
-| Basic Processor.pdf | 1–9 | Outline, machine instruction elements, instruction representation, mnemonics, instruction types, number of addresses, types of operands | `processor/machine-instructions.html` |
-| Basic Processor.pdf | 10–12 | Basic operations, processor clock, program counter, reading from memory | `processor/processor-clock.html` |
-| Basic Processor.pdf | 13–20 | Basic instruction cycle, CPU registers, top-level view, detailed steps, example program execution, execution cycle, state diagram | `processor/instruction-cycle.html` |
-| RISC and CISC.pdf | 1–11 | What is RISC, history, characteristics, pipelining (laundry analogy), RISC pipelines, hardware utilization | `processor/risc.html` |
-| RISC and CISC.pdf | 12–16 | CISC vs RISC: instruction, code size, registers & addressing modes, execution | `processor/cisc-vs-risc.html` |
-| RISC and CISC.pdf | 17–23 | RISC applications, ARM, performance equation, convergence, conclusion | `processor/risc-applications.html` |
-
-### Chapter 3 — Registers & Memory
-
-| Source | Pages / slides | Topics | Site page |
-|---|---|---|---|
-| Register & Memory.pdf | 1–8 | Outline, CPU, EU, BIU, internal bus, 8086 organization | `registers-memory/the-cpu.html` |
-| Register & Memory.pdf | 9–15 | Registers, 8086 internal registers, GP/segment/pointer/index registers, 80386 extended registers | `registers-memory/registers.html` |
-| Register & Memory.pdf | 16–24 | Bits/bytes/words, prefixes, memory, hierarchy, main/auxiliary memory, RAM/ROM, cache | `registers-memory/memory.html` |
-| Register & Memory.pdf | 25–31 | Memory organization, segments, segment:offset, physical address, exercise, program segments | `registers-memory/memory-segmentation.html` |
-| Register & Memory.pdf | 32–40 | Bus, data/address/control bus, types of transfer, interconnection structure | `registers-memory/system-bus.html` |
-| CPU Register.pptx | 1–8 | What a register is, flow of data, why the CPU needs registers, fetch–decode–execute | `registers-memory/cpu-register.html` |
-| CPU Register.pptx | 9–24 | Types of registers: GP (AX–DX), segment, index, pointer, flag register | `registers-memory/types-of-registers.html` |
-
-### Chapter 4 — Microprocessors
-
-| Source | Slides | Topics | Site page |
-|---|---|---|---|
-| 8085.pptx | 1–15 | Microprocessor, 8085 features & architecture, ALU, flags, accumulator, registers, PC, SP, W/Z, IR, timing & control, interrupts, buses | `microprocessors/8085.html` |
-| 8086.pptx | 1–14 | 8086 introduction, specifications, internal architecture, BIU, EU, registers, segmentation, pipelining, working | `microprocessors/8086.html` |
-
-## Overlaps between sources (both versions kept)
-
-| Topic | Source A | Source B | How it's handled |
-|---|---|---|---|
-| 8086 registers (AX…DX, SP, BP, SI, DI, segments, flags) | Register & Memory.pdf p. 9–15 | CPU Register.pptx slides 9–24 and 8086.pptx slide 9 | All three kept on their own pages; wording differs and each adds unique detail (e.g. 80386 registers only in the PDF, DX:AX role only in the PPTX). |
-| EU / BIU / instruction queue | Register & Memory.pdf p. 4–8 | 8086.pptx slides 6–8, 11–13 | Both kept: `registers-memory/the-cpu.html` and `microprocessors/8086.html`. |
-| Fetch–decode–execute | Basic Processor.pdf p. 13–20 | CPU Register.pptx slides 7–8 | Both kept. |
-| Pipelining | RISC and CISC.pdf p. 6–10 (laundry analogy) | 8086.pptx slides 11–12 (BIU/EU overlap) | Both kept. |
-| 2GL = assembly language | Computer Generation.pdf p. 13 | — | Linked from research page *Program Structure*. |
+- Slide-only text removed: title/“Thank you” slides, outline banners, slide footers with web citations,
+  “Contd..” headings.
+- Six thin generation pages merged into one lesson with a section per generation.
+- 2⁻²⁰ corrected to 0.00000095367 (the slide showed 0.0000000954).
+- Original spelling in slide text otherwise kept.
 
 ## Figures
 
-- **37 diagrams** recreated as inline SVG using the site palette (`src/diagrams/*.svg`). Each one from a slide has a
-  **“View original slide”** button showing the untouched source image (`src/assets/originals/`).
-  Three are marked *illustration* because they visualise text that had no figure
-  (`arch-vs-org`, `flags-8085`, `interrupt-priority-8085`).
-- **14 photos** extracted from Computer Generation.pdf and RISC and CISC.pdf (`src/assets/img/`).
-- **1 interactive figure**: the six-step *Example Program Execution* (Basic Processor.pdf p. 17) as a stepper.
-- Purely decorative clip-art on title/“thank you” slides (RISC and CISC.pdf p. 1, 2, 5, 12, 17, 22, 23) was not reproduced.
-
-## Editorial notes (no meaning changed)
-
-- Obvious typos in the originals were kept as written (e.g. “Characterstics”, “Hardare”, “nueral”, “pervious”), except `1,073,741,,824` → `1,073,741,824` (extraction artifact).
-- Register & Memory.pdf p. 17 gives 2⁻²⁰ ≈ 0.0000000954; kept as-is with an editor's note giving the exact value.
-- 8086.pptx slide 10 is titled “Features of 8085 Microprocessor” but describes the 8086; kept with a note.
-
-## Researched pages
-
-See [MISSING_TOPICS.md](MISSING_TOPICS.md) — 14 pages in chapters 5–7, each badged **Added by research** with sources.
+- **46 generated SVG diagrams** (`scripts/diagrams/specs-*.mjs` → `src/diagrams/`), redrawn from the
+  slides plus new ones for the researched lessons.
+- **13 photos** from Computer Generation.pdf and RISC and CISC.pdf (`src/assets/img/`).
+- **4 interactive tools**: program-execution stepper, segment:offset calculator, number converter, stack simulator.
