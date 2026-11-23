@@ -1,37 +1,64 @@
-<svg viewBox="0 0 640 470" xmlns="http://www.w3.org/2000/svg">
-  <g class="d-mono" text-anchor="middle" style="font-size:12.5px">
-    <text x="40" y="47">AX</text><rect class="d-box-2" x="70" y="30" width="70" height="26"/><text x="105" y="48">AH</text><rect class="d-box-2" x="140" y="30" width="70" height="26"/><text x="175" y="48">AL</text>
-    <text x="40" y="73">BX</text><rect class="d-box-2" x="70" y="56" width="70" height="26"/><text x="105" y="74">BH</text><rect class="d-box-2" x="140" y="56" width="70" height="26"/><text x="175" y="74">BL</text>
-    <text x="40" y="99">CX</text><rect class="d-box-2" x="70" y="82" width="70" height="26"/><text x="105" y="100">CH</text><rect class="d-box-2" x="140" y="82" width="70" height="26"/><text x="175" y="100">CL</text>
-    <text x="40" y="125">DX</text><rect class="d-box-2" x="70" y="108" width="70" height="26"/><text x="105" y="126">DH</text><rect class="d-box-2" x="140" y="108" width="70" height="26"/><text x="175" y="126">DL</text>
-    <rect class="d-box-3" x="70" y="160" width="140" height="24"/><text x="140" y="177">SP</text>
-    <rect class="d-box-3" x="70" y="184" width="140" height="24"/><text x="140" y="201">BP</text>
-    <rect class="d-box-3" x="70" y="208" width="140" height="24"/><text x="140" y="225">SI</text>
-    <rect class="d-box-3" x="70" y="232" width="140" height="24"/><text x="140" y="249">DI</text>
-    <rect class="d-box-3" x="70" y="256" width="140" height="24"/><text x="140" y="273">IP</text>
-    <rect class="d-box" x="70" y="314" width="70" height="26"/><text x="105" y="332">FlagsH</text><rect class="d-box" x="140" y="314" width="70" height="26"/><text x="175" y="332">FlagsL</text>
-    <rect class="d-box-2" x="70" y="370" width="140" height="24"/><text x="140" y="387">ES</text>
-    <rect class="d-box-2" x="70" y="394" width="140" height="24"/><text x="140" y="411">CS</text>
-    <rect class="d-box-2" x="70" y="418" width="140" height="24"/><text x="140" y="435">DS</text>
-    <rect class="d-box-2" x="70" y="442" width="140" height="24"/><text x="140" y="459">SS</text>
-  </g>
-  <g class="d-small" style="fill:var(--d-text)">
-    <text x="218" y="47">Accumulator</text><text x="218" y="73">Base</text><text x="218" y="99">Count</text><text x="218" y="125">Data</text>
-    <text x="218" y="177">Stack pointer</text><text x="218" y="201">Base pointer</text><text x="218" y="225">Source index</text><text x="218" y="249">Destination index</text><text x="218" y="273">Instruction pointer</text>
-    <text x="218" y="332">Status and control flags</text>
-    <text x="218" y="387">Extra</text><text x="218" y="411">Code</text><text x="218" y="435">Data</text><text x="218" y="459">Stack</text>
-  </g>
-  <path class="d-line" d="M318 32 Q326 32 326 40 V124 Q326 132 318 132"/><text class="d-small" x="334" y="86">Data group</text>
-  <path class="d-line" d="M330 162 Q338 162 338 170 V270 Q338 278 330 278"/><text class="d-small" x="346" y="216">Pointer and</text><text class="d-small" x="346" y="230">index group</text>
-  <path class="d-line" d="M268 372 Q276 372 276 380 V456 Q276 464 268 464"/><text class="d-small" x="284" y="422">Segment group</text>
-  <g class="d-text" text-anchor="middle" style="font-size:13.5px">
-    <rect class="d-box-2" x="430" y="30" width="200" height="104" rx="6"/>
-    <text x="530" y="66">AX, BX, CX and DX are</text><text x="530" y="86">two bytes wide and each</text><text x="530" y="106">byte can be accessed separately</text>
-    <rect class="d-box-2" x="430" y="166" width="200" height="104" rx="6"/>
-    <text x="530" y="212">These registers are used</text><text x="530" y="232">as memory <tspan style="fill:var(--d-accent-2);font-style:italic">pointers</tspan>.</text>
-    <rect class="d-box-3" x="430" y="304" width="200" height="46" rx="6" style="stroke:var(--d-accent-2)"/>
-    <text x="530" y="333" style="font-weight:700">6 status; 3 control ; 7 unused</text>
-    <rect class="d-box-2" x="430" y="370" width="200" height="96" rx="6"/>
-    <text x="530" y="410">Segment registers are used</text><text x="530" y="430">as base address for a segment</text>
-  </g>
+<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" style="min-width:560px">
+<rect class="d-box-3" x="80" y="38" width="75" height="28" rx="0"/>
+<rect class="d-box-3" x="155" y="38" width="75" height="28" rx="0"/>
+<rect class="d-box-3" x="80" y="66" width="75" height="28" rx="0"/>
+<rect class="d-box-3" x="155" y="66" width="75" height="28" rx="0"/>
+<rect class="d-box-3" x="80" y="94" width="75" height="28" rx="0"/>
+<rect class="d-box-3" x="155" y="94" width="75" height="28" rx="0"/>
+<rect class="d-box-3" x="80" y="122" width="75" height="28" rx="0"/>
+<rect class="d-box-3" x="155" y="122" width="75" height="28" rx="0"/>
+<rect class="d-box" x="80" y="190" width="150" height="28" rx="0"/>
+<rect class="d-box" x="80" y="218" width="150" height="28" rx="0"/>
+<rect class="d-box" x="80" y="246" width="150" height="28" rx="0"/>
+<rect class="d-box" x="80" y="274" width="150" height="28" rx="0"/>
+<rect class="d-box" x="80" y="302" width="150" height="28" rx="0"/>
+<rect class="d-box-2" x="80" y="362" width="140" height="30" rx="0"/>
+<rect class="d-box-2" x="230" y="362" width="140" height="30" rx="0"/>
+<rect class="d-box-2" x="380" y="362" width="140" height="30" rx="0"/>
+<rect class="d-box-2" x="530" y="362" width="140" height="30" rx="0"/>
+<rect class="d-box-k" x="80" y="432" width="150" height="24" rx="0"/>
+<text class="d-caps" x="80" y="24.0" text-anchor="start" dominant-baseline="central">Data group</text>
+<text class="d-small" x="430" y="24.0" text-anchor="start" dominant-baseline="central">two bytes each; high and low byte usable on their own</text>
+<text class="d-mono" x="60" y="52.0" text-anchor="end" dominant-baseline="central">AX</text>
+<text class="d-mono" x="117.5" y="52.0" text-anchor="middle" dominant-baseline="central">AH</text>
+<text class="d-mono" x="192.5" y="52.0" text-anchor="middle" dominant-baseline="central">AL</text>
+<text class="d-text" x="250" y="52.0" text-anchor="start" dominant-baseline="central">Accumulator</text>
+<text class="d-mono" x="60" y="80.0" text-anchor="end" dominant-baseline="central">BX</text>
+<text class="d-mono" x="117.5" y="80.0" text-anchor="middle" dominant-baseline="central">BH</text>
+<text class="d-mono" x="192.5" y="80.0" text-anchor="middle" dominant-baseline="central">BL</text>
+<text class="d-text" x="250" y="80.0" text-anchor="start" dominant-baseline="central">Base</text>
+<text class="d-mono" x="60" y="108.0" text-anchor="end" dominant-baseline="central">CX</text>
+<text class="d-mono" x="117.5" y="108.0" text-anchor="middle" dominant-baseline="central">CH</text>
+<text class="d-mono" x="192.5" y="108.0" text-anchor="middle" dominant-baseline="central">CL</text>
+<text class="d-text" x="250" y="108.0" text-anchor="start" dominant-baseline="central">Count</text>
+<text class="d-mono" x="60" y="136.0" text-anchor="end" dominant-baseline="central">DX</text>
+<text class="d-mono" x="117.5" y="136.0" text-anchor="middle" dominant-baseline="central">DH</text>
+<text class="d-mono" x="192.5" y="136.0" text-anchor="middle" dominant-baseline="central">DL</text>
+<text class="d-text" x="250" y="136.0" text-anchor="start" dominant-baseline="central">Data</text>
+<text class="d-caps" x="80" y="176.0" text-anchor="start" dominant-baseline="central">Pointer &amp; index group</text>
+<text class="d-small" x="430" y="176.0" text-anchor="start" dominant-baseline="central">used as memory pointers</text>
+<text class="d-mono" x="60" y="204.0" text-anchor="end" dominant-baseline="central">SP</text>
+<text class="d-mono" x="155" y="204.0" text-anchor="middle" dominant-baseline="central">SP</text>
+<text class="d-text" x="250" y="204.0" text-anchor="start" dominant-baseline="central">Stack pointer</text>
+<text class="d-mono" x="60" y="232.0" text-anchor="end" dominant-baseline="central">BP</text>
+<text class="d-mono" x="155" y="232.0" text-anchor="middle" dominant-baseline="central">BP</text>
+<text class="d-text" x="250" y="232.0" text-anchor="start" dominant-baseline="central">Base pointer</text>
+<text class="d-mono" x="60" y="260.0" text-anchor="end" dominant-baseline="central">SI</text>
+<text class="d-mono" x="155" y="260.0" text-anchor="middle" dominant-baseline="central">SI</text>
+<text class="d-text" x="250" y="260.0" text-anchor="start" dominant-baseline="central">Source index</text>
+<text class="d-mono" x="60" y="288.0" text-anchor="end" dominant-baseline="central">DI</text>
+<text class="d-mono" x="155" y="288.0" text-anchor="middle" dominant-baseline="central">DI</text>
+<text class="d-text" x="250" y="288.0" text-anchor="start" dominant-baseline="central">Destination index</text>
+<text class="d-mono" x="60" y="316.0" text-anchor="end" dominant-baseline="central">IP</text>
+<text class="d-mono" x="155" y="316.0" text-anchor="middle" dominant-baseline="central">IP</text>
+<text class="d-text" x="250" y="316.0" text-anchor="start" dominant-baseline="central">Instruction pointer</text>
+<text class="d-caps" x="80" y="348.0" text-anchor="start" dominant-baseline="central">Segment group</text>
+<text class="d-small" x="430" y="348.0" text-anchor="start" dominant-baseline="central">base address of a 64 KB segment</text>
+<text class="d-mono" x="150" y="377.0" text-anchor="middle" dominant-baseline="central">CS · Code</text>
+<text class="d-mono" x="300" y="377.0" text-anchor="middle" dominant-baseline="central">DS · Data</text>
+<text class="d-mono" x="450" y="377.0" text-anchor="middle" dominant-baseline="central">SS · Stack</text>
+<text class="d-mono" x="600" y="377.0" text-anchor="middle" dominant-baseline="central">ES · Extra</text>
+<text class="d-caps" x="80" y="420.0" text-anchor="start" dominant-baseline="central">FLAGS</text>
+<text class="d-mono d-on-accent" x="155" y="444.0" text-anchor="middle" dominant-baseline="central">FLAGS (16-bit)</text>
+<text class="d-text" x="250" y="444.0" text-anchor="start" dominant-baseline="central">6 status flags · 3 control flags · 7 unused bits</text>
 </svg>

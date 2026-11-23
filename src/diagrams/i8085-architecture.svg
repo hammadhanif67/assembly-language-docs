@@ -1,52 +1,73 @@
-<svg viewBox="0 0 760 470" xmlns="http://www.w3.org/2000/svg">
-  <g class="d-small" style="fill:var(--d-text)" text-anchor="middle">
-    <text x="190" y="14">INTR  INTA  RST5.5  RST6.5  RST7.5  TRAP</text>
-    <text x="490" y="14">SID      SOD</text>
-  </g>
-  <rect class="d-box" x="100" y="24" width="180" height="22"/><text class="d-small" x="190" y="39" text-anchor="middle" style="fill:var(--d-text)">Interrupt control</text>
-  <rect class="d-box" x="440" y="24" width="110" height="22"/><text class="d-small" x="495" y="39" text-anchor="middle" style="fill:var(--d-text)">Serial I/O Control</text>
-  <rect class="d-box-a" x="10" y="74" width="740" height="16"/>
-  <text class="d-small" x="380" y="68" text-anchor="middle">8- bit Internal Bus</text>
-  <line class="d-line d-arrow-both" x1="190" y1="48" x2="190" y2="72"/><line class="d-line d-arrow-both" x1="495" y1="48" x2="495" y2="72"/>
-  <g class="d-small" style="fill:var(--d-text)">
-    <rect class="d-box-2" x="20" y="118" width="90" height="30"/><text x="65" y="137" text-anchor="middle">Accumulator (8)</text>
-    <rect class="d-box-2" x="124" y="118" width="80" height="30"/><text x="164" y="131" text-anchor="middle">Temporary</text><text x="164" y="143" text-anchor="middle">Register (8)</text>
-    <rect class="d-box-3" x="190" y="170" width="54" height="34"/><text x="217" y="184" text-anchor="middle">Flag</text><text x="217" y="197" text-anchor="middle">Flip-Flops</text>
-    <path class="d-box-a" d="M140 224 H250 L240 262 H150 Z" style="opacity:.85"/><text x="195" y="240" text-anchor="middle" style="fill:var(--on-accent)">Arithmetic</text><text x="195" y="254" text-anchor="middle" style="fill:var(--on-accent)">Logic unit</text>
-    <rect class="d-box-2" x="300" y="118" width="100" height="30"/><text x="350" y="131" text-anchor="middle">Instruction</text><text x="350" y="143" text-anchor="middle">Register</text>
-    <rect class="d-box-2" x="300" y="176" width="100" height="72"/><text x="350" y="196" text-anchor="middle">Instruction</text><text x="350" y="210" text-anchor="middle">Decoder</text><text x="350" y="224" text-anchor="middle">&amp; Machine</text><text x="350" y="238" text-anchor="middle">Cycle encoding</text>
-    <rect class="d-box" x="510" y="118" width="190" height="26"/><text x="605" y="135" text-anchor="middle">Multiplexer</text>
-    <rect class="d-box-3" x="510" y="144" width="95" height="36"/><text x="557" y="160" text-anchor="middle">W (8)</text><text x="557" y="173" text-anchor="middle">Temp.reg</text>
-    <rect class="d-box-3" x="605" y="144" width="95" height="36"/><text x="652" y="160" text-anchor="middle">Z (8)</text><text x="652" y="173" text-anchor="middle">Temp.reg</text>
-    <rect class="d-box-2" x="510" y="180" width="95" height="36"/><text x="557" y="196" text-anchor="middle">B (8)</text><text x="557" y="209" text-anchor="middle">Reg.</text>
-    <rect class="d-box-2" x="605" y="180" width="95" height="36"/><text x="652" y="196" text-anchor="middle">C (8)</text><text x="652" y="209" text-anchor="middle">Reg.</text>
-    <rect class="d-box-2" x="510" y="216" width="95" height="36"/><text x="557" y="232" text-anchor="middle">D (8)</text><text x="557" y="245" text-anchor="middle">Reg.</text>
-    <rect class="d-box-2" x="605" y="216" width="95" height="36"/><text x="652" y="232" text-anchor="middle">E (8)</text><text x="652" y="245" text-anchor="middle">Reg.</text>
-    <rect class="d-box-2" x="510" y="252" width="95" height="36"/><text x="557" y="268" text-anchor="middle">H (8)</text><text x="557" y="281" text-anchor="middle">Reg.</text>
-    <rect class="d-box-2" x="605" y="252" width="95" height="36"/><text x="652" y="268" text-anchor="middle">L (8)</text><text x="652" y="281" text-anchor="middle">Reg.</text>
-    <rect class="d-box" x="510" y="288" width="190" height="22"/><text x="605" y="303" text-anchor="middle">Stack Pointer (16)</text>
-    <rect class="d-box" x="510" y="310" width="190" height="22"/><text x="605" y="325" text-anchor="middle">Program Counter (16)</text>
-    <rect class="d-box" x="510" y="332" width="190" height="30"/><text x="605" y="345" text-anchor="middle">Increment/Decrement</text><text x="605" y="357" text-anchor="middle">Address Latch (16)</text>
-    <rect class="d-box" x="482" y="144" width="22" height="218"/><text x="493" y="256" text-anchor="middle" transform="rotate(-90 493 256)">Register Select</text>
-    <text x="712" y="226">Register</text><text x="716" y="240">Array</text>
-    <rect class="d-box" x="40" y="300" width="400" height="70"/><text x="240" y="318" text-anchor="middle">Timing &amp; Control</text>
-    <text x="80" y="342" text-anchor="middle">CLK GEN</text><text x="160" y="342" text-anchor="middle">Control</text><text x="250" y="342" text-anchor="middle">Status</text><text x="330" y="342" text-anchor="middle">DMA</text><text x="400" y="342" text-anchor="middle">RESET</text>
-    <rect class="d-box" x="500" y="386" width="100" height="24"/><text x="550" y="402" text-anchor="middle">Address Buffer (8)</text>
-    <rect class="d-box" x="612" y="386" width="120" height="24"/><text x="672" y="402" text-anchor="middle">Data/Address Buffer (8)</text>
-    <text x="550" y="438" text-anchor="middle">A15–A8 Address Bus</text>
-    <text x="672" y="438" text-anchor="middle">AD7–AD0 Address/Data Bus</text>
-    <text x="20" y="300">POWER</text><text x="20" y="314">SUPPLY</text><text x="70" y="300">+5V</text><text x="70" y="314">GND</text>
-    <text x="16" y="342">X1</text><text x="16" y="358">X2</text>
-    <text x="240" y="400" text-anchor="middle">CLK OUT  READY  RD  WR  ALE  S0  S1  IO/M  HOLD  HLDA  RESET IN  RESET OUT</text>
-  </g>
-  <g class="d-line" style="stroke-width:5;stroke:var(--d-accent);opacity:.75">
-    <line x1="65" y1="92" x2="65" y2="114"/><line x1="164" y1="92" x2="164" y2="114"/><line x1="350" y1="92" x2="350" y2="114"/><line x1="605" y1="92" x2="605" y2="114"/>
-    <line x1="350" y1="150" x2="350" y2="172"/><line x1="350" y1="250" x2="350" y2="296"/>
-    <path d="M65 150 V244 H136"/><path d="M164 150 V230 H136"/><path d="M245 222 V92"/><path d="M262 92 V176 H246"/><path d="M730 92 V380"/>
-  </g>
-  <line class="d-line d-arrow" x1="550" y1="364" x2="550" y2="384"/><line class="d-line d-arrow" x1="672" y1="364" x2="672" y2="384"/>
-  <line class="d-line d-arrow" x1="550" y1="412" x2="550" y2="426"/><line class="d-line d-arrow-both" x1="672" y1="412" x2="672" y2="426"/>
-  <line class="d-line d-arrow" x1="30" y1="340" x2="38" y2="340"/><line class="d-line d-arrow" x1="30" y1="356" x2="38" y2="356"/>
-  <line class="d-line d-arrow" x1="442" y1="335" x2="478" y2="335"/>
-  <line class="d-line" x1="240" y1="372" x2="240" y2="388"/>
+<svg viewBox="0 0 780 500" xmlns="http://www.w3.org/2000/svg" style="min-width:660px">
+<rect class="d-group" x="500" y="120" width="260" height="260" rx="0"/>
+<rect class="d-box-2" x="100" y="20" width="190" height="40" rx="2"/>
+<rect class="d-box-2" x="430" y="20" width="190" height="40" rx="2"/>
+<path class="d-bus" d="M20.0 100.0 L760.0 100.0"/>
+<path class="d-line d-arr2" d="M195.0 60.0 L195.0 96.0"/>
+<path class="d-line d-arr2" d="M525.0 60.0 L525.0 96.0"/>
+<rect class="d-box-a" x="20" y="130" width="110" height="40" rx="2"/>
+<rect class="d-box" x="150" y="130" width="110" height="40" rx="2"/>
+<rect class="d-box-3" x="150" y="190" width="110" height="40" rx="2"/>
+<rect class="d-box-k" x="20" y="250" width="240" height="50" rx="2"/>
+<path class="d-line d-arr2" d="M75.0 104.0 L75.0 130.0"/>
+<path class="d-line d-arr" d="M205.0 104.0 L205.0 130.0"/>
+<path class="d-line d-arr" d="M75.0 170.0 L75.0 250.0"/>
+<path class="d-line d-arr" d="M180.0 170.0 L180.0 190.0"/>
+<path class="d-line d-arr2" d="M205.0 230.0 L205.0 250.0"/>
+<path class="d-line-mut d-arr-mut" d="M20.0 275.0 L10.0 275.0 L10.0 104.0"/>
+<rect class="d-box-3" x="300" y="130" width="150" height="40" rx="2"/>
+<rect class="d-box" x="300" y="190" width="150" height="70" rx="2"/>
+<path class="d-line d-arr" d="M375.0 104.0 L375.0 130.0"/>
+<path class="d-line d-arr" d="M375.0 170.0 L375.0 190.0"/>
+<rect class="d-box-2" x="520" y="140" width="110" height="34" rx="0"/>
+<rect class="d-box-2" x="630" y="140" width="110" height="34" rx="0"/>
+<rect class="d-box" x="520" y="174" width="110" height="34" rx="0"/>
+<rect class="d-box" x="630" y="174" width="110" height="34" rx="0"/>
+<rect class="d-box" x="520" y="208" width="110" height="34" rx="0"/>
+<rect class="d-box" x="630" y="208" width="110" height="34" rx="0"/>
+<rect class="d-box" x="520" y="242" width="110" height="34" rx="0"/>
+<rect class="d-box" x="630" y="242" width="110" height="34" rx="0"/>
+<rect class="d-box" x="520" y="280" width="220" height="30" rx="0"/>
+<rect class="d-box" x="520" y="310" width="220" height="30" rx="0"/>
+<rect class="d-box" x="520" y="340" width="220" height="30" rx="0"/>
+<path class="d-line d-arr2" d="M630.0 104.0 L630.0 140.0"/>
+<rect class="d-box-2" x="20" y="340" width="430" height="70" rx="2"/>
+<path class="d-line d-arr" d="M375.0 260.0 L375.0 340.0"/>
+<rect class="d-box" x="500" y="410" width="125" height="40" rx="2"/>
+<rect class="d-box" x="635" y="410" width="140" height="40" rx="2"/>
+<path class="d-line d-arr" d="M560.0 380.0 L562.5 410.0"/>
+<path class="d-line d-arr2" d="M705.0 380.0 L705.0 410.0"/>
+<path class="d-line d-arr" d="M562.5 450.0 L560.0 464.0"/>
+<path class="d-line d-arr2" d="M705.0 450.0 L705.0 464.0"/>
+<text class="d-label" x="195" y="40.0" text-anchor="middle" dominant-baseline="central">Interrupt control</text>
+<text class="d-label" x="525" y="40.0" text-anchor="middle" dominant-baseline="central">Serial I/O control</text>
+<text class="d-small" x="205" y="74.0" text-anchor="start" dominant-baseline="central">INTR · RST 5.5 · 6.5 · 7.5 · TRAP</text>
+<text class="d-caps" x="30" y="88.0" text-anchor="start" dominant-baseline="central">8-BIT INTERNAL DATA BUS</text>
+<text class="d-label d-on-accent" x="75" y="150.0" text-anchor="middle" dominant-baseline="central">Accumulator</text>
+<text class="d-label" x="205" y="150.0" text-anchor="middle" dominant-baseline="central">Temp register</text>
+<text class="d-label" x="205" y="210.0" text-anchor="middle" dominant-baseline="central">Flag flip-flops</text>
+<text class="d-label d-on-accent" x="140" y="275.0" text-anchor="middle" dominant-baseline="central">ALU</text>
+<text class="d-label" x="375" y="150.0" text-anchor="middle" dominant-baseline="central">Instruction register</text>
+<text class="d-label" x="375" y="209.0" text-anchor="middle" dominant-baseline="central">Instruction decoder</text>
+<text class="d-label" x="375" y="225.0" text-anchor="middle" dominant-baseline="central">&amp; machine cycle</text>
+<text class="d-label" x="375" y="241.0" text-anchor="middle" dominant-baseline="central">encoding</text>
+<text class="d-caps" x="510" y="134.0" text-anchor="start" dominant-baseline="central">Register array</text>
+<text class="d-mono" x="575" y="157.0" text-anchor="middle" dominant-baseline="central">W (temp)</text>
+<text class="d-mono" x="685" y="157.0" text-anchor="middle" dominant-baseline="central">Z (temp)</text>
+<text class="d-mono" x="575" y="191.0" text-anchor="middle" dominant-baseline="central">B</text>
+<text class="d-mono" x="685" y="191.0" text-anchor="middle" dominant-baseline="central">C</text>
+<text class="d-mono" x="575" y="225.0" text-anchor="middle" dominant-baseline="central">D</text>
+<text class="d-mono" x="685" y="225.0" text-anchor="middle" dominant-baseline="central">E</text>
+<text class="d-mono" x="575" y="259.0" text-anchor="middle" dominant-baseline="central">H</text>
+<text class="d-mono" x="685" y="259.0" text-anchor="middle" dominant-baseline="central">L</text>
+<text class="d-label" x="630" y="295.0" text-anchor="middle" dominant-baseline="central">Stack pointer (16)</text>
+<text class="d-label" x="630" y="325.0" text-anchor="middle" dominant-baseline="central">Program counter (16)</text>
+<text class="d-label" x="630" y="355.0" text-anchor="middle" dominant-baseline="central">Incr/decr latch (16)</text>
+<text class="d-title" x="235" y="367.0" text-anchor="middle" dominant-baseline="central">Timing &amp; control</text>
+<text class="d-small" x="235" y="383.0" text-anchor="middle" dominant-baseline="central">CLK · READY · RD · WR · ALE · S0 S1 · IO/M · HOLD · HLDA · RESET</text>
+<text class="d-label" x="562.5" y="430.0" text-anchor="middle" dominant-baseline="central">Address buffer</text>
+<text class="d-label" x="705" y="422.0" text-anchor="middle" dominant-baseline="central">Data / address</text>
+<text class="d-label" x="705" y="438.0" text-anchor="middle" dominant-baseline="central">buffer</text>
+<text class="d-small" x="560" y="476.0" text-anchor="middle" dominant-baseline="central">A15–A8 address bus</text>
+<text class="d-small" x="705" y="476.0" text-anchor="middle" dominant-baseline="central">AD7–AD0 address/data bus</text>
 </svg>

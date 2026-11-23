@@ -1,0 +1,31 @@
+<svg viewBox="0 0 760 330" xmlns="http://www.w3.org/2000/svg" style="min-width:620px">
+<rect class="d-box-a" x="40" y="40" width="160" height="70" rx="2"/>
+<rect class="d-box-3" x="300" y="40" width="160" height="70" rx="2"/>
+<rect class="d-box-2" x="560" y="40" width="160" height="70" rx="2"/>
+<path class="d-line-acc d-arr-acc" d="M200.0 64.0 L300.0 64.0"/>
+<path class="d-line-acc d-arr-acc" d="M300.0 86.0 L200.0 86.0"/>
+<path class="d-line d-arr" d="M560.0 64.0 L460.0 64.0"/>
+<path class="d-line d-arr" d="M460.0 86.0 L560.0 86.0"/>
+<path class="d-bus" d="M20.0 200.0 L740.0 200.0"/>
+<rect class="d-box-2" x="300" y="240" width="160" height="60" rx="2"/>
+<path class="d-line d-arr2" d="M120.0 110.0 L120.0 196.0"/>
+<path class="d-line d-arr2" d="M380.0 110.0 L380.0 196.0"/>
+<path class="d-line d-arr2" d="M640.0 110.0 L640.0 196.0"/>
+<path class="d-line d-arr2" d="M380.0 204.0 L380.0 240.0"/>
+<text class="d-title d-on-accent" x="120" y="67.0" text-anchor="middle" dominant-baseline="central">CPU</text>
+<text class="d-small d-on-accent" x="120" y="83.0" text-anchor="middle" dominant-baseline="central">8086</text>
+<text class="d-title" x="380" y="67.0" text-anchor="middle" dominant-baseline="central">DMA controller</text>
+<text class="d-small" x="380" y="83.0" text-anchor="middle" dominant-baseline="central">e.g. 8237</text>
+<text class="d-title" x="640" y="67.0" text-anchor="middle" dominant-baseline="central">I/O device</text>
+<text class="d-small" x="640" y="83.0" text-anchor="middle" dominant-baseline="central">disk, sound…</text>
+<text class="d-mono" x="250" y="54.0" text-anchor="middle" dominant-baseline="central">HLDA</text>
+<text class="d-mono" x="250" y="100.0" text-anchor="middle" dominant-baseline="central">HOLD</text>
+<text class="d-mono" x="510" y="54.0" text-anchor="middle" dominant-baseline="central">DREQ</text>
+<text class="d-mono" x="510" y="100.0" text-anchor="middle" dominant-baseline="central">DACK</text>
+<text class="d-caps" x="30" y="186.0" text-anchor="start" dominant-baseline="central">SYSTEM BUS (ADDRESS · DATA · CONTROL)</text>
+<text class="d-title" x="380" y="270.0" text-anchor="middle" dominant-baseline="central">Memory</text>
+<text class="d-small" x="560" y="249.0" text-anchor="start" dominant-baseline="central">1  device raises DREQ</text>
+<text class="d-small" x="560" y="263.0" text-anchor="start" dominant-baseline="central">2  DMA asks CPU with HOLD</text>
+<text class="d-small" x="560" y="277.0" text-anchor="start" dominant-baseline="central">3  CPU frees the bus, answers HLDA</text>
+<text class="d-small" x="560" y="291.0" text-anchor="start" dominant-baseline="central">4  DMA moves the block, then drops HOLD</text>
+</svg>

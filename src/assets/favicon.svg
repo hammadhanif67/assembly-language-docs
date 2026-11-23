@@ -1,7 +1,9 @@
-<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-  <rect x="7" y="7" width="41" height="41" fill="#ff4d00"/>
-  <rect x="0" y="0" width="41" height="41" fill="#0a0a0a"/>
-  <path d="M15 6v5M20.5 6v5M26 6v5M15 30v5M20.5 30v5M26 30v5M6 15h5M6 20.5h5M6 26h5M30 15h5M30 20.5h5M30 26h5" stroke="#f2efe6" stroke-width="2.4"/>
-  <rect x="11" y="11" width="19" height="19" fill="none" stroke="#f2efe6" stroke-width="2.6"/>
-  <path d="M24.4 16.6H17.4V24.4H24.4" fill="none" stroke="#ff4d00" stroke-width="3.2"/>
+<svg viewBox="-8 -8 64 64" xmlns="http://www.w3.org/2000/svg">
+  <rect x="-8" y="-8" width="64" height="64" fill="#ffffff"/>
+  <g fill="#111111">
+    <rect x="0" y="0" width="14" height="14"/><rect x="17" y="0" width="14" height="14"/><rect x="34" y="0" width="14" height="14"/>
+    <rect x="0" y="17" width="14" height="14"/>
+    <rect x="0" y="34" width="14" height="14"/><rect x="17" y="34" width="14" height="14"/><rect x="34" y="34" width="14" height="14"/>
+  </g>
+  <rect x="17" y="17" width="14" height="14" fill="#e30613"/>
 </svg>

@@ -33,58 +33,31 @@
   /* ---------- Icons ---------- */
   function icons() { if (window.lucide) lucide.createIcons({ attrs: { 'aria-hidden': 'true' } }); }
 
-  /* ---------- Sidebar ---------- */
-  function setupSidebar() {
-    $$('.nav-group-btn').forEach((btn) => btn.addEventListener('click', () => {
-      const g = btn.parentElement; const open = g.classList.toggle('open');
-      btn.setAttribute('aria-expanded', String(open));
-    }));
-    const toggle = $('.nav-toggle'), scrim = $('.scrim');
-    if (!toggle) return;
-    const set = (open) => {
-      document.body.classList.toggle('nav-open', open);
-      toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
-      if (scrim) scrim.hidden = !open;
-      if (open) { const a = $('.sidebar a.active') || $('.sidebar a, .sidebar button'); a && a.focus(); }
-    };
-    toggle.addEventListener('click', () => set(!document.body.classList.contains('nav-open')));
-    scrim && scrim.addEventListener('click', () => set(false));
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && document.body.classList.contains('nav-open')) { set(false); toggle.focus(); } });
-    const active = $('.sidebar a.active');
-    const scroller = $('.sidebar nav');
-    if (active && scroller) {
-      const r = active.getBoundingClientRect(), s = scroller.getBoundingClientRect();
-      scroller.scrollTop += r.top - s.top - s.height / 2 + r.height / 2;
+  /* ---------- Index menu (replaces the sidebar) & lesson strip ---------- */
+  function setupNav() {
+    const toggle = $('.index-toggle'), panel = $('#index-panel');
+    if (toggle && panel) {
+      const set = (open) => {
+        panel.hidden = !open;
+        toggle.setAttribute('aria-expanded', String(open));
+        document.body.classList.toggle('index-open', open);
+        if (open) {
+          const cur = $('[aria-current="page"]', panel) || $('a', panel);
+          if (cur) { cur.focus({ preventScroll: true }); cur.scrollIntoView({ block: 'nearest' }); }
+        }
+      };
+      toggle.addEventListener('click', (e) => { e.stopPropagation(); set(panel.hidden); });
+      $('.index-close', panel)?.addEventListener('click', () => { set(false); toggle.focus(); });
+      document.addEventListener('click', (e) => { if (!panel.hidden && !panel.contains(e.target) && e.target !== toggle) set(false); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden) { set(false); toggle.focus(); } });
+      panel.addEventListener('click', (e) => { if (e.target.closest('a')) set(false); });
     }
-
-    // Filter lessons: hide non-matching lessons, open chapters that contain matches
-    const filter = $('.nav-filter input'), empty = $('.nav-empty');
-    if (filter) {
-      const groups = $$('.nav-group');
-      const state = groups.map((g) => g.classList.contains('open'));
-      filter.addEventListener('input', () => {
-        const q = filter.value.trim().toLowerCase();
-        let any = false;
-        groups.forEach((g, gi) => {
-          const chTitle = $('.ch-title', g).textContent.toLowerCase();
-          const chMatch = q && chTitle.includes(q);
-          let hits = 0;
-          $$('.nav-items li', g).forEach((li) => {
-            const show = !q || chMatch || li.textContent.toLowerCase().includes(q);
-            li.classList.toggle('filtered-out', !show);
-            if (show) hits++;
-          });
-          g.classList.toggle('filtered-out', !!q && hits === 0);
-          const open = q ? hits > 0 : state[gi];
-          g.classList.toggle('open', open);
-          $('.nav-group-btn', g).setAttribute('aria-expanded', String(open));
-          if (hits) any = true;
-        });
-        if (empty) empty.hidden = !q || any;
-      });
-      filter.addEventListener('keydown', (e) => { if (e.key === 'Escape') { filter.value = ''; filter.dispatchEvent(new Event('input')); } });
-    }
+    // keep the current lesson visible in the horizontal lesson strip
+    const strip = $('.lesson-strip ol'), cur = $('.lesson-strip [aria-current="page"]');
+    if (strip && cur) strip.scrollLeft = cur.offsetLeft - strip.clientWidth / 2 + cur.clientWidth / 2;
+    // close the mobile TOC after choosing a section
+    const det = $('.toc-mobile');
+    if (det) det.addEventListener('click', (e) => { if (e.target.closest('a')) det.open = false; });
   }
 
   /* ---------- Progress, back to top, TOC scrollspy ---------- */
@@ -225,7 +198,7 @@
     });
   }
 
-  /* ---------- Lightbox for original slides & photos ---------- */
+  /* ---------- Lightbox for photos ---------- */
   function setupLightbox() {
     const box = $('.lightbox'); if (!box) return;
     const img = $('img', box), cap = $('figcaption', box), closeBtn = $('.lightbox-close', box);
@@ -275,56 +248,17 @@
     renderMermaid();
   }
 
-  /* ---------- Animations (GSAP; skipped for reduced motion) ---------- */
-  function setupAnimations() {
-    if (!window.gsap || reduceMotion) return;
-    if (window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
-    const head = $$('.doc-head > *');
-    if (head.length) gsap.from(head, { y: 14, opacity: 0, duration: .55, stagger: .06, ease: 'power2.out', clearProps: 'all' });
-    if ($('.hero')) {
-      gsap.from('.hero-copy > *', { y: 22, opacity: 0, duration: .7, stagger: .08, ease: 'power3.out', clearProps: 'all' });
-      gsap.from('.hero-term', { x: 30, opacity: 0, duration: .9, delay: .2, ease: 'power3.out', clearProps: 'all' });
-    }
-  }
-
-  /* ---------- Home: typed terminal ---------- */
-  function setupHero() {
-    const target = $('#typed-target'); if (!target) return;
-    const lines = ['.model small', '.data', "msg db 'Hello, COAL!$'", '.code', 'main proc', '    mov ax, @data   ; AX = 0B3Fh', '    mov ds, ax      ; DS = 0B3Fh', '    lea dx, msg     ; DX = 0002h', '    mov ah, 09h', '    int 21h         ; print string', '    mov ax, 4C00h', '    int 21h', 'main endp', 'end main'];
-    const regs = { ax: $('[data-reg="ax"]'), ds: $('[data-reg="ds"]'), dx: $('[data-reg="dx"]'), ip: $('[data-reg="ip"]') };
-    const steps = [[5, 'ax', '0B3F'], [6, 'ds', '0B3F'], [7, 'dx', '0002'], [8, 'ax', '093F'], [10, 'ax', '4C00']];
-    const flash = (k, v) => { const el = regs[k]; if (!el) return; el.textContent = v; el.classList.add('flash'); setTimeout(() => el.classList.remove('flash'), 600); };
-    if (reduceMotion) { target.textContent = lines.join('\n'); steps.forEach(([, k, v]) => regs[k] && (regs[k].textContent = v)); return; }
-    // Type line by line; when a line finishes "executing", update the register strip.
-    const cursor = document.createElement('span'); cursor.className = 'typed-cursor'; cursor.textContent = '█';
-    const text = document.createTextNode('');
-    target.append(text, cursor);
-    let line = 0, ch = 0, ip = 0x100;
-    const tick = () => {
-      if (line >= lines.length) { cursor.style.animation = 'blink 1s steps(1) infinite'; return; }
-      const l = lines[line];
-      if (ch < l.length) { text.data += l[ch++]; setTimeout(tick, 18 + Math.random() * 30); return; }
-      line++; ch = 0; ip += 2;
-      if (regs.ip) regs.ip.textContent = ip.toString(16).toUpperCase().padStart(4, '0');
-      steps.filter(([n]) => n === line - 1).forEach(([, k, v]) => flash(k, v));
-      if (line < lines.length) text.data += '\n';
-      setTimeout(tick, 180);
-    };
-    setTimeout(tick, 600);
-  }
-
   /* ---------- Boot ---------- */
   document.addEventListener('DOMContentLoaded', () => {
     setupPrism();
     icons();
-    setupSidebar();
+    setupNav();
     setupScroll();
     setupSmoothAnchors();
     setupCopy();
     setupSearch();
     setupLightbox();
     renderMermaid();
-    setupHero();
     if (window.COAL_WIDGETS) window.COAL_WIDGETS.init();
     icons();
   });

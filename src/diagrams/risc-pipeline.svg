@@ -1,13 +1,72 @@
-<svg viewBox="0 0 680 250" xmlns="http://www.w3.org/2000/svg">
-  <g class="d-text" style="font-size:13px">
-    <rect class="d-box-2" x="20" y="180" width="110" height="50" rx="4"/><text class="d-title" x="75" y="201" text-anchor="middle">Step 1</text><text class="d-small" x="75" y="219" text-anchor="middle" style="fill:var(--d-text)">fetch instruction</text>
-    <rect class="d-box-2" x="150" y="140" width="110" height="90" rx="4"/><text class="d-title" x="205" y="161" text-anchor="middle">Step 2</text><text class="d-small" x="205" y="179" text-anchor="middle" style="fill:var(--d-text)">read registers</text><text class="d-small" x="205" y="194" text-anchor="middle" style="fill:var(--d-text)">&amp; decode</text>
-    <rect class="d-box-2" x="280" y="100" width="110" height="130" rx="4"/><text class="d-title" x="335" y="121" text-anchor="middle">Step 3</text><text class="d-small" x="335" y="139" text-anchor="middle" style="fill:var(--d-text)">execute or</text><text class="d-small" x="335" y="154" text-anchor="middle" style="fill:var(--d-text)">calculate address</text>
-    <rect class="d-box-3" x="410" y="60" width="110" height="170" rx="4"/><text class="d-title" x="465" y="81" text-anchor="middle">Step 4</text><text class="d-small" x="465" y="99" text-anchor="middle" style="fill:var(--d-text)">access operand</text><text class="d-small" x="465" y="114" text-anchor="middle" style="fill:var(--d-text)">in data memory</text>
-    <rect class="d-box-a" x="540" y="20" width="110" height="210" rx="4"/><text class="d-title d-on-accent" x="595" y="41" text-anchor="middle">Step 5</text><text class="d-small" x="595" y="59" text-anchor="middle" style="fill:var(--on-accent)">write result</text><text class="d-small" x="595" y="74" text-anchor="middle" style="fill:var(--on-accent)">into a register</text>
-  </g>
-  <path class="d-line d-arrow d-acc-2" style="marker-end:url(#d-ah-acc2)" d="M75 170 Q140 120 200 128"/>
-  <path class="d-line d-arrow d-acc-2" style="marker-end:url(#d-ah-acc2)" d="M205 130 Q270 80 330 88"/>
-  <path class="d-line d-arrow d-acc-2" style="marker-end:url(#d-ah-acc2)" d="M335 90 Q400 40 460 48"/>
-  <path class="d-line d-arrow d-acc-2" style="marker-end:url(#d-ah-acc2)" d="M465 50 Q520 8 560 12"/>
+<svg viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg" style="min-width:600px">
+<rect class="d-box" x="120" y="44" width="64" height="36" rx="0"/>
+<rect class="d-box-2" x="184" y="44" width="64" height="36" rx="0"/>
+<rect class="d-box-a" x="248" y="44" width="64" height="36" rx="0"/>
+<rect class="d-box-2" x="312" y="44" width="64" height="36" rx="0"/>
+<rect class="d-box" x="376" y="44" width="64" height="36" rx="0"/>
+<rect class="d-box" x="184" y="90" width="64" height="36" rx="0"/>
+<rect class="d-box-2" x="248" y="90" width="64" height="36" rx="0"/>
+<rect class="d-box-a" x="312" y="90" width="64" height="36" rx="0"/>
+<rect class="d-box-2" x="376" y="90" width="64" height="36" rx="0"/>
+<rect class="d-box" x="440" y="90" width="64" height="36" rx="0"/>
+<rect class="d-box" x="248" y="136" width="64" height="36" rx="0"/>
+<rect class="d-box-2" x="312" y="136" width="64" height="36" rx="0"/>
+<rect class="d-box-a" x="376" y="136" width="64" height="36" rx="0"/>
+<rect class="d-box-2" x="440" y="136" width="64" height="36" rx="0"/>
+<rect class="d-box" x="504" y="136" width="64" height="36" rx="0"/>
+<rect class="d-box" x="312" y="182" width="64" height="36" rx="0"/>
+<rect class="d-box-2" x="376" y="182" width="64" height="36" rx="0"/>
+<rect class="d-box-a" x="440" y="182" width="64" height="36" rx="0"/>
+<rect class="d-box-2" x="504" y="182" width="64" height="36" rx="0"/>
+<rect class="d-box" x="568" y="182" width="64" height="36" rx="0"/>
+<rect class="d-box" x="376" y="228" width="64" height="36" rx="0"/>
+<rect class="d-box-2" x="440" y="228" width="64" height="36" rx="0"/>
+<rect class="d-box-a" x="504" y="228" width="64" height="36" rx="0"/>
+<rect class="d-box-2" x="568" y="228" width="64" height="36" rx="0"/>
+<rect class="d-box" x="632" y="228" width="64" height="36" rx="0"/>
+<text class="d-mono" x="152" y="24.0" text-anchor="middle" dominant-baseline="central">1</text>
+<text class="d-mono" x="216" y="24.0" text-anchor="middle" dominant-baseline="central">2</text>
+<text class="d-mono" x="280" y="24.0" text-anchor="middle" dominant-baseline="central">3</text>
+<text class="d-mono" x="344" y="24.0" text-anchor="middle" dominant-baseline="central">4</text>
+<text class="d-mono" x="408" y="24.0" text-anchor="middle" dominant-baseline="central">5</text>
+<text class="d-mono" x="472" y="24.0" text-anchor="middle" dominant-baseline="central">6</text>
+<text class="d-mono" x="536" y="24.0" text-anchor="middle" dominant-baseline="central">7</text>
+<text class="d-mono" x="600" y="24.0" text-anchor="middle" dominant-baseline="central">8</text>
+<text class="d-mono" x="664" y="24.0" text-anchor="middle" dominant-baseline="central">9</text>
+<text class="d-small" x="108" y="24.0" text-anchor="end" dominant-baseline="central">clock cycle</text>
+<text class="d-label" x="108" y="62.0" text-anchor="end" dominant-baseline="central">Instruction 1</text>
+<text class="d-mono" x="152" y="62.0" text-anchor="middle" dominant-baseline="central">IF</text>
+<text class="d-mono" x="216" y="62.0" text-anchor="middle" dominant-baseline="central">ID</text>
+<text class="d-mono d-on-accent" x="280" y="62.0" text-anchor="middle" dominant-baseline="central">EX</text>
+<text class="d-mono" x="344" y="62.0" text-anchor="middle" dominant-baseline="central">MEM</text>
+<text class="d-mono" x="408" y="62.0" text-anchor="middle" dominant-baseline="central">WB</text>
+<text class="d-label" x="108" y="108.0" text-anchor="end" dominant-baseline="central">Instruction 2</text>
+<text class="d-mono" x="216" y="108.0" text-anchor="middle" dominant-baseline="central">IF</text>
+<text class="d-mono" x="280" y="108.0" text-anchor="middle" dominant-baseline="central">ID</text>
+<text class="d-mono d-on-accent" x="344" y="108.0" text-anchor="middle" dominant-baseline="central">EX</text>
+<text class="d-mono" x="408" y="108.0" text-anchor="middle" dominant-baseline="central">MEM</text>
+<text class="d-mono" x="472" y="108.0" text-anchor="middle" dominant-baseline="central">WB</text>
+<text class="d-label" x="108" y="154.0" text-anchor="end" dominant-baseline="central">Instruction 3</text>
+<text class="d-mono" x="280" y="154.0" text-anchor="middle" dominant-baseline="central">IF</text>
+<text class="d-mono" x="344" y="154.0" text-anchor="middle" dominant-baseline="central">ID</text>
+<text class="d-mono d-on-accent" x="408" y="154.0" text-anchor="middle" dominant-baseline="central">EX</text>
+<text class="d-mono" x="472" y="154.0" text-anchor="middle" dominant-baseline="central">MEM</text>
+<text class="d-mono" x="536" y="154.0" text-anchor="middle" dominant-baseline="central">WB</text>
+<text class="d-label" x="108" y="200.0" text-anchor="end" dominant-baseline="central">Instruction 4</text>
+<text class="d-mono" x="344" y="200.0" text-anchor="middle" dominant-baseline="central">IF</text>
+<text class="d-mono" x="408" y="200.0" text-anchor="middle" dominant-baseline="central">ID</text>
+<text class="d-mono d-on-accent" x="472" y="200.0" text-anchor="middle" dominant-baseline="central">EX</text>
+<text class="d-mono" x="536" y="200.0" text-anchor="middle" dominant-baseline="central">MEM</text>
+<text class="d-mono" x="600" y="200.0" text-anchor="middle" dominant-baseline="central">WB</text>
+<text class="d-label" x="108" y="246.0" text-anchor="end" dominant-baseline="central">Instruction 5</text>
+<text class="d-mono" x="408" y="246.0" text-anchor="middle" dominant-baseline="central">IF</text>
+<text class="d-mono" x="472" y="246.0" text-anchor="middle" dominant-baseline="central">ID</text>
+<text class="d-mono d-on-accent" x="536" y="246.0" text-anchor="middle" dominant-baseline="central">EX</text>
+<text class="d-mono" x="600" y="246.0" text-anchor="middle" dominant-baseline="central">MEM</text>
+<text class="d-mono" x="664" y="246.0" text-anchor="middle" dominant-baseline="central">WB</text>
+<text class="d-small" x="20" y="286.0" text-anchor="start" dominant-baseline="central">IF fetch instruction</text>
+<text class="d-small" x="260" y="286.0" text-anchor="start" dominant-baseline="central">ID read registers &amp; decode</text>
+<text class="d-small" x="500" y="286.0" text-anchor="start" dominant-baseline="central">EX execute / calculate address</text>
+<text class="d-small" x="20" y="308.0" text-anchor="start" dominant-baseline="central">MEM access operand in memory</text>
+<text class="d-small" x="260" y="308.0" text-anchor="start" dominant-baseline="central">WB write result to register</text>
 </svg>

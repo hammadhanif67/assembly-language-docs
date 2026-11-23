@@ -1,0 +1,52 @@
+<svg viewBox="0 0 780 330" xmlns="http://www.w3.org/2000/svg" style="min-width:640px">
+<rect class="d-box" x="40" y="30" width="90" height="54" rx="0"/>
+<rect class="d-box-a" x="130" y="30" width="120" height="54" rx="0"/>
+<rect class="d-box-3" x="250" y="30" width="120" height="54" rx="0"/>
+<rect class="d-box-2" x="370" y="30" width="160" height="54" rx="0"/>
+<rect class="d-box-2" x="530" y="30" width="160" height="54" rx="0"/>
+<rect class="d-box-2" x="40" y="140" width="40" height="40" rx="0"/>
+<rect class="d-box-2" x="80" y="140" width="40" height="40" rx="0"/>
+<rect class="d-box-2" x="120" y="140" width="40" height="40" rx="0"/>
+<rect class="d-box-2" x="160" y="140" width="40" height="40" rx="0"/>
+<rect class="d-box-2" x="200" y="140" width="40" height="40" rx="0"/>
+<rect class="d-box-2" x="240" y="140" width="40" height="40" rx="0"/>
+<rect class="d-box-a" x="280" y="140" width="40" height="40" rx="0"/>
+<rect class="d-box-a" x="320" y="140" width="40" height="40" rx="0"/>
+<rect class="d-box-3" x="420" y="140" width="80" height="40" rx="0"/>
+<rect class="d-box-3" x="500" y="140" width="120" height="40" rx="0"/>
+<rect class="d-box-3" x="620" y="140" width="120" height="40" rx="0"/>
+<path class="d-line-mut d-arr-mut d-dash" d="M190.0 84.0 L200.0 140.0"/>
+<path class="d-line-mut d-arr-mut d-dash" d="M310.0 84.0 L580.0 140.0"/>
+<text class="d-label" x="85" y="49.0" text-anchor="middle" dominant-baseline="central">Prefix</text>
+<text class="d-small" x="85" y="65.0" text-anchor="middle" dominant-baseline="central">optional, 0–4 bytes</text>
+<text class="d-label d-on-accent" x="190" y="49.0" text-anchor="middle" dominant-baseline="central">Opcode</text>
+<text class="d-small d-on-accent" x="190" y="65.0" text-anchor="middle" dominant-baseline="central">1–2 bytes</text>
+<text class="d-label" x="310" y="49.0" text-anchor="middle" dominant-baseline="central">ModR/M</text>
+<text class="d-small" x="310" y="65.0" text-anchor="middle" dominant-baseline="central">0–1 byte</text>
+<text class="d-label" x="450" y="49.0" text-anchor="middle" dominant-baseline="central">Displacement</text>
+<text class="d-small" x="450" y="65.0" text-anchor="middle" dominant-baseline="central">0, 1 or 2 bytes</text>
+<text class="d-label" x="610" y="49.0" text-anchor="middle" dominant-baseline="central">Immediate data</text>
+<text class="d-small" x="610" y="65.0" text-anchor="middle" dominant-baseline="central">0, 1 or 2 bytes</text>
+<text class="d-caps" x="40" y="126.0" text-anchor="start" dominant-baseline="central">OPCODE BYTE</text>
+<text class="d-mono" x="60" y="160.0" text-anchor="middle" dominant-baseline="central">1</text>
+<text class="d-mono" x="100" y="160.0" text-anchor="middle" dominant-baseline="central">0</text>
+<text class="d-mono" x="140" y="160.0" text-anchor="middle" dominant-baseline="central">0</text>
+<text class="d-mono" x="180" y="160.0" text-anchor="middle" dominant-baseline="central">0</text>
+<text class="d-mono" x="220" y="160.0" text-anchor="middle" dominant-baseline="central">1</text>
+<text class="d-mono" x="260" y="160.0" text-anchor="middle" dominant-baseline="central">0</text>
+<text class="d-mono d-on-accent" x="300" y="160.0" text-anchor="middle" dominant-baseline="central">d</text>
+<text class="d-mono d-on-accent" x="340" y="160.0" text-anchor="middle" dominant-baseline="central">w</text>
+<text class="d-small" x="40" y="196.0" text-anchor="start" dominant-baseline="central">6-bit operation code (100010 = MOV)</text>
+<text class="d-small" x="40" y="220.0" text-anchor="start" dominant-baseline="central">d = direction: 1 → reg is the destination</text>
+<text class="d-small" x="40" y="238.0" text-anchor="start" dominant-baseline="central">w = width: 1 → word (16-bit), 0 → byte</text>
+<text class="d-caps" x="420" y="126.0" text-anchor="start" dominant-baseline="central">MODR/M BYTE</text>
+<text class="d-mono" x="460" y="160.0" text-anchor="middle" dominant-baseline="central">mod</text>
+<text class="d-mono" x="560" y="160.0" text-anchor="middle" dominant-baseline="central">reg</text>
+<text class="d-mono" x="680" y="160.0" text-anchor="middle" dominant-baseline="central">r/m</text>
+<text class="d-small" x="460" y="196.0" text-anchor="middle" dominant-baseline="central">2 bits</text>
+<text class="d-small" x="560" y="196.0" text-anchor="middle" dominant-baseline="central">3 bits</text>
+<text class="d-small" x="680" y="196.0" text-anchor="middle" dominant-baseline="central">3 bits</text>
+<text class="d-small" x="420" y="220.0" text-anchor="start" dominant-baseline="central">mod: 11 = register, 00/01/10 = memory (+0/8/16-bit disp.)</text>
+<text class="d-small" x="420" y="238.0" text-anchor="start" dominant-baseline="central">reg: a register · r/m: register or memory operand</text>
+<text class="d-mono" x="40" y="290.0" text-anchor="start" dominant-baseline="central">Example:  MOV AX, BX  →  89 D8   (opcode 100010 0 1 = 89h · ModR/M 11 011 000 = D8h)</text>
+</svg>

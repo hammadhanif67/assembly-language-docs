@@ -1,12 +1,50 @@
-<svg viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg">
-  <path class="d-line" d="M60 46 V30 H290 V46"/><rect x="150" y="18" width="50" height="22" style="fill:var(--d-canvas)"/><text class="d-text" x="175" y="35" text-anchor="middle">byte</text>
-  <path class="d-line" d="M310 46 V30 H540 V46"/><rect x="400" y="18" width="50" height="22" style="fill:var(--d-canvas)"/><text class="d-text" x="425" y="35" text-anchor="middle">byte</text>
-  <g class="d-mono" text-anchor="middle" style="font-size:17px">
-    <rect class="d-box-2" x="60" y="52" width="230" height="40" rx="4"/>
-    <rect class="d-box-3" x="310" y="52" width="230" height="40" rx="4"/>
-    <text x="75" y="79">0</text><text x="104" y="79">0</text><text x="133" y="79">1</text><text x="162" y="79">0</text><text x="191" y="79">0</text><text x="220" y="79">1</text><text x="249" y="79">1</text><text x="278" y="79">0</text>
-    <text x="325" y="79">0</text><text x="354" y="79">1</text><text x="383" y="79">1</text><text x="412" y="79">0</text><text x="441" y="79">1</text><text x="470" y="79">0</text><text x="499" y="79">1</text><text x="528" y="79">0</text>
-  </g>
-  <path class="d-line" d="M60 100 V118 H540 V100"/><rect x="270" y="106" width="60" height="24" style="fill:var(--d-canvas)"/><text class="d-text" x="300" y="124" text-anchor="middle">word</text>
-  <text class="d-small" x="300" y="152" text-anchor="middle">bit · nibble = 4 bits · byte = 8 bits · word = 16 bits · double word = 32 bits</text>
+<svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" style="min-width:520px">
+<rect class="d-box-3" x="40" y="70" width="35" height="40" rx="0"/>
+<rect class="d-box-3" x="75" y="70" width="35" height="40" rx="0"/>
+<rect class="d-box-3" x="110" y="70" width="35" height="40" rx="0"/>
+<rect class="d-box-3" x="145" y="70" width="35" height="40" rx="0"/>
+<rect class="d-box-3" x="180" y="70" width="35" height="40" rx="0"/>
+<rect class="d-box-3" x="215" y="70" width="35" height="40" rx="0"/>
+<rect class="d-box-3" x="250" y="70" width="35" height="40" rx="0"/>
+<rect class="d-box-3" x="285" y="70" width="35" height="40" rx="0"/>
+<rect class="d-box-2" x="320" y="70" width="35" height="40" rx="0"/>
+<rect class="d-box-2" x="355" y="70" width="35" height="40" rx="0"/>
+<rect class="d-box-2" x="390" y="70" width="35" height="40" rx="0"/>
+<rect class="d-box-2" x="425" y="70" width="35" height="40" rx="0"/>
+<rect class="d-box-2" x="460" y="70" width="35" height="40" rx="0"/>
+<rect class="d-box-2" x="495" y="70" width="35" height="40" rx="0"/>
+<rect class="d-box-2" x="530" y="70" width="35" height="40" rx="0"/>
+<rect class="d-box-2" x="565" y="70" width="35" height="40" rx="0"/>
+<path class="d-line-mut d-arr2" d="M40.0 40.0 L320.0 40.0"/>
+<path class="d-line-mut" d="M40.0 34.0 L40.0 46.0"/>
+<path class="d-line-mut" d="M320.0 34.0 L320.0 46.0"/>
+<path class="d-line-mut d-arr2" d="M320.0 40.0 L600.0 40.0"/>
+<path class="d-line-mut" d="M320.0 34.0 L320.0 46.0"/>
+<path class="d-line-mut" d="M600.0 34.0 L600.0 46.0"/>
+<path class="d-line-mut d-arr2" d="M40.0 130.0 L180.0 130.0"/>
+<path class="d-line-mut" d="M40.0 124.0 L40.0 136.0"/>
+<path class="d-line-mut" d="M180.0 124.0 L180.0 136.0"/>
+<path class="d-line-mut d-arr2" d="M40.0 162.0 L600.0 162.0"/>
+<path class="d-line-mut" d="M40.0 156.0 L40.0 168.0"/>
+<path class="d-line-mut" d="M600.0 156.0 L600.0 168.0"/>
+<text class="d-mono" x="57.5" y="90.0" text-anchor="middle" dominant-baseline="central">0</text>
+<text class="d-mono" x="92.5" y="90.0" text-anchor="middle" dominant-baseline="central">0</text>
+<text class="d-mono" x="127.5" y="90.0" text-anchor="middle" dominant-baseline="central">1</text>
+<text class="d-mono" x="162.5" y="90.0" text-anchor="middle" dominant-baseline="central">0</text>
+<text class="d-mono" x="197.5" y="90.0" text-anchor="middle" dominant-baseline="central">0</text>
+<text class="d-mono" x="232.5" y="90.0" text-anchor="middle" dominant-baseline="central">1</text>
+<text class="d-mono" x="267.5" y="90.0" text-anchor="middle" dominant-baseline="central">1</text>
+<text class="d-mono" x="302.5" y="90.0" text-anchor="middle" dominant-baseline="central">0</text>
+<text class="d-mono" x="337.5" y="90.0" text-anchor="middle" dominant-baseline="central">0</text>
+<text class="d-mono" x="372.5" y="90.0" text-anchor="middle" dominant-baseline="central">1</text>
+<text class="d-mono" x="407.5" y="90.0" text-anchor="middle" dominant-baseline="central">1</text>
+<text class="d-mono" x="442.5" y="90.0" text-anchor="middle" dominant-baseline="central">0</text>
+<text class="d-mono" x="477.5" y="90.0" text-anchor="middle" dominant-baseline="central">1</text>
+<text class="d-mono" x="512.5" y="90.0" text-anchor="middle" dominant-baseline="central">0</text>
+<text class="d-mono" x="547.5" y="90.0" text-anchor="middle" dominant-baseline="central">1</text>
+<text class="d-mono" x="582.5" y="90.0" text-anchor="middle" dominant-baseline="central">0</text>
+<text class="d-small" x="180" y="27.0" text-anchor="middle" dominant-baseline="central">byte (8 bits)</text>
+<text class="d-small" x="460" y="27.0" text-anchor="middle" dominant-baseline="central">byte (8 bits)</text>
+<text class="d-small" x="110" y="117.0" text-anchor="middle" dominant-baseline="central">nibble</text>
+<text class="d-small" x="320" y="149.0" text-anchor="middle" dominant-baseline="central">word (16 bits) — two words make a double word (32 bits)</text>
 </svg>

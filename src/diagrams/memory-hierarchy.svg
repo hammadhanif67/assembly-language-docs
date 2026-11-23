@@ -1,16 +1,21 @@
-<svg viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg">
-  <polygon points="300,20 345,90 255,90" style="fill:#e5322d;stroke:var(--d-stroke);stroke-width:1.5"/>
-  <polygon points="255,90 345,90 405,180 195,180" style="fill:#f07a3e;stroke:var(--d-stroke);stroke-width:1.5"/>
-  <polygon points="195,180 405,180 445,240 155,240" style="fill:#f5e43a;stroke:var(--d-stroke);stroke-width:1.5"/>
-  <polygon points="155,240 445,240 490,308 110,308" style="fill:#3ed14a;stroke:var(--d-stroke);stroke-width:1.5"/>
-  <polygon points="110,308 490,308 545,392 55,392" style="fill:#2fe0ea;stroke:var(--d-stroke);stroke-width:1.5"/>
-  <g text-anchor="middle" style="font-family:var(--font-body);font-size:18px;fill:#111">
-    <text x="300" y="80">regs</text>
-    <text x="300" y="142">cache</text>
-    <text x="300" y="218">RAM</text>
-    <text x="300" y="282">DISK</text>
-    <text x="300" y="358">Removeable Media</text>
-  </g>
-  <line class="d-line d-arrow" x1="560" y1="380" x2="560" y2="40"/>
-  <text class="d-small" x="574" y="210" transform="rotate(90 574 210)" text-anchor="middle">faster · smaller · costlier per bit</text>
+<svg viewBox="0 0 680 340" xmlns="http://www.w3.org/2000/svg" style="min-width:540px">
+<rect class="d-box-a" x="250" y="30" width="180" height="46" rx="0"/>
+<rect class="d-box-3" x="210" y="86" width="260" height="46" rx="0"/>
+<rect class="d-box-2" x="170" y="142" width="340" height="46" rx="0"/>
+<rect class="d-box" x="130" y="198" width="420" height="46" rx="0"/>
+<rect class="d-box" x="90" y="254" width="500" height="46" rx="0"/>
+<path class="d-line-acc d-arr-acc" d="M50.0 300.0 L50.0 40.0"/>
+<path class="d-line-mut d-arr-mut" d="M630.0 40.0 L630.0 300.0"/>
+<text class="d-label d-on-accent" x="340" y="45.0" text-anchor="middle" dominant-baseline="central">Registers</text>
+<text class="d-small d-on-accent" x="340" y="61.0" text-anchor="middle" dominant-baseline="central">inside the CPU</text>
+<text class="d-label" x="340" y="101.0" text-anchor="middle" dominant-baseline="central">Cache</text>
+<text class="d-small" x="340" y="117.0" text-anchor="middle" dominant-baseline="central">SRAM, on/near the chip</text>
+<text class="d-label" x="340" y="157.0" text-anchor="middle" dominant-baseline="central">Main memory (RAM)</text>
+<text class="d-small" x="340" y="173.0" text-anchor="middle" dominant-baseline="central">DRAM</text>
+<text class="d-label" x="340" y="213.0" text-anchor="middle" dominant-baseline="central">Disk</text>
+<text class="d-small" x="340" y="229.0" text-anchor="middle" dominant-baseline="central">magnetic / SSD</text>
+<text class="d-label" x="340" y="269.0" text-anchor="middle" dominant-baseline="central">Removable media</text>
+<text class="d-small" x="340" y="285.0" text-anchor="middle" dominant-baseline="central">tape, optical, USB</text>
+<text class="d-small" x="36" y="170.0" text-anchor="middle" dominant-baseline="central" transform="rotate(-90 36 170)">faster · smaller · more cost per bit</text>
+<text class="d-small" x="644" y="170.0" text-anchor="middle" dominant-baseline="central" transform="rotate(90 644 170)">slower · larger · cheaper per bit</text>
 </svg>

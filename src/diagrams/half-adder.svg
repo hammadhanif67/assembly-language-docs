@@ -1,0 +1,22 @@
+<svg viewBox="0 0 560 220" xmlns="http://www.w3.org/2000/svg" style="min-width:440px">
+<path class="d-line" d="M44.0 60.0 L200.0 60.0"/>
+<path class="d-line" d="M44.0 150.0 L200.0 150.0"/>
+<circle class="d-box-k" cx="120" cy="60" r="3"/><circle class="d-box-k" cx="150" cy="150" r="3"/>
+<path class="d-line" d="M200.0 60.0 L200.0 50.0 L236.0 50.0"/>
+<path class="d-line" d="M150.0 150.0 L150.0 66.0 L236.0 66.0"/>
+<path class="d-line" d="M120.0 60.0 L120.0 134.0 L236.0 134.0"/>
+<path class="d-line" d="M200.0 150.0 L236.0 150.0"/>
+<path class="d-line" d="M236.0 50.0 L268.0 50.0"/>
+<path class="d-line" d="M236.0 66.0 L268.0 66.0"/>
+<path class="d-box-3" d="M256 38 Q288 38 312 58 Q288 78 256 78 Q270 58 256 38 Z"/>
+<path class="d-line-acc" d="M248 38 Q262 58 248 78"/>
+<path class="d-line" d="M312.0 58.0 L352.0 58.0"/>
+<path class="d-line" d="M236.0 134.0 L260.0 134.0"/>
+<path class="d-line" d="M236.0 150.0 L260.0 150.0"/>
+<path class="d-box-3" d="M260 122 L290 122 A20 20 0 0 1 290 162 L260 162 Z"/>
+<path class="d-line" d="M310.0 142.0 L352.0 142.0"/>
+<text class="d-label" x="30" y="60.0" text-anchor="middle" dominant-baseline="central">A</text>
+<text class="d-label" x="30" y="150.0" text-anchor="middle" dominant-baseline="central">B</text>
+<text class="d-label" x="360" y="58.0" text-anchor="start" dominant-baseline="central">Sum = A ⊕ B</text>
+<text class="d-label" x="360" y="142.0" text-anchor="start" dominant-baseline="central">Carry = A · B</text>
+</svg>

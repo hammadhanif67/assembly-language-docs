@@ -1,0 +1,29 @@
+<svg viewBox="0 0 760 230" xmlns="http://www.w3.org/2000/svg" style="min-width:620px">
+<path class="d-line d-arr" d="M20.0 120.0 L740.0 120.0"/>
+<rect class="d-box-k" x="30" y="104" width="32" height="32" rx="0"/>
+<rect class="d-box-k" x="175" y="104" width="32" height="32" rx="0"/>
+<rect class="d-box-k" x="320" y="104" width="32" height="32" rx="0"/>
+<rect class="d-box-k" x="465" y="104" width="32" height="32" rx="0"/>
+<rect class="d-box-a" x="610" y="104" width="32" height="32" rx="0"/>
+<text class="d-label d-on-accent" x="46" y="120.0" text-anchor="middle" dominant-baseline="central">1</text>
+<text class="d-title" x="30" y="72.0" text-anchor="start" dominant-baseline="central">1st generation</text>
+<text class="d-mono" x="30" y="92.0" text-anchor="start" dominant-baseline="central">1946–1955</text>
+<text class="d-label" x="30" y="160.0" text-anchor="start" dominant-baseline="central">Vacuum tubes</text>
+<text class="d-label d-on-accent" x="191" y="120.0" text-anchor="middle" dominant-baseline="central">2</text>
+<text class="d-title" x="175" y="72.0" text-anchor="start" dominant-baseline="central">2nd generation</text>
+<text class="d-mono" x="175" y="92.0" text-anchor="start" dominant-baseline="central">1956–1965</text>
+<text class="d-label" x="175" y="160.0" text-anchor="start" dominant-baseline="central">Transistors</text>
+<text class="d-label d-on-accent" x="336" y="120.0" text-anchor="middle" dominant-baseline="central">3</text>
+<text class="d-title" x="320" y="72.0" text-anchor="start" dominant-baseline="central">3rd generation</text>
+<text class="d-mono" x="320" y="92.0" text-anchor="start" dominant-baseline="central">1966–1975</text>
+<text class="d-label" x="320" y="160.0" text-anchor="start" dominant-baseline="central">Integrated circuits</text>
+<text class="d-label d-on-accent" x="481" y="120.0" text-anchor="middle" dominant-baseline="central">4</text>
+<text class="d-title" x="465" y="72.0" text-anchor="start" dominant-baseline="central">4th generation</text>
+<text class="d-mono" x="465" y="92.0" text-anchor="start" dominant-baseline="central">1976–1985</text>
+<text class="d-label" x="465" y="160.0" text-anchor="start" dominant-baseline="central">Microprocessors</text>
+<text class="d-label d-on-accent" x="626" y="120.0" text-anchor="middle" dominant-baseline="central">5</text>
+<text class="d-title" x="610" y="72.0" text-anchor="start" dominant-baseline="central">5th generation</text>
+<text class="d-mono" x="610" y="92.0" text-anchor="start" dominant-baseline="central">1986 →</text>
+<text class="d-label" x="610" y="160.0" text-anchor="start" dominant-baseline="central">ULSI · AI</text>
+<text class="d-small" x="30" y="205.0" text-anchor="start" dominant-baseline="central">Each generation replaced the switching technology of the last: smaller, faster, cheaper, more reliable.</text>
+</svg>

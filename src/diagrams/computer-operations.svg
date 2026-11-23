@@ -1,42 +1,62 @@
-<svg viewBox="0 0 520 600" xmlns="http://www.w3.org/2000/svg">
-<g>
-<line class="d-line" x1="130" y1="82" x2="130" y2="128"/>
-<line class="d-line" x1="114" y1="166" x2="78" y2="206"/>
-<line class="d-line" x1="146" y1="166" x2="182" y2="206"/>
-<ellipse class="d-box-2" cx="130" cy="60" rx="38" ry="22"/><text class="d-small" x="130" y="64" text-anchor="middle" style="fill:var(--d-text)">Movement</text>
-<ellipse class="d-box-3" cx="130" cy="150" rx="38" ry="22"/><text class="d-small" x="130" y="154" text-anchor="middle" style="fill:var(--d-text)">Control</text>
-<ellipse class="d-box" cx="60" cy="220" rx="38" ry="22"/><text class="d-small" x="60" y="224" text-anchor="middle" style="fill:var(--d-text)">Storage</text>
-<ellipse class="d-box" cx="200" cy="220" rx="38" ry="22"/><text class="d-small" x="200" y="224" text-anchor="middle" style="fill:var(--d-text)">Processing</text>
-<path class="d-line d-acc" style="stroke-width:2.2;marker-end:url(#d-ah-acc)" d="M116 10 V150 Q130 170 144 150 V10"/>
-<text class="d-small" x="130" y="270" text-anchor="middle">(a)</text></g>
-<g>
-<line class="d-line" x1="390" y1="82" x2="390" y2="128"/>
-<line class="d-line" x1="374" y1="166" x2="338" y2="206"/>
-<line class="d-line" x1="406" y1="166" x2="442" y2="206"/>
-<ellipse class="d-box-2" cx="390" cy="60" rx="38" ry="22"/><text class="d-small" x="390" y="64" text-anchor="middle" style="fill:var(--d-text)">Movement</text>
-<ellipse class="d-box-3" cx="390" cy="150" rx="38" ry="22"/><text class="d-small" x="390" y="154" text-anchor="middle" style="fill:var(--d-text)">Control</text>
-<ellipse class="d-box" cx="320" cy="220" rx="38" ry="22"/><text class="d-small" x="320" y="224" text-anchor="middle" style="fill:var(--d-text)">Storage</text>
-<ellipse class="d-box" cx="460" cy="220" rx="38" ry="22"/><text class="d-small" x="460" y="224" text-anchor="middle" style="fill:var(--d-text)">Processing</text>
-<path class="d-line d-acc" style="stroke-width:2.2;marker-end:url(#d-ah-acc)" d="M404 10 V130 Q404 170 344 206"/>
-<text class="d-small" x="390" y="270" text-anchor="middle">(b)</text></g>
-<g>
-<line class="d-line" x1="130" y1="372" x2="130" y2="418"/>
-<line class="d-line" x1="114" y1="456" x2="78" y2="496"/>
-<line class="d-line" x1="146" y1="456" x2="182" y2="496"/>
-<ellipse class="d-box-2" cx="130" cy="350" rx="38" ry="22"/><text class="d-small" x="130" y="354" text-anchor="middle" style="fill:var(--d-text)">Movement</text>
-<ellipse class="d-box-3" cx="130" cy="440" rx="38" ry="22"/><text class="d-small" x="130" y="444" text-anchor="middle" style="fill:var(--d-text)">Control</text>
-<ellipse class="d-box" cx="60" cy="510" rx="38" ry="22"/><text class="d-small" x="60" y="514" text-anchor="middle" style="fill:var(--d-text)">Storage</text>
-<ellipse class="d-box" cx="200" cy="510" rx="38" ry="22"/><text class="d-small" x="200" y="514" text-anchor="middle" style="fill:var(--d-text)">Processing</text>
-<path class="d-line d-acc" style="stroke-width:2.2;marker-end:url(#d-ah-acc)" d="M40 532 Q130 600 220 532 M80 496 Q116 460 116 430 Q144 460 180 496"/>
-<text class="d-small" x="130" y="560" text-anchor="middle">(c)</text></g>
-<g>
-<line class="d-line" x1="390" y1="372" x2="390" y2="418"/>
-<line class="d-line" x1="374" y1="456" x2="338" y2="496"/>
-<line class="d-line" x1="406" y1="456" x2="442" y2="496"/>
-<ellipse class="d-box-2" cx="390" cy="350" rx="38" ry="22"/><text class="d-small" x="390" y="354" text-anchor="middle" style="fill:var(--d-text)">Movement</text>
-<ellipse class="d-box-3" cx="390" cy="440" rx="38" ry="22"/><text class="d-small" x="390" y="444" text-anchor="middle" style="fill:var(--d-text)">Control</text>
-<ellipse class="d-box" cx="320" cy="510" rx="38" ry="22"/><text class="d-small" x="320" y="514" text-anchor="middle" style="fill:var(--d-text)">Storage</text>
-<ellipse class="d-box" cx="460" cy="510" rx="38" ry="22"/><text class="d-small" x="460" y="514" text-anchor="middle" style="fill:var(--d-text)">Processing</text>
-<path class="d-line d-acc" style="stroke-width:2.2;marker-end:url(#d-ah-acc)" d="M300 532 Q390 590 495 532 Q520 460 430 400 Q404 370 404 300"/>
-<text class="d-small" x="390" y="560" text-anchor="middle">(d)</text></g>
-<text class="d-small" x="260" y="594" text-anchor="middle">Figure 1.2  Possible Computer Operations</text></svg>
+<svg viewBox="0 0 760 310" xmlns="http://www.w3.org/2000/svg" style="min-width:640px">
+<rect class="d-box-2" x="64" y="50" width="80" height="34" rx="2"/>
+<rect class="d-box-2" x="64" y="130" width="80" height="34" rx="2"/>
+<rect class="d-box-2" x="14" y="210" width="80" height="34" rx="2"/>
+<rect class="d-box-2" x="110" y="210" width="80" height="34" rx="2"/>
+<path class="d-line-mut" d="M104.0 84.0 L104.0 130.0"/>
+<path class="d-line-mut" d="M64.0 147.0 L54.0 147.0 L54.0 210.0"/>
+<path class="d-line-mut" d="M144.0 147.0 L150.0 147.0 L150.0 210.0"/>
+<path class="d-line-acc d-arr-acc" d="M90.0 12.0 L90.0 50.0"/>
+<path class="d-line-acc d-arr-acc" d="M118.0 50.0 L118.0 12.0"/>
+<rect class="d-box-2" x="252" y="50" width="80" height="34" rx="2"/>
+<rect class="d-box-2" x="252" y="130" width="80" height="34" rx="2"/>
+<rect class="d-box-2" x="202" y="210" width="80" height="34" rx="2"/>
+<rect class="d-box-2" x="298" y="210" width="80" height="34" rx="2"/>
+<path class="d-line-mut" d="M292.0 84.0 L292.0 130.0"/>
+<path class="d-line-mut" d="M252.0 147.0 L242.0 147.0 L242.0 210.0"/>
+<path class="d-line-mut" d="M332.0 147.0 L338.0 147.0 L338.0 210.0"/>
+<path class="d-line-acc d-arr-acc" d="M278.0 12.0 L278.0 50.0"/>
+<path class="d-line-acc d-arr-acc" d="M302.0 84.0 L302.0 130.0"/>
+<path class="d-line-acc d-arr-acc" d="M258.0 164.0 L258.0 186.0 L228.0 186.0 L228.0 210.0"/>
+<rect class="d-box-2" x="440" y="50" width="80" height="34" rx="2"/>
+<rect class="d-box-2" x="440" y="130" width="80" height="34" rx="2"/>
+<rect class="d-box-2" x="390" y="210" width="80" height="34" rx="2"/>
+<rect class="d-box-2" x="486" y="210" width="80" height="34" rx="2"/>
+<path class="d-line-mut" d="M480.0 84.0 L480.0 130.0"/>
+<path class="d-line-mut" d="M440.0 147.0 L430.0 147.0 L430.0 210.0"/>
+<path class="d-line-mut" d="M520.0 147.0 L526.0 147.0 L526.0 210.0"/>
+<path class="d-line-acc d-arr-acc" d="M406.0 210.0 L406.0 176.0 L450.0 176.0 L450.0 164.0"/>
+<path class="d-line-acc d-arr-acc" d="M510.0 164.0 L510.0 186.0 L542.0 186.0 L542.0 210.0"/>
+<path class="d-line-acc d-arr-acc" d="M526.0 244.0 L526.0 262.0 L430.0 262.0 L430.0 244.0"/>
+<rect class="d-box-2" x="628" y="50" width="80" height="34" rx="2"/>
+<rect class="d-box-2" x="628" y="130" width="80" height="34" rx="2"/>
+<rect class="d-box-2" x="578" y="210" width="80" height="34" rx="2"/>
+<rect class="d-box-2" x="674" y="210" width="80" height="34" rx="2"/>
+<path class="d-line-mut" d="M668.0 84.0 L668.0 130.0"/>
+<path class="d-line-mut" d="M628.0 147.0 L618.0 147.0 L618.0 210.0"/>
+<path class="d-line-mut" d="M708.0 147.0 L714.0 147.0 L714.0 210.0"/>
+<path class="d-line-acc d-arr-acc" d="M594.0 210.0 L594.0 176.0 L638.0 176.0 L638.0 164.0"/>
+<path class="d-line-acc d-arr-acc" d="M698.0 164.0 L698.0 186.0 L730.0 186.0 L730.0 210.0"/>
+<path class="d-line-acc d-arr-acc" d="M750.0 210.0 L750.0 67.0 L708.0 67.0"/>
+<path class="d-line-acc d-arr-acc" d="M682.0 50.0 L682.0 12.0"/>
+<text class="d-label" x="104" y="67.0" text-anchor="middle" dominant-baseline="central">Movement</text>
+<text class="d-label" x="104" y="147.0" text-anchor="middle" dominant-baseline="central">Control</text>
+<text class="d-label" x="54" y="227.0" text-anchor="middle" dominant-baseline="central">Storage</text>
+<text class="d-label" x="150" y="227.0" text-anchor="middle" dominant-baseline="central">Processing</text>
+<text class="d-small" x="104" y="292.0" text-anchor="middle" dominant-baseline="central">(a) Data movement</text>
+<text class="d-label" x="292" y="67.0" text-anchor="middle" dominant-baseline="central">Movement</text>
+<text class="d-label" x="292" y="147.0" text-anchor="middle" dominant-baseline="central">Control</text>
+<text class="d-label" x="242" y="227.0" text-anchor="middle" dominant-baseline="central">Storage</text>
+<text class="d-label" x="338" y="227.0" text-anchor="middle" dominant-baseline="central">Processing</text>
+<text class="d-small" x="292" y="292.0" text-anchor="middle" dominant-baseline="central">(b) Storage</text>
+<text class="d-label" x="480" y="67.0" text-anchor="middle" dominant-baseline="central">Movement</text>
+<text class="d-label" x="480" y="147.0" text-anchor="middle" dominant-baseline="central">Control</text>
+<text class="d-label" x="430" y="227.0" text-anchor="middle" dominant-baseline="central">Storage</text>
+<text class="d-label" x="526" y="227.0" text-anchor="middle" dominant-baseline="central">Processing</text>
+<text class="d-small" x="480" y="292.0" text-anchor="middle" dominant-baseline="central">(c) Processing from / to storage</text>
+<text class="d-label" x="668" y="67.0" text-anchor="middle" dominant-baseline="central">Movement</text>
+<text class="d-label" x="668" y="147.0" text-anchor="middle" dominant-baseline="central">Control</text>
+<text class="d-label" x="618" y="227.0" text-anchor="middle" dominant-baseline="central">Storage</text>
+<text class="d-label" x="714" y="227.0" text-anchor="middle" dominant-baseline="central">Processing</text>
+<text class="d-small" x="668" y="292.0" text-anchor="middle" dominant-baseline="central">(d) Processing from storage to I/O</text>
+</svg>

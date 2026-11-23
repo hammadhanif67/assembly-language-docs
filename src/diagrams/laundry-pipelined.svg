@@ -1,59 +1,53 @@
-<svg viewBox="0 0 680 330" xmlns="http://www.w3.org/2000/svg">
-<text class="d-title" x="110.0" y="22" text-anchor="middle">6 PM</text>
-<text class="d-title" x="196.7" y="22" text-anchor="middle">7</text>
-<text class="d-title" x="283.3" y="22" text-anchor="middle">8</text>
-<text class="d-title" x="370.0" y="22" text-anchor="middle">9</text>
-<text class="d-title" x="456.7" y="22" text-anchor="middle">10</text>
-<text class="d-title" x="543.3" y="22" text-anchor="middle">11</text>
-<text class="d-title" x="630.0" y="22" text-anchor="middle">Midnight</text>
-<line class="d-line d-arrow" x1="110" y1="34" x2="650" y2="34"/>
-<text class="d-text" x="370.0" y="52" text-anchor="middle" font-style="italic">Time</text>
-<rect class="d-fill-acc-2" x="111.0" y="60" width="41.3" height="4"/>
-<text class="d-mono" x="131.7" y="82" text-anchor="middle">30</text>
-<line class="d-line" x1="153.3" y1="58" x2="153.3" y2="86"/>
-<rect class="d-fill-acc-3" x="154.3" y="60" width="55.8" height="4"/>
-<text class="d-mono" x="182.2" y="82" text-anchor="middle">40</text>
-<line class="d-line" x1="211.1" y1="58" x2="211.1" y2="86"/>
-<rect class="d-fill-acc-3" x="212.1" y="60" width="55.8" height="4"/>
-<text class="d-mono" x="240.0" y="82" text-anchor="middle">40</text>
-<line class="d-line" x1="268.9" y1="58" x2="268.9" y2="86"/>
-<rect class="d-fill-acc-3" x="269.9" y="60" width="55.8" height="4"/>
-<text class="d-mono" x="297.8" y="82" text-anchor="middle">40</text>
-<line class="d-line" x1="326.7" y1="58" x2="326.7" y2="86"/>
-<rect class="d-fill-acc-3" x="327.7" y="60" width="55.8" height="4"/>
-<text class="d-mono" x="355.6" y="82" text-anchor="middle">40</text>
-<line class="d-line" x1="384.4" y1="58" x2="384.4" y2="86"/>
-<rect class="d-fill-acc-4" x="385.4" y="60" width="26.9" height="4"/>
-<text class="d-mono" x="398.9" y="82" text-anchor="middle">20</text>
-<line class="d-line" x1="413.3" y1="58" x2="413.3" y2="86"/>
-<text class="d-small" x="18" y="200" transform="rotate(-90 18 200)" text-anchor="middle">Task Order</text>
-<line class="d-line d-arrow" x1="34" y1="100" x2="34" y2="320"/>
-<circle class="d-box-3" cx="70" cy="122" r="17"/><text class="d-title" x="70" y="127" text-anchor="middle">A</text>
-<rect class="d-fill-acc-2" x="110.0" y="104" width="43.3" height="36" rx="3" style="opacity:.9"/>
-<text class="d-small d-on-accent" x="131.7" y="127" text-anchor="middle" style="fill:var(--on-accent);font-weight:700">Wash</text>
-<rect class="d-fill-acc-3" x="153.3" y="104" width="57.8" height="36" rx="3" style="opacity:.9"/>
-<text class="d-small d-on-accent" x="182.2" y="127" text-anchor="middle" style="fill:var(--on-accent);font-weight:700">Dry</text>
-<rect class="d-fill-acc-4" x="211.1" y="104" width="28.9" height="36" rx="3" style="opacity:.9"/>
-<text class="d-small d-on-accent" x="225.6" y="127" text-anchor="middle" style="fill:var(--on-accent);font-weight:700">Fold</text>
-<circle class="d-box-3" cx="70" cy="176" r="17"/><text class="d-title" x="70" y="181" text-anchor="middle">B</text>
-<rect class="d-fill-acc-2" x="153.3" y="158" width="43.3" height="36" rx="3" style="opacity:.9"/>
-<text class="d-small d-on-accent" x="175.0" y="181" text-anchor="middle" style="fill:var(--on-accent);font-weight:700">Wash</text>
-<rect class="d-fill-acc-3" x="211.1" y="158" width="57.8" height="36" rx="3" style="opacity:.9"/>
-<text class="d-small d-on-accent" x="240.0" y="181" text-anchor="middle" style="fill:var(--on-accent);font-weight:700">Dry</text>
-<rect class="d-fill-acc-4" x="268.9" y="158" width="28.9" height="36" rx="3" style="opacity:.9"/>
-<text class="d-small d-on-accent" x="283.3" y="181" text-anchor="middle" style="fill:var(--on-accent);font-weight:700">Fold</text>
-<circle class="d-box-3" cx="70" cy="230" r="17"/><text class="d-title" x="70" y="235" text-anchor="middle">C</text>
-<rect class="d-fill-acc-2" x="211.1" y="212" width="43.3" height="36" rx="3" style="opacity:.9"/>
-<text class="d-small d-on-accent" x="232.8" y="235" text-anchor="middle" style="fill:var(--on-accent);font-weight:700">Wash</text>
-<rect class="d-fill-acc-3" x="268.9" y="212" width="57.8" height="36" rx="3" style="opacity:.9"/>
-<text class="d-small d-on-accent" x="297.8" y="235" text-anchor="middle" style="fill:var(--on-accent);font-weight:700">Dry</text>
-<rect class="d-fill-acc-4" x="326.7" y="212" width="28.9" height="36" rx="3" style="opacity:.9"/>
-<text class="d-small d-on-accent" x="341.1" y="235" text-anchor="middle" style="fill:var(--on-accent);font-weight:700">Fold</text>
-<circle class="d-box-3" cx="70" cy="284" r="17"/><text class="d-title" x="70" y="289" text-anchor="middle">D</text>
-<rect class="d-fill-acc-2" x="268.9" y="266" width="43.3" height="36" rx="3" style="opacity:.9"/>
-<text class="d-small d-on-accent" x="290.6" y="289" text-anchor="middle" style="fill:var(--on-accent);font-weight:700">Wash</text>
-<rect class="d-fill-acc-3" x="326.7" y="266" width="57.8" height="36" rx="3" style="opacity:.9"/>
-<text class="d-small d-on-accent" x="355.6" y="289" text-anchor="middle" style="fill:var(--on-accent);font-weight:700">Dry</text>
-<rect class="d-fill-acc-4" x="384.4" y="266" width="28.9" height="36" rx="3" style="opacity:.9"/>
-<text class="d-small d-on-accent" x="398.9" y="289" text-anchor="middle" style="fill:var(--on-accent);font-weight:700">Fold</text>
+<svg viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg" style="min-width:600px">
+<path class="d-line-mut d-dash" d="M110.0 36.0 L110.0 300.0"/>
+<path class="d-line-mut d-dash" d="M206.7 36.0 L206.7 300.0"/>
+<path class="d-line-mut d-dash" d="M303.3 36.0 L303.3 300.0"/>
+<path class="d-line-mut d-dash" d="M400.0 36.0 L400.0 300.0"/>
+<path class="d-line-mut d-dash" d="M496.7 36.0 L496.7 300.0"/>
+<path class="d-line-mut d-dash" d="M593.3 36.0 L593.3 300.0"/>
+<path class="d-line-mut d-dash" d="M690.0 36.0 L690.0 300.0"/>
+<path class="d-line-mut d-arr-mut" d="M110.0 40.0 L690.0 40.0"/>
+<rect class="d-box-k" x="460" y="302" width="14" height="14" rx="0"/>
+<rect class="d-box-a" x="540" y="302" width="14" height="14" rx="0"/>
+<rect class="d-box-2" x="620" y="302" width="14" height="14" rx="0"/>
+<rect class="d-box-k" x="110" y="66" width="48.333333333333336" height="36" rx="0"/>
+<rect class="d-box-a" x="158.33333333333334" y="66" width="64.44444444444444" height="36" rx="0"/>
+<rect class="d-box-2" x="222.77777777777777" y="66" width="32.22222222222222" height="36" rx="0"/>
+<rect class="d-box-k" x="158.33333333333334" y="122" width="48.333333333333336" height="36" rx="0"/>
+<rect class="d-box-a" x="222.77777777777777" y="122" width="64.44444444444444" height="36" rx="0"/>
+<rect class="d-box-2" x="287.22222222222223" y="122" width="32.22222222222222" height="36" rx="0"/>
+<rect class="d-box-k" x="222.77777777777777" y="178" width="48.333333333333336" height="36" rx="0"/>
+<rect class="d-box-a" x="287.22222222222223" y="178" width="64.44444444444444" height="36" rx="0"/>
+<rect class="d-box-2" x="351.6666666666667" y="178" width="32.22222222222222" height="36" rx="0"/>
+<rect class="d-box-k" x="287.22222222222223" y="234" width="48.333333333333336" height="36" rx="0"/>
+<rect class="d-box-a" x="351.6666666666667" y="234" width="64.44444444444444" height="36" rx="0"/>
+<rect class="d-box-2" x="416.11111111111114" y="234" width="32.22222222222222" height="36" rx="0"/>
+<path class="d-line-acc" d="M448.3 280.0 L448.3 300.0"/>
+<text class="d-mono" x="110" y="22.0" text-anchor="middle" dominant-baseline="central">6 PM</text>
+<text class="d-mono" x="206.66666666666669" y="22.0" text-anchor="middle" dominant-baseline="central">7</text>
+<text class="d-mono" x="303.33333333333337" y="22.0" text-anchor="middle" dominant-baseline="central">8</text>
+<text class="d-mono" x="400" y="22.0" text-anchor="middle" dominant-baseline="central">9</text>
+<text class="d-mono" x="496.6666666666667" y="22.0" text-anchor="middle" dominant-baseline="central">10</text>
+<text class="d-mono" x="593.3333333333334" y="22.0" text-anchor="middle" dominant-baseline="central">11</text>
+<text class="d-mono" x="690" y="22.0" text-anchor="middle" dominant-baseline="central">12</text>
+<text class="d-small" x="480" y="309.0" text-anchor="start" dominant-baseline="central">Wash</text>
+<text class="d-small" x="560" y="309.0" text-anchor="start" dominant-baseline="central">Dry</text>
+<text class="d-small" x="640" y="309.0" text-anchor="start" dominant-baseline="central">Fold</text>
+<text class="d-label" x="70" y="84.0" text-anchor="end" dominant-baseline="central">Load A</text>
+<text class="d-label d-on-accent" x="134.16666666666666" y="84.0" text-anchor="middle" dominant-baseline="central">30</text>
+<text class="d-label d-on-accent" x="190.55555555555557" y="84.0" text-anchor="middle" dominant-baseline="central">40</text>
+<text class="d-label" x="238.88888888888889" y="84.0" text-anchor="middle" dominant-baseline="central">20</text>
+<text class="d-label" x="70" y="140.0" text-anchor="end" dominant-baseline="central">Load B</text>
+<text class="d-label d-on-accent" x="182.5" y="140.0" text-anchor="middle" dominant-baseline="central">30</text>
+<text class="d-label d-on-accent" x="255" y="140.0" text-anchor="middle" dominant-baseline="central">40</text>
+<text class="d-label" x="303.3333333333333" y="140.0" text-anchor="middle" dominant-baseline="central">20</text>
+<text class="d-label" x="70" y="196.0" text-anchor="end" dominant-baseline="central">Load C</text>
+<text class="d-label d-on-accent" x="246.94444444444443" y="196.0" text-anchor="middle" dominant-baseline="central">30</text>
+<text class="d-label d-on-accent" x="319.44444444444446" y="196.0" text-anchor="middle" dominant-baseline="central">40</text>
+<text class="d-label" x="367.77777777777777" y="196.0" text-anchor="middle" dominant-baseline="central">20</text>
+<text class="d-label" x="70" y="252.0" text-anchor="end" dominant-baseline="central">Load D</text>
+<text class="d-label d-on-accent" x="311.3888888888889" y="252.0" text-anchor="middle" dominant-baseline="central">30</text>
+<text class="d-label d-on-accent" x="383.8888888888889" y="252.0" text-anchor="middle" dominant-baseline="central">40</text>
+<text class="d-label" x="432.22222222222223" y="252.0" text-anchor="middle" dominant-baseline="central">20</text>
+<text class="d-small" x="454.33333333333337" y="292.0" text-anchor="start" dominant-baseline="central">done at 9:30 PM — 3.5 hours</text>
 </svg>

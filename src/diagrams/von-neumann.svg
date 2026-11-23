@@ -1,18 +1,25 @@
-<svg viewBox="0 0 520 470" xmlns="http://www.w3.org/2000/svg">
-  <rect class="d-box-2" x="110" y="20" width="300" height="56"/>
-  <text class="d-title" x="260" y="54" text-anchor="middle">Main Memory System</text>
-  <line class="d-line d-arrow d-acc" style="marker-end:url(#d-ah-acc)" x1="190" y1="140" x2="190" y2="80"/>
-  <text class="d-text" x="180" y="114" text-anchor="end">Address</text>
-  <line class="d-line d-arrow-both d-acc-2" x1="340" y1="80" x2="340" y2="138" style="marker-start:url(#d-ah-acc2);marker-end:url(#d-ah-acc2)"/>
-  <text class="d-text" x="352" y="114">Data / Instruction</text>
-  <rect class="d-box" x="110" y="142" width="300" height="196"/>
-  <text class="d-title" x="260" y="166" text-anchor="middle">Central Processing Unit</text>
-  <rect class="d-box-3" x="134" y="182" width="112" height="52"/><text class="d-text" x="190" y="204" text-anchor="middle" style="font-size:12.5px">Operational</text><text class="d-text" x="190" y="222" text-anchor="middle" style="font-size:12.5px">Registers</text>
-  <rect class="d-box-3" x="134" y="234" width="112" height="44"/><text class="d-text" x="190" y="261" text-anchor="middle" style="font-size:12.5px">Program Counter</text>
-  <rect class="d-box-3" x="270" y="182" width="116" height="96"/><text class="d-text" x="328" y="226" text-anchor="middle" style="font-size:12.5px">Arithmetic and</text><text class="d-text" x="328" y="244" text-anchor="middle" style="font-size:12.5px">Logic Unit</text>
-  <rect class="d-box-3" x="134" y="290" width="252" height="36"/><text class="d-text" x="260" y="313" text-anchor="middle" style="font-size:12.5px">Control Unit</text>
-  <line class="d-line d-arrow-both" x1="260" y1="342" x2="260" y2="388"/>
-  <rect class="d-box-2" x="110" y="392" width="300" height="50"/>
-  <text class="d-title" x="260" y="422" text-anchor="middle">Input/Output System</text>
-  <text class="d-small" x="260" y="464" text-anchor="middle">Von Neumann Architecture</text>
+<svg viewBox="0 0 560 470" xmlns="http://www.w3.org/2000/svg" style="min-width:420px">
+<rect class="d-group" x="130" y="140" width="300" height="190" rx="0"/>
+<rect class="d-box-3" x="130" y="20" width="300" height="56" rx="2"/>
+<rect class="d-box" x="150" y="174" width="120" height="44" rx="2"/>
+<rect class="d-box-3" x="150" y="224" width="120" height="44" rx="2"/>
+<rect class="d-box" x="290" y="174" width="120" height="94" rx="2"/>
+<rect class="d-box-2" x="150" y="278" width="260" height="38" rx="2"/>
+<path class="d-line d-arr" d="M220.0 140.0 L220.0 78.0"/>
+<path class="d-line-acc d-arr2-acc" d="M340.0 78.0 L340.0 140.0"/>
+<rect class="d-box" x="130" y="390" width="300" height="50" rx="2"/>
+<path class="d-line d-arr2" d="M280.0 330.0 L280.0 390.0"/>
+<text class="d-title" x="280" y="40.0" text-anchor="middle" dominant-baseline="central">Main memory</text>
+<text class="d-small" x="280" y="56.0" text-anchor="middle" dominant-baseline="central">instructions + data together</text>
+<text class="d-caps" x="140" y="154.0" text-anchor="start" dominant-baseline="central">Central processing unit</text>
+<text class="d-label" x="210" y="196.0" text-anchor="middle" dominant-baseline="central">Registers</text>
+<text class="d-label" x="210" y="246.0" text-anchor="middle" dominant-baseline="central">Program counter</text>
+<text class="d-label" x="350" y="213.0" text-anchor="middle" dominant-baseline="central">Arithmetic &amp;</text>
+<text class="d-label" x="350" y="229.0" text-anchor="middle" dominant-baseline="central">logic unit</text>
+<text class="d-label" x="280" y="297.0" text-anchor="middle" dominant-baseline="central">Control unit</text>
+<rect x="193.5" y="100.3" width="53.1" height="17.5" fill="var(--d-canvas)"/>
+<text class="d-small" x="220" y="109.0" text-anchor="middle" dominant-baseline="central">address</text>
+<rect x="245.8" y="100.3" width="188.3" height="17.5" fill="var(--d-canvas)"/>
+<text class="d-small" x="340" y="109.0" text-anchor="middle" dominant-baseline="central">data / instruction (one bus)</text>
+<text class="d-title" x="280" y="415.0" text-anchor="middle" dominant-baseline="central">Input / Output</text>
 </svg>

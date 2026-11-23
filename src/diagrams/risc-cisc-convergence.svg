@@ -1,5 +1,0 @@
-<svg viewBox="0 0 420 260" class="d-compact" xmlns="http://www.w3.org/2000/svg">
-  <path class="d-box-2" d="M210 14 L270 78 H236 V140 Q236 175 330 230 L300 250 Q232 210 210 168 Q188 210 120 250 L90 230 Q184 175 184 140 V78 H150 Z" style="stroke-width:2"/>
-  <text class="d-title" x="138" y="212" transform="rotate(-38 138 212)" style="fill:var(--d-accent-2)">RISC</text>
-  <text class="d-title" x="262" y="190" transform="rotate(38 262 190)" style="fill:var(--d-accent)">CISC</text>
-</svg>

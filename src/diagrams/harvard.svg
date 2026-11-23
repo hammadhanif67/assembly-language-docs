@@ -1,23 +1,34 @@
-<svg viewBox="0 0 600 480" xmlns="http://www.w3.org/2000/svg">
-  <rect class="d-box-2" x="150" y="20" width="300" height="56"/>
-  <text class="d-title" x="300" y="54" text-anchor="middle">Main Memory System</text>
-  <line class="d-line d-arrow d-acc" style="marker-end:url(#d-ah-acc)" x1="170" y1="146" x2="170" y2="80"/>
-  <text class="d-text" x="160" y="104" text-anchor="end" style="font-size:12.5px">Instruction</text>
-  <text class="d-text" x="160" y="120" text-anchor="end" style="font-size:12.5px">Address</text>
-  <line class="d-line d-acc-3" x1="230" y1="80" x2="230" y2="144" style="marker-start:url(#d-ah-acc3);marker-end:url(#d-ah-acc3)"/>
-  <text class="d-text" x="240" y="108" style="font-size:12.5px">Instruction</text>
-  <line class="d-line d-arrow d-acc-4" style="marker-end:url(#d-ah-acc4)" x1="380" y1="146" x2="380" y2="80"/>
-  <text class="d-text" x="372" y="136" text-anchor="end" style="font-size:12.5px">Data Address</text>
-  <line class="d-line d-acc-2" x1="430" y1="80" x2="430" y2="144" style="marker-start:url(#d-ah-acc2);marker-end:url(#d-ah-acc2)"/>
-  <text class="d-text" x="442" y="108" style="font-size:12.5px">Data</text>
-  <rect class="d-box" x="150" y="148" width="300" height="196"/>
-  <text class="d-title" x="300" y="172" text-anchor="middle">Central Processing Unit</text>
-  <rect class="d-box-3" x="174" y="188" width="112" height="52"/><text class="d-text" x="230" y="210" text-anchor="middle" style="font-size:12.5px">Operational</text><text class="d-text" x="230" y="228" text-anchor="middle" style="font-size:12.5px">Registers</text>
-  <rect class="d-box-3" x="174" y="240" width="112" height="44"/><text class="d-text" x="230" y="267" text-anchor="middle" style="font-size:12.5px">Program Counter</text>
-  <rect class="d-box-3" x="310" y="188" width="116" height="96"/><text class="d-text" x="368" y="232" text-anchor="middle" style="font-size:12.5px">Arithmetic and</text><text class="d-text" x="368" y="250" text-anchor="middle" style="font-size:12.5px">Logic Unit</text>
-  <rect class="d-box-3" x="174" y="296" width="252" height="36"/><text class="d-text" x="300" y="319" text-anchor="middle" style="font-size:12.5px">Control Unit</text>
-  <line class="d-line d-arrow-both" x1="300" y1="348" x2="300" y2="394"/>
-  <rect class="d-box-2" x="150" y="398" width="300" height="50"/>
-  <text class="d-title" x="300" y="428" text-anchor="middle">Input/Output System</text>
-  <text class="d-small" x="300" y="472" text-anchor="middle">Harvard Architecture</text>
+<svg viewBox="0 0 640 470" xmlns="http://www.w3.org/2000/svg" style="min-width:480px">
+<rect class="d-group" x="170" y="140" width="300" height="190" rx="0"/>
+<rect class="d-box-3" x="20" y="20" width="270" height="56" rx="2"/>
+<rect class="d-box-2" x="350" y="20" width="270" height="56" rx="2"/>
+<rect class="d-box" x="190" y="174" width="120" height="44" rx="2"/>
+<rect class="d-box-3" x="190" y="224" width="120" height="44" rx="2"/>
+<rect class="d-box" x="330" y="174" width="120" height="94" rx="2"/>
+<rect class="d-box-2" x="190" y="278" width="260" height="38" rx="2"/>
+<path class="d-line d-arr" d="M200.0 140.0 L200.0 78.0"/>
+<path class="d-line-acc d-arr-acc" d="M250.0 78.0 L250.0 140.0"/>
+<path class="d-line d-arr" d="M390.0 140.0 L390.0 78.0"/>
+<path class="d-line-acc d-arr2-acc" d="M440.0 78.0 L440.0 140.0"/>
+<rect class="d-box" x="170" y="390" width="300" height="50" rx="2"/>
+<path class="d-line d-arr2" d="M320.0 330.0 L320.0 390.0"/>
+<text class="d-title" x="155" y="40.0" text-anchor="middle" dominant-baseline="central">Instruction memory</text>
+<text class="d-small" x="155" y="56.0" text-anchor="middle" dominant-baseline="central">ROM / Flash</text>
+<text class="d-title" x="485" y="40.0" text-anchor="middle" dominant-baseline="central">Data memory</text>
+<text class="d-small" x="485" y="56.0" text-anchor="middle" dominant-baseline="central">RAM</text>
+<text class="d-caps" x="180" y="154.0" text-anchor="start" dominant-baseline="central">Central processing unit</text>
+<text class="d-label" x="250" y="196.0" text-anchor="middle" dominant-baseline="central">Registers</text>
+<text class="d-label" x="250" y="246.0" text-anchor="middle" dominant-baseline="central">Program counter</text>
+<text class="d-label" x="390" y="213.0" text-anchor="middle" dominant-baseline="central">Arithmetic &amp;</text>
+<text class="d-label" x="390" y="229.0" text-anchor="middle" dominant-baseline="central">logic unit</text>
+<text class="d-label" x="320" y="297.0" text-anchor="middle" dominant-baseline="central">Control unit</text>
+<rect x="150.9" y="100.3" width="98.2" height="17.5" fill="var(--d-canvas)"/>
+<text class="d-small" x="200" y="109.0" text-anchor="middle" dominant-baseline="central">instr. address</text>
+<rect x="210.6" y="100.3" width="78.8" height="17.5" fill="var(--d-canvas)"/>
+<text class="d-small" x="250" y="109.0" text-anchor="middle" dominant-baseline="central">instruction</text>
+<rect x="347.4" y="100.3" width="85.3" height="17.5" fill="var(--d-canvas)"/>
+<text class="d-small" x="390" y="109.0" text-anchor="middle" dominant-baseline="central">data address</text>
+<rect x="423.1" y="100.3" width="33.8" height="17.5" fill="var(--d-canvas)"/>
+<text class="d-small" x="440" y="109.0" text-anchor="middle" dominant-baseline="central">data</text>
+<text class="d-title" x="320" y="415.0" text-anchor="middle" dominant-baseline="central">Input / Output</text>
 </svg>

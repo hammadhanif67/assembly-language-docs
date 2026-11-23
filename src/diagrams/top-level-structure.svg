@@ -1,24 +1,32 @@
-<svg viewBox="0 0 640 520" xmlns="http://www.w3.org/2000/svg">
-  <circle class="d-box" cx="140" cy="120" r="105"/>
-  <text class="d-title" x="140" y="34" text-anchor="middle" style="font-size:12px;letter-spacing:.08em">COMPUTER</text>
-  <circle class="d-box-2" cx="88" cy="88" r="34"/><text class="d-small" x="88" y="92" text-anchor="middle" style="fill:var(--d-text)">I/O</text>
-  <circle class="d-box-2" cx="192" cy="88" r="34"/><text class="d-small" x="192" y="86" text-anchor="middle" style="fill:var(--d-text)">Main</text><text class="d-small" x="192" y="100" text-anchor="middle" style="fill:var(--d-text)">memory</text>
-  <circle class="d-box-2" cx="140" cy="132" r="30"/><text class="d-small" x="140" y="130" text-anchor="middle" style="fill:var(--d-text)">System</text><text class="d-small" x="140" y="144" text-anchor="middle" style="fill:var(--d-text)">bus</text>
-  <circle class="d-box-3" cx="140" cy="186" r="30"/><text class="d-small" x="140" y="190" text-anchor="middle" style="fill:var(--d-text)">CPU</text>
-  <circle class="d-box" cx="470" cy="250" r="105"/>
-  <text class="d-title" x="470" y="164" text-anchor="middle" style="font-size:12px;letter-spacing:.08em">CPU</text>
-  <circle class="d-box-2" cx="414" cy="222" r="34"/><text class="d-small" x="414" y="226" text-anchor="middle" style="fill:var(--d-text)">Registers</text>
-  <circle class="d-box-2" cx="526" cy="222" r="34"/><text class="d-small" x="526" y="226" text-anchor="middle" style="fill:var(--d-text)">ALU</text>
-  <circle class="d-box-2" cx="470" cy="262" r="28"/><text class="d-small" x="470" y="259" text-anchor="middle" style="fill:var(--d-text)">Internal</text><text class="d-small" x="470" y="272" text-anchor="middle" style="fill:var(--d-text)">bus</text>
-  <circle class="d-box-3" cx="470" cy="316" r="30"/><text class="d-small" x="470" y="313" text-anchor="middle" style="fill:var(--d-text)">Control</text><text class="d-small" x="470" y="327" text-anchor="middle" style="fill:var(--d-text)">unit</text>
-  <circle class="d-box-3" cx="160" cy="400" r="105"/>
-  <text class="d-title" x="160" y="320" text-anchor="middle" style="font-size:12px;letter-spacing:.08em">CONTROL UNIT</text>
-  <circle class="d-box" cx="110" cy="368" r="32"/><text class="d-small" x="110" y="364" text-anchor="middle" style="fill:var(--d-text)">Sequencing</text><text class="d-small" x="110" y="378" text-anchor="middle" style="fill:var(--d-text)">logic</text>
-  <circle class="d-box" cx="190" cy="398" r="36"/><text class="d-small" x="190" y="388" text-anchor="middle" style="fill:var(--d-text)">Control unit</text><text class="d-small" x="190" y="402" text-anchor="middle" style="fill:var(--d-text)">registers and</text><text class="d-small" x="190" y="416" text-anchor="middle" style="fill:var(--d-text)">decoders</text>
-  <circle class="d-box" cx="150" cy="458" r="30"/><text class="d-small" x="150" y="455" text-anchor="middle" style="fill:var(--d-text)">Control</text><text class="d-small" x="150" y="469" text-anchor="middle" style="fill:var(--d-text)">memory</text>
-  <line class="d-line d-dash" x1="168" y1="186" x2="368" y2="230"/>
-  <line class="d-line d-dash" x1="114" y1="200" x2="390" y2="330"/>
-  <line class="d-line d-dash" x1="498" y1="316" x2="262" y2="420"/>
-  <line class="d-line d-dash" x1="444" y1="330" x2="128" y2="300"/>
-  <text class="d-small" x="400" y="500" text-anchor="middle">Figure 1.4  The Computer: Top-Level Structure</text>
+<svg viewBox="0 0 760 330" xmlns="http://www.w3.org/2000/svg" style="min-width:620px">
+<rect class="d-group" x="20" y="20" width="220" height="290" rx="0"/>
+<rect class="d-group" x="270" y="20" width="220" height="290" rx="0"/>
+<rect class="d-group" x="520" y="20" width="220" height="290" rx="0"/>
+<rect class="d-box-3" x="40" y="52" width="180" height="46" rx="2"/>
+<rect class="d-box" x="40" y="114" width="180" height="46" rx="2"/>
+<rect class="d-box" x="40" y="176" width="180" height="46" rx="2"/>
+<rect class="d-box" x="40" y="238" width="180" height="46" rx="2"/>
+<rect class="d-box-3" x="290" y="52" width="180" height="46" rx="2"/>
+<rect class="d-box" x="290" y="114" width="180" height="46" rx="2"/>
+<rect class="d-box" x="290" y="176" width="180" height="46" rx="2"/>
+<rect class="d-box" x="290" y="238" width="180" height="46" rx="2"/>
+<rect class="d-box" x="540" y="52" width="180" height="46" rx="2"/>
+<rect class="d-box" x="540" y="114" width="180" height="46" rx="2"/>
+<rect class="d-box" x="540" y="176" width="180" height="46" rx="2"/>
+<path class="d-line-acc d-arr-acc" d="M220.0 75.0 L270.0 75.0"/>
+<path class="d-line-acc d-arr-acc" d="M470.0 75.0 L520.0 75.0"/>
+<text class="d-caps" x="30" y="34.0" text-anchor="start" dominant-baseline="central">Computer</text>
+<text class="d-label" x="130" y="75.0" text-anchor="middle" dominant-baseline="central">Central processing unit</text>
+<text class="d-label" x="130" y="137.0" text-anchor="middle" dominant-baseline="central">Main memory</text>
+<text class="d-label" x="130" y="199.0" text-anchor="middle" dominant-baseline="central">I/O</text>
+<text class="d-label" x="130" y="261.0" text-anchor="middle" dominant-baseline="central">System bus</text>
+<text class="d-caps" x="280" y="34.0" text-anchor="start" dominant-baseline="central">CPU</text>
+<text class="d-label" x="380" y="75.0" text-anchor="middle" dominant-baseline="central">Control unit</text>
+<text class="d-label" x="380" y="137.0" text-anchor="middle" dominant-baseline="central">Arithmetic &amp; logic unit</text>
+<text class="d-label" x="380" y="199.0" text-anchor="middle" dominant-baseline="central">Registers</text>
+<text class="d-label" x="380" y="261.0" text-anchor="middle" dominant-baseline="central">Internal bus</text>
+<text class="d-caps" x="530" y="34.0" text-anchor="start" dominant-baseline="central">Control unit</text>
+<text class="d-label" x="630" y="75.0" text-anchor="middle" dominant-baseline="central">Sequencing logic</text>
+<text class="d-label" x="630" y="137.0" text-anchor="middle" dominant-baseline="central">Control unit registers &amp; decoders</text>
+<text class="d-label" x="630" y="199.0" text-anchor="middle" dominant-baseline="central">Control memory</text>
 </svg>

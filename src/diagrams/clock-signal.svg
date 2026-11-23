@@ -1,16 +1,15 @@
-<svg viewBox="0 0 640 230" xmlns="http://www.w3.org/2000/svg">
-  <text class="d-small" x="400" y="26" text-anchor="middle">One Clock</text>
-  <text class="d-small" x="400" y="42" text-anchor="middle">“Period”</text>
-  <line class="d-line d-arrow-both" x1="352" y1="56" x2="448" y2="56"/>
-  <line class="d-line d-dot" x1="352" y1="50" x2="352" y2="90"/>
-  <line class="d-line d-dot" x1="448" y1="50" x2="448" y2="90"/>
-  <text class="d-mono" x="88" y="96" text-anchor="end">1</text>
-  <text class="d-mono" x="88" y="146" text-anchor="end">0</text>
-  <path class="d-line d-acc" style="stroke-width:2.4" d="M100 140 H160 V90 H208 V140 H256 V90 H304 V140 H352 V90 H400 V140 H448 V90 H496 V140 H544 V90 H592 V140"/>
-  <text class="d-title" x="60" y="40" text-anchor="start" style="font-size:13px">Rising Edge</text>
-  <line class="d-line d-arrow" x1="110" y1="48" x2="156" y2="110"/>
-  <text class="d-title" x="222" y="40" text-anchor="start" style="font-size:13px">Falling Edge</text>
-  <line class="d-line d-arrow" x1="245" y1="48" x2="211" y2="110"/>
-  <text class="d-text" x="140" y="190">Time</text>
-  <line class="d-line d-arrow" x1="185" y1="186" x2="270" y2="186"/>
+<svg viewBox="0 0 640 230" xmlns="http://www.w3.org/2000/svg" style="min-width:500px">
+<path class="d-line-acc" d="M80.0 150.0 L128.0 150.0 L128.0 90.0 L176.0 90.0 L176.0 150.0 L224.0 150.0 L224.0 90.0 L272.0 90.0 L272.0 150.0 L320.0 150.0 L320.0 90.0 L368.0 90.0 L368.0 150.0 L416.0 150.0 L416.0 90.0 L464.0 90.0 L464.0 150.0 L512.0 150.0 L512.0 90.0 L560.0 90.0 L560.0 150.0"/>
+<path class="d-line-mut d-arr-mut" d="M128.0 186.0 L128.0 158.0"/>
+<path class="d-line-mut d-arr-mut" d="M216.0 186.0 L178.0 158.0"/>
+<path class="d-line-mut d-arr2" d="M320.0 62.0 L416.0 62.0"/>
+<path class="d-line-mut" d="M320.0 56.0 L320.0 68.0"/>
+<path class="d-line-mut" d="M416.0 56.0 L416.0 68.0"/>
+<path class="d-line-mut d-arr-mut" d="M460.0 214.0 L580.0 214.0"/>
+<text class="d-mono" x="64" y="90.0" text-anchor="middle" dominant-baseline="central">1</text>
+<text class="d-mono" x="64" y="150.0" text-anchor="middle" dominant-baseline="central">0</text>
+<text class="d-small" x="128" y="198.0" text-anchor="middle" dominant-baseline="central">rising edge</text>
+<text class="d-small" x="232" y="198.0" text-anchor="middle" dominant-baseline="central">falling edge</text>
+<text class="d-small" x="368" y="49.0" text-anchor="middle" dominant-baseline="central">one clock period</text>
+<text class="d-small" x="440" y="214.0" text-anchor="end" dominant-baseline="central">time</text>
 </svg>

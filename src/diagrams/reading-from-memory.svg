@@ -1,24 +1,33 @@
-<svg viewBox="0 0 680 270" xmlns="http://www.w3.org/2000/svg">
-  <rect class="d-frame" x="10" y="10" width="330" height="230" style="stroke-dasharray:none"/>
-  <text class="d-title" x="175" y="226" text-anchor="middle">Microprocessor</text>
-  <rect class="d-box-2" x="26" y="26" width="128" height="52" rx="4"/>
-  <text class="d-title" x="90" y="48" text-anchor="middle">Control Unit</text>
-  <text class="d-text" x="90" y="68" text-anchor="middle">(CU)</text>
-  <rect class="d-box-2" x="190" y="90" width="134" height="38" rx="4"/>
-  <text class="d-title" x="257" y="115" text-anchor="middle">PC</text>
-  <rect class="d-box-2" x="190" y="160" width="134" height="38" rx="4"/>
-  <text class="d-title" x="257" y="185" text-anchor="middle">Data Buffer</text>
-  <rect class="d-frame" x="500" y="10" width="170" height="230" style="stroke-dasharray:none"/>
-  <text class="d-text" x="520" y="58">Read</text>
-  <text class="d-text" x="520" y="113">Address</text>
-  <text class="d-text" x="520" y="183">Data</text>
-  <text class="d-title" x="585" y="226" text-anchor="middle">Memory</text>
-  <line class="d-line d-arrow" x1="154" y1="52" x2="508" y2="52"/>
-  <text class="d-text" x="420" y="40" text-anchor="middle">Memory</text>
-  <text class="d-text" x="420" y="88" text-anchor="middle">Read</text>
-  <line class="d-line-thick d-acc" x1="324" y1="109" x2="496" y2="109" style="marker-end:url(#d-ah-acc)"/>
-  <text class="d-text" x="420" y="142" text-anchor="middle">Memory address</text>
-  <line class="d-line-thick d-acc-2" x1="508" y1="179" x2="336" y2="179" style="marker-end:url(#d-ah-acc2)"/>
-  <text class="d-text" x="420" y="214" text-anchor="middle">Data from Memory</text>
-  <text class="d-title" x="340" y="262" text-anchor="middle">Figure: Reading from memory</text>
+<svg viewBox="0 0 680 260" xmlns="http://www.w3.org/2000/svg" style="min-width:560px">
+<rect class="d-group" x="20" y="20" width="290" height="220" rx="0"/>
+<rect class="d-group" x="480" y="20" width="180" height="220" rx="0"/>
+<rect class="d-box-2" x="40" y="52" width="150" height="44" rx="2"/>
+<rect class="d-box-3" x="140" y="118" width="150" height="42" rx="2"/>
+<rect class="d-box" x="140" y="180" width="150" height="42" rx="2"/>
+<rect class="d-box" x="520" y="52" width="100" height="28.333333333333332" rx="0"/>
+<rect class="d-box" x="520" y="80.33333333333333" width="100" height="28.333333333333332" rx="0"/>
+<rect class="d-box" x="520" y="108.66666666666666" width="100" height="28.333333333333332" rx="0"/>
+<rect class="d-box" x="520" y="137" width="100" height="28.333333333333332" rx="0"/>
+<rect class="d-box" x="520" y="165.33333333333331" width="100" height="28.333333333333332" rx="0"/>
+<rect class="d-box" x="520" y="193.66666666666666" width="100" height="28.333333333333332" rx="0"/>
+<path class="d-line d-arr" d="M190.0 74.0 L520.0 74.0"/>
+<path class="d-line-acc d-arr-acc" d="M290.0 139.0 L520.0 139.0"/>
+<path class="d-line d-arr" d="M520.0 201.0 L290.0 201.0"/>
+<text class="d-caps" x="30" y="34.0" text-anchor="start" dominant-baseline="central">Microprocessor</text>
+<text class="d-label" x="115" y="74.0" text-anchor="middle" dominant-baseline="central">Control unit (CU)</text>
+<text class="d-mono" x="215" y="139.0" text-anchor="middle" dominant-baseline="central">PC</text>
+<text class="d-label" x="215" y="201.0" text-anchor="middle" dominant-baseline="central">Data buffer</text>
+<text class="d-caps" x="490" y="34.0" text-anchor="start" dominant-baseline="central">Memory</text>
+<text class="d-mono" x="570" y="66.2" text-anchor="middle" dominant-baseline="central">…</text>
+<text class="d-mono" x="570" y="94.5" text-anchor="middle" dominant-baseline="central">0941</text>
+<text class="d-mono" x="570" y="122.8" text-anchor="middle" dominant-baseline="central">0940</text>
+<text class="d-mono" x="570" y="151.2" text-anchor="middle" dominant-baseline="central">…</text>
+<text class="d-mono" x="570" y="179.5" text-anchor="middle" dominant-baseline="central">0301</text>
+<text class="d-mono" x="570" y="207.8" text-anchor="middle" dominant-baseline="central">0300</text>
+<rect x="315.6" y="65.3" width="78.8" height="17.5" fill="var(--d-canvas)"/>
+<text class="d-small" x="355" y="74.0" text-anchor="middle" dominant-baseline="central">memory read</text>
+<rect x="378.5" y="130.3" width="53.1" height="17.5" fill="var(--d-canvas)"/>
+<text class="d-small" x="405" y="139.0" text-anchor="middle" dominant-baseline="central">address</text>
+<rect x="349.5" y="192.3" width="111.0" height="17.5" fill="var(--d-canvas)"/>
+<text class="d-small" x="405" y="201.0" text-anchor="middle" dominant-baseline="central">data from memory</text>
 </svg>

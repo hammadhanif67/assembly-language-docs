@@ -1,15 +1,32 @@
-<svg viewBox="0 0 520 130" class="d-compact" xmlns="http://www.w3.org/2000/svg">
-  <g class="d-small" text-anchor="middle"><text x="50" y="18">D7</text><text x="110" y="18">D6</text><text x="170" y="18">D5</text><text x="230" y="18">D4</text><text x="290" y="18">D3</text><text x="350" y="18">D2</text><text x="410" y="18">D1</text><text x="470" y="18">D0</text></g>
-  <g class="d-mono" text-anchor="middle" style="font-size:16px">
-    <rect class="d-box-3" x="20" y="26" width="60" height="44"/><text x="50" y="54">S</text>
-    <rect class="d-box-3" x="80" y="26" width="60" height="44"/><text x="110" y="54">Z</text>
-    <rect class="d-box" x="140" y="26" width="60" height="44"/><text x="170" y="54" class="d-muted">–</text>
-    <rect class="d-box-3" x="200" y="26" width="60" height="44"/><text x="230" y="54">AC</text>
-    <rect class="d-box" x="260" y="26" width="60" height="44"/><text x="290" y="54" class="d-muted">–</text>
-    <rect class="d-box-3" x="320" y="26" width="60" height="44"/><text x="350" y="54">P</text>
-    <rect class="d-box" x="380" y="26" width="60" height="44"/><text x="410" y="54" class="d-muted">–</text>
-    <rect class="d-box-3" x="440" y="26" width="60" height="44"/><text x="470" y="54">CY</text>
-  </g>
-  <g class="d-small" text-anchor="middle"><text x="50" y="90">Sign</text><text x="110" y="90">Zero</text><text x="230" y="90">Aux. Carry</text><text x="350" y="90">Parity</text><text x="470" y="90">Carry</text></g>
-  <text class="d-small" x="260" y="118" text-anchor="middle">– = unused/reserved bit</text>
+<svg viewBox="0 0 560 150" xmlns="http://www.w3.org/2000/svg" style="min-width:440px">
+<rect class="d-box-a" x="40" y="34" width="60" height="44" rx="0"/>
+<rect class="d-box-a" x="100" y="34" width="60" height="44" rx="0"/>
+<rect class="d-box" x="160" y="34" width="60" height="44" rx="0"/>
+<rect class="d-box-a" x="220" y="34" width="60" height="44" rx="0"/>
+<rect class="d-box" x="280" y="34" width="60" height="44" rx="0"/>
+<rect class="d-box-a" x="340" y="34" width="60" height="44" rx="0"/>
+<rect class="d-box" x="400" y="34" width="60" height="44" rx="0"/>
+<rect class="d-box-a" x="460" y="34" width="60" height="44" rx="0"/>
+<text class="d-small" x="70" y="22.0" text-anchor="middle" dominant-baseline="central">D7</text>
+<text class="d-mono d-on-accent" x="70" y="56.0" text-anchor="middle" dominant-baseline="central">S</text>
+<text class="d-small" x="70" y="96.0" text-anchor="middle" dominant-baseline="central">Sign</text>
+<text class="d-small" x="130" y="22.0" text-anchor="middle" dominant-baseline="central">D6</text>
+<text class="d-mono d-on-accent" x="130" y="56.0" text-anchor="middle" dominant-baseline="central">Z</text>
+<text class="d-small" x="130" y="96.0" text-anchor="middle" dominant-baseline="central">Zero</text>
+<text class="d-small" x="190" y="22.0" text-anchor="middle" dominant-baseline="central">D5</text>
+<text class="d-mono" x="190" y="56.0" text-anchor="middle" dominant-baseline="central">–</text>
+<text class="d-small" x="250" y="22.0" text-anchor="middle" dominant-baseline="central">D4</text>
+<text class="d-mono d-on-accent" x="250" y="56.0" text-anchor="middle" dominant-baseline="central">AC</text>
+<text class="d-small" x="250" y="96.0" text-anchor="middle" dominant-baseline="central">Aux. carry</text>
+<text class="d-small" x="310" y="22.0" text-anchor="middle" dominant-baseline="central">D3</text>
+<text class="d-mono" x="310" y="56.0" text-anchor="middle" dominant-baseline="central">–</text>
+<text class="d-small" x="370" y="22.0" text-anchor="middle" dominant-baseline="central">D2</text>
+<text class="d-mono d-on-accent" x="370" y="56.0" text-anchor="middle" dominant-baseline="central">P</text>
+<text class="d-small" x="370" y="96.0" text-anchor="middle" dominant-baseline="central">Parity</text>
+<text class="d-small" x="430" y="22.0" text-anchor="middle" dominant-baseline="central">D1</text>
+<text class="d-mono" x="430" y="56.0" text-anchor="middle" dominant-baseline="central">–</text>
+<text class="d-small" x="490" y="22.0" text-anchor="middle" dominant-baseline="central">D0</text>
+<text class="d-mono d-on-accent" x="490" y="56.0" text-anchor="middle" dominant-baseline="central">CY</text>
+<text class="d-small" x="490" y="96.0" text-anchor="middle" dominant-baseline="central">Carry</text>
+<text class="d-small" x="40" y="132.0" text-anchor="start" dominant-baseline="central">– = unused bit. The ALU sets these five flags after arithmetic and logic operations.</text>
 </svg>

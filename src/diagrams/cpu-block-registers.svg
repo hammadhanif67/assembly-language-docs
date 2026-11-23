@@ -1,24 +1,31 @@
-<svg viewBox="0 0 560 520" xmlns="http://www.w3.org/2000/svg">
-  <rect class="d-box-2" x="200" y="10" width="160" height="50"/><text class="d-title" x="280" y="42" text-anchor="middle">OUTPUT</text>
-  <line class="d-line d-arrow" style="stroke-width:4" x1="280" y1="102" x2="280" y2="64"/>
-  <rect class="d-box" x="20" y="104" width="520" height="320" style="fill:var(--d-fill-3)"/>
-  <text class="d-title" x="280" y="128" text-anchor="middle">Central Processing Unit (CPU)</text>
-  <rect class="d-box" x="40" y="142" width="200" height="140" style="stroke:var(--d-accent-3);stroke-width:3"/>
-  <text class="d-title" x="140" y="166" text-anchor="middle">Control Unit</text>
-  <rect class="d-box-a" x="56" y="178" width="168" height="40" style="fill:#ffc000;stroke:#333"/><text x="140" y="203" text-anchor="middle" style="fill:#111;font-family:var(--font-body)">Program Counter</text>
-  <rect class="d-box-a" x="56" y="226" width="168" height="44" style="fill:#ffc000;stroke:#333"/><text x="140" y="245" text-anchor="middle" style="fill:#111;font-family:var(--font-body);font-size:13px">Current Instruction</text><text x="140" y="262" text-anchor="middle" style="fill:#111;font-family:var(--font-body);font-size:13px">Register</text>
-  <line class="d-line d-arrow-both" style="stroke-width:3" x1="140" y1="286" x2="140" y2="306"/>
-  <rect class="d-box" x="40" y="310" width="200" height="100" style="stroke:var(--d-accent);stroke-width:3"/>
-  <text class="d-title" x="140" y="334" text-anchor="middle">Arithmetic Logic Unit</text>
-  <rect x="56" y="348" width="168" height="44" style="fill:#ffc000;stroke:#333"/><text x="140" y="376" text-anchor="middle" style="fill:#111;font-family:var(--font-body)">Accumulator</text>
-  <rect class="d-box" x="320" y="150" width="200" height="200" style="stroke:var(--d-accent-2);stroke-width:3"/>
-  <text class="d-title" x="420" y="176" text-anchor="middle">Registers</text>
-  <rect x="336" y="192" width="168" height="54" style="fill:#ffc000;stroke:#333"/><text x="420" y="215" text-anchor="middle" style="fill:#111;font-family:var(--font-body);font-size:13.5px">Memory Data</text><text x="420" y="233" text-anchor="middle" style="fill:#111;font-family:var(--font-body);font-size:13.5px">Register</text>
-  <rect x="336" y="270" width="168" height="54" style="fill:#ffc000;stroke:#333"/><text x="420" y="293" text-anchor="middle" style="fill:#111;font-family:var(--font-body);font-size:13.5px">Memory Address</text><text x="420" y="311" text-anchor="middle" style="fill:#111;font-family:var(--font-body);font-size:13.5px">Register</text>
-  <line class="d-line d-arrow-both" style="stroke-width:3" x1="250" y1="210" x2="310" y2="210"/>
-  <line class="d-line d-arrow-both" style="stroke-width:3" x1="250" y1="360" x2="310" y2="330"/>
-  <rect class="d-box-2" x="40" y="452" width="170" height="54"/><text class="d-title" x="125" y="485" text-anchor="middle">INPUT</text>
-  <line class="d-line d-arrow" style="stroke-width:4" x1="125" y1="450" x2="125" y2="428"/>
-  <rect class="d-box-2" x="290" y="452" width="230" height="54"/><text class="d-title" x="405" y="485" text-anchor="middle">Memory</text>
-  <line class="d-line d-arrow-both" style="stroke-width:4" x1="405" y1="428" x2="405" y2="448"/>
+<svg viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg" style="min-width:520px">
+<rect class="d-group" x="40" y="100" width="560" height="280" rx="0"/>
+<rect class="d-group" x="60" y="130" width="220" height="140" rx="0"/>
+<rect class="d-group" x="60" y="290" width="220" height="74" rx="0"/>
+<rect class="d-group" x="360" y="130" width="220" height="140" rx="0"/>
+<rect class="d-box-2" x="240" y="20" width="160" height="44" rx="2"/>
+<rect class="d-box-3" x="80" y="160" width="180" height="40" rx="2"/>
+<rect class="d-box-3" x="80" y="212" width="180" height="40" rx="2"/>
+<rect class="d-box-a" x="80" y="314" width="180" height="38" rx="2"/>
+<rect class="d-box" x="380" y="160" width="180" height="40" rx="2"/>
+<rect class="d-box" x="380" y="212" width="180" height="40" rx="2"/>
+<path class="d-line d-arr2" d="M280.0 200.0 L360.0 200.0"/>
+<path class="d-line d-arr2" d="M170.0 270.0 L170.0 290.0"/>
+<rect class="d-box-2" x="80" y="420" width="160" height="44" rx="2"/>
+<rect class="d-box-2" x="380" y="420" width="180" height="44" rx="2"/>
+<path class="d-line d-arr" d="M320.0 100.0 L320.0 64.0"/>
+<path class="d-line d-arr" d="M160.0 420.0 L160.0 380.0"/>
+<path class="d-line d-arr2" d="M470.0 380.0 L470.0 420.0"/>
+<text class="d-label" x="320" y="42.0" text-anchor="middle" dominant-baseline="central">Output</text>
+<text class="d-caps" x="50" y="114.0" text-anchor="start" dominant-baseline="central">Central processing unit (CPU)</text>
+<text class="d-caps" x="70" y="144.0" text-anchor="start" dominant-baseline="central">Control unit</text>
+<text class="d-label" x="170" y="180.0" text-anchor="middle" dominant-baseline="central">Program counter</text>
+<text class="d-label" x="170" y="232.0" text-anchor="middle" dominant-baseline="central">Current instruction register</text>
+<text class="d-caps" x="70" y="304.0" text-anchor="start" dominant-baseline="central">Arithmetic logic unit</text>
+<text class="d-label d-on-accent" x="170" y="333.0" text-anchor="middle" dominant-baseline="central">Accumulator</text>
+<text class="d-caps" x="370" y="144.0" text-anchor="start" dominant-baseline="central">Registers</text>
+<text class="d-label" x="470" y="180.0" text-anchor="middle" dominant-baseline="central">Memory data register</text>
+<text class="d-label" x="470" y="232.0" text-anchor="middle" dominant-baseline="central">Memory address register</text>
+<text class="d-label" x="160" y="442.0" text-anchor="middle" dominant-baseline="central">Input</text>
+<text class="d-label" x="470" y="442.0" text-anchor="middle" dominant-baseline="central">Memory</text>
 </svg>

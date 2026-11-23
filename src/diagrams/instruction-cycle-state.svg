@@ -1,38 +1,47 @@
-<svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
-  <g>
-    <circle class="d-box-2" cx="80" cy="80" r="46"/>
-    <circle class="d-box-2" cx="320" cy="80" r="46"/>
-    <circle class="d-box-2" cx="560" cy="80" r="46"/>
-    <circle class="d-box" cx="80" cy="250" r="46"/>
-    <circle class="d-box" cx="200" cy="250" r="46"/>
-    <circle class="d-box" cx="320" cy="250" r="46"/>
-    <circle class="d-box-3" cx="440" cy="250" r="46"/>
-    <circle class="d-box" cx="560" cy="250" r="46"/>
-  </g>
-  <g class="d-text" text-anchor="middle" style="font-size:12.5px">
-    <text x="80" y="76">Instruction</text><text x="80" y="92">fetch</text>
-    <text x="320" y="76">Operand</text><text x="320" y="92">fetch</text>
-    <text x="560" y="76">Operand</text><text x="560" y="92">store</text>
-    <text x="80" y="238">Instruction</text><text x="80" y="254">address</text><text x="80" y="270">calculation</text>
-    <text x="200" y="238">Instruction</text><text x="200" y="254">operation</text><text x="200" y="270">decoding</text>
-    <text x="320" y="238">Operand</text><text x="320" y="254">address</text><text x="320" y="270">calculation</text>
-    <text x="440" y="246">Data</text><text x="440" y="262">Operation</text>
-    <text x="560" y="238">Operand</text><text x="560" y="254">address</text><text x="560" y="270">calculation</text>
-  </g>
-  <line class="d-line d-arrow" x1="80" y1="204" x2="80" y2="128"/>
-  <line class="d-line d-arrow" x1="110" y1="115" x2="174" y2="210"/>
-  <line class="d-line d-arrow" x1="246" y1="250" x2="272" y2="250"/>
-  <line class="d-line d-arrow" x1="308" y1="205" x2="308" y2="128"/>
-  <line class="d-line d-arrow" x1="334" y1="126" x2="334" y2="203"/>
-  <text class="d-small" x="346" y="160">Multiple</text><text class="d-small" x="346" y="174">operands</text>
-  <path class="d-line d-arrow" d="M366 80 H400 L430 204"/>
-  <line class="d-line d-arrow" x1="486" y1="250" x2="512" y2="250"/>
-  <line class="d-line d-arrow" x1="548" y1="205" x2="548" y2="128"/>
-  <line class="d-line d-arrow" x1="574" y1="126" x2="574" y2="203"/>
-  <text class="d-small" x="586" y="160">Multiple</text><text class="d-small" x="586" y="174">results</text>
-  <path class="d-line d-acc" d="M606 80 H650 L670 340 H118"/>
-  <line class="d-line d-arrow d-acc" style="marker-end:url(#d-ah-acc)" x1="118" y1="340" x2="94" y2="296"/>
-  <line class="d-line d-arrow d-acc-2" style="marker-end:url(#d-ah-acc2)" x1="380" y1="340" x2="338" y2="296"/>
-  <text class="d-small" x="104" y="362" style="fill:var(--d-text)">Instruction complete, fetch next instruction</text>
-  <text class="d-small" x="436" y="362" style="fill:var(--d-text)">Return for string or vector data</text>
+<svg viewBox="0 0 740 370" xmlns="http://www.w3.org/2000/svg" style="min-width:640px">
+<rect class="d-box-3" x="20" y="44" width="122" height="54" rx="2"/>
+<rect class="d-box-3" x="304" y="44" width="122" height="54" rx="2"/>
+<rect class="d-box-3" x="588" y="44" width="122" height="54" rx="2"/>
+<rect class="d-box-2" x="20" y="214" width="122" height="54" rx="2"/>
+<rect class="d-box-2" x="162" y="214" width="122" height="54" rx="2"/>
+<rect class="d-box-2" x="304" y="214" width="122" height="54" rx="2"/>
+<rect class="d-box-a" x="446" y="214" width="122" height="54" rx="2"/>
+<rect class="d-box-2" x="588" y="214" width="122" height="54" rx="2"/>
+<path class="d-line d-arr" d="M81.0 214.0 L81.0 98.0"/>
+<path class="d-line d-arr" d="M142.0 71.0 L223.0 71.0 L223.0 214.0"/>
+<path class="d-line d-arr" d="M284.0 241.0 L304.0 241.0"/>
+<path class="d-line d-arr" d="M346.7 214.0 L346.7 98.0"/>
+<path class="d-line-mut d-arr-mut" d="M383.3 98.0 L383.3 214.0"/>
+<path class="d-line d-arr" d="M426.0 71.0 L507.0 71.0 L507.0 214.0"/>
+<path class="d-line d-arr" d="M568.0 241.0 L588.0 241.0"/>
+<path class="d-line d-arr" d="M630.7 214.0 L630.7 98.0"/>
+<path class="d-line-mut d-arr-mut" d="M667.3 98.0 L667.3 214.0"/>
+<path class="d-line-acc d-arr-acc" d="M710.0 71.0 L726.0 71.0 L726.0 320.0 L81.0 320.0 L81.0 268.0"/>
+<path class="d-line-acc d-arr-acc" d="M365.0 320.0 L365.0 268.0"/>
+<text class="d-caps" x="20" y="24.0" text-anchor="start" dominant-baseline="central">CPU ACCESS TO MEMORY OR I/O</text>
+<text class="d-caps" x="150" y="292.0" text-anchor="start" dominant-baseline="central">INTERNAL CPU OPERATIONS</text>
+<text class="d-label" x="81" y="63.0" text-anchor="middle" dominant-baseline="central">Instruction</text>
+<text class="d-label" x="81" y="79.0" text-anchor="middle" dominant-baseline="central">fetch</text>
+<text class="d-label" x="365" y="63.0" text-anchor="middle" dominant-baseline="central">Operand</text>
+<text class="d-label" x="365" y="79.0" text-anchor="middle" dominant-baseline="central">fetch</text>
+<text class="d-label" x="649" y="63.0" text-anchor="middle" dominant-baseline="central">Operand</text>
+<text class="d-label" x="649" y="79.0" text-anchor="middle" dominant-baseline="central">store</text>
+<text class="d-label" x="81" y="233.0" text-anchor="middle" dominant-baseline="central">Instruction</text>
+<text class="d-label" x="81" y="249.0" text-anchor="middle" dominant-baseline="central">address calc.</text>
+<text class="d-label" x="223" y="233.0" text-anchor="middle" dominant-baseline="central">Instruction</text>
+<text class="d-label" x="223" y="249.0" text-anchor="middle" dominant-baseline="central">decoding</text>
+<text class="d-label" x="365" y="233.0" text-anchor="middle" dominant-baseline="central">Operand</text>
+<text class="d-label" x="365" y="249.0" text-anchor="middle" dominant-baseline="central">address calc.</text>
+<text class="d-label d-on-accent" x="507" y="233.0" text-anchor="middle" dominant-baseline="central">Data</text>
+<text class="d-label d-on-accent" x="507" y="249.0" text-anchor="middle" dominant-baseline="central">operation</text>
+<text class="d-label" x="649" y="233.0" text-anchor="middle" dominant-baseline="central">Operand</text>
+<text class="d-label" x="649" y="249.0" text-anchor="middle" dominant-baseline="central">address calc.</text>
+<rect x="376.6" y="147.3" width="117.5" height="17.5" fill="var(--d-canvas)"/>
+<text class="d-small" x="435.3" y="156.0" text-anchor="middle" dominant-baseline="central">multiple operands</text>
+<rect x="561.8" y="147.3" width="111.0" height="17.5" fill="var(--d-canvas)"/>
+<text class="d-small" x="617.3" y="156.0" text-anchor="middle" dominant-baseline="central">multiple results</text>
+<rect x="71.1" y="311.3" width="297.8" height="17.5" fill="var(--d-canvas)"/>
+<text class="d-small" x="220" y="320.0" text-anchor="middle" dominant-baseline="central">instruction complete — fetch next instruction</text>
+<rect x="354.0" y="335.3" width="214.1" height="17.5" fill="var(--d-canvas)"/>
+<text class="d-small" x="461" y="344.0" text-anchor="middle" dominant-baseline="central">return for string or vector data</text>
 </svg>

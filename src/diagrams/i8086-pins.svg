@@ -1,0 +1,127 @@
+<svg viewBox="0 0 720 620" xmlns="http://www.w3.org/2000/svg" style="min-width:560px">
+<rect class="d-box-2" x="260" y="30" width="200" height="570" rx="6"/>
+<path class="d-line" d="M344 30 A16 16 0 0 0 376 30"/>
+<path class="d-line" d="M232.0 49.0 L260.0 49.0"/>
+<path class="d-line" d="M232.0 77.0 L260.0 77.0"/>
+<path class="d-line" d="M232.0 105.0 L260.0 105.0"/>
+<path class="d-line" d="M232.0 133.0 L260.0 133.0"/>
+<path class="d-line" d="M232.0 161.0 L260.0 161.0"/>
+<path class="d-line" d="M232.0 189.0 L260.0 189.0"/>
+<path class="d-line" d="M232.0 217.0 L260.0 217.0"/>
+<path class="d-line" d="M232.0 245.0 L260.0 245.0"/>
+<path class="d-line" d="M232.0 273.0 L260.0 273.0"/>
+<path class="d-line" d="M232.0 301.0 L260.0 301.0"/>
+<path class="d-line" d="M232.0 329.0 L260.0 329.0"/>
+<path class="d-line" d="M232.0 357.0 L260.0 357.0"/>
+<path class="d-line" d="M232.0 385.0 L260.0 385.0"/>
+<path class="d-line" d="M232.0 413.0 L260.0 413.0"/>
+<path class="d-line" d="M232.0 441.0 L260.0 441.0"/>
+<path class="d-line" d="M232.0 469.0 L260.0 469.0"/>
+<path class="d-line" d="M232.0 497.0 L260.0 497.0"/>
+<path class="d-line" d="M232.0 525.0 L260.0 525.0"/>
+<path class="d-line" d="M232.0 553.0 L260.0 553.0"/>
+<path class="d-line" d="M232.0 581.0 L260.0 581.0"/>
+<path class="d-line" d="M460.0 49.0 L488.0 49.0"/>
+<path class="d-line" d="M460.0 77.0 L488.0 77.0"/>
+<path class="d-line" d="M460.0 105.0 L488.0 105.0"/>
+<path class="d-line" d="M460.0 133.0 L488.0 133.0"/>
+<path class="d-line" d="M460.0 161.0 L488.0 161.0"/>
+<path class="d-line" d="M460.0 189.0 L488.0 189.0"/>
+<path class="d-line" d="M460.0 217.0 L488.0 217.0"/>
+<path class="d-line" d="M460.0 245.0 L488.0 245.0"/>
+<path class="d-line" d="M460.0 273.0 L488.0 273.0"/>
+<path class="d-line" d="M460.0 301.0 L488.0 301.0"/>
+<path class="d-line" d="M460.0 329.0 L488.0 329.0"/>
+<path class="d-line" d="M460.0 357.0 L488.0 357.0"/>
+<path class="d-line" d="M460.0 385.0 L488.0 385.0"/>
+<path class="d-line" d="M460.0 413.0 L488.0 413.0"/>
+<path class="d-line" d="M460.0 441.0 L488.0 441.0"/>
+<path class="d-line" d="M460.0 469.0 L488.0 469.0"/>
+<path class="d-line" d="M460.0 497.0 L488.0 497.0"/>
+<path class="d-line" d="M460.0 525.0 L488.0 525.0"/>
+<path class="d-line" d="M460.0 553.0 L488.0 553.0"/>
+<path class="d-line" d="M460.0 581.0 L488.0 581.0"/>
+<text class="d-title" x="360" y="306.0" text-anchor="middle" dominant-baseline="central">8086</text>
+<text class="d-title" x="360" y="324.0" text-anchor="middle" dominant-baseline="central">CPU</text>
+<text class="d-label" x="226" y="49.0" text-anchor="end" dominant-baseline="central">GND</text>
+<text class="d-small" x="268" y="49.0" text-anchor="start" dominant-baseline="central">1</text>
+<text class="d-label d-red" x="226" y="77.0" text-anchor="end" dominant-baseline="central">AD14</text>
+<text class="d-small" x="268" y="77.0" text-anchor="start" dominant-baseline="central">2</text>
+<text class="d-label d-red" x="226" y="105.0" text-anchor="end" dominant-baseline="central">AD13</text>
+<text class="d-small" x="268" y="105.0" text-anchor="start" dominant-baseline="central">3</text>
+<text class="d-label d-red" x="226" y="133.0" text-anchor="end" dominant-baseline="central">AD12</text>
+<text class="d-small" x="268" y="133.0" text-anchor="start" dominant-baseline="central">4</text>
+<text class="d-label d-red" x="226" y="161.0" text-anchor="end" dominant-baseline="central">AD11</text>
+<text class="d-small" x="268" y="161.0" text-anchor="start" dominant-baseline="central">5</text>
+<text class="d-label d-red" x="226" y="189.0" text-anchor="end" dominant-baseline="central">AD10</text>
+<text class="d-small" x="268" y="189.0" text-anchor="start" dominant-baseline="central">6</text>
+<text class="d-label d-red" x="226" y="217.0" text-anchor="end" dominant-baseline="central">AD9</text>
+<text class="d-small" x="268" y="217.0" text-anchor="start" dominant-baseline="central">7</text>
+<text class="d-label d-red" x="226" y="245.0" text-anchor="end" dominant-baseline="central">AD8</text>
+<text class="d-small" x="268" y="245.0" text-anchor="start" dominant-baseline="central">8</text>
+<text class="d-label d-red" x="226" y="273.0" text-anchor="end" dominant-baseline="central">AD7</text>
+<text class="d-small" x="268" y="273.0" text-anchor="start" dominant-baseline="central">9</text>
+<text class="d-label d-red" x="226" y="301.0" text-anchor="end" dominant-baseline="central">AD6</text>
+<text class="d-small" x="268" y="301.0" text-anchor="start" dominant-baseline="central">10</text>
+<text class="d-label d-red" x="226" y="329.0" text-anchor="end" dominant-baseline="central">AD5</text>
+<text class="d-small" x="268" y="329.0" text-anchor="start" dominant-baseline="central">11</text>
+<text class="d-label d-red" x="226" y="357.0" text-anchor="end" dominant-baseline="central">AD4</text>
+<text class="d-small" x="268" y="357.0" text-anchor="start" dominant-baseline="central">12</text>
+<text class="d-label d-red" x="226" y="385.0" text-anchor="end" dominant-baseline="central">AD3</text>
+<text class="d-small" x="268" y="385.0" text-anchor="start" dominant-baseline="central">13</text>
+<text class="d-label d-red" x="226" y="413.0" text-anchor="end" dominant-baseline="central">AD2</text>
+<text class="d-small" x="268" y="413.0" text-anchor="start" dominant-baseline="central">14</text>
+<text class="d-label d-red" x="226" y="441.0" text-anchor="end" dominant-baseline="central">AD1</text>
+<text class="d-small" x="268" y="441.0" text-anchor="start" dominant-baseline="central">15</text>
+<text class="d-label d-red" x="226" y="469.0" text-anchor="end" dominant-baseline="central">AD0</text>
+<text class="d-small" x="268" y="469.0" text-anchor="start" dominant-baseline="central">16</text>
+<text class="d-label" x="226" y="497.0" text-anchor="end" dominant-baseline="central">NMI</text>
+<text class="d-small" x="268" y="497.0" text-anchor="start" dominant-baseline="central">17</text>
+<text class="d-label" x="226" y="525.0" text-anchor="end" dominant-baseline="central">INTR</text>
+<text class="d-small" x="268" y="525.0" text-anchor="start" dominant-baseline="central">18</text>
+<text class="d-label" x="226" y="553.0" text-anchor="end" dominant-baseline="central">CLK</text>
+<text class="d-small" x="268" y="553.0" text-anchor="start" dominant-baseline="central">19</text>
+<text class="d-label" x="226" y="581.0" text-anchor="end" dominant-baseline="central">GND</text>
+<text class="d-small" x="268" y="581.0" text-anchor="start" dominant-baseline="central">20</text>
+<text class="d-label" x="494" y="49.0" text-anchor="start" dominant-baseline="central">VCC</text>
+<text class="d-small" x="452" y="49.0" text-anchor="end" dominant-baseline="central">40</text>
+<text class="d-label d-red" x="494" y="77.0" text-anchor="start" dominant-baseline="central">AD15</text>
+<text class="d-small" x="452" y="77.0" text-anchor="end" dominant-baseline="central">39</text>
+<text class="d-label d-red" x="494" y="105.0" text-anchor="start" dominant-baseline="central">A16/S3</text>
+<text class="d-small" x="452" y="105.0" text-anchor="end" dominant-baseline="central">38</text>
+<text class="d-label d-red" x="494" y="133.0" text-anchor="start" dominant-baseline="central">A17/S4</text>
+<text class="d-small" x="452" y="133.0" text-anchor="end" dominant-baseline="central">37</text>
+<text class="d-label d-red" x="494" y="161.0" text-anchor="start" dominant-baseline="central">A18/S5</text>
+<text class="d-small" x="452" y="161.0" text-anchor="end" dominant-baseline="central">36</text>
+<text class="d-label d-red" x="494" y="189.0" text-anchor="start" dominant-baseline="central">A19/S6</text>
+<text class="d-small" x="452" y="189.0" text-anchor="end" dominant-baseline="central">35</text>
+<text class="d-label" x="494" y="217.0" text-anchor="start" dominant-baseline="central">BHE̅/S7</text>
+<text class="d-small" x="452" y="217.0" text-anchor="end" dominant-baseline="central">34</text>
+<text class="d-label" x="494" y="245.0" text-anchor="start" dominant-baseline="central">MN/MX̅</text>
+<text class="d-small" x="452" y="245.0" text-anchor="end" dominant-baseline="central">33</text>
+<text class="d-label" x="494" y="273.0" text-anchor="start" dominant-baseline="central">RD̅</text>
+<text class="d-small" x="452" y="273.0" text-anchor="end" dominant-baseline="central">32</text>
+<text class="d-label" x="494" y="301.0" text-anchor="start" dominant-baseline="central">HOLD (RQ̅/GT̅0)</text>
+<text class="d-small" x="452" y="301.0" text-anchor="end" dominant-baseline="central">31</text>
+<text class="d-label" x="494" y="329.0" text-anchor="start" dominant-baseline="central">HLDA (RQ̅/GT̅1)</text>
+<text class="d-small" x="452" y="329.0" text-anchor="end" dominant-baseline="central">30</text>
+<text class="d-label" x="494" y="357.0" text-anchor="start" dominant-baseline="central">WR̅ (LOCK̅)</text>
+<text class="d-small" x="452" y="357.0" text-anchor="end" dominant-baseline="central">29</text>
+<text class="d-label" x="494" y="385.0" text-anchor="start" dominant-baseline="central">M/IO̅ (S̅2)</text>
+<text class="d-small" x="452" y="385.0" text-anchor="end" dominant-baseline="central">28</text>
+<text class="d-label" x="494" y="413.0" text-anchor="start" dominant-baseline="central">DT/R̅ (S̅1)</text>
+<text class="d-small" x="452" y="413.0" text-anchor="end" dominant-baseline="central">27</text>
+<text class="d-label" x="494" y="441.0" text-anchor="start" dominant-baseline="central">DEN̅ (S̅0)</text>
+<text class="d-small" x="452" y="441.0" text-anchor="end" dominant-baseline="central">26</text>
+<text class="d-label" x="494" y="469.0" text-anchor="start" dominant-baseline="central">ALE (QS0)</text>
+<text class="d-small" x="452" y="469.0" text-anchor="end" dominant-baseline="central">25</text>
+<text class="d-label" x="494" y="497.0" text-anchor="start" dominant-baseline="central">INTA̅ (QS1)</text>
+<text class="d-small" x="452" y="497.0" text-anchor="end" dominant-baseline="central">24</text>
+<text class="d-label" x="494" y="525.0" text-anchor="start" dominant-baseline="central">TEST̅</text>
+<text class="d-small" x="452" y="525.0" text-anchor="end" dominant-baseline="central">23</text>
+<text class="d-label" x="494" y="553.0" text-anchor="start" dominant-baseline="central">READY</text>
+<text class="d-small" x="452" y="553.0" text-anchor="end" dominant-baseline="central">22</text>
+<text class="d-label" x="494" y="581.0" text-anchor="start" dominant-baseline="central">RESET</text>
+<text class="d-small" x="452" y="581.0" text-anchor="end" dominant-baseline="central">21</text>
+<text class="d-small" x="20" y="606.0" text-anchor="start" dominant-baseline="central">Red = multiplexed address/data and address/status lines. In brackets: the maximum-mode meaning of pins 24–31.</text>
+</svg>

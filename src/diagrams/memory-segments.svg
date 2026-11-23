@@ -1,26 +1,44 @@
-<svg viewBox="0 0 560 470" xmlns="http://www.w3.org/2000/svg">
-  <g class="d-mono" text-anchor="end" style="font-size:12.5px">
-    <text x="90" y="34">F0000</text><text x="90" y="60">E0000</text><text x="90" y="86">D0000</text><text x="90" y="112">C0000</text>
-    <text x="90" y="138">B0000</text><text x="90" y="164">A0000</text><text x="90" y="190">90000</text><text x="90" y="216">80000</text>
-    <text x="90" y="242">70000</text><text x="90" y="268">60000</text><text x="90" y="294">50000</text><text x="90" y="320">40000</text>
-    <text x="90" y="346">30000</text><text x="90" y="372">20000</text><text x="90" y="398">10000</text><text x="90" y="424">00000</text>
-  </g>
-  <g>
-    <rect class="d-box" x="104" y="10" width="140" height="420"/>
-    <line class="d-line" x1="104" y1="36" x2="244" y2="36"/><line class="d-line" x1="104" y1="62" x2="244" y2="62"/><line class="d-line" x1="104" y1="88" x2="244" y2="88"/><line class="d-line" x1="104" y1="114" x2="244" y2="114"/>
-    <line class="d-line" x1="104" y1="140" x2="244" y2="140"/><line class="d-line" x1="104" y1="166" x2="244" y2="166"/><line class="d-line" x1="104" y1="192" x2="244" y2="192"/>
-    <rect class="d-box-a" x="104" y="192" width="140" height="26" style="opacity:.75"/>
-    <line class="d-line" x1="104" y1="218" x2="244" y2="218"/><line class="d-line" x1="104" y1="244" x2="244" y2="244"/><line class="d-line" x1="104" y1="270" x2="244" y2="270"/>
-    <line class="d-line" x1="104" y1="296" x2="244" y2="296"/><line class="d-line" x1="104" y1="322" x2="244" y2="322"/><line class="d-line" x1="104" y1="348" x2="244" y2="348"/>
-    <line class="d-line" x1="104" y1="374" x2="244" y2="374"/><line class="d-line" x1="104" y1="400" x2="244" y2="400"/>
-  </g>
-  <line class="d-line d-arrow d-acc" style="marker-end:url(#d-ah-acc)" x1="244" y1="205" x2="400" y2="205"/>
-  <rect class="d-box-2" x="404" y="170" width="140" height="70"/>
-  <text class="d-text" x="474" y="210" text-anchor="middle">One Segment</text>
-  <text class="d-mono" x="324" y="166" text-anchor="middle">8000:FFFF</text>
-  <text class="d-mono" x="324" y="256" text-anchor="middle">8000:0000</text>
-  <line class="d-line d-arrow" x1="306" y1="300" x2="306" y2="266"/>
-  <line class="d-line d-arrow" x1="350" y1="300" x2="350" y2="266"/>
-  <text class="d-small" x="294" y="318" text-anchor="middle">segment</text>
-  <text class="d-small" x="360" y="318" text-anchor="middle">offset</text>
+<svg viewBox="0 0 620 470" xmlns="http://www.w3.org/2000/svg" style="min-width:480px">
+<rect class="d-box" x="110" y="20" width="150" height="26" rx="0"/>
+<rect class="d-box" x="110" y="46" width="150" height="26" rx="0"/>
+<rect class="d-box" x="110" y="72" width="150" height="26" rx="0"/>
+<rect class="d-box" x="110" y="98" width="150" height="26" rx="0"/>
+<rect class="d-box" x="110" y="124" width="150" height="26" rx="0"/>
+<rect class="d-box" x="110" y="150" width="150" height="26" rx="0"/>
+<rect class="d-box" x="110" y="176" width="150" height="26" rx="0"/>
+<rect class="d-box-a" x="110" y="202" width="150" height="26" rx="0"/>
+<rect class="d-box" x="110" y="228" width="150" height="26" rx="0"/>
+<rect class="d-box" x="110" y="254" width="150" height="26" rx="0"/>
+<rect class="d-box" x="110" y="280" width="150" height="26" rx="0"/>
+<rect class="d-box" x="110" y="306" width="150" height="26" rx="0"/>
+<rect class="d-box" x="110" y="332" width="150" height="26" rx="0"/>
+<rect class="d-box" x="110" y="358" width="150" height="26" rx="0"/>
+<rect class="d-box" x="110" y="384" width="150" height="26" rx="0"/>
+<rect class="d-box" x="110" y="410" width="150" height="26" rx="0"/>
+<rect class="d-box-3" x="400" y="170" width="190" height="90" rx="2"/>
+<path class="d-line-acc d-arr-acc" d="M260.0 215.0 L400.0 215.0"/>
+<path class="d-line-mut d-arr-mut" d="M430.0 310.0 L440.0 290.0"/>
+<path class="d-line-mut d-arr-mut" d="M530.0 310.0 L520.0 290.0"/>
+<text class="d-mono" x="98" y="33.0" text-anchor="end" dominant-baseline="central">F0000</text>
+<text class="d-mono" x="98" y="59.0" text-anchor="end" dominant-baseline="central">E0000</text>
+<text class="d-mono" x="98" y="85.0" text-anchor="end" dominant-baseline="central">D0000</text>
+<text class="d-mono" x="98" y="111.0" text-anchor="end" dominant-baseline="central">C0000</text>
+<text class="d-mono" x="98" y="137.0" text-anchor="end" dominant-baseline="central">B0000</text>
+<text class="d-mono" x="98" y="163.0" text-anchor="end" dominant-baseline="central">A0000</text>
+<text class="d-mono" x="98" y="189.0" text-anchor="end" dominant-baseline="central">90000</text>
+<text class="d-mono" x="98" y="215.0" text-anchor="end" dominant-baseline="central">80000</text>
+<text class="d-mono" x="98" y="241.0" text-anchor="end" dominant-baseline="central">70000</text>
+<text class="d-mono" x="98" y="267.0" text-anchor="end" dominant-baseline="central">60000</text>
+<text class="d-mono" x="98" y="293.0" text-anchor="end" dominant-baseline="central">50000</text>
+<text class="d-mono" x="98" y="319.0" text-anchor="end" dominant-baseline="central">40000</text>
+<text class="d-mono" x="98" y="345.0" text-anchor="end" dominant-baseline="central">30000</text>
+<text class="d-mono" x="98" y="371.0" text-anchor="end" dominant-baseline="central">20000</text>
+<text class="d-mono" x="98" y="397.0" text-anchor="end" dominant-baseline="central">10000</text>
+<text class="d-mono" x="98" y="423.0" text-anchor="end" dominant-baseline="central">00000</text>
+<text class="d-label" x="495" y="207.0" text-anchor="middle" dominant-baseline="central">One segment</text>
+<text class="d-small" x="495" y="223.0" text-anchor="middle" dominant-baseline="central">64 KB = 2¹⁶ bytes</text>
+<text class="d-mono" x="495" y="152.0" text-anchor="middle" dominant-baseline="central">8000:FFFF  (last byte)</text>
+<text class="d-mono" x="495" y="278.0" text-anchor="middle" dominant-baseline="central">8000:0000  (first byte)</text>
+<text class="d-small" x="430" y="320.0" text-anchor="middle" dominant-baseline="central">segment</text>
+<text class="d-small" x="530" y="320.0" text-anchor="middle" dominant-baseline="central">offset</text>
 </svg>

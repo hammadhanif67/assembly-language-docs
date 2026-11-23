@@ -1,27 +1,27 @@
-<svg viewBox="0 0 700 290" xmlns="http://www.w3.org/2000/svg">
-  <g class="d-text" text-anchor="middle" style="font-size:17px">
-    <text x="150" y="44">time</text><line class="d-line" x1="110" y1="52" x2="190" y2="52"/><text x="150" y="74">program</text>
-    <text x="220" y="62">=</text>
-    <text x="290" y="44">time</text><line class="d-line" x1="255" y1="52" x2="325" y2="52"/><text x="290" y="74">cycle</text>
-    <text x="350" y="62">×</text>
-    <text x="430" y="44">cycles</text><line class="d-line d-acc-2" x1="375" y1="52" x2="485" y2="52"/><text x="430" y="74">instruction</text>
-    <text x="510" y="62">×</text>
-    <text x="590" y="44">instructions</text><line class="d-line d-acc" x1="535" y1="52" x2="645" y2="52"/><text x="590" y="74">program</text>
-  </g>
-  <path class="d-box-2" d="M20 190 L110 110 V140 H330 V240 H110 V270 Z" style="stroke:var(--d-accent)"/>
-  <g class="d-small" text-anchor="middle" style="fill:var(--d-text);font-size:12.5px">
-    <text x="220" y="166">The CISC approach attempts to</text>
-    <text x="220" y="184" style="font-weight:700">minimize the number of</text>
-    <text x="220" y="202" style="font-weight:700">instructions per program,</text>
-    <text x="220" y="220">sacrificing the number of</text>
-    <text x="220" y="238">cycles per instruction.</text>
-  </g>
-  <path class="d-box-3" d="M680 190 L590 110 V140 H370 V240 H590 V270 Z" style="stroke:var(--d-accent-2)"/>
-  <g class="d-small" text-anchor="middle" style="fill:var(--d-text);font-size:12.5px">
-    <text x="480" y="166">RISC does the opposite,</text>
-    <text x="480" y="184" style="font-weight:700">reducing the cycles per</text>
-    <text x="480" y="202" style="font-weight:700">instruction at the cost of the</text>
-    <text x="480" y="220">number of instructions per</text>
-    <text x="480" y="238">program.</text>
-  </g>
+<svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" style="min-width:600px">
+<path class="d-line" d="M45.0 56.0 L135.0 56.0"/>
+<path class="d-line" d="M210.0 56.0 L290.0 56.0"/>
+<path class="d-line-acc" d="M360.0 56.0 L480.0 56.0"/>
+<path class="d-line-acc" d="M545.0 56.0 L675.0 56.0"/>
+<rect class="d-box-2" x="380" y="150" width="320" height="110" rx="2"/>
+<rect class="d-box-3" x="20" y="150" width="320" height="110" rx="2"/>
+<path class="d-line-mut d-arr-mut" d="M610.0 88.0 L610.0 120.0 L540.0 120.0 L540.0 150.0"/>
+<path class="d-line-mut d-arr-mut" d="M420.0 88.0 L420.0 120.0 L180.0 120.0 L180.0 150.0"/>
+<text class="d-label" x="90" y="40.0" text-anchor="middle" dominant-baseline="central">time</text>
+<text class="d-label" x="90" y="72.0" text-anchor="middle" dominant-baseline="central">program</text>
+<text class="d-title" x="170" y="56.0" text-anchor="middle" dominant-baseline="central">=</text>
+<text class="d-label" x="250" y="40.0" text-anchor="middle" dominant-baseline="central">time</text>
+<text class="d-label" x="250" y="72.0" text-anchor="middle" dominant-baseline="central">cycle</text>
+<text class="d-title" x="320" y="56.0" text-anchor="middle" dominant-baseline="central">×</text>
+<text class="d-label" x="420" y="40.0" text-anchor="middle" dominant-baseline="central">cycles</text>
+<text class="d-label" x="420" y="72.0" text-anchor="middle" dominant-baseline="central">instruction</text>
+<text class="d-title" x="510" y="56.0" text-anchor="middle" dominant-baseline="central">×</text>
+<text class="d-label" x="610" y="40.0" text-anchor="middle" dominant-baseline="central">instructions</text>
+<text class="d-label" x="610" y="72.0" text-anchor="middle" dominant-baseline="central">program</text>
+<text class="d-title" x="540" y="172.0" text-anchor="middle" dominant-baseline="central">CISC</text>
+<text class="d-text" x="540" y="202.0" text-anchor="middle" dominant-baseline="central">minimizes instructions per program,</text>
+<text class="d-text" x="540" y="218.0" text-anchor="middle" dominant-baseline="central">sacrificing cycles per instruction</text>
+<text class="d-title" x="180" y="172.0" text-anchor="middle" dominant-baseline="central">RISC</text>
+<text class="d-text" x="180" y="202.0" text-anchor="middle" dominant-baseline="central">reduces cycles per instruction,</text>
+<text class="d-text" x="180" y="218.0" text-anchor="middle" dominant-baseline="central">at the cost of instructions per program</text>
 </svg>

@@ -1,0 +1,23 @@
+<svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" style="min-width:620px">
+<rect class="d-box-a" x="20" y="40" width="34" height="46" rx="0"/>
+<rect class="d-box-3" x="54" y="40" width="175" height="46" rx="0"/>
+<rect class="d-box-2" x="229" y="40" width="491" height="46" rx="0"/>
+<rect class="d-box-a" x="20" y="150" width="34" height="46" rx="0"/>
+<rect class="d-box-3" x="54" y="150" width="120.3125" height="46" rx="0"/>
+<rect class="d-box-2" x="174.3125" y="150" width="545.6875" height="46" rx="0"/>
+<text class="d-caps" x="20" y="24.0" text-anchor="start" dominant-baseline="central">Single precision (float, 32 bits)</text>
+<text class="d-mono d-on-accent" x="37" y="63.0" text-anchor="middle" dominant-baseline="central">S</text>
+<text class="d-label" x="141.5" y="63.0" text-anchor="middle" dominant-baseline="central">exponent · 8 bits</text>
+<text class="d-label" x="474.5" y="63.0" text-anchor="middle" dominant-baseline="central">fraction (mantissa) · 23 bits</text>
+<text class="d-small" x="37" y="102.0" text-anchor="middle" dominant-baseline="central">1</text>
+<text class="d-small" x="141.5" y="102.0" text-anchor="middle" dominant-baseline="central">bias 127</text>
+<text class="d-small" x="720" y="102.0" text-anchor="end" dominant-baseline="central">32 bits</text>
+<text class="d-caps" x="20" y="134.0" text-anchor="start" dominant-baseline="central">Double precision (double, 64 bits)</text>
+<text class="d-mono d-on-accent" x="37" y="173.0" text-anchor="middle" dominant-baseline="central">S</text>
+<text class="d-label" x="114.15625" y="173.0" text-anchor="middle" dominant-baseline="central">exponent · 11 bits</text>
+<text class="d-label" x="447.15625" y="173.0" text-anchor="middle" dominant-baseline="central">fraction (mantissa) · 52 bits</text>
+<text class="d-small" x="37" y="212.0" text-anchor="middle" dominant-baseline="central">1</text>
+<text class="d-small" x="114.15625" y="212.0" text-anchor="middle" dominant-baseline="central">bias 1023</text>
+<text class="d-small" x="720" y="212.0" text-anchor="end" dominant-baseline="central">64 bits</text>
+<text class="d-mono" x="380" y="268.0" text-anchor="middle" dominant-baseline="central">value = (−1)^S × 1.fraction × 2^(exponent − bias)</text>
+</svg>

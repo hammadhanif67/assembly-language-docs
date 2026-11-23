@@ -1,0 +1,40 @@
+<svg viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg" style="min-width:640px">
+<rect class="d-box-2" x="210" y="44" width="60" height="36" rx="0"/>
+<rect class="d-box-2" x="270" y="44" width="60" height="36" rx="0"/>
+<rect class="d-box-2" x="330" y="44" width="60" height="36" rx="0"/>
+<rect class="d-box-2" x="390" y="44" width="60" height="36" rx="0"/>
+<rect class="d-box-a" x="450" y="44" width="60" height="36" rx="0"/>
+<rect class="d-box-2" x="270" y="98" width="60" height="36" rx="0"/>
+<rect class="d-box-3" x="330" y="98" width="60" height="36" rx="0"/>
+<rect class="d-box-3" x="390" y="98" width="60" height="36" rx="0"/>
+<rect class="d-box-2" x="450" y="98" width="60" height="36" rx="0"/>
+<rect class="d-box-2" x="510" y="98" width="60" height="36" rx="0"/>
+<rect class="d-box-2" x="570" y="98" width="60" height="36" rx="0"/>
+<rect class="d-box-2" x="630" y="98" width="60" height="36" rx="0"/>
+<text class="d-mono" x="240" y="22.0" text-anchor="middle" dominant-baseline="central">1</text>
+<text class="d-mono" x="300" y="22.0" text-anchor="middle" dominant-baseline="central">2</text>
+<text class="d-mono" x="360" y="22.0" text-anchor="middle" dominant-baseline="central">3</text>
+<text class="d-mono" x="420" y="22.0" text-anchor="middle" dominant-baseline="central">4</text>
+<text class="d-mono" x="480" y="22.0" text-anchor="middle" dominant-baseline="central">5</text>
+<text class="d-mono" x="540" y="22.0" text-anchor="middle" dominant-baseline="central">6</text>
+<text class="d-mono" x="600" y="22.0" text-anchor="middle" dominant-baseline="central">7</text>
+<text class="d-mono" x="660" y="22.0" text-anchor="middle" dominant-baseline="central">8</text>
+<text class="d-small" x="200" y="22.0" text-anchor="end" dominant-baseline="central">cycle</text>
+<text class="d-mono" x="200" y="62.0" text-anchor="end" dominant-baseline="central">ADD R1, R2, R3</text>
+<text class="d-mono" x="240" y="62.0" text-anchor="middle" dominant-baseline="central">IF</text>
+<text class="d-mono" x="300" y="62.0" text-anchor="middle" dominant-baseline="central">ID</text>
+<text class="d-mono" x="360" y="62.0" text-anchor="middle" dominant-baseline="central">EX</text>
+<text class="d-mono" x="420" y="62.0" text-anchor="middle" dominant-baseline="central">MEM</text>
+<text class="d-mono d-on-accent" x="480" y="62.0" text-anchor="middle" dominant-baseline="central">WB</text>
+<text class="d-mono" x="200" y="116.0" text-anchor="end" dominant-baseline="central">SUB R4, R1, R5</text>
+<text class="d-mono" x="300" y="116.0" text-anchor="middle" dominant-baseline="central">IF</text>
+<text class="d-label" x="360" y="116.0" text-anchor="middle" dominant-baseline="central">bubble</text>
+<text class="d-label" x="420" y="116.0" text-anchor="middle" dominant-baseline="central">bubble</text>
+<text class="d-mono" x="480" y="116.0" text-anchor="middle" dominant-baseline="central">ID</text>
+<text class="d-mono" x="540" y="116.0" text-anchor="middle" dominant-baseline="central">EX</text>
+<text class="d-mono" x="600" y="116.0" text-anchor="middle" dominant-baseline="central">MEM</text>
+<text class="d-mono" x="660" y="116.0" text-anchor="middle" dominant-baseline="central">WB</text>
+<text class="d-small" x="450" y="180.0" text-anchor="middle" dominant-baseline="central">R1 is written in cycle 5 (WB of ADD) but SUB needs R1 when it decodes.</text>
+<text class="d-small" x="450" y="200.0" text-anchor="middle" dominant-baseline="central">Without forwarding the pipeline inserts two bubbles (stalls).</text>
+<text class="d-label" x="450" y="228.0" text-anchor="middle" dominant-baseline="central">With forwarding the EX result goes straight to the next instruction — no stall.</text>
+</svg>
