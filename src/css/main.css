@@ -961,3 +961,46 @@ p.t-math { margin: 4px 0; }
 @media (prefers-reduced-motion: reduce) { .hv-circuit .tr-p { animation: none; stroke-dasharray: none; opacity: .25; } .cd-live i { animation: none; } }
 .hv-circuit { -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, .18) 0%, rgba(0, 0, 0, .12) 48%, #000 62%); mask-image: linear-gradient(90deg, rgba(0, 0, 0, .18) 0%, rgba(0, 0, 0, .12) 48%, #000 62%); }
 @media (max-width: 900px) { .hv-circuit { -webkit-mask-image: none; mask-image: none; opacity: .35; } }
+
+/* ---------- 30. Lesson progress: slim segments instead of the tab row ---------- */
+.lh-progress { display: flex; gap: 4px; width: min(100%, 220px); margin-top: 4px; }
+.lh-progress a { position: relative; flex: 1; height: 6px; border-radius: 3px; background: var(--line-2); transition: background .15s, transform .15s; }
+.lh-progress a.done { background: var(--ink); }
+.lh-progress a[aria-current="page"] { background: var(--red); }
+.lh-progress a:hover, .lh-progress a:focus-visible { transform: scaleY(1.6); background: var(--red-dark); outline: none; }
+.lh-progress a::after { content: attr(data-t); position: absolute; left: 50%; bottom: 14px; z-index: 5; padding: 6px 10px; border-radius: 6px; background: var(--ink); color: #fff; font: 500 12.5px var(--font); white-space: pre; transform: translateX(-50%) scaleY(.625); transform-origin: bottom; opacity: 0; pointer-events: none; transition: opacity .15s; }
+.lh-progress a:hover::after, .lh-progress a:focus-visible::after { opacity: 1; }
+.lh-progress a:first-child::after { left: 0; transform: scaleY(.625); }
+.lh-progress a:last-child::after { left: auto; right: 0; transform: scaleY(.625); }
+
+/* =====================================================================
+   31. Hero v2: programs typed and run live; lines flow into the card
+   ===================================================================== */
+.hv-a { background: radial-gradient(1100px 520px at 82% 30%, rgba(227, 6, 19, .26), transparent 60%), radial-gradient(rgba(255, 255, 255, .055) 1px, transparent 1px) 0 0 / 26px 26px, #0b0b0c; }
+.cd-wrap { position: relative; min-width: 0; }
+.cd-traces { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 0; }
+.cd-traces path { fill: none; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+.cd-traces .tr { stroke: #26262a; stroke-width: 2; }
+.cd-traces .tr-p { stroke: #ff2a36; stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 90 910; stroke-dashoffset: 1000; filter: drop-shadow(0 0 5px rgba(255, 42, 54, .95)); animation: tr-in 3.2s cubic-bezier(.45, 0, .2, 1) infinite; animation-delay: calc(var(--k) * -.37s); }
+@keyframes tr-in { from { stroke-dashoffset: 1000; } to { stroke-dashoffset: 90; } }
+.cd-pad { position: absolute; z-index: 2; width: 9px; height: 9px; border-radius: 2px; background: #ff2a36; box-shadow: 0 0 0 3px rgba(227, 6, 19, .18), 0 0 12px rgba(255, 42, 54, .8); transform: translate(-50%, -50%); animation: pad 3.2s ease-in-out infinite; }
+.cd-pad:nth-of-type(2n) { animation-delay: -1.1s; } .cd-pad:nth-of-type(3n) { animation-delay: -2s; }
+@keyframes pad { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+.cd-wrap .cpu-demo { z-index: 1; }
+.cd-bar { gap: 10px; }
+.cd-tabs { display: flex; flex: 1; gap: 4px; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.cd-tabs::-webkit-scrollbar { display: none; }
+.cd-tab { flex: none; padding: 4px 10px; border: 1px solid transparent; border-radius: 6px; background: none; color: #77776f; font: 500 12px var(--font-mono); cursor: pointer; transition: color .15s, background .15s, border-color .15s; }
+.cd-tab:hover { color: #e8e8e3; }
+.cd-tab.on { background: #1d1d20; border-color: #333336; color: #fff; }
+.cd-live b { font: inherit; }
+.cpu-demo[data-state="typing"] .cd-live i { background: #ffb35c; box-shadow: none; animation: blink 1s steps(2) infinite; }
+.cpu-demo[data-state="done"] .cd-live i { background: var(--red); animation: none; box-shadow: none; }
+@keyframes blink { 50% { opacity: .2; } }
+.cd-code { min-height: calc(7 * 32px + 20px); }
+.cd-line.typing code::after { content: ""; display: inline-block; width: .55em; height: 1.05em; margin-left: 1px; vertical-align: -2px; background: #ff6b74; animation: blink .9s steps(2) infinite; }
+.cd-line { animation: line-in .25s ease both; }
+@keyframes line-in { from { opacity: 0; transform: translateX(-6px); } }
+@media (max-width: 900px) { .cd-traces, .cd-pad { display: none; } }
+@media (prefers-reduced-motion: reduce) { .cd-traces .tr-p, .cd-pad, .cd-line { animation: none; } .cd-traces .tr-p { stroke-dasharray: none; opacity: .3; } }
+.cd-tab.on::after { content: ".asm"; color: #8a8a85; }

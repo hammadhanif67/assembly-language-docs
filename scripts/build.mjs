@@ -330,6 +330,7 @@ ${header(prefix, page)}
       <div class="lh-meta">
         <p class="lh-chapter"><span class="lh-num">${pad(ch.num)}.${idx + 1}</span></p>
         <p class="eyebrow">${esc(ch.title)}<br>Lesson ${idx + 1} of ${ch.pages.length}</p>
+        <nav class="lh-progress" aria-label="Lessons in ${esc(ch.title)}">${ch.pages.map((p, k) => `<a href="${prefix}${p.url}"${p === page ? ' aria-current="page"' : k < idx ? ' class="done"' : ''} data-t="${pad(k + 1)}  ${esc(p.title)}" aria-label="Lesson ${k + 1}: ${esc(p.title)}"></a>`).join('')}</nav>
       </div>
       <div class="lh-main">
         <h1>${esc(page.title)}</h1>
@@ -337,7 +338,6 @@ ${header(prefix, page)}
         <p class="lh-facts">${page.sections ? `<span>${page.sections} sections</span>` : ''}${page.research ? '<span class="tag-research">Researched topic</span>' : ''}</p>
       </div>
     </header>
-    ${strip}
     <div class="lesson-grid">
       <article class="doc-body">
 ${tocHtml ? `<details class="toc-mobile"><summary>On this page</summary><ol>${tocItems}</ol></details>` : ''}
@@ -516,7 +516,6 @@ function renderHome() {
 ${header(prefix)}
 <main id="main" tabindex="-1">
   <section class="hv hv-a">
-    <svg class="hv-circuit" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path class="tr" d="M0 120 H260 V60 H520"/><path class="tr-p" d="M0 120 H260 V60 H520" pathLength="1000" style="--k:0"/><path class="tr" d="M1440 90 H1180 V200 H980"/><path class="tr-p" d="M1440 90 H1180 V200 H980" pathLength="1000" style="--k:1"/><path class="tr" d="M0 520 H180 V420 H420 V470"/><path class="tr-p" d="M0 520 H180 V420 H420 V470" pathLength="1000" style="--k:2"/><path class="tr" d="M1440 600 H1260 V500 H1060"/><path class="tr-p" d="M1440 600 H1260 V500 H1060" pathLength="1000" style="--k:3"/><path class="tr" d="M640 0 V80 H760"/><path class="tr-p" d="M640 0 V80 H760" pathLength="1000" style="--k:4"/><path class="tr" d="M860 700 V610 H1000 V560"/><path class="tr-p" d="M860 700 V610 H1000 V560" pathLength="1000" style="--k:5"/><path class="tr" d="M0 330 H120"/><path class="tr-p" d="M0 330 H120" pathLength="1000" style="--k:6"/><path class="tr" d="M1440 360 H1320 V300"/><path class="tr-p" d="M1440 360 H1320 V300" pathLength="1000" style="--k:7"/></svg>
     <div class="wrap hv-grid">
       <div class="hv-main">
         <p class="hv-eyebrow">Computer Organization &amp; Assembly Language</p>
@@ -525,12 +524,16 @@ ${header(prefix)}
         <div class="hv-cta"><a class="btn btn--primary" href="${prefix}${pages[0].url}">Start learning<i data-lucide="arrow-right"></i></a><a class="btn hv-btn2" href="${prefix}${solved ? solved.url : 'tools/index.html'}">Solved problems</a></div>
         <dl class="hv-stats"><div><dt>Chapters</dt><dd>${chs.length}</dd></div><div><dt>Lessons</dt><dd>${pages.length}</dd></div><div><dt>Diagrams</dt><dd>${usedDiagrams.size}</dd></div><div><dt>Calculators</dt><dd>${allTools.length}</dd></div></dl>
       </div>
-      <div class="cpu-demo" role="img" aria-label="Animation: an 8086 loop adds 5 + 4 + 3 + 2 + 1 into AX, one instruction at a time">
-        <div class="cd-bar"><span class="cd-dots"><i></i><i></i><i></i></span><span class="cd-file">sum.asm · 8086</span><span class="cd-live"><i></i>Running</span></div>
-        <ol class="cd-code"><li class="cd-line"><span class="cd-addr">0000</span><span class="cd-bytes">B9 05 00</span><code><b>mov</b>  cx, <em>5</em></code></li><li class="cd-line"><span class="cd-addr">0003</span><span class="cd-bytes">B8 00 00</span><code><b>mov</b>  ax, <em>0</em></code></li><li class="cd-line"><span class="cd-addr">0006</span><span class="cd-bytes">01 C8</span><code><u>L1:</u> <b>add</b>  ax, cx</code></li><li class="cd-line"><span class="cd-addr">0008</span><span class="cd-bytes">E2 FC</span><code>    <b>loop</b> L1</code></li><li class="cd-line"><span class="cd-addr">000A</span><span class="cd-bytes">F4</span><code><b>hlt</b></code></li></ol>
-        <div class="cd-pipe"><span class="cd-stage" style="--d:0">Fetch</span><i class="cd-arrow"></i><span class="cd-stage" style="--d:1">Decode</span><i class="cd-arrow"></i><span class="cd-stage" style="--d:2">Execute</span><i class="cd-arrow"></i><span class="cd-stage" style="--d:3">Write back</span></div>
-        <div class="cd-regs"><div class="cd-reg"><span>AX</span><b data-reg="AX">0000</b></div><div class="cd-reg"><span>CX</span><b data-reg="CX">0000</b></div><div class="cd-reg"><span>IP</span><b data-reg="IP">0000</b></div><div class="cd-reg"><span>Cycles</span><b data-reg="cyc">0</b></div></div>
-        <p class="cd-result">AX = 000Fh = 5 + 4 + 3 + 2 + 1 = 15</p>
+      <div class="cd-wrap">
+        <svg class="cd-traces" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path class="tr" d="M168 14 H124 V28 H100"/><path class="tr-p" d="M168 14 H124 V28 H100" pathLength="1000" style="--k:0"/><path class="tr" d="M190 66 H132 V58 H100"/><path class="tr-p" d="M190 66 H132 V58 H100" pathLength="1000" style="--k:1"/><path class="tr" d="M150 128 V112 H118 V86 H100"/><path class="tr-p" d="M150 128 V112 H118 V86 H100" pathLength="1000" style="--k:2"/><path class="tr" d="M22 -60 V-22 H14 V0"/><path class="tr-p" d="M22 -60 V-22 H14 V0" pathLength="1000" style="--k:3"/><path class="tr" d="M70 -80 V-30 H62 V0"/><path class="tr-p" d="M70 -80 V-30 H62 V0" pathLength="1000" style="--k:4"/><path class="tr" d="M92 -50 V0"/><path class="tr-p" d="M92 -50 V0" pathLength="1000" style="--k:5"/><path class="tr" d="M30 170 V122 H40 V100"/><path class="tr-p" d="M30 170 V122 H40 V100" pathLength="1000" style="--k:6"/><path class="tr" d="M78 160 V100"/><path class="tr-p" d="M78 160 V100" pathLength="1000" style="--k:7"/><path class="tr" d="M-30 112 H-8 V100 H6 V100"/><path class="tr-p" d="M-30 112 H-8 V100 H6 V100" pathLength="1000" style="--k:8"/></svg>
+        <i class="cd-pad" style="left:100%;top:28%"></i><i class="cd-pad" style="left:100%;top:58%"></i><i class="cd-pad" style="left:100%;top:86%"></i><i class="cd-pad" style="left:14%;top:0%"></i><i class="cd-pad" style="left:62%;top:0%"></i><i class="cd-pad" style="left:92%;top:0%"></i><i class="cd-pad" style="left:40%;top:100%"></i><i class="cd-pad" style="left:78%;top:100%"></i><i class="cd-pad" style="left:6%;top:100%"></i>
+        <div class="cpu-demo" role="img" aria-label="Animation: an 8086 loop adds 5 + 4 + 3 + 2 + 1 into AX, one instruction at a time">
+          <div class="cd-bar"><span class="cd-dots"><i></i><i></i><i></i></span><div class="cd-tabs" role="group" aria-label="Example programs"><span class="cd-tab on">sum.asm</span></div><span class="cd-live"><i></i><b>Running</b></span></div>
+          <ol class="cd-code"><li class="cd-line"><span class="cd-addr">0000</span><span class="cd-bytes">B9 05 00</span><code><b>mov</b>  cx, <em>5</em></code></li><li class="cd-line"><span class="cd-addr">0003</span><span class="cd-bytes">B8 00 00</span><code><b>mov</b>  ax, <em>0</em></code></li><li class="cd-line"><span class="cd-addr">0006</span><span class="cd-bytes">01 C8</span><code><u>L1:</u> <b>add</b>  ax, cx</code></li><li class="cd-line"><span class="cd-addr">0008</span><span class="cd-bytes">E2 FC</span><code>    <b>loop</b> L1</code></li><li class="cd-line"><span class="cd-addr">000A</span><span class="cd-bytes">F4</span><code><b>hlt</b></code></li></ol>
+          <div class="cd-pipe"><span class="cd-stage" style="--d:0">Fetch</span><i class="cd-arrow"></i><span class="cd-stage" style="--d:1">Decode</span><i class="cd-arrow"></i><span class="cd-stage" style="--d:2">Execute</span><i class="cd-arrow"></i><span class="cd-stage" style="--d:3">Write back</span></div>
+          <div class="cd-regs"><div class="cd-reg"><span>AX</span><b data-reg="AX">0000</b></div><div class="cd-reg"><span>CX</span><b data-reg="CX">0000</b></div><div class="cd-reg"><span>IP</span><b data-reg="IP">0000</b></div><div class="cd-reg"><span>Cycles</span><b data-reg="cyc">0</b></div></div>
+          <p class="cd-result">AX = 000Fh = 5 + 4 + 3 + 2 + 1 = 15</p>
+        </div>
       </div>
     </div>
   </section>

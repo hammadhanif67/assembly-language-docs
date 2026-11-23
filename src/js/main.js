@@ -292,45 +292,103 @@
     pick();
   }
 
-  /* ---------- Home hero: an 8086 program that runs on screen ---------- */
+  /* ---------- Home hero: 8086 programs that type themselves in, then run ---------- */
   function setupHeroDemo() {
     const demo = $('.cpu-demo');
     if (!demo) return;
-    const lines = $$('.cd-line', demo), stages = $$('.cd-stage', demo);
-    const reg = (n) => $(`[data-reg="${n}"]`, demo);
-    const hex = (n) => n.toString(16).toUpperCase().padStart(4, '0');
-    // trace of: mov cx,5 / mov ax,0 / L1: add ax,cx / loop L1 / hlt
-    const steps = [[0, { CX: 5, IP: 0x0000 }], [1, { AX: 0, IP: 0x0003 }]];
-    let ax = 0;
-    for (let cx = 5; cx >= 1; cx--) { ax += cx; steps.push([2, { AX: ax, IP: 0x0006 }]); steps.push([3, { CX: cx - 1, IP: 0x0008 }]); }
-    steps.push([4, { IP: 0x000a }]);
-    const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const state = { AX: 0, CX: 0, IP: 0, cyc: 0 };
-    const show = (k) => { const el = reg(k); if (!el) return; el.textContent = k === 'cyc' ? String(state.cyc) : hex(state[k]); };
-    const flash = (k) => { const el = reg(k); if (!el) return; const box = el.closest('.cd-reg'); box.classList.remove('flash'); void box.offsetWidth; box.classList.add('flash'); };
-    if (still) { // final state, no motion
-      Object.assign(state, { AX: 15, CX: 0, IP: 0x000a, cyc: steps.length }); ['AX', 'CX', 'IP', 'cyc'].forEach(show);
-      lines[4].classList.add('on'); demo.classList.add('done'); return;
-    }
-    let i = 0, timer = null, visible = true;
-    const tick = () => {
-      if (i >= steps.length) { // pause on the result, then run again
-        demo.classList.add('done');
-        timer = setTimeout(() => { demo.classList.remove('done'); i = 0; Object.assign(state, { AX: 0, CX: 0, IP: 0, cyc: 0 }); ['AX', 'CX', 'IP', 'cyc'].forEach(show); tick(); }, 2600);
-        return;
-      }
-      const [ln, regs] = steps[i++];
-      lines.forEach((l, k) => l.classList.toggle('on', k === ln));
-      stages.forEach((s) => { s.classList.remove('run'); void s.offsetWidth; s.classList.add('run'); });
-      Object.entries(regs).forEach(([k, v]) => { const changed = state[k] !== v; state[k] = v; show(k); if (changed && k !== 'IP') flash(k); });
-      state.cyc++; show('cyc'); show('IP');
-      timer = setTimeout(tick, 1150);
+    const L = (addr, bytes, code) => ({ addr, bytes, code });
+    const sumSteps = [[0, { CX: 5, IP: 0 }], [1, { AX: 0, IP: 3 }]];
+    for (let cx = 5, ax = 0; cx >= 1; cx--) { ax += cx; sumSteps.push([2, { AX: ax, IP: 6 }], [3, { CX: cx - 1, IP: 8 }]); }
+    sumSteps.push([4, { IP: 0x0a }]);
+    const facSteps = [[0, { CX: 4, IP: 0 }], [1, { AX: 1, IP: 3 }]];
+    for (let cx = 4, ax = 1; cx >= 1; cx--) { ax *= cx; facSteps.push([2, { AX: ax, DX: 0, IP: 6 }], [3, { CX: cx - 1, IP: 8 }]); }
+    facSteps.push([4, { IP: 0x0a }]);
+    const PROGRAMS = [
+      { file: 'sum.asm', regs: [['AX', 4], ['CX', 4], ['IP', 4], ['cyc', 0]], init: { AX: 0, CX: 0, IP: 0 },
+        lines: [L('0000', 'B9 05 00', 'mov  cx, 5'), L('0003', 'B8 00 00', 'mov  ax, 0'), L('0006', '01 C8', 'L1: add  ax, cx'), L('0008', 'E2 FC', '    loop L1'), L('000A', 'F4', 'hlt')],
+        steps: sumSteps, result: 'AX = 000Fh = 5 + 4 + 3 + 2 + 1 = 15' },
+      { file: 'factorial.asm', regs: [['AX', 4], ['CX', 4], ['IP', 4], ['cyc', 0]], init: { AX: 0, CX: 0, DX: 0, IP: 0 },
+        lines: [L('0000', 'B9 04 00', 'mov  cx, 4'), L('0003', 'B8 01 00', 'mov  ax, 1'), L('0006', 'F7 E1', 'L1: mul  cx'), L('0008', 'E2 FC', '    loop L1'), L('000A', 'F4', 'hlt')],
+        steps: facSteps, result: 'AX = 0018h = 4! = 4 × 3 × 2 × 1 = 24' },
+      { file: 'swap.asm', regs: [['AX', 4], ['BX', 4], ['SP', 4], ['IP', 4]], init: { AX: 0, BX: 0, SP: 0x100, IP: 0 },
+        lines: [L('0000', 'B8 34 12', 'mov  ax, 1234h'), L('0003', 'BB 78 56', 'mov  bx, 5678h'), L('0006', '50', 'push ax'), L('0007', '53', 'push bx'), L('0008', '58', 'pop  ax'), L('0009', '5B', 'pop  bx'), L('000A', 'F4', 'hlt')],
+        steps: [[0, { AX: 0x1234, IP: 0 }], [1, { BX: 0x5678, IP: 3 }], [2, { SP: 0xfe, IP: 6 }], [3, { SP: 0xfc, IP: 7 }], [4, { AX: 0x5678, SP: 0xfe, IP: 8 }], [5, { BX: 0x1234, SP: 0x100, IP: 9 }], [6, { IP: 0x0a }]],
+        result: 'Swapped through the stack: AX = 5678h, BX = 1234h' },
+      { file: 'shift.asm', regs: [['AL', 2], ['CF', 1], ['IP', 4], ['cyc', 0]], init: { AL: 0, CF: 0, IP: 0 },
+        lines: [L('0000', 'B0 B3', 'mov  al, 0B3h'), L('0002', 'D0 E0', 'shl  al, 1'), L('0004', 'D0 E8', 'shr  al, 1'), L('0006', 'D0 C8', 'ror  al, 1'), L('0008', 'F4', 'hlt')],
+        steps: [[0, { AL: 0xb3, IP: 0 }], [1, { AL: 0x66, CF: 1, IP: 2 }], [2, { AL: 0x33, CF: 0, IP: 4 }], [3, { AL: 0x99, CF: 1, IP: 6 }], [4, { IP: 8 }]],
+        result: 'AL = 99h = 1001 1001b, CF = 1' },
+    ];
+    const MNEM = /^(\s*)(\w+:)?(\s*)(\w+)(.*)$/;
+    const color = (code) => {
+      const m = code.match(MNEM); if (!m) return code;
+      const ops = m[5].replace(/\b(0[0-9A-F]*h|\d+h?)\b/gi, '<em>$1</em>');
+      return `${m[1]}${m[2] ? `<u>${m[2]}</u>` : ''}${m[3]}<b>${m[4]}</b>${ops}`;
     };
-    const start = () => { if (!timer && visible && !document.hidden) tick(); };
-    const stop = () => { clearTimeout(timer); timer = null; };
-    if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => { visible = e.isIntersecting; visible ? start() : stop(); }).observe(demo);
-    document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
-    start();
+    const fmt = (v, w) => (w === 0 ? String(v) : w === 1 ? String(v) : v.toString(16).toUpperCase().padStart(w, '0'));
+    const codeEl = $('.cd-code', demo), regsEl = $('.cd-regs', demo), tabsEl = $('.cd-tabs', demo), resEl = $('.cd-result', demo), live = $('.cd-live b', demo);
+    const stages = $$('.cd-stage', demo);
+    tabsEl.innerHTML = PROGRAMS.map((p, k) => `<button type="button" class="cd-tab" data-k="${k}" title="${p.file}">${p.file.replace('.asm', '')}</button>`).join('');
+    const tabs = $$('.cd-tab', tabsEl);
+
+    let gen = 0, paused = false, cur = 0;
+    const sleep = (ms, g) => new Promise((res) => {
+      const t0 = Date.now();
+      const go = () => { if (g !== gen) return res(false); if (paused) return setTimeout(go, 200); const el = Date.now() - t0; if (el >= ms) return res(true); setTimeout(go, Math.min(120, ms - el)); };
+      go();
+    });
+    const setLive = (t, cls) => { live.textContent = t; demo.dataset.state = cls; };
+    const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const render = (p, state) => {
+      regsEl.innerHTML = p.regs.map(([k, w]) => `<div class="cd-reg" data-k="${k}"><span>${k === 'cyc' ? 'Cycles' : k}</span><b>${fmt(state[k] ?? 0, w)}</b></div>`).join('');
+    };
+    const setReg = (p, state, k, flashIt) => {
+      const box = $(`.cd-reg[data-k="${k}"]`, regsEl); if (!box) return;
+      const w = p.regs.find((r) => r[0] === k)[1];
+      $('b', box).textContent = fmt(state[k], w);
+      if (flashIt) { box.classList.remove('flash'); void box.offsetWidth; box.classList.add('flash'); }
+    };
+
+    async function run(k, g) {
+      const p = PROGRAMS[k]; cur = k;
+      tabs.forEach((t, i) => t.classList.toggle('on', i === k));
+      const state = { ...p.init, cyc: 0 };
+      render(p, state);
+      resEl.textContent = p.result; demo.classList.remove('done');
+      codeEl.innerHTML = p.lines.map((l) => `<li class="cd-line"><span class="cd-addr">${l.addr}</span><span class="cd-bytes">${l.bytes}</span><code></code></li>`).join('');
+      const items = $$('.cd-line', codeEl);
+      if (still) { items.forEach((li, i) => { $('code', li).innerHTML = color(p.lines[i].code); }); }
+      else {
+        setLive('Typing', 'typing');
+        for (let i = 0; i < items.length; i++) {
+          const c = $('code', items[i]), text = p.lines[i].code;
+          items[i].classList.add('typing');
+          for (let n = 1; n <= text.length; n++) { c.textContent = text.slice(0, n); if (!(await sleep(22, g))) return; }
+          c.innerHTML = color(text); items[i].classList.remove('typing');
+          if (!(await sleep(90, g))) return;
+        }
+        if (!(await sleep(350, g))) return;
+      }
+      setLive('Running', 'running');
+      for (const [ln, regs] of p.steps) {
+        items.forEach((li, i) => li.classList.toggle('on', i === ln));
+        stages.forEach((s) => { s.classList.remove('run'); void s.offsetWidth; s.classList.add('run'); });
+        Object.entries(regs).forEach(([r, v]) => { const ch = state[r] !== v; state[r] = v; setReg(p, state, r, ch && r !== 'IP'); });
+        state.cyc++; setReg(p, state, 'cyc', false);
+        if (still) continue;
+        if (!(await sleep(950, g))) return;
+      }
+      demo.classList.add('done'); setLive('Done', 'done');
+      if (still) return;
+      if (!(await sleep(2600, g))) return;
+      run((k + 1) % PROGRAMS.length, g);
+    }
+    const restart = (k) => { gen++; run(k, gen); };
+    tabs.forEach((t) => t.addEventListener('click', () => restart(+t.dataset.k)));
+    if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => { paused = !e.isIntersecting || document.hidden; }).observe(demo);
+    document.addEventListener('visibilitychange', () => { paused = document.hidden; });
+    restart(0);
   }
 
   /* ---------- Boot ---------- */
