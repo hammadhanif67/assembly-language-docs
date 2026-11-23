@@ -1,6 +1,6 @@
 ---
-title: CPU Register — What, Why & How
-description: What a CPU register is, why the CPU needs registers, the flow of data through registers and how registers work in the fetch–decode–execute cycle.
+title: CPU Register: What, Why & How
+description: What a CPU register is, why the CPU needs registers, the flow of data through registers and how registers work in the fetch-decode-execute cycle.
 ---
 
 ## CPU Register
@@ -17,11 +17,11 @@ They work in coordination with the CPU's memory to optimize processing, with cac
 ## Flow of Data Through Registers
 
 :::diagram data-flow-registers
-Figure: Flow of Data Through Registers — Hard Disk → RAM → Cache → Registers (inside the CPU)
+Figure: Flow of Data Through Registers, Hard Disk → RAM → Cache → Registers (inside the CPU)
 :::
 
 :::diagram cpu-block-registers
-Figure: Central Processing Unit (CPU) — Control Unit (Program Counter, Current Instruction Register), Arithmetic Logic Unit (Accumulator), Registers (Memory Data Register, Memory Address Register), INPUT, OUTPUT and Memory
+Figure: Central Processing Unit (CPU), Control Unit (Program Counter, Current Instruction Register), Arithmetic Logic Unit (Accumulator), Registers (Memory Data Register, Memory Address Register), INPUT, OUTPUT and Memory
 :::
 
 ## Why Does CPU Need Registers?

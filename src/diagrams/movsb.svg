@@ -23,5 +23,5 @@
 <text class="d-mono" x="125" y="172.0" text-anchor="middle" dominant-baseline="central">SI</text>
 <text class="d-mono" x="525" y="172.0" text-anchor="middle" dominant-baseline="central">DI</text>
 <text class="d-text" x="40" y="222.0" text-anchor="start" dominant-baseline="central">After each byte:  SI ← SI ± 1,  DI ← DI ± 1   (+ if DF = 0 after CLD,  − if DF = 1 after STD)</text>
-<text class="d-text" x="40" y="252.0" text-anchor="start" dominant-baseline="central">With REP:  repeat while CX ≠ 0, decrementing CX each time — copies CX bytes in one instruction.</text>
+<text class="d-text" x="40" y="252.0" text-anchor="start" dominant-baseline="central">With REP:  repeat while CX ≠ 0, decrementing CX each time, copies CX bytes in one instruction.</text>
 </svg>

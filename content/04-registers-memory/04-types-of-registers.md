@@ -13,7 +13,7 @@ description: General-purpose registers (AX, BX, CX, DX), segment registers, inde
 
 ## General Purpose Register
 
-The Intel 8086 microprocessor has four main 16-bit general-purpose registers—AX, BX, CX, and DX—which can also be split into eight independent 8-bit registers (AH, AL, BH, BL, CH, CL, DH, and DL) for flexible data manipulation.
+The Intel 8086 microprocessor has four main 16-bit general-purpose registers, AX, BX, CX, and DX, which can also be split into eight independent 8-bit registers (AH, AL, BH, BL, CH, CL, DH, and DL) for flexible data manipulation.
 
 ## The Four Main General-Purpose Registers
 
@@ -38,7 +38,7 @@ The Intel 8086 microprocessor has four main 16-bit general-purpose registers—A
 - **Function:** Used alongside AX during complex arithmetic like multiplication and division to hold the higher-order 16 bits of a 32-bit result (DX:AX). It also stores I/O port addresses during input/output operations.
 
 :::diagram gp-registers
-Figure: 16-bit general purpose, pointer and index registers — AX (AH/AL) Accumulator, BX (BH/BL) Base, CX (CH/CL) Count, DX (DH/DL) Data, SP Stack Pointer, BP Base Pointer, SI Source Index, DI Destination Index
+Figure: 16-bit general purpose, pointer and index registers, AX (AH/AL) Accumulator, BX (BH/BL) Base, CX (CH/CL) Count, DX (DH/DL) Data, SP Stack Pointer, BP Base Pointer, SI Source Index, DI Destination Index
 :::
 
 ## Segment Register
@@ -53,7 +53,7 @@ Main Types of Segment Registers:
 - Extra Segment (ES)
 
 :::diagram segment-registers
-Figure: Segment Registers — CS (Code Segment), DS (Data Segment), SS (Stack Segment), ES (Extra Segment)
+Figure: Segment Registers, CS (Code Segment), DS (Data Segment), SS (Stack Segment), ES (Extra Segment)
 :::
 
 
@@ -93,7 +93,7 @@ In the Intel 8086 microprocessor, the flag register is a 16-bit register where 9
 - Control Flag
 
 :::diagram flags-8086
-Figure: Flags — 6 are status flags (Carry, Parity, Auxiliary, Zero, Sign, Overflow), 3 are control flag (Trap, Interrupt enable, Direction). Bits marked X are undefined.
+Figure: Flags, 6 are status flags (Carry, Parity, Auxiliary, Zero, Sign, Overflow), 3 are control flag (Trap, Interrupt enable, Direction). Bits marked X are undefined.
 :::
 
 A status flag reflects the outcome of a CPU arithmetic or logical operation, while a control flag dictates how the CPU behaves or executes future operations

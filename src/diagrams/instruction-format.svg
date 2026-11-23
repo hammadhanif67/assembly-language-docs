@@ -7,7 +7,7 @@
 <path class="d-line-mut" d="M552.0 110.0 L552.0 122.0"/>
 <rect class="d-box-3" x="40" y="190" width="128" height="46" rx="0"/>
 <rect class="d-box-2" x="168" y="190" width="384" height="46" rx="0"/>
-<text class="d-caps" x="40" y="24.0" text-anchor="start" dominant-baseline="central">Format A — two operands</text>
+<text class="d-caps" x="40" y="24.0" text-anchor="start" dominant-baseline="central">Format A, two operands</text>
 <text class="d-label" x="104" y="77.0" text-anchor="middle" dominant-baseline="central">Opcode</text>
 <text class="d-small" x="104" y="42.0" text-anchor="middle" dominant-baseline="central">4 bits</text>
 <text class="d-label" x="264" y="77.0" text-anchor="middle" dominant-baseline="central">Operand reference</text>
@@ -15,7 +15,7 @@
 <text class="d-label" x="456" y="77.0" text-anchor="middle" dominant-baseline="central">Operand reference</text>
 <text class="d-small" x="456" y="42.0" text-anchor="middle" dominant-baseline="central">6 bits</text>
 <text class="d-small" x="296" y="103.0" text-anchor="middle" dominant-baseline="central">16 bits</text>
-<text class="d-caps" x="40" y="160.0" text-anchor="start" dominant-baseline="central">Format B — one operand</text>
+<text class="d-caps" x="40" y="160.0" text-anchor="start" dominant-baseline="central">Format B, one operand</text>
 <text class="d-label" x="104" y="213.0" text-anchor="middle" dominant-baseline="central">Opcode</text>
 <text class="d-label" x="360" y="213.0" text-anchor="middle" dominant-baseline="central">Operand</text>
 <text class="d-small" x="104" y="178.0" text-anchor="middle" dominant-baseline="central">4 bits</text>

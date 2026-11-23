@@ -31,7 +31,7 @@ sequenceDiagram
   D->>C: user presses "trace" → resume again
 ```
 
-## DOS DEBUG — essential commands
+## DOS DEBUG: essential commands
 
 | Command | Meaning | Example |
 |---|---|---|
@@ -71,7 +71,7 @@ C:\> debug hello.exe
 
 ## Sources
 
-- Wikipedia, *DEBUG (DOS command)* — [en.wikipedia.org/wiki/Debug_(command)](https://en.wikipedia.org/wiki/Debug_(command))
-- DOSBox project — [dosbox.com](https://www.dosbox.com/)
-- Intel, *The 8086 Family User's Manual* (1979) — trap flag and single-step interrupt — [archive.org](https://ia801302.us.archive.org/2/items/bitsavers_intel80869lyUsersManualOct79_62967963/9800722-03_The_8086_Family_Users_Manual_Oct79.pdf)
-- KFUPM COE 205, *Some Basic Interrupts* — [faculty.kfupm.edu.sa](https://faculty.kfupm.edu.sa/COE/shazli/coe205/Help/interrupts.html)
+- Wikipedia, *DEBUG (DOS command)*, [en.wikipedia.org/wiki/Debug_(command)](https://en.wikipedia.org/wiki/Debug_(command))
+- DOSBox project, [dosbox.com](https://www.dosbox.com/)
+- Intel, *The 8086 Family User's Manual* (1979), trap flag and single-step interrupt, [archive.org](https://ia801302.us.archive.org/2/items/bitsavers_intel80869lyUsersManualOct79_62967963/9800722-03_The_8086_Family_Users_Manual_Oct79.pdf)
+- KFUPM COE 205, *Some Basic Interrupts*, [faculty.kfupm.edu.sa](https://faculty.kfupm.edu.sa/COE/shazli/coe205/Help/interrupts.html)

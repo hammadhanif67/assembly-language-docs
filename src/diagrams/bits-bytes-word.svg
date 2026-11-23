@@ -46,5 +46,5 @@
 <text class="d-small" x="180" y="27.0" text-anchor="middle" dominant-baseline="central">byte (8 bits)</text>
 <text class="d-small" x="460" y="27.0" text-anchor="middle" dominant-baseline="central">byte (8 bits)</text>
 <text class="d-small" x="110" y="117.0" text-anchor="middle" dominant-baseline="central">nibble</text>
-<text class="d-small" x="320" y="149.0" text-anchor="middle" dominant-baseline="central">word (16 bits) — two words make a double word (32 bits)</text>
+<text class="d-small" x="320" y="149.0" text-anchor="middle" dominant-baseline="central">word (16 bits), two words make a double word (32 bits)</text>
 </svg>

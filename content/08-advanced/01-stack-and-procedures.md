@@ -15,7 +15,7 @@ and **BP** registers that point into it. This page shows how to use them.
 - `POP` reads the word at `SS:SP`, then increments SP by 2.
 
 :::widget stack-visualizer
-Interactive stack — PUSH values and POP them into AX to watch SP move.
+Interactive stack, PUSH values and POP them into AX to watch SP move.
 :::
 
 ```asm
@@ -90,7 +90,7 @@ print_num proc
 divide:
     xor dx, dx
     div bx               ; AX = AX / 10, DX = remainder (next digit)
-    push dx              ; digits come out in reverse — stack fixes the order
+    push dx              ; digits come out in reverse, stack fixes the order
     inc cx
     test ax, ax
     jnz divide
@@ -120,7 +120,7 @@ end main
 multiply proc
     push bp
     mov  bp, sp      ; BP now gives fixed access to this frame
-    mov  ax, [bp+4]  ; parameter 1 (7)   — [bp+2] is the return address
+    mov  ax, [bp+4]  ; parameter 1 (7), [bp+2] is the return address
     mul  word ptr [bp+6] ; × parameter 2 (5)
     pop  bp
     ret  4           ; return and drop 4 bytes of parameters
@@ -138,6 +138,6 @@ Because addressing with BP uses **SS** by default (see [Addressing Modes](../ass
 
 ## Sources
 
-- Intel, *The 8086 Family User's Manual* (1979), ch. 2 — stack implementation, CALL/RET — [archive.org](https://ia801302.us.archive.org/2/items/bitsavers_intel80869lyUsersManualOct79_62967963/9800722-03_The_8086_Family_Users_Manual_Oct79.pdf)
-- Wikipedia, *Call stack* — [en.wikipedia.org/wiki/Call_stack](https://en.wikipedia.org/wiki/Call_stack)
+- Intel, *The 8086 Family User's Manual* (1979), ch. 2, stack implementation, CALL/RET, [archive.org](https://ia801302.us.archive.org/2/items/bitsavers_intel80869lyUsersManualOct79_62967963/9800722-03_The_8086_Family_Users_Manual_Oct79.pdf)
+- Wikipedia, *Call stack*, [en.wikipedia.org/wiki/Call_stack](https://en.wikipedia.org/wiki/Call_stack)
 - K. Irvine, *Assembly Language for x86 Processors*, ch. 5 “Procedures” and ch. 8 “Advanced Procedures”.

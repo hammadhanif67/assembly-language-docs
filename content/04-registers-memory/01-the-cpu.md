@@ -1,5 +1,5 @@
 ---
-title: The CPU — EU, BIU & Internal Bus
+title: The CPU: EU, BIU & Internal Bus
 description: The components of a microcomputer system, the CPU, the Execution Unit, the Bus Interface Unit, the internal bus and the Intel 8086 microprocessor organization.
 ---
 
@@ -17,7 +17,7 @@ description: The components of a microcomputer system, the CPU, the Execution Un
 ## CPU
 
 :::figure img-80486.jpg side
-Intel 80486DX2 — a later member of the x86 family that began with the 8086
+Intel 80486DX2, a later member of the x86 family that began with the 8086
 :::
 
 - Brain of Computer; controls all operations
@@ -41,7 +41,7 @@ Intel 80486DX2 — a later member of the x86 family that began with the 8086
 - EU uses registers for:
   - Storing data.
   - Holding operands for ALU
-  - To reflect result of a computation – FLAG register
+  - To reflect result of a computation, FLAG register
 
 ## Bus Interface Unit (BIU)
 
@@ -59,5 +59,5 @@ Intel 80486DX2 — a later member of the x86 family that began with the 8086
 ## Intel 8086 Microprocessor Organization
 
 :::diagram i8086-organization
-Figure: Intel 8086 Microprocessor Organization — Execution Unit (EU) and BUS Interface Unit (BIU)
+Figure: Intel 8086 Microprocessor Organization, Execution Unit (EU) and BUS Interface Unit (BIU)
 :::

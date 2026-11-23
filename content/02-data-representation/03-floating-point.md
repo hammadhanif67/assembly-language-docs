@@ -1,6 +1,6 @@
 ---
 title: Floating-Point Numbers (IEEE 754)
-description: How computers store real numbers — sign, exponent and fraction, the bias, converting a decimal number by hand, special values, and why 0.1 is not exact.
+description: How computers store real numbers, sign, exponent and fraction, the bias, converting a decimal number by hand, special values, and why 0.1 is not exact.
 research: true
 ---
 
@@ -27,7 +27,7 @@ value = (−1)^S × 1.F × 2^(E − bias)
 ```
 
 The implied leading 1 gives one free bit of precision: single precision keeps about **7 decimal digits**,
-double precision about **15–16**.
+double precision about **15-16**.
 
 ## Converting a decimal number by hand
 
@@ -60,7 +60,7 @@ S  Exponent   Fraction
 |---|---|---|
 | Largest value | ≈ 3.4 × 10³⁸ | ≈ 1.8 × 10³⁰⁸ |
 | Smallest normal value | ≈ 1.2 × 10⁻³⁸ | ≈ 2.2 × 10⁻³⁰⁸ |
-| Decimal digits of precision | ≈ 7 | ≈ 15–16 |
+| Decimal digits of precision | ≈ 7 | ≈ 15-16 |
 
 ## Why 0.1 is not exact
 
@@ -81,7 +81,7 @@ the **8087 math coprocessor**, which added an 80-bit internal format and instruc
 
 ## Sources
 
-- IEEE, *IEEE Standard for Floating-Point Arithmetic (IEEE 754-2019)* — [standards.ieee.org](https://standards.ieee.org/ieee/754/6210/)
-- Wikipedia, *Single-precision floating-point format* — [en.wikipedia.org](https://en.wikipedia.org/wiki/Single-precision_floating-point_format)
-- Wikipedia, *Intel 8087* — [en.wikipedia.org](https://en.wikipedia.org/wiki/Intel_8087)
-- D. Goldberg, *What Every Computer Scientist Should Know About Floating-Point Arithmetic* (1991) — [docs.oracle.com](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html)
+- IEEE, *IEEE Standard for Floating-Point Arithmetic (IEEE 754-2019)*, [standards.ieee.org](https://standards.ieee.org/ieee/754/6210/)
+- Wikipedia, *Single-precision floating-point format*, [en.wikipedia.org](https://en.wikipedia.org/wiki/Single-precision_floating-point_format)
+- Wikipedia, *Intel 8087*, [en.wikipedia.org](https://en.wikipedia.org/wiki/Intel_8087)
+- D. Goldberg, *What Every Computer Scientist Should Know About Floating-Point Arithmetic* (1991), [docs.oracle.com](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html)

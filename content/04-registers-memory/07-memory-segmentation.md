@@ -6,10 +6,10 @@ description: Memory organization, addresses and contents, memory segments, segme
 ## Memory Organization
 
 - Memory is organized into a collection of bytes.
-- Each byte is identified by a number – **Address**
+- Each byte is identified by a number, **Address**
   - Number of bits in an address depends on the processor
   - Example:- Intel 8086: 20-bit address, Intel 80286: 24-bit address
-- Data stored in a memory byte – **Contents**
+- Data stored in a memory byte, **Contents**
 
 
 - Number of bits used in the address determines the number of bytes that can be accessed by the processor.
@@ -23,7 +23,7 @@ description: Memory organization, addresses and contents, memory segments, segme
 - Within a segment, memory location is specified by an offset. This is the number of bytes from the beginning of the segment.
 
 :::diagram memory-segments
-Figure: One Segment — 8000:0000 to 8000:FFFF (segment : offset)
+Figure: One Segment, 8000:0000 to 8000:FFFF (segment : offset)
 :::
 
 ## Segment : Offset Address

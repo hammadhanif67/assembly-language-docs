@@ -29,7 +29,7 @@ flowchart LR
   P2 --> L["Listing .lst"]
 ```
 
-### Pass 1 — build the symbol table
+### Pass 1: build the symbol table
 
 The assembler keeps a **location counter (LC)**, the offset of the next byte. For each line it records
 labels and variables with the current LC, then adds the size of the instruction or data.
@@ -39,11 +39,11 @@ labels and variables with the current LC, then adds the size of the instruction 
 | `msg db 'Hi$'` | 0000 | 3 | msg = 0000 (data) |
 | `count dw 5` | 0003 | 2 | count = 0003 (data) |
 | `start: mov ax, @data` | 0000 | 3 | start = 0000 (code) |
-| `jmp done` | 0003 | 2 | — |
-| `mov ax, 1` | 0005 | 3 | — |
+| `jmp done` | 0003 | 2 | - |
+| `mov ax, 1` | 0005 | 3 | - |
 | `done: mov ah, 4Ch` | 0008 | 2 | done = 0008 |
 
-### Pass 2 — generate code
+### Pass 2: generate code
 
 Now every symbol has an address, so each instruction can be [encoded](../processor/instruction-encoding.html)
 completely. Undefined names produce errors (“undefined symbol”). Names declared `EXTRN` are left as
@@ -84,7 +84,7 @@ The DOS loader brings the program into memory and starts it:
 | | .COM | .EXE |
 |---|---|---|
 | Size limit | one 64 KB segment for code + data + stack | several segments, up to available memory |
-| Header | none — a plain memory image | “MZ” header with a relocation table |
+| Header | none, a plain memory image | “MZ” header with a relocation table |
 | Start address | always offset **100h** (`ORG 100h`), after the PSP | given in the header (`END main`) |
 | Segment registers at start | CS = DS = ES = SS = PSP segment | CS and SS from the header; DS = ES = PSP |
 | Memory model | `.MODEL TINY` | `.MODEL SMALL` and larger |
@@ -106,6 +106,6 @@ end start
 ## Sources
 
 - L. Beck, *System Software: An Introduction to Systems Programming*, ch. 2 “Assemblers” and ch. 3 “Loaders and Linkers”.
-- Wikipedia, *Assembly language — Number of passes* — [en.wikipedia.org](https://en.wikipedia.org/wiki/Assembly_language#Number_of_passes)
-- Wikipedia, *COM file* — [en.wikipedia.org](https://en.wikipedia.org/wiki/COM_file)
-- Wikipedia, *DOS MZ executable* — [en.wikipedia.org](https://en.wikipedia.org/wiki/DOS_MZ_executable)
+- Wikipedia, *Assembly language, Number of passes*, [en.wikipedia.org](https://en.wikipedia.org/wiki/Assembly_language#Number_of_passes)
+- Wikipedia, *COM file*, [en.wikipedia.org](https://en.wikipedia.org/wiki/COM_file)
+- Wikipedia, *DOS MZ executable*, [en.wikipedia.org](https://en.wikipedia.org/wiki/DOS_MZ_executable)

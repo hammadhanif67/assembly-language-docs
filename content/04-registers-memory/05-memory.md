@@ -6,7 +6,7 @@ description: Bits, bytes and double words, common prefixes, memory, memory hiera
 ## Bits, Bytes and Double words
 
 :::diagram bits-bytes-word
-Figure: Two bytes form a word — 0 0 1 0 0 1 1 0 · 0 1 1 0 1 0 1 0
+Figure: Two bytes form a word, 0 0 1 0 0 1 1 0 · 0 1 1 0 1 0 1 0
 :::
 
 - Each 1 or 0 is called a *bit*.
@@ -34,7 +34,7 @@ Figure: Two bytes form a word — 0 0 1 0 0 1 1 0 · 0 1 1 0 1 0 1 0
 ## Memory
 
 :::figure img-core-memory.jpg side
-Magnetic-core memory plane — each tiny ring stored one bit
+Magnetic-core memory plane, each tiny ring stored one bit
 :::
 
 - Information processed by the computer is stored in its memory.
@@ -49,7 +49,7 @@ Magnetic-core memory plane — each tiny ring stored one bit
 ## Memory Hierarchy
 
 :::diagram memory-hierarchy
-Figure: Memory Hierarchy — regs, cache, RAM, DISK, Removeable Media
+Figure: Memory Hierarchy, regs, cache, RAM, DISK, Removeable Media
 :::
 
 
@@ -65,7 +65,7 @@ Figure: Auxiliary memory ↔ I/O processor ↔ Main Memory ↔ CPU, with Cache b
 ## Main Memory
 
 :::figure img-ram-module.jpg side
-RAM modules — main memory is built from RAM integrated circuits
+RAM modules, main memory is built from RAM integrated circuits
 :::
 
 - Most of the main memory in a general purpose computer is made up of RAM integrated circuits chips, but a portion of the memory may be constructed with ROM chips

@@ -5,7 +5,7 @@ description: Introduction to RISC, background and history, characteristics of RI
 
 ## Introduction
 
-- RISC – Reduced Instruction Set Computer
+- RISC, Reduced Instruction Set Computer
 - RISC is a type of microprocessor architecture that utilizes
   - a small, highly-optimized set of instructions
   - rather than a more specialized set of instructions.
@@ -48,11 +48,11 @@ Let's say that there are four loads of dirty laundry that need to be washed, dri
 - **Folding** - 20 minutes
 
 :::diagram laundry-sequential
-Figure: Sequential laundry — tasks A, B, C, D from 6 PM to Midnight (30 · 40 · 20 for each load)
+Figure: Sequential laundry, tasks A, B, C, D from 6 PM to Midnight (30 · 40 · 20 for each load)
 :::
 
 :::diagram laundry-pipelined
-Figure: Pipelined laundry — 30 · 40 · 40 · 40 · 40 · 20
+Figure: Pipelined laundry, 30 · 40 · 40 · 40 · 40 · 20
 :::
 
 ## RISC Pipelines

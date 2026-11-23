@@ -4,31 +4,31 @@ Where every lesson on the site came from. Paths are relative to the site root.
 
 The course material (7 PDFs and 3 PowerPoint decks in the project root) is **not** published and is not
 referenced on the site. Four PDFs were scanned images with no text layer (Computer Generation, Basic
-Processor, RISC and CISC, Register & Memory — 117 pages); their text was transcribed from the page images.
+Processor, RISC and CISC, Register & Memory, 117 pages); their text was transcribed from the page images.
 
 ## Lessons from the course material
 
 | Lesson | Site page | Source |
 |---|---|---|
-| Generations of Computers | `fundamentals/generations.html` | Computer Generation.pdf, p. 1–34 (six slide sections merged into one lesson) |
-| Architecture vs. Organization | `fundamentals/architecture-vs-organization.html` | Computer Architecture.pdf, p. 1–17 |
-| Structure and Function | `fundamentals/structure-and-function.html` | Sturuture and Function.pdf, p. 1–12 |
-| Von Neumann & Harvard | `fundamentals/von-neumann-harvard.html` | Von Neumann,s.pdf, p. 1–10 |
-| Machine Instruction Elements | `processor/machine-instructions.html` | Basic Processor.pdf, p. 1–9 |
-| Processor Clock & Program Counter | `processor/processor-clock.html` | Basic Processor.pdf, p. 10–12 |
-| Instruction Cycle | `processor/instruction-cycle.html` | Basic Processor.pdf, p. 13–20 |
-| What is RISC? | `processor/risc.html` | RISC and CISC.pdf, p. 1–11 |
-| CISC vs. RISC | `processor/cisc-vs-risc.html` | RISC and CISC.pdf, p. 12–16 |
-| RISC Applications & Convergence | `processor/risc-applications.html` | RISC and CISC.pdf, p. 17–23 |
-| The CPU — EU, BIU & Internal Bus | `registers-memory/the-cpu.html` | Register & Memory.pdf, p. 1–8 |
-| Registers (8086) | `registers-memory/registers.html` | Register & Memory.pdf, p. 9–15 |
-| CPU Register — What, Why & How | `registers-memory/cpu-register.html` | CPU Register.pptx, slides 1–8 |
-| Types of Registers | `registers-memory/types-of-registers.html` | CPU Register.pptx, slides 9–24 |
-| Memory | `registers-memory/memory.html` | Register & Memory.pdf, p. 16–24 |
-| Memory Organization & Segmentation | `registers-memory/memory-segmentation.html` | Register & Memory.pdf, p. 25–31 |
-| System Bus | `registers-memory/system-bus.html` | Register & Memory.pdf, p. 32–40 |
-| 8085 Microprocessor | `microprocessors/8085.html` | 8085.pptx, slides 1–15 |
-| 8086 Microprocessor | `microprocessors/8086.html` | 8086.pptx, slides 1–14 |
+| Generations of Computers | `fundamentals/generations.html` | Computer Generation.pdf, p. 1-34 (six slide sections merged into one lesson) |
+| Architecture vs. Organization | `fundamentals/architecture-vs-organization.html` | Computer Architecture.pdf, p. 1-17 |
+| Structure and Function | `fundamentals/structure-and-function.html` | Sturuture and Function.pdf, p. 1-12 |
+| Von Neumann & Harvard | `fundamentals/von-neumann-harvard.html` | Von Neumann,s.pdf, p. 1-10 |
+| Machine Instruction Elements | `processor/machine-instructions.html` | Basic Processor.pdf, p. 1-9 |
+| Processor Clock & Program Counter | `processor/processor-clock.html` | Basic Processor.pdf, p. 10-12 |
+| Instruction Cycle | `processor/instruction-cycle.html` | Basic Processor.pdf, p. 13-20 |
+| What is RISC? | `processor/risc.html` | RISC and CISC.pdf, p. 1-11 |
+| CISC vs. RISC | `processor/cisc-vs-risc.html` | RISC and CISC.pdf, p. 12-16 |
+| RISC Applications & Convergence | `processor/risc-applications.html` | RISC and CISC.pdf, p. 17-23 |
+| The CPU, EU, BIU & Internal Bus | `registers-memory/the-cpu.html` | Register & Memory.pdf, p. 1-8 |
+| Registers (8086) | `registers-memory/registers.html` | Register & Memory.pdf, p. 9-15 |
+| CPU Register, What, Why & How | `registers-memory/cpu-register.html` | CPU Register.pptx, slides 1-8 |
+| Types of Registers | `registers-memory/types-of-registers.html` | CPU Register.pptx, slides 9-24 |
+| Memory | `registers-memory/memory.html` | Register & Memory.pdf, p. 16-24 |
+| Memory Organization & Segmentation | `registers-memory/memory-segmentation.html` | Register & Memory.pdf, p. 25-31 |
+| System Bus | `registers-memory/system-bus.html` | Register & Memory.pdf, p. 32-40 |
+| 8085 Microprocessor | `microprocessors/8085.html` | 8085.pptx, slides 1-15 |
+| 8086 Microprocessor | `microprocessors/8086.html` | 8086.pptx, slides 1-14 |
 
 ## Researched lessons (29)
 
@@ -47,7 +47,7 @@ memory-and-performance, addressing, tracing-code, writing-programs. Each ends wi
 |---|---|---|
 | 8086 registers | Registers (8086), CPU Register, Types of Registers, 8086 Microprocessor | all kept; each adds detail the others lack |
 | EU / BIU / queue | The CPU, 8086 Microprocessor | both kept |
-| Fetch–decode–execute | Instruction Cycle, CPU Register | both kept |
+| Fetch-decode-execute | Instruction Cycle, CPU Register | both kept |
 | Pipelining | What is RISC?, 8086 Microprocessor, Pipelining & Hazards | intro, 8086 case and full treatment |
 
 ## Editorial changes

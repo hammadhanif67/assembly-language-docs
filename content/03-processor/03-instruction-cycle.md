@@ -1,6 +1,6 @@
 ---
 title: Instruction Cycle
-description: The basic fetch–decode–execute cycle, CPU registers used in it, a step-by-step example program execution and the instruction cycle state diagram.
+description: The basic fetch-decode-execute cycle, CPU registers used in it, a step-by-step example program execution and the instruction cycle state diagram.
 ---
 
 ## Basic Instruction Cycle
@@ -15,7 +15,7 @@ description: The basic fetch–decode–execute cycle, CPU registers used in it,
   5. Store the result in memory if needed
 
 :::diagram fetch-execute
-Figure: Basic instruction cycle — Fetch Cycle and Execute Cycle
+Figure: Basic instruction cycle, Fetch Cycle and Execute Cycle
 :::
 
 
@@ -27,7 +27,7 @@ Figure: Basic instruction cycle — Fetch Cycle and Execute Cycle
 ## Computer Components: Top Level View
 
 :::diagram top-level-view
-Figure: Computer Components — Top Level View
+Figure: Computer Components, Top Level View
 :::
 
 | Abbreviation | Meaning |
@@ -55,7 +55,7 @@ Figure: Computer Components — Top Level View
 ## Example Program Execution
 
 :::widget program-execution
-Figure: Example Program Execution (Steps 1–6). Use the buttons to step through all six steps.
+Figure: Example Program Execution (Steps 1-6). Use the buttons to step through all six steps.
 :::
 
 <small>This is the classic textbook example (W. Stallings, <em>Computer Organization and Architecture</em>): opcode 1 = load AC from memory, 5 = add to AC from memory, 2 = store AC to memory.</small>
@@ -63,7 +63,7 @@ Figure: Example Program Execution (Steps 1–6). Use the buttons to step through
 ## Instruction Execution Cycle
 
 :::diagram instruction-execution-cycle
-Figure: Instruction Execution Cycle — fetch, decode, execute, store the output
+Figure: Instruction Execution Cycle, fetch, decode, execute, store the output
 :::
 
 ## Instruction Cycle State Diagram

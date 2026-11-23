@@ -74,5 +74,5 @@ A computer performs four basic functions:
 - It performs this coordination in response to instructions.
 
 :::diagram computer-operations
-Figure 1.2 Possible Computer Operations — (a) data movement, (b) storage, (c) processing from/to storage, (d) processing from storage to I/O
+Figure 1.2 Possible Computer Operations, (a) data movement, (b) storage, (c) processing from/to storage, (d) processing from storage to I/O
 :::

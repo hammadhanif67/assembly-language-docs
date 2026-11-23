@@ -14,19 +14,19 @@
 <text class="d-mono d-on-accent" x="130" y="56.0" text-anchor="middle" dominant-baseline="central">Z</text>
 <text class="d-small" x="130" y="96.0" text-anchor="middle" dominant-baseline="central">Zero</text>
 <text class="d-small" x="190" y="22.0" text-anchor="middle" dominant-baseline="central">D5</text>
-<text class="d-mono" x="190" y="56.0" text-anchor="middle" dominant-baseline="central">–</text>
+<text class="d-mono" x="190" y="56.0" text-anchor="middle" dominant-baseline="central">-</text>
 <text class="d-small" x="250" y="22.0" text-anchor="middle" dominant-baseline="central">D4</text>
 <text class="d-mono d-on-accent" x="250" y="56.0" text-anchor="middle" dominant-baseline="central">AC</text>
 <text class="d-small" x="250" y="96.0" text-anchor="middle" dominant-baseline="central">Aux. carry</text>
 <text class="d-small" x="310" y="22.0" text-anchor="middle" dominant-baseline="central">D3</text>
-<text class="d-mono" x="310" y="56.0" text-anchor="middle" dominant-baseline="central">–</text>
+<text class="d-mono" x="310" y="56.0" text-anchor="middle" dominant-baseline="central">-</text>
 <text class="d-small" x="370" y="22.0" text-anchor="middle" dominant-baseline="central">D2</text>
 <text class="d-mono d-on-accent" x="370" y="56.0" text-anchor="middle" dominant-baseline="central">P</text>
 <text class="d-small" x="370" y="96.0" text-anchor="middle" dominant-baseline="central">Parity</text>
 <text class="d-small" x="430" y="22.0" text-anchor="middle" dominant-baseline="central">D1</text>
-<text class="d-mono" x="430" y="56.0" text-anchor="middle" dominant-baseline="central">–</text>
+<text class="d-mono" x="430" y="56.0" text-anchor="middle" dominant-baseline="central">-</text>
 <text class="d-small" x="490" y="22.0" text-anchor="middle" dominant-baseline="central">D0</text>
 <text class="d-mono d-on-accent" x="490" y="56.0" text-anchor="middle" dominant-baseline="central">CY</text>
 <text class="d-small" x="490" y="96.0" text-anchor="middle" dominant-baseline="central">Carry</text>
-<text class="d-small" x="40" y="132.0" text-anchor="start" dominant-baseline="central">– = unused bit. The ALU sets these five flags after arithmetic and logic operations.</text>
+<text class="d-small" x="40" y="132.0" text-anchor="start" dominant-baseline="central">,  = unused bit. The ALU sets these five flags after arithmetic and logic operations.</text>
 </svg>

@@ -1,12 +1,12 @@
 ---
-title: Segments & Addressing — Solved
-description: 8086 physical addresses, finding the offset or segment, segment ranges, effective addresses for every addressing mode and the stack after PUSH — solved step by step.
+title: Segments & Addressing: Solved
+description: 8086 physical addresses, finding the offset or segment, segment ranges, effective addresses for every addressing mode and the stack after PUSH, solved step by step.
 research: true
 ---
 
 All questions use the 8086 rule **Physical address = Segment × 10h + Offset**. Multiplying by 10h simply writes a 0 on the right of the hex number. Try your own values in the [segment : offset](../tools/index.html#segoff) and [effective address](../tools/index.html#ea) calculators.
 
-## Question 1 — Physical address
+## Question 1: Physical address
 
 **Find the physical address of the logical address 40FF:938B.**
 
@@ -27,7 +27,7 @@ Column by column from the right: 0 + B = B; F + 8 = 17h → write 7, carry 1; F 
 40FF:938B → **4A37Bh**
 :::
 
-## Question 2 — Finding the offset
+## Question 2: Finding the offset
 
 **The physical address 4A37Bh is in the segment 4A00h. What is the offset?**
 
@@ -36,10 +36,10 @@ Column by column from the right: 0 + B = B; F + 8 = 17h → write 7, carry 1; F 
 3. Offset = 4A37Bh − 4A000h = **037Bh**.
 
 :::answer
-Offset = **037Bh**, so 4A00:037B and 40FF:938B are the **same** byte — many logical addresses can point to one physical address.
+Offset = **037Bh**, so 4A00:037B and 40FF:938B are the **same** byte, many logical addresses can point to one physical address.
 :::
 
-## Question 3 — Finding the segment
+## Question 3: Finding the segment
 
 **The physical address is 2C5A4h and the offset is 05A4h. Find the segment.**
 
@@ -51,7 +51,7 @@ Offset = **037Bh**, so 4A00:037B and 40FF:938B are the **same** byte — many lo
 Segment = **2C00h** (check: 2C000h + 05A4h = 2C5A4h ✓)
 :::
 
-## Question 4 — Range of a segment
+## Question 4: Range of a segment
 
 **DS = 2000h. Which physical addresses does the data segment cover?**
 
@@ -60,10 +60,10 @@ Segment = **2C00h** (check: 2C000h + 05A4h = 2C5A4h ✓)
 3. Size = 10000h bytes = 65,536 = 64 KB.
 
 :::answer
-**20000h – 2FFFFh** (64 KB)
+**20000h, 2FFFFh** (64 KB)
 :::
 
-## Question 5 — Effective and physical address for each mode
+## Question 5: Effective and physical address for each mode
 
 **Given BX = 0100h, BP = 0FF0h, SI = 0020h, DI = 0030h, DS = 2000h, SS = 3000h, ES = 4000h, find the effective address (EA) and physical address (PA) of the source operand.**
 
@@ -79,14 +79,14 @@ Segment = **2C00h** (check: 2C000h + 05A4h = 2C5A4h ✓)
 **Steps for every row:**
 
 1. Add the registers and displacement inside `[ ]` → EA (16 bits).
-2. Choose the segment: if **BP** is used it is **SS**, otherwise **DS** — unless a prefix such as `ES:` overrides it.
+2. Choose the segment: if **BP** is used it is **SS**, otherwise **DS**, unless a prefix such as `ES:` overrides it.
 3. PA = segment × 10h + EA.
 
 :::warning
 `[BP+SI]` uses **SS**, not DS. Forgetting the BP → SS rule is the most common error in these questions.
 :::
 
-## Question 6 — The stack after PUSH
+## Question 6: The stack after PUSH
 
 **SS = 3000h, SP = 0100h, AX = 1234h. After `PUSH AX`, what is SP, and where in memory are the bytes?**
 
@@ -99,7 +99,7 @@ Segment = **2C00h** (check: 2C000h + 05A4h = 2C5A4h ✓)
 SP = **00FEh**; 34h at **300FEh**, 12h at **300FFh**
 :::
 
-## Question 7 — Words in memory
+## Question 7: Words in memory
 
 **`MOV [2000h], AX` with DS = 1000h and AX = 0ABCDh. Which bytes change?**
 
@@ -112,5 +112,5 @@ SP = **00FEh**; 34h at **300FEh**, 12h at **300FFh**
 
 ## Sources
 
-- Intel, *iAPX 86/88 User’s Manual* — segmentation, addressing modes, default segments, PUSH/POP.
-- K. Irvine, *Assembly Language for x86 Processors* — effective address examples.
+- Intel, *iAPX 86/88 User’s Manual*, segmentation, addressing modes, default segments, PUSH/POP.
+- K. Irvine, *Assembly Language for x86 Processors*, effective address examples.

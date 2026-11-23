@@ -1,6 +1,6 @@
 ---
 title: Addressing Modes
-description: The 8086 addressing modes — immediate, register, direct, register indirect, based, indexed, based-indexed — with effective-address rules and default segments.
+description: The 8086 addressing modes, immediate, register, direct, register indirect, based, indexed, based-indexed, with effective-address rules and default segments.
 research: true
 ---
 
@@ -26,8 +26,8 @@ flowchart TD
 
 | Mode | Example | Operand is… | Effective address (EA) |
 |---|---|---|---|
-| Immediate | `mov ax, 25` | the constant inside the instruction | — |
-| Register | `mov ax, bx` | a CPU register | — |
+| Immediate | `mov ax, 25` | the constant inside the instruction | - |
+| Register | `mov ax, bx` | a CPU register | - |
 | Direct | `mov ax, [0400h]` or `mov ax, total` | memory | the displacement itself |
 | Register indirect | `mov ax, [bx]` | memory | BX, SI, DI or BP |
 | Based | `mov ax, [bx+6]` | memory | BX or BP + displacement |
@@ -94,7 +94,7 @@ invalid (they become legal only on the 80386 and later with 32-bit registers).
 
 ## Sources
 
-- Intel, *The 8086 Family User's Manual* (1979), “Addressing Modes” — register/immediate operands, memory addressing modes, effective address — [archive.org](https://ia801302.us.archive.org/2/items/bitsavers_intel80869lyUsersManualOct79_62967963/9800722-03_The_8086_Family_Users_Manual_Oct79.pdf)
-- Intel 8086 Family User's Manual (alternate copy) — [ceibo.com](https://www.ceibo.com/eng/datasheets/Intel_8086_Family_Users_Manual.pdf)
-- Wikipedia, *x86 memory segmentation* — [en.wikipedia.org/wiki/X86_memory_segmentation](https://en.wikipedia.org/wiki/X86_memory_segmentation)
-- WSU EE314, *x86 instruction reference* — [eecs.wsu.edu](https://eecs.wsu.edu/~ee314/handouts/x86ref.pdf)
+- Intel, *The 8086 Family User's Manual* (1979), “Addressing Modes”, register/immediate operands, memory addressing modes, effective address, [archive.org](https://ia801302.us.archive.org/2/items/bitsavers_intel80869lyUsersManualOct79_62967963/9800722-03_The_8086_Family_Users_Manual_Oct79.pdf)
+- Intel 8086 Family User's Manual (alternate copy), [ceibo.com](https://www.ceibo.com/eng/datasheets/Intel_8086_Family_Users_Manual.pdf)
+- Wikipedia, *x86 memory segmentation*, [en.wikipedia.org/wiki/X86_memory_segmentation](https://en.wikipedia.org/wiki/X86_memory_segmentation)
+- WSU EE314, *x86 instruction reference*, [eecs.wsu.edu](https://eecs.wsu.edu/~ee314/handouts/x86ref.pdf)

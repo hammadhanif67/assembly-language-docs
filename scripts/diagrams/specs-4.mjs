@@ -115,14 +115,14 @@ specs['movsb'] = () => {
   d.path([[525, 160], [525, 90]], { cls: 'd-line', arrow: 'end' }); d.text(525, 172, 'DI', { cls: 'd-mono' });
   d.box(20, 200, 700, 80, { kind: 'alt' });
   d.text(40, 222, 'After each byte:  SI ← SI ± 1,  DI ← DI ± 1   (+ if DF = 0 after CLD,  − if DF = 1 after STD)', { cls: 'd-text', anchor: 'start' });
-  d.text(40, 252, 'With REP:  repeat while CX ≠ 0, decrementing CX each time — copies CX bytes in one instruction.', { cls: 'd-text', anchor: 'start' });
+  d.text(40, 252, 'With REP:  repeat while CX ≠ 0, decrementing CX each time, copies CX bytes in one instruction.', { cls: 'd-text', anchor: 'start' });
   return d;
 };
 
 // ---------- Interrupt vector table ----------
 specs['ivt'] = () => {
   const d = new Diagram(760, 380, { minw: 620 });
-  d.text(40, 24, 'INTERRUPT VECTOR TABLE  0000:0000 – 0000:03FF', { cls: 'd-caps', anchor: 'start' });
+  d.text(40, 24, 'INTERRUPT VECTOR TABLE  0000:0000-0000:03FF', { cls: 'd-caps', anchor: 'start' });
   const rows = [['0000', 'INT 00h', 'divide error'], ['0004', 'INT 01h', 'single step'], ['0008', 'INT 02h', 'NMI'], ['⋮', '', ''], ['0040', 'INT 10h', 'BIOS video'], ['⋮', '', ''], ['0084', 'INT 21h', 'DOS services'], ['⋮', '', ''], ['03FC', 'INT FFh', '']];
   rows.forEach(([a, n, t], i) => {
     const y = 40 + i * 34, hl = n === 'INT 21h';

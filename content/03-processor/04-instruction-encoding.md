@@ -1,6 +1,6 @@
 ---
 title: Instruction Encoding (8086 Machine Code)
-description: How an 8086 instruction becomes bytes — opcode with d and w bits, the ModR/M byte, register codes, displacement and immediate data — with worked examples.
+description: How an 8086 instruction becomes bytes, opcode with d and w bits, the ModR/M byte, register codes, displacement and immediate data, with worked examples.
 research: true
 ---
 
@@ -18,9 +18,9 @@ An 8086 instruction is **1 to 6 bytes** long (plus optional prefixes):
 
 | Field | Size | Purpose |
 |---|---|---|
-| Prefix | 0–4 bytes | segment override (`ES:`), `REP`, `LOCK` |
-| Opcode | 1–2 bytes | the operation; often ends in a **d** (direction) and **w** (width) bit |
-| ModR/M | 0–1 byte | which registers or memory addressing mode the operands use |
+| Prefix | 0-4 bytes | segment override (`ES:`), `REP`, `LOCK` |
+| Opcode | 1-2 bytes | the operation; often ends in a **d** (direction) and **w** (width) bit |
+| ModR/M | 0-1 byte | which registers or memory addressing mode the operands use |
 | Displacement | 0, 1 or 2 bytes | the constant part of a memory address, e.g. the `4` in `[BX+4]` |
 | Immediate | 0, 1 or 2 bytes | a constant operand, e.g. the `1234h` in `MOV AX, 1234h` |
 
@@ -87,6 +87,6 @@ next to each instruction. It is the quickest way to check this table.
 
 ## Sources
 
-- Intel, *The 8086 Family User's Manual* (1979), “Machine Instruction Encoding and Decoding” — [archive.org](https://ia801302.us.archive.org/2/items/bitsavers_intel80869lyUsersManualOct79_62967963/9800722-03_The_8086_Family_Users_Manual_Oct79.pdf)
-- Wikipedia, *ModR/M* — [en.wikipedia.org](https://en.wikipedia.org/wiki/ModR/M)
-- WSU EE314, *x86 instruction reference* — [eecs.wsu.edu](https://eecs.wsu.edu/~ee314/handouts/x86ref.pdf)
+- Intel, *The 8086 Family User's Manual* (1979), “Machine Instruction Encoding and Decoding”, [archive.org](https://ia801302.us.archive.org/2/items/bitsavers_intel80869lyUsersManualOct79_62967963/9800722-03_The_8086_Family_Users_Manual_Oct79.pdf)
+- Wikipedia, *ModR/M*, [en.wikipedia.org](https://en.wikipedia.org/wiki/ModR/M)
+- WSU EE314, *x86 instruction reference*, [eecs.wsu.edu](https://eecs.wsu.edu/~ee314/handouts/x86ref.pdf)

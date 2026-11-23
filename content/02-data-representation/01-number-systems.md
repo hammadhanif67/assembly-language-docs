@@ -15,9 +15,9 @@ In any base *b*, a digit's value is the digit multiplied by *b* raised to its po
 | Base | Name | Digits | Example | Value |
 |---|---|---|---|---|
 | 2 | Binary | 0 1 | `1011b` | 1·2³ + 0·2² + 1·2¹ + 1·2⁰ = **11** |
-| 8 | Octal | 0–7 | `13o` | 1·8¹ + 3·8⁰ = **11** |
-| 10 | Decimal | 0–9 | `11` | **11** |
-| 16 | Hexadecimal | 0–9, A–F | `0Bh` | 11·16⁰ = **11** |
+| 8 | Octal | 0-7 | `13o` | 1·8¹ + 3·8⁰ = **11** |
+| 10 | Decimal | 0-9 | `11` | **11** |
+| 16 | Hexadecimal | 0-9, A-F | `0Bh` | 11·16⁰ = **11** |
 
 ## Converting between bases
 
@@ -66,7 +66,7 @@ Group bits in fours from the right; each group is one hex digit:
 ## Try it
 
 :::widget number-converter
-Number converter — type in any box; the others update. It also shows the value as an 8/16/32-bit pattern and its signed (two's complement) meaning.
+Number converter, type in any box; the others update. It also shows the value as an 8/16/32-bit pattern and its signed (two's complement) meaning.
 :::
 
 ## Writing numbers in assembly (MASM/TASM syntax)
@@ -86,7 +86,7 @@ name: `mov ax, FFFFh` is an error (undefined symbol), `mov ax, 0FFFFh` is correc
 
 ## Sources
 
-- Intel, *The 8086 Family User's Manual* (Oct. 1979), ch. 2 — data types — [archive.org](https://ia801302.us.archive.org/2/items/bitsavers_intel80869lyUsersManualOct79_62967963/9800722-03_The_8086_Family_Users_Manual_Oct79.pdf)
-- Microsoft Learn, *MASM: Directives reference / radix and constants* — [learn.microsoft.com](https://learn.microsoft.com/en-us/cpp/assembler/masm/directives-reference)
-- Wikipedia, *Hexadecimal* — [en.wikipedia.org/wiki/Hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal)
+- Intel, *The 8086 Family User's Manual* (Oct. 1979), ch. 2, data types, [archive.org](https://ia801302.us.archive.org/2/items/bitsavers_intel80869lyUsersManualOct79_62967963/9800722-03_The_8086_Family_Users_Manual_Oct79.pdf)
+- Microsoft Learn, *MASM: Directives reference / radix and constants*, [learn.microsoft.com](https://learn.microsoft.com/en-us/cpp/assembler/masm/directives-reference)
+- Wikipedia, *Hexadecimal*, [en.wikipedia.org/wiki/Hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal)
 - K. Irvine, *Assembly Language for x86 Processors*, ch. 1.3 “Data Representation”.

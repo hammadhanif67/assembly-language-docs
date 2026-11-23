@@ -42,7 +42,7 @@ flowchart LR
   C --> A
 ```
 
-## Example 1 — copy a string
+## Example 1: copy a string
 
 ```asm
 .data
@@ -59,7 +59,7 @@ dst  db 8 dup(?)
     rep movsb           ; dst = 'ASSEMBLY'
 ```
 
-## Example 2 — fill a buffer
+## Example 2: fill a buffer
 
 ```asm
     lea di, dst
@@ -69,7 +69,7 @@ dst  db 8 dup(?)
     rep stosb           ; dst = '--------'
 ```
 
-## Example 3 — find a character (length of a `$`-string)
+## Example 3: find a character (length of a `$`-string)
 
 ```asm
 .data
@@ -88,7 +88,7 @@ text db 'COAL rocks$'
     dec di              ; DI = 10 = length without '$'
 ```
 
-## Example 4 — compare two strings
+## Example 4: compare two strings
 
 ```asm
     lea si, str1
@@ -107,7 +107,7 @@ until changed, so a routine that leaves DF = 1 can break code that runs later.
 
 ## Sources
 
-- B. Howard, *Assembly tutorial — string instructions* — [ic.unicamp.br](https://www.ic.unicamp.br/~celio/mc404s2-03/bhoward_tutorial/asmtut7.html)
-- R. Hyde, *The Art of Assembly Language*, ch. 15 “Strings and Character Sets” — [cs.yale.edu](https://www.cs.yale.edu/flint/cs422/doc/art-of-asm/pdf/CH15.PDF)
-- Intel 80386 Programmer's Reference, §3.6 String and Character Translation — [css.csail.mit.edu](https://css.csail.mit.edu/6.5660/2013/readings/i386/s03_06.htm)
-- Intel 80386 Programmer's Reference, *MOVS* — [scs.stanford.edu](https://www.scs.stanford.edu/nyu/04fa/lab/i386/MOVS.htm)
+- B. Howard, *Assembly tutorial, string instructions*, [ic.unicamp.br](https://www.ic.unicamp.br/~celio/mc404s2-03/bhoward_tutorial/asmtut7.html)
+- R. Hyde, *The Art of Assembly Language*, ch. 15 “Strings and Character Sets”, [cs.yale.edu](https://www.cs.yale.edu/flint/cs422/doc/art-of-asm/pdf/CH15.PDF)
+- Intel 80386 Programmer's Reference, §3.6 String and Character Translation, [css.csail.mit.edu](https://css.csail.mit.edu/6.5660/2013/readings/i386/s03_06.htm)
+- Intel 80386 Programmer's Reference, *MOVS*, [scs.stanford.edu](https://www.scs.stanford.edu/nyu/04fa/lab/i386/MOVS.htm)

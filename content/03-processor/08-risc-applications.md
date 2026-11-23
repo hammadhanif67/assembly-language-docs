@@ -7,17 +7,17 @@ description: RISC applications, ARM architecture and products, the performance e
 
 | Low End & Mobile System | High End RISC & Supercomputing |
 |---|---|
-| **ARM ARCHITECTURE** — Android based systems/ Apple iPhone/ Nintendo GBA etc. | **MIPS** — used in embedded system in routers, used by Digital Equipment Corporation etc. |
-| **MIPS line** — in PlayStations, Nintendo 64 etc. | **IBM'S Power Architecture** — In many IBM's supercomputers, workstations etc. |
-| **Atmel AVR** — Xbox handheld controllers to BMW cars | **Alpha** — In Single-board computers, Servers & Supercomputers from Digital Equivalent Cooperation etc. |
+| **ARM ARCHITECTURE**, Android based systems/ Apple iPhone/ Nintendo GBA etc. | **MIPS**, used in embedded system in routers, used by Digital Equipment Corporation etc. |
+| **MIPS line**, in PlayStations, Nintendo 64 etc. | **IBM'S Power Architecture**, In many IBM's supercomputers, workstations etc. |
+| **Atmel AVR**, Xbox handheld controllers to BMW cars | **Alpha**, In Single-board computers, Servers & Supercomputers from Digital Equivalent Cooperation etc. |
 
 ## ARM Based Products
 
 :::figure img-raspberry-pi.jpg side
-Raspberry Pi 4 — a credit-card computer built around a 64-bit ARM Cortex-A72 processor
+Raspberry Pi 4, a credit-card computer built around a 64-bit ARM Cortex-A72 processor
 :::
 
-ARM based products — Apple iPhone (ARM11), Lego Mindstrome Robot (ARM7), Paison Series game consoles (ARM7TDMI).
+ARM based products, Apple iPhone (ARM11), Lego Mindstrome Robot (ARM7), Paison Series game consoles (ARM7TDMI).
 
 ## ARM Architecture
 

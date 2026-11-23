@@ -1,6 +1,6 @@
 ---
-title: I/O Techniques — Polling, Interrupts & DMA
-description: How the CPU exchanges data with devices — I/O-mapped vs memory-mapped I/O, programmed I/O (polling), interrupt-driven I/O and direct memory access (DMA).
+title: I/O Techniques: Polling, Interrupts & DMA
+description: How the CPU exchanges data with devices, I/O-mapped vs memory-mapped I/O, programmed I/O (polling), interrupt-driven I/O and direct memory access (DMA).
 research: true
 ---
 
@@ -40,7 +40,7 @@ wait_ready:
 ## 2. Interrupt-driven I/O
 
 The CPU starts the device and continues other work. When the device is ready it raises an **interrupt**;
-the CPU pauses, runs the device’s interrupt service routine to move the data, and resumes — see
+the CPU pauses, runs the device’s interrupt service routine to move the data, and resumes, see
 [Interrupts & I/O](../advanced/interrupts-and-io.html#what-int-n-does).
 
 - ✔ No busy-waiting.
@@ -77,5 +77,5 @@ blocked for long.
 
 - W. Stallings, *Computer Organization and Architecture*, ch. 7 “Input/Output”.
 - Intel, *8237A High Performance Programmable DMA Controller* datasheet.
-- Wikipedia, *Direct memory access* — [en.wikipedia.org](https://en.wikipedia.org/wiki/Direct_memory_access)
-- Wikipedia, *Memory-mapped I/O and port-mapped I/O* — [en.wikipedia.org](https://en.wikipedia.org/wiki/Memory-mapped_I/O_and_port-mapped_I/O)
+- Wikipedia, *Direct memory access*, [en.wikipedia.org](https://en.wikipedia.org/wiki/Direct_memory_access)
+- Wikipedia, *Memory-mapped I/O and port-mapped I/O*, [en.wikipedia.org](https://en.wikipedia.org/wiki/Memory-mapped_I/O_and_port-mapped_I/O)

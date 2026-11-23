@@ -1,4 +1,4 @@
-/* COAL Documentation — small interactive widgets. Mount points: <div class="widget" data-widget="name"> */
+/* COAL Documentation, small interactive widgets. Mount points: <div class="widget" data-widget="name"> */
 (function () {
   'use strict';
   const h = (html) => { const t = document.createElement('template'); t.innerHTML = html.trim(); return t.content; };
@@ -8,12 +8,12 @@
   function programExecution(el) {
     const mem0 = { 0x300: '1940', 0x301: '5941', 0x302: '2941', 0x940: '0003', 0x941: '0002' };
     const steps = [
-      { pc: '300', ac: '', ir: '1940', mem: {}, hl: [0x300], note: 'Step 1 — The PC holds 300, the address of the first instruction. The instruction 1940 is loaded into the instruction register IR (fetch). Opcode 1 = “load AC from memory”, address 940.' },
-      { pc: '301', ac: '0003', ir: '1940', mem: {}, hl: [0x940], note: 'Step 2 — The PC is incremented to 301. The instruction executes: the word at address 940 (0003) is loaded into the accumulator AC.' },
-      { pc: '301', ac: '0003', ir: '5941', mem: {}, hl: [0x301], note: 'Step 3 — The next instruction 5941 is fetched from location 301 into IR. Opcode 5 = “add to AC from memory”, address 941.' },
-      { pc: '302', ac: '0005', ir: '5941', mem: {}, hl: [0x941], note: 'Step 4 — The PC is incremented to 302. The old contents of AC and the contents of location 941 are added: 3 + 2 = 5, and the result is stored in AC.' },
-      { pc: '302', ac: '0005', ir: '2941', mem: {}, hl: [0x302], note: 'Step 5 — The next instruction 2941 is fetched from location 302 into IR. Opcode 2 = “store AC to memory”, address 941.' },
-      { pc: '303', ac: '0005', ir: '2941', mem: { 0x941: '0005' }, hl: [0x941], note: 'Step 6 — The PC is incremented to 303. The contents of AC (0005) are stored in location 941.' },
+      { pc: '300', ac: '', ir: '1940', mem: {}, hl: [0x300], note: 'Step 1, The PC holds 300, the address of the first instruction. The instruction 1940 is loaded into the instruction register IR (fetch). Opcode 1 = “load AC from memory”, address 940.' },
+      { pc: '301', ac: '0003', ir: '1940', mem: {}, hl: [0x940], note: 'Step 2, The PC is incremented to 301. The instruction executes: the word at address 940 (0003) is loaded into the accumulator AC.' },
+      { pc: '301', ac: '0003', ir: '5941', mem: {}, hl: [0x301], note: 'Step 3, The next instruction 5941 is fetched from location 301 into IR. Opcode 5 = “add to AC from memory”, address 941.' },
+      { pc: '302', ac: '0005', ir: '5941', mem: {}, hl: [0x941], note: 'Step 4, The PC is incremented to 302. The old contents of AC and the contents of location 941 are added: 3 + 2 = 5, and the result is stored in AC.' },
+      { pc: '302', ac: '0005', ir: '2941', mem: {}, hl: [0x302], note: 'Step 5, The next instruction 2941 is fetched from location 302 into IR. Opcode 2 = “store AC to memory”, address 941.' },
+      { pc: '303', ac: '0005', ir: '2941', mem: { 0x941: '0005' }, hl: [0x941], note: 'Step 6, The PC is incremented to 303. The contents of AC (0005) are stored in location 941.' },
     ];
     let i = 0;
     el.append(h(`<div class="stepper-panel">
@@ -57,10 +57,10 @@
     const seg = el.querySelector('[data-seg]'), off = el.querySelector('[data-off]'), out = el.querySelector('[data-out]');
     const ok = (v) => /^[0-9a-f]{1,4}$/i.test(v);
     const run = () => {
-      if (!ok(seg.value) || !ok(off.value)) { out.innerHTML = '<span class="w-err">Enter 1–4 hexadecimal digits (0–9, A–F) in each box.</span>'; return; }
+      if (!ok(seg.value) || !ok(off.value)) { out.innerHTML = '<span class="w-err">Enter 1-4 hexadecimal digits (0-9, A-F) in each box.</span>'; return; }
       const s = parseInt(seg.value, 16), o = parseInt(off.value, 16);
       const pa = s * 16 + o, wrapped = pa & 0xfffff;
-      out.innerHTML = `Logical address = <b>${hex(s, 4)}:${hex(o, 4)}</b><br>Segment × 10h = ${hex(s, 4)}h × 10h = ${hex(s * 16, 5)}h<br>Physical address = ${hex(s * 16, 5)}h + ${hex(o, 4)}h = <b>${hex(pa, 5)}h</b>${pa > 0xfffff ? ` <span class="w-err">(exceeds 20 bits — wraps to ${hex(wrapped, 5)}h on an 8086)</span>` : ''}`;
+      out.innerHTML = `Logical address = <b>${hex(s, 4)}:${hex(o, 4)}</b><br>Segment × 10h = ${hex(s, 4)}h × 10h = ${hex(s * 16, 5)}h<br>Physical address = ${hex(s * 16, 5)}h + ${hex(o, 4)}h = <b>${hex(pa, 5)}h</b>${pa > 0xfffff ? ` <span class="w-err">(exceeds 20 bits, wraps to ${hex(wrapped, 5)}h on an 8086)</span>` : ''}`;
     };
     seg.addEventListener('input', run); off.addEventListener('input', run); run();
   }
@@ -111,7 +111,7 @@
       el.querySelector('[data-regs]').innerHTML = `<div class="mem-row${hl === 'sp' ? ' hl' : ''}"><span class="mem-addr">SP</span>${cell(hex(sp, 4))}</div><div class="mem-row${hl === 'ax' ? ' hl' : ''}"><span class="mem-addr">AX</span>${cell(ax)}</div>`;
     };
     el.querySelector('[data-push]').addEventListener('click', () => {
-      if (!/^[0-9a-f]{1,4}$/i.test(v.value)) { note.textContent = 'Enter 1–4 hex digits.'; return; }
+      if (!/^[0-9a-f]{1,4}$/i.test(v.value)) { note.textContent = 'Enter 1-4 hex digits.'; return; }
       if (sp <= 0xf8) { note.textContent = 'This demo stack is full (stack overflow!). POP something first.'; return; }
       sp -= 2; mem[sp] = hex(parseInt(v.value, 16), 4);
       note.textContent = `PUSH ${mem[sp]}h → SP = SP − 2 = ${hex(sp, 4)}h, then [SS:${hex(sp, 4)}] = ${mem[sp]}h`;

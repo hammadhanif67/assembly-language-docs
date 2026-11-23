@@ -1,4 +1,4 @@
-/* COAL Docs — calculator workbench (tools page). Each tool registers as a widget. */
+/* COAL Docs, calculator workbench (tools page). Each tool registers as a widget. */
 (function () {
   'use strict';
   const W = window.COAL_WIDGETS;
@@ -78,7 +78,7 @@
     const terms = d.map((c, i) => [DIG.indexOf(c), d.length - 1 - i]);
     const shown = base === 2 ? terms.filter(([v]) => v) : terms;
     const sum = terms.reduce((s, [v, p]) => s + v * base ** p, 0);
-    return `<p class="t-hint">Multiply each digit by its place value ${base}<sup>position</sup> (rightmost position = 0) and add${base === 2 ? ' — only the 1 bits count' : ''}:</p>
+    return `<p class="t-hint">Multiply each digit by its place value ${base}<sup>position</sup> (rightmost position = 0) and add${base === 2 ? ', only the 1 bits count' : ''}:</p>
       <p class="t-math">${shown.map(([v, p]) => `${v}×${pow(base, p)}`).join(' + ') || '0'}</p>
       <p class="t-math">= ${shown.map(([v, p]) => fmtN(v * base ** p)).join(' + ') || '0'} = <b>${fmtN(sum)}</b></p>`;
   }
@@ -117,7 +117,7 @@
       if (src === 8) wk += fold('Octal → decimal: add the place values', weightSum(u.toString(8), 8), true) + fold('Octal → binary: 3 bits per digit', groupBits(bs, 3)) + fold('Binary → hexadecimal: groups of 4 bits', groupBits(bs, 4));
       return `<div class="t-bits" style="--n:${Math.min(bits, 16)}">${cells}</div>` + rows([
         ['Unsigned decimal', n >>> 0], ['Signed decimal', toSigned(n, bits)], ['Hexadecimal', hex(n, bits / 4) + 'h'],
-        ['Binary', bin(n, bits) + 'b'], ['Octal', (n >>> 0).toString(8) + 'o'], ['ASCII (low byte)', esc(String.fromCharCode(n & 0xff)).trim() && (n & 0xff) >= 32 && (n & 0xff) < 127 ? `'${esc(String.fromCharCode(n & 0xff))}'` : '—'],
+        ['Binary', bin(n, bits) + 'b'], ['Octal', (n >>> 0).toString(8) + 'o'], ['ASCII (low byte)', esc(String.fromCharCode(n & 0xff)).trim() && (n & 0xff) >= 32 && (n & 0xff) < 127 ? `'${esc(String.fromCharCode(n & 0xff))}'` : '-'],
       ]) + `<div class="t-work"><p class="t-work-h">Step-by-step working</p>${wk}</div>`;
     });
     out.addEventListener('click', (e) => {
@@ -139,14 +139,14 @@
       if (n < lo || n > hi) throw new Error(`Out of the signed ${bits}-bit range ${lo} … ${hi}.`);
       const abs = Math.abs(n), m = mask(bits);
       const res = (n >>> 0) & m;
-      if (n >= 0) return rows([['Positive — stored as is', bin(abs, bits)], ['Hex', hex(res, bits / 4) + 'h'], ['Signed range', `${lo} … ${hi}`]]) + work([`A positive number (sign bit 0) is simply converted to binary: ${fmtN(abs)} = ${bin(abs, bits)}`, `Range for ${bits} bits: −2<sup>${bits - 1}</sup> … 2<sup>${bits - 1}</sup> − 1 = ${lo} … ${hi}`]);
+      if (n >= 0) return rows([['Positive, stored as is', bin(abs, bits)], ['Hex', hex(res, bits / 4) + 'h'], ['Signed range', `${lo} … ${hi}`]]) + work([`A positive number (sign bit 0) is simply converted to binary: ${fmtN(abs)} = ${bin(abs, bits)}`, `Range for ${bits} bits: −2<sup>${bits - 1}</sup> … 2<sup>${bits - 1}</sup> − 1 = ${lo} … ${hi}`]);
       const inv = (~abs >>> 0) & m;
       return rows([
         [`1. |${n}| in binary`, bin(abs, bits)], ['2. Invert every bit', bin(inv, bits)], ['3. Add 1', `<b>${bin(res, bits)}</b>`],
         ['Result (hex)', `<b>${hex(res, bits / 4)}h</b>`], ['Same bits read unsigned', res >>> 0], ['Signed range', `${lo} … ${hi}`],
       ]) + work([
         `Write |${n}| = ${abs} in ${bits}-bit binary: <span class="t-math">${bin(abs, bits)}</span>`,
-        `One's complement — flip every 0 to 1 and 1 to 0: <span class="t-math">${bin(inv, bits)}</span>`,
+        `One's complement, flip every 0 to 1 and 1 to 0: <span class="t-math">${bin(inv, bits)}</span>`,
         `Add 1: <span class="t-math">${bin(inv, bits)} + 1 = <b>${bin(res, bits)}</b></span>`,
         `Shortcut formula: 2<sup>${bits}</sup> − |x| = ${fmtN(2 ** bits)} − ${abs} = <b>${fmtN(res >>> 0)}</b> = ${hex(res, bits / 4)}h`,
         `Check: the sign bit (leftmost) is 1, so the number is negative. Reading it back: −2<sup>${bits - 1}</sup> + ${fmtN((res >>> 0) - 2 ** (bits - 1))} = ${n} ✓`,
@@ -183,7 +183,7 @@
       const R = (r >>> 0) & m, d = bits / 4;
       const flagInfo = { CF: 'carry/borrow out of the top bit (unsigned overflow)', ZF: 'result is zero', SF: 'top bit of the result (negative if signed)', OF: 'signed overflow', PF: 'even number of 1s in the low byte', AF: 'carry/borrow out of bit 3 (BCD)' };
       const chips = Object.entries(flagInfo).map(([k, t]) => `<span class="t-flag${f[k] ? ' on' : ''}" title="${t}">${k}=${f[k] ? 1 : 0}</span>`).join('');
-      const kept = op === 'CMP' || op === 'TEST' ? ' <em>(not stored — only flags change)</em>' : '';
+      const kept = op === 'CMP' || op === 'TEST' ? ' <em>(not stored, only flags change)</em>' : '';
       const unchangedCF = op === 'INC' || op === 'DEC' ? '<p class="t-hint">INC and DEC leave CF unchanged.</p>' : '';
       // working: column layout of the operation, then the reason for every flag
       const B2 = op === 'NEG' ? a : op === 'INC' || op === 'DEC' ? 1 : b;
@@ -195,12 +195,12 @@
       const ls = (x) => toSigned(x, bits), lo = -(2 ** (bits - 1)), hi = 2 ** (bits - 1) - 1;
       const trueSigned = { ADD: ls(a) + ls(b), ADC: ls(a) + ls(b) + (cf ? 1 : 0), INC: ls(a) + 1, SUB: ls(a) - ls(b), SBB: ls(a) - ls(b) - (cf ? 1 : 0), CMP: ls(a) - ls(b), DEC: ls(a) - 1, NEG: -ls(a) }[op];
       const reasons = [
-        arith && op !== 'INC' && op !== 'DEC' ? `<b>CF = ${f.CF ? 1 : 0}</b> — unsigned: ${['ADD', 'ADC'].includes(op) ? `${a} + ${b}${op === 'ADC' && cf ? ' + 1' : ''} = ${r} ${r > m ? `&gt; ${m}, a carry leaves the top bit` : `≤ ${m}, no carry`}` : op === 'NEG' ? `NEG sets CF unless the operand is 0` : `${a} ${a < b + (op === 'SBB' && cf ? 1 : 0) ? '&lt;' : '≥'} ${b}${op === 'SBB' && cf ? ' + 1' : ''} → ${r < 0 ? 'a borrow is needed' : 'no borrow'}`}` : `<b>CF = ${f.CF ? 1 : 0}</b> — ${op === 'INC' || op === 'DEC' ? 'unchanged by INC/DEC' : 'logic instructions always clear CF'}`,
-        `<b>ZF = ${f.ZF ? 1 : 0}</b> — the ${bits}-bit result ${R === 0 ? 'is' : 'is not'} zero`,
-        `<b>SF = ${f.SF ? 1 : 0}</b> — copy of the top bit (bit ${bits - 1}) of the result`,
-        arith ? `<b>OF = ${f.OF ? 1 : 0}</b> — signed: ${trueSigned} ${trueSigned < lo || trueSigned > hi ? `is outside ${lo} … ${hi}, so the signed result is wrong` : `fits in ${lo} … ${hi}`}` : `<b>OF = 0</b> — logic instructions always clear OF`,
-        `<b>PF = ${f.PF ? 1 : 0}</b> — the low byte ${bin(R & 0xff, 8)} has ${ones} one-bit${ones === 1 ? '' : 's'} (${ones % 2 ? 'odd' : 'even'})`,
-        arith ? `<b>AF = ${f.AF ? 1 : 0}</b> — low nibbles ${hex(A2 & 0xf, 1)}h ${sym} ${hex(B2 & 0xf, 1)}h ${f.AF ? (sym === '+' ? 'carry out of bit 3' : 'borrow into bit 3') : 'no carry/borrow at bit 3'}` : `<b>AF</b> — undefined after logic instructions`,
+        arith && op !== 'INC' && op !== 'DEC' ? `<b>CF = ${f.CF ? 1 : 0}</b>, unsigned: ${['ADD', 'ADC'].includes(op) ? `${a} + ${b}${op === 'ADC' && cf ? ' + 1' : ''} = ${r} ${r > m ? `&gt; ${m}, a carry leaves the top bit` : `≤ ${m}, no carry`}` : op === 'NEG' ? `NEG sets CF unless the operand is 0` : `${a} ${a < b + (op === 'SBB' && cf ? 1 : 0) ? '&lt;' : '≥'} ${b}${op === 'SBB' && cf ? ' + 1' : ''} → ${r < 0 ? 'a borrow is needed' : 'no borrow'}`}` : `<b>CF = ${f.CF ? 1 : 0}</b>, ${op === 'INC' || op === 'DEC' ? 'unchanged by INC/DEC' : 'logic instructions always clear CF'}`,
+        `<b>ZF = ${f.ZF ? 1 : 0}</b>, the ${bits}-bit result ${R === 0 ? 'is' : 'is not'} zero`,
+        `<b>SF = ${f.SF ? 1 : 0}</b>, copy of the top bit (bit ${bits - 1}) of the result`,
+        arith ? `<b>OF = ${f.OF ? 1 : 0}</b>, signed: ${trueSigned} ${trueSigned < lo || trueSigned > hi ? `is outside ${lo} … ${hi}, so the signed result is wrong` : `fits in ${lo} … ${hi}`}` : `<b>OF = 0</b>, logic instructions always clear OF`,
+        `<b>PF = ${f.PF ? 1 : 0}</b>, the low byte ${bin(R & 0xff, 8)} has ${ones} one-bit${ones === 1 ? '' : 's'} (${ones % 2 ? 'odd' : 'even'})`,
+        arith ? `<b>AF = ${f.AF ? 1 : 0}</b>, low nibbles ${hex(A2 & 0xf, 1)}h ${sym} ${hex(B2 & 0xf, 1)}h ${f.AF ? (sym === '+' ? 'carry out of bit 3' : 'borrow into bit 3') : 'no carry/borrow at bit 3'}` : `<b>AF</b>, undefined after logic instructions`,
       ];
       return rows([
         ['Operation', unary ? `${op} ${hex(a, d)}h` : `${op} ${hex(a, d)}h, ${hex(b, d)}h`],
@@ -217,7 +217,7 @@
       const bits = +v.w, m = mask(bits), top = 2 ** (bits - 1);
       let x = (need(parseNum(v.v), 'Value') >>> 0) & m, cf = v.cf ? 1 : 0;
       const count = need(parseNum(v.c), 'Count');
-      if (count < 0 || count > 31) throw new Error('Count must be 0–31 (the 8086 uses CL; later CPUs mask it to 5 bits).');
+      if (count < 0 || count > 31) throw new Error('Count must be 0-31 (the 8086 uses CL; later CPUs mask it to 5 bits).');
       const steps = [[0, x, cf]];
       for (let i = 0; i < count; i++) {
         const msb = x & top ? 1 : 0, lsb = x & 1;
@@ -239,8 +239,8 @@
         SAR: `SAR keeps the sign bit, so it divides a signed number by 2<sup>${count}</sup> rounding down: ${toSigned(x0, bits)} ÷ ${2 ** count} → ${Math.floor(toSigned(x0, bits) / 2 ** count)}`,
         ROL: 'Rotate: the bit leaving on the left re-enters on the right and is also copied to CF; nothing is lost.',
         ROR: 'Rotate: the bit leaving on the right re-enters on the left and is also copied to CF; nothing is lost.',
-        RCL: `Rotate through carry: CF acts as a ${bits + 1}th bit — the top bit goes to CF and the old CF enters bit 0.`,
-        RCR: `Rotate through carry: CF acts as a ${bits + 1}th bit — bit 0 goes to CF and the old CF enters the top bit.`,
+        RCL: `Rotate through carry: CF acts as a ${bits + 1}th bit, the top bit goes to CF and the old CF enters bit 0.`,
+        RCR: `Rotate through carry: CF acts as a ${bits + 1}th bit, bit 0 goes to CF and the old CF enters the top bit.`,
       }[v.op === 'SAL' ? 'SHL' : v.op];
       return rows([['Result', `<b>${hex(x, bits / 4)}h</b> = ${x} unsigned, ${toSigned(x, bits)} signed`], ['CF after', cf]]) + work([rule, 'The table shows every single-bit step; CF holds the last bit shifted out.']) + table;
     });
@@ -274,11 +274,11 @@
           `CF = OF = ${of ? 1 : 0}`,
         ]);
       }
-      if (sv === 0) return rows([['Result', '<span class="t-bad">Divide error — INT 0 (division by zero)</span>']]);
+      if (sv === 0) return rows([['Result', '<span class="t-bad">Divide error, INT 0 (division by zero)</span>']]);
       const dividend = bits === 8 ? (signed ? toSigned(AX, 16) : AX) : (signed ? toSigned(((DX << 16) | AX) >>> 0, 32) : ((DX << 16) | AX) >>> 0);
       const q = Math.trunc(dividend / sv), r = dividend - q * sv;
       const qmax = signed ? 2 ** (bits - 1) - 1 : mask(bits), qmin = signed ? -(2 ** (bits - 1)) : 0;
-      if (q > qmax || q < qmin) return rows([['Computes', `${dividend} ÷ ${sv} = ${q}`], ['Result', `<span class="t-bad">Divide overflow — quotient does not fit in ${bits === 8 ? 'AL' : 'AX'} (INT 0)</span>`]]);
+      if (q > qmax || q < qmin) return rows([['Computes', `${dividend} ÷ ${sv} = ${q}`], ['Result', `<span class="t-bad">Divide overflow, quotient does not fit in ${bits === 8 ? 'AL' : 'AX'} (INT 0)</span>`]]);
       const qn = q & mask(bits), rn = r & mask(bits);
       const dwork = work([
         `Dividend: ${bits === 8 ? `AX = ${hex(AX, 4)}h` : `DX:AX = ${hex(DX, 4)}:${hex(AX, 4)}h`} = ${dividend}`,
@@ -379,9 +379,9 @@
           iw = work([
             `Sign: ${value < 0 ? 'the number is negative → S = <b>1</b>' : 'the number is positive → S = <b>0</b>'}`,
             `Integer part ${ip} → binary (divide by 2): <b>${ip.toString(2)}</b>`,
-            tr.length ? `Fraction part ${fmtN(ax - ip)} → binary: multiply by 2 and take the integer digit each time${fold('Show the ×2 table', `<table class="t-table"><thead><tr><th>Fraction × 2</th><th>Result</th><th>Bit</th></tr></thead><tbody>${tr.map(([a, t, d]) => `<tr><td class="mono">${fmtN(a)} × 2</td><td class="mono">${fmtN(t)}</td><td class="mono"><b>${d}</b></td></tr>`).join('')}</tbody></table>${fr > 0 ? '<p class="t-hint">The fraction does not end — it repeats, so it is rounded to fit the fraction field.</p>' : ''}`)}→ <b>.${fs}${fr > 0 ? '…' : ''}</b>` : 'No fraction part.',
+            tr.length ? `Fraction part ${fmtN(ax - ip)} → binary: multiply by 2 and take the integer digit each time${fold('Show the ×2 table', `<table class="t-table"><thead><tr><th>Fraction × 2</th><th>Result</th><th>Bit</th></tr></thead><tbody>${tr.map(([a, t, d]) => `<tr><td class="mono">${fmtN(a)} × 2</td><td class="mono">${fmtN(t)}</td><td class="mono"><b>${d}</b></td></tr>`).join('')}</tbody></table>${fr > 0 ? '<p class="t-hint">The fraction does not end, it repeats, so it is rounded to fit the fraction field.</p>' : ''}`)}→ <b>.${fs}${fr > 0 ? '…' : ''}</b>` : 'No fraction part.',
             `Together: <span class="t-math">${ip.toString(2)}.${fs || '0'}${fr > 0 ? '…' : ''}</span>`,
-            `Normalise — move the binary point so a single 1 is left of it: <span class="t-math">1.${Ft.slice(0, 24)}${Ft.length > 24 ? '…' : ''} × 2<sup>${e2}</sup></span>`,
+            `Normalise, move the binary point so a single 1 is left of it: <span class="t-math">1.${Ft.slice(0, 24)}${Ft.length > 24 ? '…' : ''} × 2<sup>${e2}</sup></span>`,
             `Biased exponent = ${e2} + ${bias} = ${e} = <b>${E}</b>b (${eb} bits)`,
             `Fraction field = the bits after the leading 1, padded with 0s to ${fb} bits: <span class="t-math">${F.slice(0, 32)}${fb > 32 ? '…' : ''}</span>`,
             assemble,
@@ -409,7 +409,7 @@
     bind(el, form, out, (v) => {
       let codes;
       if (v.dir === 't2c') codes = [...v.v].map((c) => c.charCodeAt(0));
-      else { codes = v.v.trim().split(/[\s,]+/).filter(Boolean).map((x) => parseInt(x.replace(/h$/i, ''), 16)); if (codes.some((c) => Number.isNaN(c) || c > 255)) throw new Error('Enter hex bytes 00–FF separated by spaces.'); }
+      else { codes = v.v.trim().split(/[\s,]+/).filter(Boolean).map((x) => parseInt(x.replace(/h$/i, ''), 16)); if (codes.some((c) => Number.isNaN(c) || c > 255)) throw new Error('Enter hex bytes 00-FF separated by spaces.'); }
       if (!codes.length) return '';
       if (codes.length > 64) codes = codes.slice(0, 64);
       const name = (c) => ({ 0: 'NUL', 9: 'TAB', 10: 'LF', 13: 'CR', 27: 'ESC', 32: 'space' }[c] || (c < 32 || c === 127 ? 'ctrl' : c > 127 ? 'ext.' : esc(String.fromCharCode(c))));
@@ -426,7 +426,7 @@
     bind(el, form, out, (v) => {
       if (v.mode === 'size') {
         const n = need(parseNum(v.n), 'Address lines');
-        if (n < 1 || n > 48) throw new Error('Use 1–48 address lines.');
+        if (n < 1 || n > 48) throw new Error('Use 1-48 address lines.');
         const bytes = 2 ** n;
         const ladder = [];
         let val = bytes, u = 0; const names = ['bytes', 'KB', 'MB', 'GB', 'TB'];
@@ -442,7 +442,7 @@
       const m = need(parseNum(v.m), 'Memory size'), mult = { B: 1, KB: 1024, MB: 2 ** 20, GB: 2 ** 30 }[v.u], bytes = m * mult;
       if (bytes <= 0) throw new Error('Memory size must be positive.');
       const n = Math.ceil(Math.log2(bytes));
-      return rows([['Address lines needed', `log₂(${bytes.toLocaleString('en-US')}) → <b>${n}</b>`], ['Exact power of two?', 2 ** n === bytes ? 'yes' : `no — ${n} lines address ${fmt(2 ** n)}`]]) + work([
+      return rows([['Address lines needed', `log₂(${bytes.toLocaleString('en-US')}) → <b>${n}</b>`], ['Exact power of two?', 2 ** n === bytes ? 'yes' : `no, ${n} lines address ${fmt(2 ** n)}`]]) + work([
         `Convert the size to bytes: ${fmtN(m)} ${v.u} × ${fmtN(mult)} = <b>${fmtN(bytes)} bytes</b>`,
         `Find n with 2<sup>n</sup> ≥ ${fmtN(bytes)}: n = log₂(${fmtN(bytes)}) = ${fmtN(Math.log2(bytes))}${Number.isInteger(Math.log2(bytes)) ? '' : ` → round up to ${n}`}`,
         `Answer: <b>${n} address lines</b> (2<sup>${n}</sup> = ${fmtN(2 ** n)})`,
@@ -456,7 +456,7 @@
     const lg = (x, name) => { const l = Math.log2(x); if (!Number.isInteger(l) || x < 1) throw new Error(`${name} must be a power of two.`); return l; };
     bind(el, form, out, (v) => {
       const A = need(parseNum(v.a), 'Address bits'), C = need(parseNum(v.c), 'Cache size'), B = need(parseNum(v.b), 'Block size'), k = +v.k;
-      if (A < 4 || A > 32) throw new Error('Address bits: 4–32.');
+      if (A < 4 || A > 32) throw new Error('Address bits: 4-32.');
       const ob = lg(B, 'Block size'), lines = C / B; lg(C, 'Cache size');
       if (lines < 1) throw new Error('Cache must hold at least one block.');
       const sets = k === 0 ? 1 : lines / k;
@@ -478,7 +478,7 @@
         `Number of lines = cache size ÷ block size = ${C} ÷ ${B} = <b>${lines}</b>`,
         k === 0 ? 'Fully associative: one set, so there are no index bits' : `Number of sets = lines ÷ ways = ${lines} ÷ ${k} = <b>${sets}</b> → ${k === 1 ? 'line' : 'set'} bits = log₂(${sets}) = <b>${ib}</b>`,
         `Tag bits = address bits − ${k === 0 ? '' : 'index − '}offset = ${A} − ${k === 0 ? '' : `${ib} − `}${ob} = <b>${tb}</b>`,
-        `Write the address ${x.toString(16).toUpperCase()}h in ${A} bits and cut it: <span class="t-math">${tag || '—'} | ${idx || '—'} | ${off}</span> (tag | ${k === 1 ? 'line' : 'set'} | offset)`,
+        `Write the address ${x.toString(16).toUpperCase()}h in ${A} bits and cut it: <span class="t-math">${tag || '-'} | ${idx || '-'} | ${off}</span> (tag | ${k === 1 ? 'line' : 'set'} | offset)`,
         `So the block goes to ${k === 0 ? 'any line' : `${k === 1 ? 'line' : 'set'} ${val(idx)}`}; the cache stores tag ${val(tag).toString(16).toUpperCase()}h to recognise it later.`,
       ]);
     });
@@ -488,7 +488,7 @@
   const unitBits = (u, base) => ({ bit: 1, nibble: 4, B: 8 }[u] || 8 * base ** ['KB', 'MB', 'GB', 'TB', 'PB'].indexOf(u) * base);
   const posNum = (s, name) => { const x = Number(String(s).replace(/,/g, '').trim()); if (String(s).trim() === '' || !Number.isFinite(x) || x < 0) throw new Error(`${name}: enter a positive number.`); return x; };
   W.register('tool-units', (el) => {
-    const [form, out] = mount(el, `<div class="t-row">${field('Value', 'v', '2')}${select('From', 'f', UNITS, 'GB')}${select('To', 't', UNITS, 'bit')}${select('Standard', 's', [[1024, 'binary — 1 KB = 1024 B (memory)'], [1000, 'decimal — 1 KB = 1000 B (disks, networks)']], 1024)}</div><p class="t-hint">Memory sizes use powers of two (1 KB = 2<sup>10</sup> = 1024 bytes; IEC name KiB). Disk makers and network speeds use powers of ten (1 KB = 1000 bytes).</p>`);
+    const [form, out] = mount(el, `<div class="t-row">${field('Value', 'v', '2')}${select('From', 'f', UNITS, 'GB')}${select('To', 't', UNITS, 'bit')}${select('Standard', 's', [[1024, 'binary, 1 KB = 1024 B (memory)'], [1000, 'decimal, 1 KB = 1000 B (disks, networks)']], 1024)}</div><p class="t-hint">Memory sizes use powers of two (1 KB = 2<sup>10</sup> = 1024 bytes; IEC name KiB). Disk makers and network speeds use powers of ten (1 KB = 1000 bytes).</p>`);
     bind(el, form, out, (v) => {
       const x = posNum(v.v, 'Value'), base = +v.s, order = UNITS.map((u) => u[0]);
       const fromBits = x * unitBits(v.f, base), res = fromBits / unitBits(v.t, base);
@@ -551,7 +551,7 @@
         const mix = parts.map(([sh, c]) => [sh.endsWith('%') ? Number(sh.slice(0, -1)) / 100 : Number(sh), Number(c)]);
         if (mix.some(([a, b]) => !Number.isFinite(a) || !Number.isFinite(b))) throw new Error('Mix: write share:cycles pairs, e.g. 50%:1, 30%:2, 20%:3.');
         const tot = mix.reduce((s, [a]) => s + a, 0);
-        if (Math.abs(tot - 1) > 1e-6) throw new Error(`The shares add up to ${fmtN(tot * 100)}% — they must add up to 100%.`);
+        if (Math.abs(tot - 1) > 1e-6) throw new Error(`The shares add up to ${fmtN(tot * 100)}%, they must add up to 100%.`);
         cpi = mix.reduce((s, [a, c]) => s + a * c, 0);
         mixStep = `Average CPI = Σ (share × cycles) = ${mix.map(([a, c]) => `${fmtN(a)}×${fmtN(c)}`).join(' + ')} = <b>${fmtN(cpi)}</b>`;
       } else cpi = posNum(v.cpi, 'CPI');
@@ -587,11 +587,11 @@
 
   // ---------- 16. Cache: hit ratio & average access time ----------
   W.register('tool-amat', (el) => {
-    const [form, out] = mount(el, `<div class="t-row">${field('Hit ratio h (0.9, 90% or hits/total)', 'h', '0.95', 'class="t-wide"')}${field('Cache time Tc (ns)', 'tc', '10')}${field('Memory time Tm (ns)', 'tm', '100')}${select('Access type', 'm', [['h', 'hierarchical — cache first, then memory'], ['s', 'simultaneous — both looked up together']], 'h')}</div>`);
+    const [form, out] = mount(el, `<div class="t-row">${field('Hit ratio h (0.9, 90% or hits/total)', 'h', '0.95', 'class="t-wide"')}${field('Cache time Tc (ns)', 'tc', '10')}${field('Memory time Tm (ns)', 'tm', '100')}${select('Access type', 'm', [['h', 'hierarchical, cache first, then memory'], ['s', 'simultaneous, both looked up together']], 'h')}</div>`);
     bind(el, form, out, (v) => {
       const raw = v.h.trim(); let h, hStep = '';
       if (raw.includes('/')) { const [a, b] = raw.split('/').map(Number); if (!(b > 0) || a < 0 || a > b) throw new Error('Write hits/total, e.g. 950/1000.'); h = a / b; hStep = `Hit ratio h = hits ÷ total = ${fmtN(a)} ÷ ${fmtN(b)} = <b>${fmtN(h)}</b>; miss ratio = 1 − h = ${fmtN(1 - h)}`; }
-      else { h = raw.endsWith('%') ? Number(raw.slice(0, -1)) / 100 : Number(raw); if (!(h >= 0 && h <= 1)) throw new Error('Hit ratio must be between 0 and 1 (or 0–100%).'); hStep = `Hit ratio h = ${fmtN(h)}, miss ratio = 1 − h = ${fmtN(1 - h)}`; }
+      else { h = raw.endsWith('%') ? Number(raw.slice(0, -1)) / 100 : Number(raw); if (!(h >= 0 && h <= 1)) throw new Error('Hit ratio must be between 0 and 1 (or 0-100%).'); hStep = `Hit ratio h = ${fmtN(h)}, miss ratio = 1 − h = ${fmtN(1 - h)}`; }
       const tc = posNum(v.tc, 'Cache time'), tm = posNum(v.tm, 'Memory time');
       const t = v.m === 'h' ? h * tc + (1 - h) * (tc + tm) : h * tc + (1 - h) * tm;
       const formula = v.m === 'h' ? 'T = h × Tc + (1 − h) × (Tc + Tm)' : 'T = h × Tc + (1 − h) × Tm';

@@ -7,10 +7,10 @@ export const specs = {};
 specs['generations-timeline'] = () => {
   const d = new Diagram(760, 230, { minw: 620 });
   const gens = [
-    ['1st', '1946–1955', 'Vacuum tubes'],
-    ['2nd', '1956–1965', 'Transistors'],
-    ['3rd', '1966–1975', 'Integrated circuits'],
-    ['4th', '1976–1985', 'Microprocessors'],
+    ['1st', '1946-1955', 'Vacuum tubes'],
+    ['2nd', '1956-1965', 'Transistors'],
+    ['3rd', '1966-1975', 'Integrated circuits'],
+    ['4th', '1976-1985', 'Microprocessors'],
     ['5th', '1986 →', 'ULSI · AI'],
   ];
   d.path([[20, 120], [740, 120]], { cls: 'd-line', arrow: 'end' });
@@ -28,10 +28,10 @@ specs['generations-timeline'] = () => {
 // ---------- Architecture vs organization ----------
 specs['arch-vs-org'] = () => {
   const d = new Diagram(700, 300, { minw: 560 });
-  d.box(20, 20, 660, 110, { kind: 'group', label: 'Architecture — what the programmer sees' });
+  d.box(20, 20, 660, 110, { kind: 'group', label: 'Architecture, what the programmer sees' });
   ['Instruction set', 'Data representation', 'I/O mechanisms', 'Memory addressing'].forEach((t, i) => d.box(40 + i * 160, 56, 140, 52, { label: t, kind: 'tint' }));
   d.path([[350, 132], [350, 166]], { cls: 'd-line-acc', arrow: 'end', label: 'is implemented by', labelAt: [430, 149] });
-  d.box(20, 170, 660, 110, { kind: 'group', label: 'Organization — how it is built (hidden from the programmer)' });
+  d.box(20, 170, 660, 110, { kind: 'group', label: 'Organization, how it is built (hidden from the programmer)' });
   ['Control signals', 'Peripheral interfaces', 'Memory technology', 'Operational units'].forEach((t, i) => d.box(40 + i * 160, 206, 140, 52, { label: t, kind: 'alt' }));
   return d;
 };
@@ -111,12 +111,12 @@ specs['harvard'] = () => {
 // ---------- Instruction format ----------
 specs['instruction-format'] = () => {
   const d = new Diagram(640, 250, { minw: 520 });
-  d.text(40, 24, 'Format A — two operands', { cls: 'd-caps', anchor: 'start' });
+  d.text(40, 24, 'Format A, two operands', { cls: 'd-caps', anchor: 'start' });
   const parts = [['Opcode', 4, 'tint'], ['Operand reference', 6, 'alt'], ['Operand reference', 6, 'alt']];
   let x = 40;
   parts.forEach(([t, bits, k]) => { const w = bits * 32; d.box(x, 54, w, 46, { label: t, kind: k, r: 0 }); d.text(x + w / 2, 42, `${bits} bits`, { cls: 'd-small' }); x += w; });
   d.dim(40, x, 116, '16 bits');
-  d.text(40, 160, 'Format B — one operand', { cls: 'd-caps', anchor: 'start' });
+  d.text(40, 160, 'Format B, one operand', { cls: 'd-caps', anchor: 'start' });
   d.box(40, 190, 128, 46, { label: 'Opcode', kind: 'tint', r: 0 });
   d.box(168, 190, 384, 46, { label: 'Operand', kind: 'alt', r: 0 });
   d.text(104, 178, '4 bits', { cls: 'd-small' });
@@ -242,7 +242,7 @@ specs['instruction-cycle-state'] = () => {
   d.path([DO.right, OAC2.left]);
   d.path([OAC2.at('top', 0.35), OS.at('bottom', 0.35)]);
   d.path([OS.at('bottom', 0.65), OAC2.at('top', 0.65)], { cls: 'd-line-mut', label: 'multiple results', labelAt: [OS.x + W * 0.65 - 50, 156] });
-  d.path([OS.right, [726, OS.cy], [726, 320], [IAC.cx, 320], IAC.bottom], { cls: 'd-line-acc', label: 'instruction complete — fetch next instruction', labelAt: [220, 320] });
+  d.path([OS.right, [726, OS.cy], [726, 320], [IAC.cx, 320], IAC.bottom], { cls: 'd-line-acc', label: 'instruction complete, fetch next instruction', labelAt: [220, 320] });
   d.path([[OAC.cx, 320], OAC.bottom], { cls: 'd-line-acc' });
   d.tag(OAC.cx + 96, 344, 'return for string or vector data');
   return d;
@@ -267,8 +267,8 @@ const laundry = (rows, top, endMin) => {
   d.text(nearEnd ? ex - 6 : ex + 6, 292, `done at ${top}`, { cls: 'd-small', anchor: nearEnd ? 'end' : 'start' });
   return d;
 };
-specs['laundry-sequential'] = () => laundry(['A', 'B', 'C', 'D'].map((n, i) => { const o = i * 90; return [n, [[o, o + 30, 'w'], [o + 30, o + 70, 'r'], [o + 70, o + 90, 'f']]]; }), 'midnight — 6 hours', 360);
-specs['laundry-pipelined'] = () => laundry(['A', 'B', 'C', 'D'].map((n, i) => { const ws = i === 0 ? 0 : 30 + (i - 1) * 40, ds = 30 + i * 40; return [n, [[ws, ws + 30, 'w'], [ds, ds + 40, 'r'], [ds + 40, ds + 60, 'f']]]; }), '9:30 PM — 3.5 hours', 210);
+specs['laundry-sequential'] = () => laundry(['A', 'B', 'C', 'D'].map((n, i) => { const o = i * 90; return [n, [[o, o + 30, 'w'], [o + 30, o + 70, 'r'], [o + 70, o + 90, 'f']]]; }), 'midnight, 6 hours', 360);
+specs['laundry-pipelined'] = () => laundry(['A', 'B', 'C', 'D'].map((n, i) => { const ws = i === 0 ? 0 : 30 + (i - 1) * 40, ds = 30 + i * 40; return [n, [[ws, ws + 30, 'w'], [ds, ds + 40, 'r'], [ds + 40, ds + 60, 'f']]]; }), '9:30 PM, 3.5 hours', 210);
 
 // ---------- RISC 5-stage pipeline ----------
 specs['risc-pipeline'] = () => {

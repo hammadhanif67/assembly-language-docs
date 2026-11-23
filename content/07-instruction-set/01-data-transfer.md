@@ -8,7 +8,7 @@ Data transfer instructions copy data between registers, memory, the stack and I/
 8086, **none of them change the arithmetic flags** (except `POPF` and `SAHF`, which load the flags on
 purpose).
 
-## MOV — copy
+## MOV: copy
 
 `MOV destination, source` copies the source into the destination. The source is unchanged.
 
@@ -36,28 +36,28 @@ mov ds, ax          ; segment   ← register
 Which operand combinations MOV allows
 :::
 
-## XCHG — swap
+## XCHG: swap
 
 ```asm
 xchg ax, bx        ; swap two registers
 xchg al, [si]      ; swap register with memory
 ```
 
-## LEA, LDS, LES — load addresses
+## LEA, LDS, LES: load addresses
 
 ```asm
 lea dx, msg            ; DX = offset of msg (address, not contents)
-lea bx, [bx+si+4]      ; BX = BX + SI + 4 — LEA can also do quick arithmetic
+lea bx, [bx+si+4]      ; BX = BX + SI + 4, LEA can also do quick arithmetic
 lds si, farptr         ; SI = word at farptr, DS = word at farptr+2
 les di, farptr         ; same, loading ES:DI
 ```
 
 | Instruction | Loads | Example result |
 |---|---|---|
-| `mov dx, word ptr msg` | the **contents** of msg (its first 2 bytes) | for `msg db 'CO…'`: DX = 4F43h ('O','C' — little-endian) |
+| `mov dx, word ptr msg` | the **contents** of msg (its first 2 bytes) | for `msg db 'CO…'`: DX = 4F43h ('O','C', little-endian) |
 | `lea dx, msg` | the **address** (offset) of msg | DX = offset of msg, e.g. 0002h |
 
-## XLAT — table lookup
+## XLAT: table lookup
 
 `XLAT` replaces AL with the byte at `DS:[BX + AL]`, i.e. table translation:
 
@@ -84,11 +84,11 @@ The 8086 pushes and pops **words only** (16-bit). See [Stack & Procedures](../ad
 ## Flag transfers
 
 ```asm
-lahf          ; AH = low byte of FLAGS (SF ZF – AF – PF – CF)
+lahf          ; AH = low byte of FLAGS (SF ZF, AF, PF, CF)
 sahf          ; low byte of FLAGS = AH
 ```
 
-## Port I/O — IN / OUT
+## Port I/O: IN / OUT
 
 The 8086 has a separate 64 K **I/O address space** (ports). Data goes through AL (byte) or AX (word):
 
@@ -100,6 +100,6 @@ out dx, al        ; write AL to port 3F8h (16-bit port numbers go in DX)
 
 ## Sources
 
-- Intel, *The 8086 Family User's Manual* (1979), ch. 2 — Data Transfer Instructions — [archive.org](https://ia801302.us.archive.org/2/items/bitsavers_intel80869lyUsersManualOct79_62967963/9800722-03_The_8086_Family_Users_Manual_Oct79.pdf)
-- WSU EE314, *x86 instruction reference* — [eecs.wsu.edu](https://eecs.wsu.edu/~ee314/handouts/x86ref.pdf)
-- Wikipedia, *x86 instruction listings* — [en.wikipedia.org/wiki/X86_instruction_listings](https://en.wikipedia.org/wiki/X86_instruction_listings)
+- Intel, *The 8086 Family User's Manual* (1979), ch. 2, Data Transfer Instructions, [archive.org](https://ia801302.us.archive.org/2/items/bitsavers_intel80869lyUsersManualOct79_62967963/9800722-03_The_8086_Family_Users_Manual_Oct79.pdf)
+- WSU EE314, *x86 instruction reference*, [eecs.wsu.edu](https://eecs.wsu.edu/~ee314/handouts/x86ref.pdf)
+- Wikipedia, *x86 instruction listings*, [en.wikipedia.org/wiki/X86_instruction_listings](https://en.wikipedia.org/wiki/X86_instruction_listings)

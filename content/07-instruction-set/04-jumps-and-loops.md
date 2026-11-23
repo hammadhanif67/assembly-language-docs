@@ -8,7 +8,7 @@ Normally the CPU runs instructions in order because IP is incremented after each
 [instruction cycle](../processor/instruction-cycle.html)). **Transfer-of-control** instructions load
 a new value into IP (and sometimes CS) instead.
 
-## JMP — unconditional
+## JMP: unconditional
 
 ```asm
       jmp done          ; always go to label 'done'
@@ -74,7 +74,7 @@ endif:
 | `LOOPNE` / `LOOPNZ` | CX ≠ 0 **and** ZF = 0 |
 | `JCXZ` | CX = 0 (use it to skip a loop when the count is 0) |
 
-### for loop — print 10 stars
+### for loop: print 10 stars
 
 ```asm
       mov cx, 10
@@ -86,7 +86,7 @@ star: mov dl, '*'
 skip:
 ```
 
-### while loop — sum 1 + 2 + … until the sum exceeds 100
+### while loop: sum 1 + 2 + … until the sum exceeds 100
 
 ```asm
       xor ax, ax         ; sum
@@ -102,7 +102,7 @@ while_end:               ; AX = 105, BX = 14
 
 ## Sources
 
-- Intel, *The 8086 Family User's Manual* (1979), ch. 2 — Program Transfer Instructions — [archive.org](https://ia801302.us.archive.org/2/items/bitsavers_intel80869lyUsersManualOct79_62967963/9800722-03_The_8086_Family_Users_Manual_Oct79.pdf)
-- Wikipedia, *FLAGS register* — [en.wikipedia.org/wiki/FLAGS_register](https://en.wikipedia.org/wiki/FLAGS_register)
-- WSU EE314, *x86 instruction reference* — [eecs.wsu.edu](https://eecs.wsu.edu/~ee314/handouts/x86ref.pdf)
+- Intel, *The 8086 Family User's Manual* (1979), ch. 2, Program Transfer Instructions, [archive.org](https://ia801302.us.archive.org/2/items/bitsavers_intel80869lyUsersManualOct79_62967963/9800722-03_The_8086_Family_Users_Manual_Oct79.pdf)
+- Wikipedia, *FLAGS register*, [en.wikipedia.org/wiki/FLAGS_register](https://en.wikipedia.org/wiki/FLAGS_register)
+- WSU EE314, *x86 instruction reference*, [eecs.wsu.edu](https://eecs.wsu.edu/~ee314/handouts/x86ref.pdf)
 - K. Irvine, *Assembly Language for x86 Processors*, ch. 6 “Conditional Processing”.

@@ -70,7 +70,7 @@ specs['half-adder'] = () => {
 // ---------- 8086 instruction encoding ----------
 specs['x86-encoding'] = () => {
   const d = new Diagram(780, 330, { minw: 640 });
-  const parts = [['Prefix', '0–4 bytes', 'box', 90], ['Opcode', '1–2 bytes', 'red', 120], ['ModR/M', '0–1 byte', 'tint', 120], ['Displacement', '0, 1 or 2 bytes', 'alt', 160], ['Immediate data', '0, 1 or 2 bytes', 'alt', 160]];
+  const parts = [['Prefix', '0-4 bytes', 'box', 90], ['Opcode', '1-2 bytes', 'red', 120], ['ModR/M', '0-1 byte', 'tint', 120], ['Displacement', '0, 1 or 2 bytes', 'alt', 160], ['Immediate data', '0, 1 or 2 bytes', 'alt', 160]];
   let x = 40;
   const pos = {};
   parts.forEach(([t, s, k, w]) => { pos[t] = d.box(x, 30, w, 54, { label: t, sub: s, kind: k, r: 0 }); x += w; });
@@ -109,7 +109,7 @@ specs['pipeline-hazard'] = () => {
   });
   d.text(X0 + 4 * cw, 180, 'R1 is written in cycle 5 (WB of ADD) but SUB needs R1 when it decodes.', { cls: 'd-small' });
   d.text(X0 + 4 * cw, 200, 'Without forwarding the pipeline inserts two bubbles (stalls).', { cls: 'd-small' });
-  d.text(X0 + 4 * cw, 228, 'With forwarding the EX result goes straight to the next instruction — no stall.', { cls: 'd-label' });
+  d.text(X0 + 4 * cw, 228, 'With forwarding the EX result goes straight to the next instruction, no stall.', { cls: 'd-label' });
   return d;
 };
 
@@ -121,10 +121,10 @@ specs['cache-direct'] = () => {
   const ix = d.box(200, 40, 320, 50, { label: 'Line (index) · 8 bits', sub: '1010 0111 = A7h = 167', kind: 'tint', r: 0 });
   const of = d.box(520, 40, 160, 50, { label: 'Offset · 4 bits', sub: '1100 = 12', kind: 'alt', r: 0 });
   // cache table
-  d.text(200, 132, 'CACHE — 256 LINES × 16 BYTES = 4 KB', { cls: 'd-caps', anchor: 'start' });
+  d.text(200, 132, 'CACHE, 256 LINES × 16 BYTES = 4 KB', { cls: 'd-caps', anchor: 'start' });
   const cols = [['Line', 60], ['V', 40], ['Tag', 70], ['Data block (16 bytes)', 250]];
   let x = 200; cols.forEach(([h, w]) => { d.box(x, 146, w, 30, { label: h, kind: 'dark', r: 0 }); x += w; });
-  const rows = [['0', '0', '—', '—'], ['⋮', '', '', ''], ['166', '1', '7', '…'], ['167', '1', '3', 'byte 0 … byte 12 … byte 15'], ['168', '0', '—', '—'], ['⋮', '', '', ''], ['255', '1', '0', '…']];
+  const rows = [['0', '0', '-', '-'], ['⋮', '', '', ''], ['166', '1', '7', '…'], ['167', '1', '3', 'byte 0 … byte 12 … byte 15'], ['168', '0', '-', '-'], ['⋮', '', '', ''], ['255', '1', '0', '…']];
   rows.forEach(([n, v, tg, data], i) => {
     const y = 176 + i * 28, hl = n === '167';
     d.box(200, y, 60, 28, { label: n, mono: true, r: 0, kind: hl ? 'tint' : 'alt' });
@@ -170,7 +170,7 @@ specs['i8086-pins'] = () => {
   const grp = (n) => (/^AD|^A1|AD15/.test(n) ? 'd-label d-red' : /GND|VCC/.test(n) ? 'd-label' : 'd-label');
   left.forEach((n, i) => { const y = top + 19 + i * P; d.path([[X - 28, y], [X, y]], { arrow: null }); d.text(X - 34, y, n, { cls: grp(n), anchor: 'end' }); d.text(X + 8, y, `${i + 1}`, { cls: 'd-small', anchor: 'start' }); });
   right.forEach((n, i) => { const y = top + 19 + i * P; d.path([[X + W, y], [X + W + 28, y]], { arrow: null }); d.text(X + W + 34, y, n, { cls: grp(n), anchor: 'start' }); d.text(X + W - 8, y, `${40 - i}`, { cls: 'd-small', anchor: 'end' }); });
-  d.text(20, 606, 'Red = multiplexed address/data and address/status lines. In brackets: the maximum-mode meaning of pins 24–31.', { cls: 'd-small', anchor: 'start' });
+  d.text(20, 606, 'Red = multiplexed address/data and address/status lines. In brackets: the maximum-mode meaning of pins 24-31.', { cls: 'd-small', anchor: 'start' });
   return d;
 };
 

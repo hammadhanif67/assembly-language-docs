@@ -1,10 +1,10 @@
 [
   { "dir": "01-fundamentals", "title": "Computer Fundamentals", "icon": "landmark", "summary": "Where computers came from and how they are organized: generations, architecture vs. organization, structure and function, von Neumann and Harvard." },
   { "dir": "02-data-representation", "title": "Data Representation", "icon": "binary", "summary": "How a machine stores numbers, characters and logic: number systems, two's complement, floating point and Boolean logic." },
-  { "dir": "03-processor", "title": "The Processor", "icon": "cpu", "summary": "Machine instructions, the clock, the fetch–decode–execute cycle, instruction encoding, pipelining, and RISC vs. CISC." },
+  { "dir": "03-processor", "title": "The Processor", "icon": "cpu", "summary": "Machine instructions, the clock, the fetch-decode-execute cycle, instruction encoding, pipelining, and RISC vs. CISC." },
   { "dir": "04-registers-memory", "title": "Registers, Memory & I/O", "icon": "layers", "summary": "Registers of the 8086, the memory hierarchy and cache, segmentation, the system bus and the ways a CPU talks to devices." },
   { "dir": "05-microprocessors", "title": "Microprocessors", "icon": "microchip", "summary": "The Intel 8085 and 8086: architecture, registers, buses, pins and operating modes." },
-  { "dir": "06-assembly-basics", "title": "Assembly Basics", "icon": "file-code", "summary": "Writing a first program: structure, the assembler–linker–loader toolchain, directives and addressing modes." },
+  { "dir": "06-assembly-basics", "title": "Assembly Basics", "icon": "file-code", "summary": "Writing a first program: structure, the assembler-linker-loader toolchain, directives and addressing modes." },
   { "dir": "07-instruction-set", "title": "The Instruction Set", "icon": "terminal", "summary": "The 8086 instruction groups: data transfer, arithmetic, logic, shifts, jumps and loops." },
   { "dir": "08-advanced", "title": "Advanced Assembly", "icon": "rocket", "summary": "Procedures and the stack, arrays and number I/O, strings, interrupts, macros and debugging." },
   { "dir": "09-solved-problems", "title": "Solved Problems", "icon": "pencil-ruler", "summary": "Exam-style questions solved step by step: the formula sheet, number conversions, memory and performance, addressing, tracing code and writing complete programs." }

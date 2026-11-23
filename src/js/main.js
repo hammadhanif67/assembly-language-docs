@@ -1,4 +1,4 @@
-/* COAL Documentation — site behaviour (no framework). */
+/* COAL Documentation, site behaviour (no framework). */
 (function () {
   'use strict';
   const $ = (s, r = document) => r.querySelector(s);

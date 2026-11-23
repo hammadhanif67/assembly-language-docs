@@ -1,4 +1,4 @@
-# Missing Topics — gap analysis
+# Missing Topics: gap analysis
 
 The course material (7 PDFs + 3 PowerPoint decks, see [CONTENT_MAP.md](CONTENT_MAP.md)) covers the
 *computer organization* half of COAL in depth: computer generations, architecture vs. organization,
@@ -31,16 +31,16 @@ site. Every page below carries a **“Researched topic”** tag and ends with a 
 | 17 | Instruction encoding (8086 machine code) | Connects instruction formats to real bytes | `processor/instruction-encoding.html` |
 | 18 | Pipelining & hazards | Pipelining was only introduced by analogy | `processor/pipelining.html` |
 | 19 | Cache memory & mapping | Cache was named but its organization was not covered | `registers-memory/cache-mapping.html` |
-| 20 | I/O techniques — polling, interrupts, DMA | Standard COA topic, absent | `registers-memory/io-techniques.html` |
+| 20 | I/O techniques, polling, interrupts, DMA | Standard COA topic, absent | `registers-memory/io-techniques.html` |
 | 21 | 8086 pins & minimum/maximum mode | Hardware side of the 8086 | `microprocessors/8086-pins-and-modes.html` |
 | 22 | Assembler, linker & loader; .COM vs .EXE | How the toolchain works internally | `assembly-basics/assembler-linker-loader.html` |
 | 23 | Arrays & number input/output | Needed for practical programs | `advanced/arrays-and-number-io.html` |
 | 24 | Formula sheet & how to solve | Formulas were spread over many decks | `solved-problems/formula-sheet.html` |
-| 25 | Number conversions — solved | Worked numericals for exam practice | `solved-problems/number-conversions.html` |
-| 26 | Memory, units & performance — solved | bits…TB, address lines, chips, cache, CPU time, pipelines | `solved-problems/memory-and-performance.html` |
-| 27 | Segments & addressing — solved | Physical/effective address exercises | `solved-problems/addressing.html` |
-| 28 | Tracing code — solved | Register/flag trace tables | `solved-problems/tracing-code.html` |
-| 29 | Writing programs — solved | Complete programs built step by step | `solved-problems/writing-programs.html` |
+| 25 | Number conversions, solved | Worked numericals for exam practice | `solved-problems/number-conversions.html` |
+| 26 | Memory, units & performance, solved | bits…TB, address lines, chips, cache, CPU time, pipelines | `solved-problems/memory-and-performance.html` |
+| 27 | Segments & addressing, solved | Physical/effective address exercises | `solved-problems/addressing.html` |
+| 28 | Tracing code, solved | Register/flag trace tables | `solved-problems/tracing-code.html` |
+| 29 | Writing programs, solved | Complete programs built step by step | `solved-problems/writing-programs.html` |
 
 ## Topics the PDFs already cover (no research page needed)
 
@@ -50,5 +50,5 @@ instruction cycle & pipelining · RISC vs CISC · interrupts on the 8085.
 
 ## Out of scope (deliberately not added)
 
-Protected mode / 32- and 64-bit programming, floating point (x87/SSE), and OS internals — they go
+Protected mode / 32- and 64-bit programming, floating point (x87/SSE), and OS internals, they go
 beyond a typical first COAL course built around the 8086.

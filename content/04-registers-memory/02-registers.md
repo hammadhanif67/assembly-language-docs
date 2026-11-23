@@ -16,7 +16,7 @@ description: What registers are, general types of registers, 8086 internal regis
 ## 8086 Internal registers 16 bits (2 bytes each)
 
 :::diagram i8086-registers
-Figure: 8086 Internal registers — data group, pointer and index group, status and control flags, segment group
+Figure: 8086 Internal registers, data group, pointer and index group, status and control flags, segment group
 :::
 
 - AX, BX, CX and DX are two bytes wide and each byte can be accessed separately
@@ -50,7 +50,7 @@ Figure: 8086 Internal registers — data group, pointer and index group, status 
 - **SI** and **DI** used in string movement instructions.
 - **SP** and **BP** are used to access data inside the stack segment
 - **BP - base pointer**: Primarily used to access parameters passed via the stack. Offset address relative to SS
-- **SP – stack pointer**: Always points to top item on the stack. Offset address relative to SS
+- **SP, stack pointer**: Always points to top item on the stack. Offset address relative to SS
 
 ## 80386 Extended Registers
 

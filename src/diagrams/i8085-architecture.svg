@@ -68,6 +68,6 @@
 <text class="d-label" x="562.5" y="430.0" text-anchor="middle" dominant-baseline="central">Address buffer</text>
 <text class="d-label" x="705" y="421.0" text-anchor="middle" dominant-baseline="central">Data / address</text>
 <text class="d-label" x="705" y="439.0" text-anchor="middle" dominant-baseline="central">buffer</text>
-<text class="d-small" x="560" y="476.0" text-anchor="middle" dominant-baseline="central">A15–A8 address bus</text>
-<text class="d-small" x="705" y="476.0" text-anchor="middle" dominant-baseline="central">AD7–AD0 address/data bus</text>
+<text class="d-small" x="560" y="476.0" text-anchor="middle" dominant-baseline="central">A15-A8 address bus</text>
+<text class="d-small" x="705" y="476.0" text-anchor="middle" dominant-baseline="central">AD7-AD0 address/data bus</text>
 </svg>

@@ -43,14 +43,14 @@ specs['i8086-organization'] = () => {
 };
 specs['i8086-block'] = () => {
   const d = new Diagram(760, 470, { minw: 640 });
-  d.box(20, 20, 720, 170, { kind: 'group', label: 'BIU — fetches instructions, computes addresses' });
+  d.box(20, 20, 720, 170, { kind: 'group', label: 'BIU, fetches instructions, computes addresses' });
   d.cells(40, 50, 110, 125, ['CS', 'SS', 'DS', 'ES', 'IP'], { kinds: ['box', 'box', 'box', 'box', 'tint'] });
   const sum = d.box(190, 70, 160, 80, { label: 'Σ', sub: ['physical address =', 'segment × 10h + offset'], kind: 'alt' });
   d.text(450, 52, '6-BYTE PRE-FETCH QUEUE', { cls: 'd-caps', anchor: 'start' });
   d.cells(450, 66, 270, 44, ['1', '2', '3', '4', '5', '6'], { dir: 'row', kinds: ['tint'] });
   d.path([[150, 110], sum.left]);
   d.path([sum.right, [420, 110], [420, 88], [450, 88]], { label: 'to memory / I/O', labelAt: [420, 140] });
-  d.box(20, 220, 720, 230, { kind: 'group', label: 'EU — decodes and executes' });
+  d.box(20, 220, 720, 230, { kind: 'group', label: 'EU, decodes and executes' });
   const gp = [['AH', 'AL', 'AX'], ['BH', 'BL', 'BX'], ['CH', 'CL', 'CX'], ['DH', 'DL', 'DX']];
   gp.forEach(([h, l, n], i) => { d.box(70, 250 + i * 26, 60, 26, { label: h, mono: true, r: 0, kind: 'tint' }); d.box(130, 250 + i * 26, 60, 26, { label: l, mono: true, r: 0, kind: 'tint' }); d.text(56, 263 + i * 26, n, { cls: 'd-mono', anchor: 'end' }); });
   d.cells(70, 356, 120, 80, ['SP', 'BP', 'SI', 'DI'], {});
@@ -97,7 +97,7 @@ specs['bits-bytes-word'] = () => {
   d.dim(40, 320, 40, 'byte (8 bits)');
   d.dim(320, 600, 40, 'byte (8 bits)');
   d.dim(40, 180, 130, 'nibble');
-  d.dim(40, 600, 162, 'word (16 bits) — two words make a double word (32 bits)');
+  d.dim(40, 600, 162, 'word (16 bits), two words make a double word (32 bits)');
   return d;
 };
 
@@ -251,7 +251,7 @@ specs['segment-registers'] = () => {
 };
 specs['flags-8086'] = () => {
   const d = new Diagram(720, 300, { minw: 600 });
-  const bits = ['–', '–', '–', '–', 'OF', 'DF', 'IF', 'TF', 'SF', 'ZF', '–', 'AF', '–', 'PF', '–', 'CF'];
+  const bits = ['-', '-', '-', '-', 'OF', 'DF', 'IF', 'TF', 'SF', 'ZF', '-', 'AF', '-', 'PF', '-', 'CF'];
   const status = new Set(['OF', 'SF', 'ZF', 'AF', 'PF', 'CF']), control = new Set(['DF', 'IF', 'TF']);
   bits.forEach((b, i) => {
     const x = 40 + i * 40;
@@ -266,8 +266,8 @@ specs['flags-8086'] = () => {
     d.path([[x, 100], [x, y - 8]], { cls: 'd-line-mut', arrow: null });
     d.text(x, y, names[b], { cls: status.has(b) ? 'd-label d-red' : 'd-label' });
   });
-  d.box(40, 250, 20, 20, { kind: 'red', r: 0 }); d.text(68, 260, 'status flags (6) — result of the last operation', { cls: 'd-small', anchor: 'start' });
-  d.box(380, 250, 20, 20, { kind: 'dark', r: 0 }); d.text(408, 260, 'control flags (3) — change how the CPU runs', { cls: 'd-small', anchor: 'start' });
+  d.box(40, 250, 20, 20, { kind: 'red', r: 0 }); d.text(68, 260, 'status flags (6), result of the last operation', { cls: 'd-small', anchor: 'start' });
+  d.box(380, 250, 20, 20, { kind: 'dark', r: 0 }); d.text(408, 260, 'control flags (3), change how the CPU runs', { cls: 'd-small', anchor: 'start' });
   return d;
 };
 
@@ -303,16 +303,16 @@ specs['i8085-architecture'] = () => {
   const ab = d.box(500, 410, 125, 40, { label: 'Address buffer' });
   const db = d.box(635, 410, 140, 40, { label: ['Data / address', 'buffer'] });
   d.path([[560, 380], ab.top]); d.path([[705, 380], db.top], { arrow: 'both' });
-  d.text(560, 476, 'A15–A8 address bus', { cls: 'd-small' });
-  d.text(705, 476, 'AD7–AD0 address/data bus', { cls: 'd-small' });
+  d.text(560, 476, 'A15-A8 address bus', { cls: 'd-small' });
+  d.text(705, 476, 'AD7-AD0 address/data bus', { cls: 'd-small' });
   d.path([ab.bottom, [560, 464]]); d.path([db.bottom, [705, 464]], { arrow: 'both' });
   return d;
 };
 specs['flags-8085'] = () => {
   const d = new Diagram(560, 150, { minw: 440 });
-  const f = [['S', 'Sign'], ['Z', 'Zero'], ['–', ''], ['AC', 'Aux. carry'], ['–', ''], ['P', 'Parity'], ['–', ''], ['CY', 'Carry']];
+  const f = [['S', 'Sign'], ['Z', 'Zero'], ['-', ''], ['AC', 'Aux. carry'], ['-', ''], ['P', 'Parity'], ['-', ''], ['CY', 'Carry']];
   f.forEach(([b, n], i) => { const x = 40 + i * 60; d.text(x + 30, 22, `D${7 - i}`, { cls: 'd-small' }); d.box(x, 34, 60, 44, { label: b, mono: true, r: 0, kind: n ? 'red' : 'box' }); if (n) d.text(x + 30, 96, n, { cls: 'd-small' }); });
-  d.text(40, 132, '– = unused bit. The ALU sets these five flags after arithmetic and logic operations.', { cls: 'd-small', anchor: 'start' });
+  d.text(40, 132, ',  = unused bit. The ALU sets these five flags after arithmetic and logic operations.', { cls: 'd-small', anchor: 'start' });
   return d;
 };
 specs['interrupt-priority-8085'] = () => {

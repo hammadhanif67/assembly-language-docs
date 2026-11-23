@@ -88,7 +88,7 @@ include io.inc
 
 ## Sources
 
-- Microsoft Learn, *MASM Directives reference — Macros (MACRO, LOCAL, ENDM)* — [learn.microsoft.com](https://learn.microsoft.com/en-us/cpp/assembler/masm/directives-reference)
-- HelpPC 2.10, *Macro Assembler Directives* — [panthema.net](https://panthema.net/2006/helppc21/HelpPC-2.10-HTML/asm-directives.html)
-- Intel, *MCS-86 Macro Assembly Language Reference Manual* (1979) — [bitsavers mirror](https://ftp.mirrorservice.org/sites/www.bitsavers.org/pdf/intel/ISIS_II/9800640-02_MCS-86_Macro_Assembly_Language_Manual_Sep79.pdf)
+- Microsoft Learn, *MASM Directives reference, Macros (MACRO, LOCAL, ENDM)*, [learn.microsoft.com](https://learn.microsoft.com/en-us/cpp/assembler/masm/directives-reference)
+- HelpPC 2.10, *Macro Assembler Directives*, [panthema.net](https://panthema.net/2006/helppc21/HelpPC-2.10-HTML/asm-directives.html)
+- Intel, *MCS-86 Macro Assembly Language Reference Manual* (1979), [bitsavers mirror](https://ftp.mirrorservice.org/sites/www.bitsavers.org/pdf/intel/ISIS_II/9800640-02_MCS-86_Macro_Assembly_Language_Manual_Sep79.pdf)
 - K. Irvine, *Assembly Language for x86 Processors*, ch. 10 “Structures and Macros”.

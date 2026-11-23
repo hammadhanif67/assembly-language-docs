@@ -3,7 +3,7 @@ title: Processor Clock & Program Counter
 description: Basic operations of a processor, the processor clock signal, and the program counter used to read from memory.
 ---
 
-## Basic Operations – Processor
+## Basic Operations: Processor
 
 - Execute the software by fetching instruction from memory
 - Look for any external signal and react accordingly
@@ -17,7 +17,7 @@ description: Basic operations of a processor, the processor clock signal, and th
 - All activity within the CPU is synchronized with the edges (rising or falling) of this clock signal.
 
 :::diagram clock-signal
-Figure: Clock signal — rising edge, falling edge and one clock “period”
+Figure: Clock signal, rising edge, falling edge and one clock “period”
 :::
 
 ## Program Counter (a.k.a. Binary Counter)

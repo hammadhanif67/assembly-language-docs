@@ -82,7 +82,7 @@ print_bit:
 
 ## Sources
 
-- Intel, *The 8086 Family User's Manual* (1979), ch. 2 — Bit Manipulation Instructions — [archive.org](https://ia801302.us.archive.org/2/items/bitsavers_intel80869lyUsersManualOct79_62967963/9800722-03_The_8086_Family_Users_Manual_Oct79.pdf)
-- Wikipedia, *Bitwise operation* — [en.wikipedia.org/wiki/Bitwise_operation](https://en.wikipedia.org/wiki/Bitwise_operation)
-- Wikipedia, *Circular shift* — [en.wikipedia.org/wiki/Circular_shift](https://en.wikipedia.org/wiki/Circular_shift)
-- WSU EE314, *x86 instruction reference* — [eecs.wsu.edu](https://eecs.wsu.edu/~ee314/handouts/x86ref.pdf)
+- Intel, *The 8086 Family User's Manual* (1979), ch. 2, Bit Manipulation Instructions, [archive.org](https://ia801302.us.archive.org/2/items/bitsavers_intel80869lyUsersManualOct79_62967963/9800722-03_The_8086_Family_Users_Manual_Oct79.pdf)
+- Wikipedia, *Bitwise operation*, [en.wikipedia.org/wiki/Bitwise_operation](https://en.wikipedia.org/wiki/Bitwise_operation)
+- Wikipedia, *Circular shift*, [en.wikipedia.org/wiki/Circular_shift](https://en.wikipedia.org/wiki/Circular_shift)
+- WSU EE314, *x86 instruction reference*, [eecs.wsu.edu](https://eecs.wsu.edu/~ee314/handouts/x86ref.pdf)

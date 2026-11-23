@@ -13,7 +13,7 @@ following conditional jump can test them.
 | Instruction | Operation | Notes |
 |---|---|---|
 | `ADD d, s` | d = d + s | |
-| `ADC d, s` | d = d + s + CF | add with carry — multi-word addition |
+| `ADC d, s` | d = d + s + CF | add with carry, multi-word addition |
 | `SUB d, s` | d = d − s | |
 | `SBB d, s` | d = d − s − CF | subtract with borrow |
 | `INC d` | d = d + 1 | does **not** change CF |
@@ -116,6 +116,6 @@ add_loop:
 
 ## Sources
 
-- Intel, *The 8086 Family User's Manual* (1979), ch. 2 — Arithmetic Instructions and flag effects — [archive.org](https://ia801302.us.archive.org/2/items/bitsavers_intel80869lyUsersManualOct79_62967963/9800722-03_The_8086_Family_Users_Manual_Oct79.pdf)
-- Wikipedia, *FLAGS register* — [en.wikipedia.org/wiki/FLAGS_register](https://en.wikipedia.org/wiki/FLAGS_register)
-- WSU EE314, *x86 instruction reference* — [eecs.wsu.edu](https://eecs.wsu.edu/~ee314/handouts/x86ref.pdf)
+- Intel, *The 8086 Family User's Manual* (1979), ch. 2, Arithmetic Instructions and flag effects, [archive.org](https://ia801302.us.archive.org/2/items/bitsavers_intel80869lyUsersManualOct79_62967963/9800722-03_The_8086_Family_Users_Manual_Oct79.pdf)
+- Wikipedia, *FLAGS register*, [en.wikipedia.org/wiki/FLAGS_register](https://en.wikipedia.org/wiki/FLAGS_register)
+- WSU EE314, *x86 instruction reference*, [eecs.wsu.edu](https://eecs.wsu.edu/~ee314/handouts/x86ref.pdf)

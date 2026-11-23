@@ -1,6 +1,6 @@
 ---
 title: Pipelining & Hazards
-description: How instruction pipelining speeds up a processor, how to compute speed-up, and the three hazards that slow it down — structural, data and control — with their fixes.
+description: How instruction pipelining speeds up a processor, how to compute speed-up, and the three hazards that slow it down, structural, data and control, with their fixes.
 research: true
 ---
 
@@ -44,7 +44,7 @@ read-after-write (RAW) hazard:
 
 ```asm
 ADD R1, R2, R3   ; R1 = R2 + R3   (written in WB, cycle 5)
-SUB R4, R1, R5   ; needs R1 in ID — too early!
+SUB R4, R1, R5   ; needs R1 in ID, too early!
 ```
 
 :::diagram pipeline-hazard
@@ -64,7 +64,7 @@ the branch is taken, those must be thrown away (**flushed**).
 - **Branch prediction:** guess the outcome (for example “backward branches are taken”, since they usually
   close loops) and fetch along the guess.
 - **Delayed branch:** always execute the instruction right after the branch.
-- **Flush:** discard wrongly fetched instructions — the cost is the **branch penalty**.
+- **Flush:** discard wrongly fetched instructions, the cost is the **branch penalty**.
 
 | Hazard | Cause | Typical fix |
 |---|---|---|
@@ -82,5 +82,5 @@ version of a control hazard.
 
 - D. Patterson & J. Hennessy, *Computer Organization and Design*, ch. 4 “The Processor” (pipelining and hazards).
 - W. Stallings, *Computer Organization and Architecture*, ch. 14 “Instruction pipelining”.
-- Wikipedia, *Hazard (computer architecture)* — [en.wikipedia.org](https://en.wikipedia.org/wiki/Hazard_(computer_architecture))
-- Wikipedia, *Instruction pipelining* — [en.wikipedia.org](https://en.wikipedia.org/wiki/Instruction_pipelining)
+- Wikipedia, *Hazard (computer architecture)*, [en.wikipedia.org](https://en.wikipedia.org/wiki/Hazard_(computer_architecture))
+- Wikipedia, *Instruction pipelining*, [en.wikipedia.org](https://en.wikipedia.org/wiki/Instruction_pipelining)

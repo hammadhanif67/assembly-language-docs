@@ -123,5 +123,5 @@
 <text class="d-small" x="452" y="553.0" text-anchor="end" dominant-baseline="central">22</text>
 <text class="d-label" x="494" y="581.0" text-anchor="start" dominant-baseline="central">RESET</text>
 <text class="d-small" x="452" y="581.0" text-anchor="end" dominant-baseline="central">21</text>
-<text class="d-small" x="20" y="606.0" text-anchor="start" dominant-baseline="central">Red = multiplexed address/data and address/status lines. In brackets: the maximum-mode meaning of pins 24–31.</text>
+<text class="d-small" x="20" y="606.0" text-anchor="start" dominant-baseline="central">Red = multiplexed address/data and address/status lines. In brackets: the maximum-mode meaning of pins 24-31.</text>
 </svg>

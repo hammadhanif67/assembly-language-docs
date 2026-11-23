@@ -1,4 +1,4 @@
-// COAL Docs — static site builder.
+// COAL Docs, static site builder.
 // Reads content/<chapter>/*.md, renders with marked, writes plain HTML into dist/.
 // Page types: home (index.html), chapter overview (<chapter>/index.html), lesson (<chapter>/<lesson>.html), 404.
 import fs from 'node:fs';
@@ -124,7 +124,7 @@ function preprocess(body, prefix, raws) {
   return body.replace(/^:::(diagram|figures|figure|widget|note|tip|warning|answer)(?:[ \t]+([^\n]+))?\n([\s\S]*?)\n:::[ \t]*$/gm, (_, kind, arg = '', text) => {
     const caption = text.trim().replace(/^Figure:\s*/, '');
     arg = arg.trim();
-    // :::figures — one row of photos, each line "file.jpg | caption"
+    // :::figures, one row of photos, each line "file.jpg | caption"
     if (kind === 'figures')
       return keep(`<div class="photo-row">${caption.split('\n').map((l) => l.split('|').map((x) => x.trim())).map(([f, c]) => photo(f, c || '')).join('')}</div>`);
     if (kind === 'diagram') return keep(renderDiagram(arg, caption));
@@ -249,28 +249,25 @@ function footer(prefix, extraScripts = '') {
   const program = chs.filter((c) => c.num > 5).map(link).join('');
   const solvedCh = chs.find((c) => c.dir === '09-solved-problems');
   const formula = solvedCh && solvedCh.pages[0];
-  const mark = LOGO.replaceAll('coal-logo', 'coal-logo-m').replace('<svg', '<svg class="ftr-mark-svg" aria-hidden="true" focusable="false"');
   return `<footer class="site-footer">
-  <div class="ftr-mark" aria-hidden="true">${mark}</div>
-  <div class="ftr-top">
+  <div class="ftr">
     <div class="ftr-brand">
       <a class="brand" href="${prefix}index.html">${LOGO.replaceAll('coal-logo', 'coal-logo-f')}<span class="brand-name">COAL<span class="brand-docs">Docs</span></span></a>
-      <p>${SITE.full}. Lessons, diagrams, calculators and solved problems — from computer generations down to the 8086 instruction set.</p>
-      <div class="ftr-cta"><a class="btn btn--primary" href="${prefix}${pages[0].url}">Start learning<i data-lucide="arrow-right"></i></a><button class="btn btn--dark" type="button" data-search-open><i data-lucide="search"></i>Search</button></div>
+      <p>${SITE.full}. Lessons, diagrams, calculators and solved problems, from computer generations to the 8086 instruction set.</p>
     </div>
-    <nav class="ftr-nav" aria-label="Computer organization chapters"><p class="eyebrow">Learn</p><ol>${learn}</ol></nav>
-    <nav class="ftr-nav" aria-label="Assembly chapters"><p class="eyebrow">Program &amp; practise</p><ol>${program}</ol></nav>
-    <nav class="ftr-nav" aria-label="Resources"><p class="eyebrow">Resources</p><ul>
-      <li><a href="${prefix}tools/index.html"><i data-lucide="calculator" aria-hidden="true"></i>Calculators</a></li>
-      ${formula ? `<li><a href="${prefix}${formula.url}"><i data-lucide="sigma" aria-hidden="true"></i>Formula sheet</a></li>` : ''}
-      ${solvedCh ? `<li><a href="${prefix}${solvedCh.url}"><i data-lucide="pencil-ruler" aria-hidden="true"></i>Solved problems</a></li>` : ''}
-      <li><button type="button" class="link-btn" data-index-open><i data-lucide="list-tree" aria-hidden="true"></i>Full index</button></li>
-      <li><a href="${SITE.repo}" target="_blank" rel="noopener"><i data-lucide="github" aria-hidden="true"></i>Source on GitHub</a></li>
+    <nav class="ftr-nav" aria-label="Computer organization chapters"><p class="ftr-h">Learn</p><ol>${learn}</ol></nav>
+    <nav class="ftr-nav" aria-label="Assembly chapters"><p class="ftr-h">Program and practise</p><ol>${program}</ol></nav>
+    <nav class="ftr-nav" aria-label="Resources"><p class="ftr-h">Resources</p><ul>
+      <li><a href="${prefix}tools/index.html">Calculators</a></li>
+      ${formula ? `<li><a href="${prefix}${formula.url}">Formula sheet</a></li>` : ''}
+      ${solvedCh ? `<li><a href="${prefix}${solvedCh.url}">Solved problems</a></li>` : ''}
+      <li><button type="button" class="link-btn" data-index-open>Full index</button></li>
+      <li><button type="button" class="link-btn" data-search-open>Search</button></li>
     </ul></nav>
   </div>
   <div class="ftr-bottom">
-    <p>© ${new Date().getFullYear()} COAL Docs · Code MIT · Photos from Wikimedia Commons, credited on each page</p>
-    <a class="ftr-top-link" href="#main"><i data-lucide="arrow-up" aria-hidden="true"></i>Back to top</a>
+    <p>© ${new Date().getFullYear()} COAL Docs. Code under the MIT licence. Photos from Wikimedia Commons, credited under each photo.</p>
+    <a class="ftr-gh" href="${SITE.repo}" target="_blank" rel="noopener"><i data-lucide="github" aria-hidden="true"></i>GitHub</a>
   </div>
 </footer>
 <button class="back-to-top" type="button" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
@@ -319,7 +316,7 @@ function renderLesson(page, i) {
     prev ? `<a class="pager-link" href="${prefix}${prev.url}" rel="prev"><span class="eyebrow"><i data-lucide="arrow-left"></i>Previous</span><span class="pager-title">${esc(prev.title)}</span></a>` : '<span></span>'
   }${next ? `<a class="pager-link pager-next" href="${prefix}${next.url}" rel="next"><span class="eyebrow">Next<i data-lucide="arrow-right"></i></span><span class="pager-title">${esc(next.title)}</span></a>` : '<span></span>'}</nav>`;
   const usesMermaid = /class="mermaid"/.test(page.html);
-  const out = `${head({ title: `${page.title} — ${SITE.name}`, description: page.description, prefix })}
+  const out = `${head({ title: `${page.title} | ${SITE.name}`, description: page.description, prefix })}
 <body class="lesson-page${page.research ? ' is-research' : ''}">
 ${header(prefix, page)}
 <main id="main" tabindex="-1">
@@ -367,7 +364,7 @@ function renderChapter(ch, ci) {
 </a></li>`
     )
     .join('');
-  const out = `${head({ title: `${ch.title} — ${SITE.name}`, description: ch.summary, prefix })}
+  const out = `${head({ title: `${ch.title} | ${SITE.name}`, description: ch.summary, prefix })}
 <body class="chapter-page">
 ${header(prefix)}
 <main id="main" tabindex="-1">
@@ -396,15 +393,15 @@ ${footer(prefix)}`;
 // ---------- tools (calculator workbench) ----------
 const TOOL_GROUPS = [
   ['Numbers', [
-    ['base', 'tool-base', 'Number converter', 'Decimal, hexadecimal, binary and octal in one place, for 8, 16 or 32 bits — with clickable bits.', 'binary'],
+    ['base', 'tool-base', 'Number converter', 'Decimal, hexadecimal, binary and octal in one place, for 8, 16 or 32 bits, with clickable bits.', 'binary'],
     ['twos', 'tool-twos', 'Two’s complement', 'See how a negative number is stored, step by step: invert the bits, add one.', 'minus'],
-    ['ieee', 'tool-ieee', 'IEEE 754 floating point', 'Turn a decimal number into its sign, exponent and fraction bits — or back again.', 'sigma'],
+    ['ieee', 'tool-ieee', 'IEEE 754 floating point', 'Turn a decimal number into its sign, exponent and fraction bits, or back again.', 'sigma'],
     ['ascii', 'tool-ascii', 'ASCII codes', 'Characters to codes and codes to characters, ready to paste into a DB directive.', 'type'],
   ]],
   ['Instructions', [
     ['alu', 'tool-alu', 'ALU & flags', 'Run ADD, SUB, CMP, AND, OR, XOR, INC, DEC or NEG and see CF, ZF, SF, OF, PF and AF.', 'flag'],
     ['shift', 'tool-shift', 'Shift & rotate', 'SHL, SHR, SAR, ROL, ROR, RCL and RCR, bit by bit with the carry flag.', 'arrow-left-right'],
-    ['muldiv', 'tool-muldiv', 'MUL & DIV', 'Exactly which registers hold the product, quotient and remainder — and when division overflows.', 'divide'],
+    ['muldiv', 'tool-muldiv', 'MUL & DIV', 'Exactly which registers hold the product, quotient and remainder, and when division overflows.', 'divide'],
   ]],
   ['Memory & addressing', [
     ['segoff', 'tool-segoff', 'Segment : offset', 'Physical address from segment and offset, or solve for the missing one.', 'map-pin'],
@@ -413,7 +410,7 @@ const TOOL_GROUPS = [
     ['cache', 'tool-cache', 'Cache address split', 'Break an address into tag, index and offset for any cache size and mapping.', 'layers'],
   ]],
   ['Data units & performance', [
-    ['units', 'tool-units', 'Data units: bits to TB', 'Bits, nibbles, bytes, KB, MB, GB, TB and PB — binary (1024) or decimal (1000), with every multiply and divide shown.', 'ruler'],
+    ['units', 'tool-units', 'Data units: bits to TB', 'Bits, nibbles, bytes, KB, MB, GB, TB and PB, binary (1024) or decimal (1000), with every multiply and divide shown.', 'ruler'],
     ['transfer', 'tool-transfer', 'Transfer time', 'How long a file takes at a given speed: size in bits ÷ bits per second, step by step.', 'timer'],
     ['perf', 'tool-perf', 'CPU time, CPI & MIPS', 'The CPU performance equation from clock rate, instruction count and CPI or an instruction mix.', 'gauge'],
     ['pipeline', 'tool-pipeline', 'Pipeline speed-up', 'Time with and without a k-stage pipeline, speed-up, efficiency and throughput.', 'git-commit-horizontal'],
@@ -433,7 +430,7 @@ function renderTools() {
   <div class="widget tool-widget" data-widget="${widget}"></div>
 </section>`;
   }).join('')).join('');
-  const out = `${head({ title: `Calculators & Tools — ${SITE.name}`, description: 'Calculators for computer organization and assembly: number bases, two’s complement, flags, shifts, MUL/DIV, segment:offset, effective address, IEEE 754, ASCII, memory size and cache mapping.', prefix })}
+  const out = `${head({ title: `Calculators & Tools, ${SITE.name}`, description: 'Calculators for computer organization and assembly: number bases, two’s complement, flags, shifts, MUL/DIV, segment:offset, effective address, IEEE 754, ASCII, memory size and cache mapping.', prefix })}
 <body class="tools-page">
 ${header(prefix)}
 <main id="main" tabindex="-1">
@@ -444,7 +441,7 @@ ${header(prefix)}
       <div>
         <p class="eyebrow">Workbench · ${all.length} calculators</p>
         <h1>Calculators &amp; Tools</h1>
-        <p class="lede">Every calculation you meet in COAL — number bases, signed numbers, flags, shifts, multiplication and division, addresses, floating point and caches. Results update as you type.</p>
+        <p class="lede">Every calculation you meet in COAL, number bases, signed numbers, flags, shifts, multiplication and division, addresses, floating point and caches. Results update as you type.</p>
       </div>
     </header>
     <div class="tools-layout">
@@ -461,101 +458,53 @@ ${footer(prefix, `<script src="${prefix}js/tools.js" defer></script>`)}`;
 // ---------- home ----------
 function renderHome() {
   const prefix = './';
-  const totalMin = pages.reduce((s, p) => s + p.minutes, 0);
   const allTools = TOOL_GROUPS.flatMap(([, t]) => t);
-  const byDir = (d) => chs.find((c) => c.dir === d);
-  const solved = byDir('09-solved-problems');
+  const solved = chs.find((c) => c.dir === '09-solved-problems');
+  const popular = [
+    ['MOV & data transfer', 'instruction-set/data-transfer.html'],
+    ['Flags', 'registers-memory/registers.html'],
+    ['8086', 'microprocessors/8086.html'],
+    ['Addressing modes', 'assembly-basics/addressing-modes.html'],
+    ['Cache', 'registers-memory/cache-mapping.html'],
+    ['Number systems', 'data-representation/number-systems.html'],
+  ].filter(([, u]) => pages.some((p) => p.url === u));
 
-  // chapter cards
-  const cards = chs
-    .map((c) => {
-      const min = c.pages.reduce((s, p) => s + p.minutes, 0);
-      const first = c.pages.slice(0, 3).map((p) => `<li><a href="${prefix}${p.url}">${esc(p.title)}</a></li>`).join('');
-      const more = c.pages.length > 3 ? `<li class="cc-more"><a href="${prefix}${c.url}">+ ${c.pages.length - 3} more</a></li>` : '';
-      return `<li class="ch-card${c === solved ? ' ch-card--practice' : ''}">
-  <a class="cc-head" href="${prefix}${c.url}"><span class="cc-num">${pad(c.num)}</span><i data-lucide="${esc(c.icon || 'book-open')}" aria-hidden="true"></i></a>
-  <h3 class="cc-title"><a href="${prefix}${c.url}">${esc(c.title)}</a></h3>
-  <p class="cc-desc">${esc(c.summary || '')}</p>
-  <ul class="cc-lessons">${first}${more}</ul>
-  <p class="cc-meta"><span>${c.pages.length} lessons · ${min} min</span><i data-lucide="arrow-right" aria-hidden="true"></i></p>
+  const cards = chs.map((c) => {
+    const shown = c.pages.slice(0, 4).map((p) => `<li><a href="${prefix}${p.url}">${esc(p.title)}</a></li>`).join('');
+    const more = c.pages.length > 4 ? `<li class="pc-more"><a href="${prefix}${c.url}">All ${c.pages.length} lessons</a></li>` : '';
+    return `<li class="pc">
+  <a class="pc-top" href="${prefix}${c.url}"><span class="pc-ico"><i data-lucide="${esc(c.icon || 'book-open')}" aria-hidden="true"></i></span><span class="pc-num">Chapter ${pad(c.num)}</span></a>
+  <h3 class="pc-title"><a href="${prefix}${c.url}">${esc(c.title)}</a></h3>
+  <p class="pc-desc">${esc(c.summary || '')}</p>
+  <ul class="pc-list">${shown}${more}</ul>
 </li>`;
-    })
-    .join('');
+  }).join('');
 
-  // learning path (three stages)
-  const chip = (c) => `<a class="lp-chip" href="${prefix}${c.url}"><span>${pad(c.num)}</span>${esc(c.title)}</a>`;
-  const stage = (n, title, text, list, cta) => `<li class="lp-step"><span class="lp-n">${n}</span><h3>${title}</h3><p>${text}</p><div class="lp-chips">${list.map(chip).join('')}${cta || ''}</div></li>`;
-  const path1 = chs.filter((c) => c.num <= 5), path2 = chs.filter((c) => c.num >= 6 && c.num <= 8);
-  const tools = allTools.slice(0, 8)
-    .map(([id, , t, d, i]) => `<li><a class="tool" href="${prefix}tools/index.html#${id}"><i data-lucide="${i}" aria-hidden="true"></i><span class="tool-title">${t}</span><span class="tool-desc">${d}</span></a></li>`)
-    .join('');
+  const quick = [
+    ['tools/index.html', 'calculator', 'Calculators', `${allTools.length} calculators that show every step of the working.`],
+    solved && solved.pages[0] ? [solved.pages[0].url, 'sigma', 'Formula sheet', 'Every COAL formula on one page, with a method to solve any question.'] : null,
+    solved ? [solved.url, 'pencil-ruler', 'Solved problems', 'Exam-style questions worked out step by step.'] : null,
+  ].filter(Boolean).map(([u, i, t, d]) => `<li><a class="qk" href="${prefix}${u}"><span class="pc-ico"><i data-lucide="${i}" aria-hidden="true"></i></span><span><span class="qk-title">${t}</span><span class="qk-desc">${d}</span></span><i data-lucide="arrow-right" class="qk-arrow" aria-hidden="true"></i></a></li>`).join('');
 
-  const out = `${head({ title: `${SITE.name} — ${SITE.full}`, description: 'Learn Computer Organization & Assembly Language: processors, registers, memory, the 8085 and 8086, and x86 assembly programming — with clear diagrams, step-by-step calculators and solved problems.', prefix })}
-<body class="home-page">
+  const out = `${head({ title: `${SITE.name} | ${SITE.full}`, description: 'Learn Computer Organization & Assembly Language: processors, registers, memory, the 8085 and 8086, and x86 assembly programming, with clear diagrams, step-by-step calculators and solved problems.', prefix })}
+<body class="home-page portal">
 ${header(prefix)}
 <main id="main" tabindex="-1">
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-main">
-        <p class="eyebrow hero-eyebrow"><span class="dot" aria-hidden="true"></span>Free course · ${chs.length} chapters · ${pages.length} lessons</p>
-        <h1 class="hero-title">Computer Organization <span>&amp; Assembly Language</span></h1>
-        <p class="hero-lede">How a computer really works — the instruction cycle, registers, memory and buses of the 8086 — and how to program it in assembly, one clear step at a time.</p>
-        <div class="hero-cta"><a class="btn btn--primary" href="${prefix}${pages[0].url}">Start learning<i data-lucide="arrow-right"></i></a><a class="btn" href="${prefix}${solved ? solved.url : 'tools/index.html'}">Solved problems</a></div>
-        <button class="hero-search" type="button" data-search-open><i data-lucide="search" aria-hidden="true"></i><span>Search lessons, registers, instructions…</span><span class="keys"><kbd>Ctrl</kbd><kbd>K</kbd></span></button>
-      </div>
-      <figure class="hero-card" aria-label="Example: a loop that adds 5 + 4 + 3 + 2 + 1 in the AX register">
-        <div class="hc-bar"><span class="hc-file">sum.asm</span><span class="hc-tag">8086</span></div>
-<pre class="hc-code"><span class="hc-ln"><b>1</b><i>mov</i>  cx, <em>5</em>       <u>; counter</u></span><span class="hc-ln"><b>2</b><i>mov</i>  ax, <em>0</em>       <u>; total</u></span><span class="hc-ln"><b>3</b>L1: <i>add</i>  ax, cx  <u>; ax = ax + cx</u></span><span class="hc-ln"><b>4</b>    <i>loop</i> L1      <u>; cx−1, repeat</u></span><span class="hc-ln"><b>5</b><u>; ax = 5+4+3+2+1</u></span></pre>
-        <div class="hc-regs">
-          <div><span>AX</span><b>000F</b></div><div><span>BX</span><b>0000</b></div><div><span>CX</span><b>0000</b></div><div><span>DX</span><b>0000</b></div>
-          <div><span>SI</span><b>0000</b></div><div><span>DI</span><b>0000</b></div><div><span>IP</span><b>000B</b></div><div><span>SP</span><b>0100</b></div>
-        </div>
-        <figcaption class="hc-flags"><span>Flags</span><b class="on">ZF</b><b>CF</b><b>SF</b><b>OF</b><b class="on">PF</b></figcaption>
-      </figure>
-      <dl class="hero-stats">
-        <div><dt>Chapters</dt><dd>${chs.length}</dd></div>
-        <div><dt>Lessons</dt><dd>${pages.length}</dd></div>
-        <div><dt>Diagrams</dt><dd>${usedDiagrams.size}</dd></div>
-        <div><dt>Calculators</dt><dd>${allTools.length}</dd></div>
-        <div><dt>Reading time</dt><dd>${Math.round(totalMin / 60)}<small>h</small></dd></div>
-      </dl>
+  <section class="portal-hero">
+    <div class="wrap">
+      <p class="portal-eyebrow">COAL Docs</p>
+      <h1>Learn Computer Organization <span>&amp; Assembly Language</span></h1>
+      <p class="portal-lede">${pages.length} lessons in ${chs.length} chapters, from how a computer works to programming the 8086.</p>
+      <button class="portal-search" type="button" data-search-open><i data-lucide="search" aria-hidden="true"></i><span class="ps-text">Search lessons, registers, instructions</span><span class="keys"><kbd>Ctrl</kbd><kbd>K</kbd></span></button>
+      <p class="popular"><span>Popular:</span>${popular.map(([t, u]) => `<a href="${prefix}${u}">${esc(t)}</a>`).join('')}</p>
     </div>
   </section>
-
-  <section class="home-block home-block--path" aria-labelledby="path-h">
+  <section class="portal-body" id="chapters" aria-labelledby="chapters-h">
     <div class="wrap">
-      <div class="sec-head"><p class="eyebrow">Learning path</p><h2 id="path-h">Three steps from zero to assembly</h2></div>
-      <ol class="lp">
-        ${stage('01', 'Understand the machine', 'Generations, number systems, the processor, registers, memory and the 8085/8086.', path1)}
-        ${stage('02', 'Program the 8086', 'Program structure, directives, addressing modes, the instruction set, procedures, strings and interrupts.', path2)}
-        ${stage('03', 'Practise and check', 'Exam-style questions solved step by step, and calculators that show their working.', solved ? [solved] : [], `<a class="lp-chip lp-chip--tools" href="${prefix}tools/index.html"><i data-lucide="calculator" aria-hidden="true"></i>${allTools.length} calculators</a>`)}
-      </ol>
-    </div>
-  </section>
-
-  <section class="home-block" id="chapters" aria-labelledby="chapters-h">
-    <div class="wrap">
-      <div class="sec-head sec-head--row"><div><p class="eyebrow">Contents</p><h2 id="chapters-h">All chapters</h2></div><button class="btn btn--ghost" type="button" data-index-open><i data-lucide="list-tree" aria-hidden="true"></i>Open the full index</button></div>
-      <ol class="ch-cards">${cards}</ol>
-    </div>
-  </section>
-
-  <section class="home-block home-block--alt" aria-labelledby="tools-h">
-    <div class="wrap">
-      <div class="sec-head sec-head--row"><div><p class="eyebrow">Workbench</p><h2 id="tools-h">Calculators that show their working</h2></div><a class="btn" href="${prefix}tools/index.html">All ${allTools.length} calculators<i data-lucide="arrow-right"></i></a></div>
-      <ul class="tool-grid">${tools}</ul>
-    </div>
-  </section>
-
-  <section class="home-block home-block--how" aria-labelledby="how-h">
-    <div class="wrap">
-      <div class="sec-head"><p class="eyebrow">How to use</p><h2 id="how-h">Find anything fast</h2></div>
-      <ul class="how-tiles">
-        <li><button class="how-tile" type="button" data-search-open><span class="ht-ico"><i data-lucide="search" aria-hidden="true"></i></span><span class="ht-title">Search <span class="keys"><kbd>Ctrl</kbd><kbd>K</kbd></span></span><span class="ht-text">Every lesson, register and instruction — results as you type. <kbd>/</kbd> works too.</span></button></li>
-        <li><button class="how-tile" type="button" data-index-open><span class="ht-ico"><i data-lucide="list-tree" aria-hidden="true"></i></span><span class="ht-title">Index</span><span class="ht-text">The full table of contents, one click away in the header — or the ☰ menu on a phone.</span></button></li>
-        <li><a class="how-tile" href="${prefix}${pages[0].url}"><span class="ht-ico"><i data-lucide="text-quote" aria-hidden="true"></i></span><span class="ht-title">On this page</span><span class="ht-text">Jump between the sections of a long lesson; the current one is highlighted.</span></a></li>
-        <li><a class="how-tile" href="${prefix}tools/index.html"><span class="ht-ico"><i data-lucide="calculator" aria-hidden="true"></i></span><span class="ht-title">Check your answer</span><span class="ht-text">Type your own numbers into a calculator and compare every step.</span></a></li>
-      </ul>
+      <div class="portal-head"><h2 id="chapters-h">Chapters</h2><a href="${prefix}${pages[0].url}">Start from the first lesson<i data-lucide="arrow-right" aria-hidden="true"></i></a></div>
+      <ol class="pc-grid">${cards}</ol>
+      <h2 class="portal-h2">Practice and tools</h2>
+      <ul class="qk-grid">${quick}</ul>
     </div>
   </section>
 </main>
@@ -565,7 +514,7 @@ ${footer(prefix)}`;
 
 function render404() {
   const prefix = SITE.base;
-  const out = `${head({ title: `Page not found — ${SITE.name}`, prefix })}
+  const out = `${head({ title: `Page not found, ${SITE.name}`, prefix })}
 <body class="home-page">
 ${header(prefix)}
 <main id="main" tabindex="-1"><div class="wrap not-found"><p class="eyebrow">Error 404</p><h1>JMP to an invalid address.</h1><p class="lede">This page doesn’t exist. Use search or the index to find what you need.</p><div class="hero-cta"><a class="btn btn--primary" href="${prefix}index.html">Go home</a><button class="btn" type="button" data-search-open>Search</button></div></div></main>

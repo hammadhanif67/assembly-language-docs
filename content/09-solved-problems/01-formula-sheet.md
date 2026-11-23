@@ -6,10 +6,10 @@ research: true
 
 ## How to solve any question
 
-Almost every COAL question — a conversion, an address, a trace or a program — is solved the same way:
+Almost every COAL question, a conversion, an address, a trace or a program, is solved the same way:
 
 1. **Write what is given.** List every value with its unit or base (`40FFh`, `2 GHz`, `16 KB`, `AL = 25h`).
-2. **Pick the formula or rule.** Find it in the tables below. Write it down before putting numbers in — most marks are for the method.
+2. **Pick the formula or rule.** Find it in the tables below. Write it down before putting numbers in, most marks are for the method.
 3. **Substitute and work in small steps.** One operation per line; keep hex, binary and decimal clearly labelled (`h`, `b`, no suffix).
 4. **Check the answer.** Convert back, check the range (does it fit in 8 or 16 bits?), check the unit, and test it with the [calculators](../tools/index.html).
 
@@ -26,7 +26,7 @@ Always write the base: `10` could be ten, two (`10b`) or sixteen (`10h`). In ass
 | Base *b* → decimal | Σ digit × *b*<sup>position</sup> (rightmost position = 0, after the point −1, −2 …) |
 | Binary → hex / octal | Group 4 bits (hex) or 3 bits (octal) from the right |
 | Hex / octal → binary | Write each digit as 4 bits (hex) or 3 bits (octal) |
-| Two’s complement of −*x* (*n* bits) | Invert the bits of *x* and add 1 — or 2<sup>*n*</sup> − *x* |
+| Two’s complement of −*x* (*n* bits) | Invert the bits of *x* and add 1, or 2<sup>*n*</sup> − *x* |
 | Signed range (*n* bits) | −2<sup>*n*−1</sup> … 2<sup>*n*−1</sup> − 1 (8-bit: −128 … 127) |
 | Unsigned range (*n* bits) | 0 … 2<sup>*n*</sup> − 1 (8-bit: 0 … 255) |
 | IEEE 754 single | value = (−1)<sup>S</sup> × 1.F × 2<sup>E − 127</sup>; 1 + 8 + 23 bits |
@@ -51,7 +51,7 @@ Always write the base: `10` could be ten, two (`10b`) or sixteen (`10h`). In ass
 
 | Question | Formula |
 |---|---|
-| Memory size from *n* address lines | 2<sup>*n*</sup> locations (bytes) — 16 lines → 64 KB, 20 → 1 MB |
+| Memory size from *n* address lines | 2<sup>*n*</sup> locations (bytes), 16 lines → 64 KB, 20 → 1 MB |
 | Address lines for a memory | *n* = log₂(size in bytes), rounded up |
 | Highest address | 2<sup>*n*</sup> − 1 (all address bits 1) |
 | Chips needed | total memory ÷ memory per chip |
@@ -93,7 +93,7 @@ Always write the base: `10` could be ten, two (`10b`) or sixteen (`10h`). In ass
 
 ## Sources
 
-- Intel, *8086 16-bit HMOS Microprocessor* data sheet and *iAPX 86/88 User’s Manual* — physical addresses, flags, PUSH/POP.
-- W. Stallings, *Computer Organization and Architecture* — cache mapping, performance equation, pipelining.
-- D. Patterson & J. Hennessy, *Computer Organization and Design* — CPU time, CPI and MIPS.
-- IEC 80000-13 — binary prefixes (KiB, MiB, GiB) versus decimal prefixes.
+- Intel, *8086 16-bit HMOS Microprocessor* data sheet and *iAPX 86/88 User’s Manual*, physical addresses, flags, PUSH/POP.
+- W. Stallings, *Computer Organization and Architecture*, cache mapping, performance equation, pipelining.
+- D. Patterson & J. Hennessy, *Computer Organization and Design*, CPU time, CPI and MIPS.
+- IEC 80000-13, binary prefixes (KiB, MiB, GiB) versus decimal prefixes.

@@ -1,6 +1,6 @@
 ---
 title: Program Structure & Toolchain
-description: From source file to running program — assembler, linker, loader; the simplified segment directives; and a complete first 8086 program.
+description: From source file to running program, assembler, linker, loader; the simplified segment directives; and a complete first 8086 program.
 research: true
 ---
 
@@ -66,7 +66,7 @@ register, so the address goes through a general-purpose register first.
 flowchart TB
   subgraph RAM["Physical memory (1 MB, 20-bit addresses)"]
     direction TB
-    PSP["PSP — 256-byte DOS header (ES and DS point here at start-up)"]
+    PSP["PSP, 256-byte DOS header (ES and DS point here at start-up)"]
     CODE["Code segment ← CS:IP"]
     DATA["Data segment ← DS (after mov ds, ax)"]
     STACK["Stack segment ← SS:SP (grows downward)"]
@@ -99,8 +99,8 @@ hello
 
 ## Sources
 
-- Microsoft Learn, *.MODEL (MASM)* — [learn.microsoft.com/en-us/cpp/assembler/masm/dot-model](https://learn.microsoft.com/en-us/cpp/assembler/masm/dot-model)
-- Microsoft Learn, *MASM Directives reference* — [learn.microsoft.com](https://learn.microsoft.com/en-us/cpp/assembler/masm/directives-reference)
-- UMBC CMSC 211, *DOS INT 21h functions* — [csee.umbc.edu](https://www.csee.umbc.edu/courses/undergraduate/CMSC211/fall01/burt/tech_help/int21.html)
-- Wikipedia, *Assembly language* (assembler, linker concepts) — [en.wikipedia.org/wiki/Assembly_language](https://en.wikipedia.org/wiki/Assembly_language)
-- Wikipedia, *Program Segment Prefix* — [en.wikipedia.org/wiki/Program_Segment_Prefix](https://en.wikipedia.org/wiki/Program_Segment_Prefix)
+- Microsoft Learn, *.MODEL (MASM)*, [learn.microsoft.com/en-us/cpp/assembler/masm/dot-model](https://learn.microsoft.com/en-us/cpp/assembler/masm/dot-model)
+- Microsoft Learn, *MASM Directives reference*, [learn.microsoft.com](https://learn.microsoft.com/en-us/cpp/assembler/masm/directives-reference)
+- UMBC CMSC 211, *DOS INT 21h functions*, [csee.umbc.edu](https://www.csee.umbc.edu/courses/undergraduate/CMSC211/fall01/burt/tech_help/int21.html)
+- Wikipedia, *Assembly language* (assembler, linker concepts), [en.wikipedia.org/wiki/Assembly_language](https://en.wikipedia.org/wiki/Assembly_language)
+- Wikipedia, *Program Segment Prefix*, [en.wikipedia.org/wiki/Program_Segment_Prefix](https://en.wikipedia.org/wiki/Program_Segment_Prefix)

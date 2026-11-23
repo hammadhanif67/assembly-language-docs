@@ -6,7 +6,7 @@ description: What a bus is, data bus, address bus, control bus, types of transfe
 ## What is a Bus?
 
 :::figure img-motherboard.jpg side
-A motherboard — the copper traces between CPU socket, memory slots and expansion slots are the buses
+A motherboard, the copper traces between CPU socket, memory slots and expansion slots are the buses
 :::
 
 - A communication pathway connecting two or more devices
@@ -68,5 +68,5 @@ Figure: CPU, Memory and I/O connected by the Address Bus, Control Bus and Data B
   - Receives interrupt signal
 
 :::diagram interconnection
-Figure: Interconnection structure — Memory, I/O Module and CPU (Address, Data Read, Data Write, Interrupt Signals)
+Figure: Interconnection structure, Memory, I/O Module and CPU (Address, Data Read, Data Write, Interrupt Signals)
 :::

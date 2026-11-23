@@ -94,7 +94,7 @@ mean a byte or a word. Write `mov byte ptr [bx], 5` or `mov word ptr [bx], 5`.
 
 ## Sources
 
-- Microsoft Learn, *MASM Directives reference* (Data allocation, Equates, Segments, Procedures) — [learn.microsoft.com](https://learn.microsoft.com/en-us/cpp/assembler/masm/directives-reference)
-- HelpPC 2.10, *Macro Assembler Directives* — [panthema.net](https://panthema.net/2006/helppc21/HelpPC-2.10-HTML/asm-directives.html)
-- Wikipedia, *Endianness* — [en.wikipedia.org/wiki/Endianness](https://en.wikipedia.org/wiki/Endianness)
+- Microsoft Learn, *MASM Directives reference* (Data allocation, Equates, Segments, Procedures), [learn.microsoft.com](https://learn.microsoft.com/en-us/cpp/assembler/masm/directives-reference)
+- HelpPC 2.10, *Macro Assembler Directives*, [panthema.net](https://panthema.net/2006/helppc21/HelpPC-2.10-HTML/asm-directives.html)
+- Wikipedia, *Endianness*, [en.wikipedia.org/wiki/Endianness](https://en.wikipedia.org/wiki/Endianness)
 - K. Irvine, *Assembly Language for x86 Processors*, ch. 3 “Assembly Language Fundamentals”.

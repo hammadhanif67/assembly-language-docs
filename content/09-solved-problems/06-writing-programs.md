@@ -1,21 +1,21 @@
 ---
-title: Writing Programs — Solved
-description: A method for writing any 8086 assembly program, and seven complete programs solved step by step — array sum, largest number, counting even numbers, reversing a string, factorial, printing a number and converting to upper case.
+title: Writing Programs: Solved
+description: A method for writing any 8086 assembly program, and seven complete programs solved step by step, array sum, largest number, counting even numbers, reversing a string, factorial, printing a number and converting to upper case.
 research: true
 ---
 
 ## A method for any program question
 
 1. **Understand the task.** What is the input, what is the output, where are they (memory, register, screen)?
-2. **Choose the registers.** For example: SI = pointer into the array, CX = counter, AX = result. Write this down — it is your plan.
+2. **Choose the registers.** For example: SI = pointer into the array, CX = counter, AX = result. Write this down, it is your plan.
 3. **Write pseudocode** in plain words: *set total = 0; repeat n times: total = total + next element*.
 4. **Translate line by line** into instructions. Loops use `LOOP` (counts CX down) or `CMP` + a conditional jump.
 5. **Add the frame:** `.model`, `.stack`, `.data`, `.code`, load DS, and end with `INT 21h` function `4Ch`.
 6. **Trace it** with a small example (see [Tracing Code](tracing-code.html)) before you say it is finished.
 
-The programs run in EMU8086 or DOSBox with MASM/TASM. Program 1 shows the full frame; Programs 2–4 and 7 start at `.data` — put `.model small` and `.stack 100h` above them. Programs 5 and 6 show only the working lines: place them inside `main` after DS is loaded.
+The programs run in EMU8086 or DOSBox with MASM/TASM. Program 1 shows the full frame; Programs 2-4 and 7 start at `.data`, put `.model small` and `.stack 100h` above them. Programs 5 and 6 show only the working lines: place them inside `main` after DS is loaded.
 
-## Program 1 — Sum of an array
+## Program 1: Sum of an array
 
 **Add the bytes 12, 7, 25, 3, 9 and store the total in the word `sum`.**
 
@@ -54,7 +54,7 @@ end main
 `sum` = **56 (0038h)**
 :::
 
-## Program 2 — Largest number in an array
+## Program 2: Largest number in an array
 
 **Find the largest of 12, 7, 25, 3, 9.**
 
@@ -92,7 +92,7 @@ end main
 `big` = **25 (19h)**. For signed numbers use `JGE` instead of `JAE`.
 :::
 
-## Program 3 — Count the even numbers
+## Program 3: Count the even numbers
 
 **How many of 12, 7, 26, 3, 8 are even?**
 
@@ -129,11 +129,11 @@ end main
 `evens` = **3**
 :::
 
-## Program 4 — Reverse a string with the stack
+## Program 4: Reverse a string with the stack
 
 **Print `COAL` backwards.**
 
-*Idea:* push every character, then pop them — the stack gives them back in reverse order. PUSH works on words, so the character is pushed in AX (AL = character).
+*Idea:* push every character, then pop them, the stack gives them back in reverse order. PUSH works on words, so the character is pushed in AX (AL = character).
 
 ```asm
 .data
@@ -168,7 +168,7 @@ end main
 The screen shows **LAOC**
 :::
 
-## Program 5 — Factorial
+## Program 5: Factorial
 
 **Compute 5! = 5 × 4 × 3 × 2 × 1.**
 
@@ -195,11 +195,11 @@ fact:
 AX = **120 (0078h)**. 8! = 40,320 is the largest factorial that fits in AX; 9! needs DX:AX.
 :::
 
-## Program 6 — Print a number in decimal
+## Program 6: Print a number in decimal
 
 **Print the value 2468 that is stored in AX.**
 
-*Idea:* divide by 10 again and again; each remainder is one digit, but they come out **last digit first**. Push them, then pop and print — the stack puts them back in order. Add `'0'` (30h) to turn a digit into its ASCII character.
+*Idea:* divide by 10 again and again; each remainder is one digit, but they come out **last digit first**. Push them, then pop and print, the stack puts them back in order. Add `'0'` (30h) to turn a digit into its ASCII character.
 
 ```asm
     mov  ax, 2468
@@ -233,7 +233,7 @@ Popped in reverse: 2, 4, 6, 8.
 The screen shows **2468**
 :::
 
-## Program 7 — Convert a string to upper case
+## Program 7: Convert a string to upper case
 
 **Change `hello, coal!` to upper case and print it.**
 
@@ -271,11 +271,11 @@ end main
 ```
 
 :::answer
-The screen shows **HELLO, COAL!** — the comma, space and `!` are unchanged.
+The screen shows **HELLO, COAL!**, the comma, space and `!` are unchanged.
 :::
 
 ## Sources
 
-- Microsoft, *MASM 6.1 Programmer’s Guide* — `.model`, `.data`, `.code`, `equ`, `$`.
-- Ralf Brown’s Interrupt List — INT 21h functions 02h, 09h and 4Ch.
-- K. Irvine, *Assembly Language for x86 Processors* — loops, arrays and string processing.
+- Microsoft, *MASM 6.1 Programmer’s Guide*, `.model`, `.data`, `.code`, `equ`, `$`.
+- Ralf Brown’s Interrupt List, INT 21h functions 02h, 09h and 4Ch.
+- K. Irvine, *Assembly Language for x86 Processors*, loops, arrays and string processing.

@@ -36,5 +36,5 @@
 <text class="d-mono" x="660" y="116.0" text-anchor="middle" dominant-baseline="central">WB</text>
 <text class="d-small" x="450" y="180.0" text-anchor="middle" dominant-baseline="central">R1 is written in cycle 5 (WB of ADD) but SUB needs R1 when it decodes.</text>
 <text class="d-small" x="450" y="200.0" text-anchor="middle" dominant-baseline="central">Without forwarding the pipeline inserts two bubbles (stalls).</text>
-<text class="d-label" x="450" y="228.0" text-anchor="middle" dominant-baseline="central">With forwarding the EX result goes straight to the next instruction — no stall.</text>
+<text class="d-label" x="450" y="228.0" text-anchor="middle" dominant-baseline="central">With forwarding the EX result goes straight to the next instruction, no stall.</text>
 </svg>

@@ -45,15 +45,15 @@
 <text class="d-small" x="360" y="74.0" text-anchor="middle" dominant-baseline="central">1010 0111 = A7h = 167</text>
 <text class="d-label" x="600" y="56.0" text-anchor="middle" dominant-baseline="central">Offset · 4 bits</text>
 <text class="d-small" x="600" y="74.0" text-anchor="middle" dominant-baseline="central">1100 = 12</text>
-<text class="d-caps" x="200" y="132.0" text-anchor="start" dominant-baseline="central">CACHE — 256 LINES × 16 BYTES = 4 KB</text>
+<text class="d-caps" x="200" y="132.0" text-anchor="start" dominant-baseline="central">CACHE, 256 LINES × 16 BYTES = 4 KB</text>
 <text class="d-label d-on-accent" x="230" y="161.0" text-anchor="middle" dominant-baseline="central">Line</text>
 <text class="d-label d-on-accent" x="280" y="161.0" text-anchor="middle" dominant-baseline="central">V</text>
 <text class="d-label d-on-accent" x="335" y="161.0" text-anchor="middle" dominant-baseline="central">Tag</text>
 <text class="d-label d-on-accent" x="495" y="161.0" text-anchor="middle" dominant-baseline="central">Data block (16 bytes)</text>
 <text class="d-mono" x="230" y="190.0" text-anchor="middle" dominant-baseline="central">0</text>
 <text class="d-mono" x="280" y="190.0" text-anchor="middle" dominant-baseline="central">0</text>
-<text class="d-mono" x="335" y="190.0" text-anchor="middle" dominant-baseline="central">—</text>
-<text class="d-mono" x="495" y="190.0" text-anchor="middle" dominant-baseline="central">—</text>
+<text class="d-mono" x="335" y="190.0" text-anchor="middle" dominant-baseline="central">-</text>
+<text class="d-mono" x="495" y="190.0" text-anchor="middle" dominant-baseline="central">-</text>
 <text class="d-mono" x="230" y="218.0" text-anchor="middle" dominant-baseline="central">⋮</text>
 <text class="d-mono" x="230" y="246.0" text-anchor="middle" dominant-baseline="central">166</text>
 <text class="d-mono" x="280" y="246.0" text-anchor="middle" dominant-baseline="central">1</text>
@@ -65,8 +65,8 @@
 <text class="d-mono" x="495" y="274.0" text-anchor="middle" dominant-baseline="central">byte 0 … byte 12 … byte 15</text>
 <text class="d-mono" x="230" y="302.0" text-anchor="middle" dominant-baseline="central">168</text>
 <text class="d-mono" x="280" y="302.0" text-anchor="middle" dominant-baseline="central">0</text>
-<text class="d-mono" x="335" y="302.0" text-anchor="middle" dominant-baseline="central">—</text>
-<text class="d-mono" x="495" y="302.0" text-anchor="middle" dominant-baseline="central">—</text>
+<text class="d-mono" x="335" y="302.0" text-anchor="middle" dominant-baseline="central">-</text>
+<text class="d-mono" x="495" y="302.0" text-anchor="middle" dominant-baseline="central">-</text>
 <text class="d-mono" x="230" y="330.0" text-anchor="middle" dominant-baseline="central">⋮</text>
 <text class="d-mono" x="230" y="358.0" text-anchor="middle" dominant-baseline="central">255</text>
 <text class="d-mono" x="280" y="358.0" text-anchor="middle" dominant-baseline="central">1</text>

@@ -1,14 +1,13 @@
 # COAL Docs
 
-**Computer Organization & Assembly Language** — a course-style documentation site: 48 lessons in
+**Computer Organization & Assembly Language**, a course-style documentation site: 48 lessons in
 9 chapters, 53 diagrams, a calculator workbench with 16 tools that show their working step by step, and a chapter of solved problems, from computer generations to 8086 assembly programming.
 
 🔗 **Live site:** https://hammadhanif67.github.io/assembly-language-docs/
 
 <p align="center"><img src="src/assets/favicon.svg" width="88" alt="COAL Docs logo: a 3×3 grid of squares forming a C, with a red centre square"></p>
 
-The logo is a 3×3 grid of cells, like memory cells: the black cells form a **C** and the centre cell is red —
-the core.
+The logo is a 3×3 grid of cells, like memory cells: the black cells form a **C** and the centre cell is red, the core.
 
 ## Chapters
 
@@ -22,7 +21,7 @@ the core.
 | 06 | Assembly Basics | Program structure, assembler/linker/loader, directives, addressing modes |
 | 07 | The Instruction Set | Data transfer, arithmetic, logic/shift/rotate, jumps & loops |
 | 08 | Advanced Assembly | Stack & procedures, arrays & number I/O, strings, interrupts & I/O, macros, debugging |
-| 09 | Solved Problems | Formula sheet, number conversions, memory/units/performance, addressing, tracing code, writing programs — every question solved step by step |
+| 09 | Solved Problems | Formula sheet, number conversions, memory/units/performance, addressing, tracing code, writing programs, every question solved step by step |
 
 Lessons marked **Researched topic** were written to complete the curriculum and end with a References
 section. See [`CONTENT_MAP.md`](CONTENT_MAP.md) and [`MISSING_TOPICS.md`](MISSING_TOPICS.md).
@@ -119,7 +118,7 @@ src/
    float it beside the text), `:::note` / `:::tip` / `:::warning` / `:::answer`, and ```` ```mermaid ```` fences. A `## Sources` section is shown as
    “References”.
 3. For a new diagram, add a spec to `scripts/diagrams/specs-*.mjs`.
-4. Run `npm run check`, commit and push — GitHub Actions deploys automatically.
+4. Run `npm run check`, commit and push, GitHub Actions deploys automatically.
 
 ## Source material
 
@@ -131,7 +130,7 @@ Their text was transcribed into `content/`; diagrams were redrawn.
 - Libraries (CDN): [Prism.js](https://prismjs.com) (MIT), [Fuse.js](https://fusejs.io) (Apache-2.0),
   [Lucide](https://lucide.dev) (ISC), [Mermaid](https://mermaid.js.org) (MIT); [marked](https://marked.js.org) (MIT, build time).
 - Fonts: Inter, Inter Tight, JetBrains Mono (Google Fonts, SIL OFL).
-- Photos: Wikimedia Commons contributors — public domain, CC BY or CC BY-SA, credited under each photo and
+- Photos: Wikimedia Commons contributors, public domain, CC BY or CC BY-SA, credited under each photo and
   listed in `scripts/image-credits.json`.
 - Researched lessons cite Intel’s 8086 manuals, Microsoft Learn (MASM), Stallings, Patterson & Hennessy,
   Irvine and others in their References sections.

@@ -4,7 +4,7 @@ description: The basic gates (AND, OR, NOT, NAND, NOR, XOR), truth tables, Boole
 research: true
 ---
 
-Every operation the ALU performs — adding, comparing, ANDing — is built from **logic gates**: tiny circuits
+Every operation the ALU performs, adding, comparing, ANDing, is built from **logic gates**: tiny circuits
 that combine binary inputs into a binary output. Boolean algebra is the mathematics used to describe and
 simplify them.
 
@@ -81,6 +81,6 @@ not al              ; AL = 11000011b
 ## Sources
 
 - M. Morris Mano, *Digital Design*, ch. 2 “Boolean Algebra and Logic Gates”.
-- Wikipedia, *Logic gate* — [en.wikipedia.org](https://en.wikipedia.org/wiki/Logic_gate)
-- Wikipedia, *De Morgan's laws* — [en.wikipedia.org](https://en.wikipedia.org/wiki/De_Morgan%27s_laws)
-- Wikipedia, *Adder (electronics)* — [en.wikipedia.org](https://en.wikipedia.org/wiki/Adder_(electronics))
+- Wikipedia, *Logic gate*, [en.wikipedia.org](https://en.wikipedia.org/wiki/Logic_gate)
+- Wikipedia, *De Morgan's laws*, [en.wikipedia.org](https://en.wikipedia.org/wiki/De_Morgan%27s_laws)
+- Wikipedia, *Adder (electronics)*, [en.wikipedia.org](https://en.wikipedia.org/wiki/Adder_(electronics))

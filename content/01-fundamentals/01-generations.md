@@ -1,12 +1,12 @@
 ---
 title: Generations of Computers
-description: What a computer is, and the five generations of computers — technology, materials, languages (1GL–5GL), advantages and disadvantages of each.
+description: What a computer is, and the five generations of computers, technology, materials, languages (1GL-5GL), advantages and disadvantages of each.
 ---
 
 ## Computer
 
 :::figure img-computer.jpg side
-IBM Personal Computer 5150 (1981) — screen, system unit and keyboard
+IBM Personal Computer 5150 (1981), screen, system unit and keyboard
 :::
 
 A computer is a machine that manipulates data according to a set of instructions. A computer is a programmable machine that receives input, stores and provides output in a useful format, they can be constructed out of almost anything.
@@ -25,10 +25,10 @@ There are Five Generations of computers:-
 The five generations of computers and the technology behind each
 :::
 
-## First Generation (1946–1955)
+## First Generation (1946-1955)
 
 :::figure img-eniac.jpg side
-ENIAC — programmers at work on the first generation computer (U.S. Army photo)
+ENIAC, programmers at work on the first generation computer (U.S. Army photo)
 :::
 
 First generation computer uses Vacuum tubes, Magnetic tape drives and magnetic core memories were developed. ENIAC (Electronic Numeric Integrator And Calculator ) was the first electronic digital computer. It uses about 18,000 vacuum tubes. Its size was too much large. This was very hard to read and write programs by every person. The first generation computer produces too much heat.
@@ -36,7 +36,7 @@ First generation computer uses Vacuum tubes, Magnetic tape drives and magnetic c
 ### Material Used
 
 :::figure img-vacuum-tubes.jpg side
-Vacuum tubes — the switching element of first generation computers
+Vacuum tubes, the switching element of first generation computers
 :::
 
 - Vacuum Tubes
@@ -69,10 +69,10 @@ The disadvantages are:-
 - They contained thousands of valves (vacuum tubes) making them unreliable.
 - The major limitations for early computers was that memory was practically non-existant , only punched tape, delay line memory and mercury memory were available.
 
-## Second Generation (1956–1965)
+## Second Generation (1956-1965)
 
 :::figure img-ibm-1401.jpg side
-IBM 1401 — a transistorised second generation computer with tape drives
+IBM 1401, a transistorised second generation computer with tape drives
 :::
 
 Second generation computer uses a new electronic device called Transistor in the place of Vacuum tube. Storage capacity of computer also increase during this generation. Second generation computers also started showing the characteristics of modern day computers with utilities such as printers, disk storage and operating systems. Many financial information was processed using these computers.
@@ -93,7 +93,7 @@ An IBM SMS circuit card: discrete transistors, resistors and diodes
 Represent a step up from the first generation languages. Allow for the use of symbolic names instead of just numbers. Second generation languages are known as assembly languages. Code written in an assembly language is converted into machine language (1GL).
 
 ```asm
-MOV AL, 61h           ; 2GL — assembly: a symbolic name instead of 10110000
+MOV AL, 61h           ; 2GL, assembly: a symbolic name instead of 10110000
 ```
 
 ### Advantages
@@ -113,10 +113,10 @@ MOV AL, 61h           ; 2GL — assembly: a symbolic name instead of 10110000
 - Manual assembly of individual components into a functioning unit was required.
 - Commercial production was difficult and costly.
 
-## Third Generation (1966–1975)
+## Third Generation (1966-1975)
 
 :::figure img-ibm-360.jpg side
-IBM System/360 Model 30 — a third generation computer family
+IBM System/360 Model 30, a third generation computer family
 :::
 
 In third generation computer transistor were replaced with Integrated Circuit (IC) which is a combination of number of transistor and other electronic components fused together on single crystal. This generation machine uses magnetic tape and magnetic disk as secondary storage device.
@@ -124,7 +124,7 @@ In third generation computer transistor were replaced with Integrated Circuit (I
 ### Material Used
 
 :::figure img-slt-chip.jpg side
-IBM SLT module — early integrated (hybrid) circuit used in the System/360
+IBM SLT module, early integrated (hybrid) circuit used in the System/360
 :::
 
 - Silicon Chips
@@ -137,7 +137,7 @@ IBM SLT module — early integrated (hybrid) circuit used in the System/360
 With the languages introduced by the third generation of computer programming, words and commands (instead of just symbols and numbers) were being used. These languages therefore, had syntax that was much easier to understand. Third generation languages are known as "high level languages" and include C, C++, Java, and Javascript, among others.
 
 ```c
-char c = 'a';         /* 3GL — C: the compiler produces the MOV for you */
+char c = 'a';         /* 3GL, C: the compiler produces the MOV for you */
 ```
 
 ### Advantages
@@ -156,10 +156,10 @@ char c = 'a';         /* 3GL — C: the compiler produces the MOV for you */
 - Air-conditioning required in many cases.
 - Highly sophisticated technology required for the manufacture of IC chips.
 
-## Fourth Generation (1976–1985)
+## Fourth Generation (1976-1985)
 
 :::figure img-intel-4004.jpg side
-Intel 4004 — the first single-chip microprocessor
+Intel 4004, the first single-chip microprocessor
 :::
 
 In fourth generation computer IC were replaced with Microprocessors. A microprocessor chip consist of entire central processing unit in a single chip. Computing speed increased. Due to the reduction of cost and the availability of the computers power at a small place allowed everyday user to benefit.
@@ -193,10 +193,10 @@ SELECT name FROM students WHERE marks > 80;   -- 4GL: say WHAT you want, not how
 
 - Highly sophisticated technology required for the manufacture of LSI chips.
 
-## Fifth Generation (1986–onward)
+## Fifth Generation (1986-onward)
 
 :::figure img-blue-gene.jpg side
-IBM Blue Gene/P — massively parallel fifth generation supercomputer
+IBM Blue Gene/P, massively parallel fifth generation supercomputer
 :::
 
 In fifth generation computer VLSI technology were replaced by Ultra large Scale Integration (ULSI) technology. This technology helped to developed very small but extremely powerful and fast computers which come to be known as ROBOTS. The fifth generation computers will be under Artificial-Intelligence. The idea of fifth generation computer was introduced by Japan's Ministry of International Trade and Industry in 1982.

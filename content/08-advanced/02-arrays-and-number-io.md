@@ -132,5 +132,5 @@ pr: mov  dl, al
 ## Sources
 
 - K. Irvine, *Assembly Language for x86 Processors*, ch. 4 “Data Transfers, Addressing, and Arithmetic” and ch. 9 “Strings and Arrays”.
-- UMBC CMSC 211, *INT 21h functions* — [csee.umbc.edu](https://www.csee.umbc.edu/courses/undergraduate/CMSC211/fall01/burt/tech_help/int21.html)
-- Wikipedia, *Row- and column-major order* — [en.wikipedia.org](https://en.wikipedia.org/wiki/Row-_and_column-major_order)
+- UMBC CMSC 211, *INT 21h functions*, [csee.umbc.edu](https://www.csee.umbc.edu/courses/undergraduate/CMSC211/fall01/burt/tech_help/int21.html)
+- Wikipedia, *Row- and column-major order*, [en.wikipedia.org](https://en.wikipedia.org/wiki/Row-_and_column-major_order)

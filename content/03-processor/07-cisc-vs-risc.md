@@ -27,7 +27,7 @@ STORE address1, R1
 ## Code Size
 
 :::diagram code-size
-Figure: CISC — Code size is smaller but complicated. RISC — Code size is larger but simpler.
+Figure: CISC, Code size is smaller but complicated. RISC, Code size is larger but simpler.
 :::
 
 | CISC | RISC |

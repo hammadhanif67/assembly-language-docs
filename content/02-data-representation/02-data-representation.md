@@ -88,7 +88,7 @@ supports it with `DAA`/`DAS` (packed) and `AAA`/`AAS`/`AAM`/`AAD` (unpacked). Th
 
 ## Sources
 
-- Wikipedia, *Two's complement* — [en.wikipedia.org/wiki/Two%27s_complement](https://en.wikipedia.org/wiki/Two%27s_complement)
-- Wikipedia, *ASCII* — [en.wikipedia.org/wiki/ASCII](https://en.wikipedia.org/wiki/ASCII)
-- Wikipedia, *FLAGS register* — [en.wikipedia.org/wiki/FLAGS_register](https://en.wikipedia.org/wiki/FLAGS_register)
-- Intel, *The 8086 Family User's Manual* (1979), ch. 2 — data types, arithmetic and flags — [archive.org](https://ia801302.us.archive.org/2/items/bitsavers_intel80869lyUsersManualOct79_62967963/9800722-03_The_8086_Family_Users_Manual_Oct79.pdf)
+- Wikipedia, *Two's complement*, [en.wikipedia.org/wiki/Two%27s_complement](https://en.wikipedia.org/wiki/Two%27s_complement)
+- Wikipedia, *ASCII*, [en.wikipedia.org/wiki/ASCII](https://en.wikipedia.org/wiki/ASCII)
+- Wikipedia, *FLAGS register*, [en.wikipedia.org/wiki/FLAGS_register](https://en.wikipedia.org/wiki/FLAGS_register)
+- Intel, *The 8086 Family User's Manual* (1979), ch. 2, data types, arithmetic and flags, [archive.org](https://ia801302.us.archive.org/2/items/bitsavers_intel80869lyUsersManualOct79_62967963/9800722-03_The_8086_Family_Users_Manual_Oct79.pdf)

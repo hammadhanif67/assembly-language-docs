@@ -20,7 +20,7 @@ interrupt types** that share one mechanism.
 
 ## The interrupt vector table (IVT)
 
-The first 1 KB of memory (`0000:0000` – `0000:03FF`) holds 256 **vectors**, 4 bytes each (offset, then segment). The vector for type *n* is at address `n × 4`.
+The first 1 KB of memory (`0000:0000`, `0000:03FF`) holds 256 **vectors**, 4 bytes each (offset, then segment). The vector for type *n* is at address `n × 4`.
 
 ```text
 int 21h  →  vector at 21h × 4 = 0084h  →  [0000:0084] = handler IP, [0000:0086] = handler CS
@@ -43,19 +43,19 @@ flowchart TD
   G --> H["Continue after INT n"]
 ```
 
-## DOS services — INT 21h
+## DOS services: INT 21h
 
 Put the function number in **AH**, other inputs in the listed registers, then `int 21h`.
 
 | AH | Function | Input | Output |
 |---|---|---|---|
-| 01h | read a character (with echo) | — | AL = character |
-| 02h | write a character | DL = character | — |
-| 08h | read a character (no echo) | — | AL = character |
-| 09h | write a `$`-terminated string | DS:DX = string address | — |
+| 01h | read a character (with echo) | - | AL = character |
+| 02h | write a character | DL = character | - |
+| 08h | read a character (no echo) | - | AL = character |
+| 09h | write a `$`-terminated string | DS:DX = string address | - |
 | 0Ah | buffered line input | DS:DX = buffer (byte 0 = max length) | byte 1 = chars read |
-| 2Ah | get system date | — | CX = year, DH = month, DL = day |
-| 4Ch | terminate program | AL = return code | — |
+| 2Ah | get system date | - | CX = year, DH = month, DL = day |
+| 4Ch | terminate program | AL = return code | - |
 
 ### Example: read a key and echo it in uppercase
 
@@ -111,9 +111,9 @@ the keyboard controller's data port is 60h and the PC speaker is controlled thro
 
 ## Sources
 
-- Intel, *The 8086 Family User's Manual* (1979) — interrupts and the interrupt pointer table — [archive.org](https://ia801302.us.archive.org/2/items/bitsavers_intel80869lyUsersManualOct79_62967963/9800722-03_The_8086_Family_Users_Manual_Oct79.pdf)
-- UMBC CMSC 211, *INT 21h functions* — [csee.umbc.edu](https://www.csee.umbc.edu/courses/undergraduate/CMSC211/fall01/burt/tech_help/int21.html)
-- UMBC CMSC 211, *BIOS and DOS interrupts* — [courses.cs.umbc.edu](https://courses.cs.umbc.edu/undergraduate/CMSC211/fall02/burt/tech_help/BIOSandDOS_Interrupts.html)
-- R. Duncan, *MS-DOS Functions* (1988) — [bitsavers mirror](https://ftp.mirrorservice.org/sites/www.bitsavers.org/pdf/microsoft/msdos_3.3/Duncan_-_MS-DOS_Functions_1988.pdf)
-- Wikipedia, *DOS API* — [en.wikipedia.org/wiki/DOS_API](https://en.wikipedia.org/wiki/DOS_API)
-- Wikipedia, *Interrupt vector table* — [en.wikipedia.org/wiki/Interrupt_vector_table](https://en.wikipedia.org/wiki/Interrupt_vector_table)
+- Intel, *The 8086 Family User's Manual* (1979), interrupts and the interrupt pointer table, [archive.org](https://ia801302.us.archive.org/2/items/bitsavers_intel80869lyUsersManualOct79_62967963/9800722-03_The_8086_Family_Users_Manual_Oct79.pdf)
+- UMBC CMSC 211, *INT 21h functions*, [csee.umbc.edu](https://www.csee.umbc.edu/courses/undergraduate/CMSC211/fall01/burt/tech_help/int21.html)
+- UMBC CMSC 211, *BIOS and DOS interrupts*, [courses.cs.umbc.edu](https://courses.cs.umbc.edu/undergraduate/CMSC211/fall02/burt/tech_help/BIOSandDOS_Interrupts.html)
+- R. Duncan, *MS-DOS Functions* (1988), [bitsavers mirror](https://ftp.mirrorservice.org/sites/www.bitsavers.org/pdf/microsoft/msdos_3.3/Duncan_-_MS-DOS_Functions_1988.pdf)
+- Wikipedia, *DOS API*, [en.wikipedia.org/wiki/DOS_API](https://en.wikipedia.org/wiki/DOS_API)
+- Wikipedia, *Interrupt vector table*, [en.wikipedia.org/wiki/Interrupt_vector_table](https://en.wikipedia.org/wiki/Interrupt_vector_table)

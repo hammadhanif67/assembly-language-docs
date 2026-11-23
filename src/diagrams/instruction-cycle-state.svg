@@ -40,8 +40,8 @@
 <text class="d-small" x="435.3" y="156.0" text-anchor="middle" dominant-baseline="central">multiple operands</text>
 <rect x="561.8" y="147.3" width="111.0" height="17.5" fill="var(--d-canvas)"/>
 <text class="d-small" x="617.3" y="156.0" text-anchor="middle" dominant-baseline="central">multiple results</text>
-<rect x="71.1" y="311.3" width="297.8" height="17.5" fill="var(--d-canvas)"/>
-<text class="d-small" x="220" y="320.0" text-anchor="middle" dominant-baseline="central">instruction complete — fetch next instruction</text>
+<rect x="74.3" y="311.3" width="291.4" height="17.5" fill="var(--d-canvas)"/>
+<text class="d-small" x="220" y="320.0" text-anchor="middle" dominant-baseline="central">instruction complete, fetch next instruction</text>
 <rect x="354.0" y="335.3" width="214.1" height="17.5" fill="var(--d-canvas)"/>
 <text class="d-small" x="461" y="344.0" text-anchor="middle" dominant-baseline="central">return for string or vector data</text>
 </svg>

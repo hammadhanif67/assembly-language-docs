@@ -1,6 +1,6 @@
 ---
 title: Cache Memory & Mapping
-description: Why caches work (locality), hits, misses and average access time, and the three mapping techniques — direct, fully associative and set-associative — plus replacement and write policies.
+description: Why caches work (locality), hits, misses and average access time, and the three mapping techniques, direct, fully associative and set-associative, plus replacement and write policies.
 research: true
 ---
 
@@ -12,7 +12,7 @@ memory. This lesson explains how the cache decides where a memory block goes and
 - **Temporal locality:** a byte used now will probably be used again soon (loop counters, variables).
 - **Spatial locality:** bytes near it will probably be used soon (array elements, the next instruction).
 
-So the cache keeps recently used **blocks** (lines) of 16–64 bytes, not single bytes.
+So the cache keeps recently used **blocks** (lines) of 16-64 bytes, not single bytes.
 
 ## Hits, misses and average access time
 
@@ -34,7 +34,7 @@ The cache treats every memory address as three fields:
 |---|---|
 | **Offset** | the byte inside a block (block of 2ᵇ bytes → b bits) |
 | **Index / line** | which cache line (or set) to look in |
-| **Tag** | the rest of the address — stored with the line to tell blocks apart |
+| **Tag** | the rest of the address, stored with the line to tell blocks apart |
 
 ## 1. Direct mapping
 
@@ -47,7 +47,7 @@ Direct-mapped cache: address 3A7Ch looks only in line 167 and compares the tag
 **Example:** a 4 KB cache with 16-byte lines has 256 lines. A 16-bit address splits into
 tag 4 bits · line 8 bits · offset 4 bits. Address `3A7Ch` = `0011 1010 0111 1100` → tag 3, line 167, byte 12.
 
-- ✔ Simple and fast — one comparison.
+- ✔ Simple and fast, one comparison.
 - ✘ Two blocks that map to the same line keep evicting each other (**conflict misses**).
 
 ## 2. Fully associative mapping
@@ -75,7 +75,7 @@ line within it.
 
 ## Replacement and write policies
 
-When a set is full, a **replacement policy** chooses the victim: **LRU** (least recently used — the usual
+When a set is full, a **replacement policy** chooses the victim: **LRU** (least recently used, the usual
 choice), **FIFO**, or **random**.
 
 When the CPU writes:
@@ -87,6 +87,6 @@ When the CPU writes:
 ## Sources
 
 - W. Stallings, *Computer Organization and Architecture*, ch. 4 “Cache Memory”.
-- Wikipedia, *Cache placement policies* — [en.wikipedia.org](https://en.wikipedia.org/wiki/Cache_placement_policies)
-- Wikipedia, *CPU cache* — [en.wikipedia.org](https://en.wikipedia.org/wiki/CPU_cache)
-- Wikipedia, *Locality of reference* — [en.wikipedia.org](https://en.wikipedia.org/wiki/Locality_of_reference)
+- Wikipedia, *Cache placement policies*, [en.wikipedia.org](https://en.wikipedia.org/wiki/Cache_placement_policies)
+- Wikipedia, *CPU cache*, [en.wikipedia.org](https://en.wikipedia.org/wiki/CPU_cache)
+- Wikipedia, *Locality of reference*, [en.wikipedia.org](https://en.wikipedia.org/wiki/Locality_of_reference)
