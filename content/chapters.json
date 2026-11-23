@@ -1,0 +1,9 @@
+[
+  { "dir": "01-foundations", "title": "Foundations", "icon": "landmark" },
+  { "dir": "02-processor", "title": "Processor Basics", "icon": "cpu" },
+  { "dir": "03-registers-memory", "title": "Registers & Memory", "icon": "layers" },
+  { "dir": "04-microprocessors", "title": "Microprocessors", "icon": "microchip" },
+  { "dir": "05-assembly-basics", "title": "Assembly Basics", "icon": "binary" },
+  { "dir": "06-instruction-set", "title": "Instruction Set", "icon": "terminal" },
+  { "dir": "07-advanced", "title": "Advanced Assembly", "icon": "rocket" }
+]
