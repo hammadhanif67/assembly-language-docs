@@ -1087,3 +1087,14 @@ p.t-math { margin: 4px 0; }
 .hv-eyebrow.decoded .ey-coal i { animation: coal-in .45s cubic-bezier(.2, .8, .2, 1) both; animation-delay: calc(.55s + var(--i) * .1s); }
 @keyframes coal-in { to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .hv-eyebrow.decoded .ac, .hv-eyebrow.decoded .ey-coal i { animation: none; } .ey-coal, .ey-coal i { opacity: 1; transform: none; } }
+
+/* ---------- 35. COAL label: a different animation each round ---------- */
+.ey-t { display: inline-block; min-height: 1.2em; white-space: pre-wrap; transition: color .4s; }
+.hv-eyebrow.typing .ey-t::after { content: ""; display: inline-block; width: .5em; height: 1em; margin-left: 2px; vertical-align: -2px; background: #ff4d57; animation: blink .8s steps(2) infinite; }
+.hv-eyebrow.wave .lt { display: inline-block; animation: ey-wave .7s cubic-bezier(.3, .7, .3, 1) both; animation-delay: calc(var(--n) * 28ms); }
+@keyframes ey-wave { 40% { transform: translateY(-7px); color: #fff; text-shadow: 0 0 12px rgba(255, 77, 87, .9); } }
+.hv-eyebrow.spot .ey-t { color: rgba(255, 77, 87, .22); }
+.hv-eyebrow.spot .ac { display: inline-block; color: #fff; text-shadow: 0 0 18px rgba(255, 77, 87, 1); animation: ey-spot 1.9s ease both; }
+@keyframes ey-spot { 0% { transform: none; } 20%, 80% { transform: scale(1.35); } 100% { transform: none; } }
+.hv-eyebrow.bin .ey-t { color: #2fd36b; letter-spacing: .14em; }
+.ey-coal.hex { gap: .5em; letter-spacing: .04em; }

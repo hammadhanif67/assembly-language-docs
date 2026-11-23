@@ -409,31 +409,76 @@
     setTimeout(go, 900);
   }
 
-  /* ---------- Home hero: the eyebrow decodes from hex, then spells COAL ---------- */
+  /* ---------- Home hero: the COAL label plays a different animation each time ---------- */
   function setupEyebrow() {
-    const el = document.querySelector('.hv-eyebrow .ey-t');
-    if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) { if (el) el.closest('.hv-eyebrow').classList.add('decoded'); return; }
-    const nodes = [];
-    const walk = (n) => n.childNodes.forEach((c) => (c.nodeType === 3 ? nodes.push([c, c.nodeValue]) : walk(c)));
-    walk(el);
-    const total = nodes.reduce((s, [, t]) => s + t.length, 0), POOL = '01ABCDEF';
-    const t0 = performance.now(), dur = 1100, delay = 150;
-    let finished = false;
-    const finish = () => { if (finished) return; finished = true; nodes.forEach(([n, orig]) => { n.nodeValue = orig; }); el.closest('.hv-eyebrow').classList.add('decoded'); };
-    const frame = (t) => {
-      if (finished) return;
-      const shown = Math.floor(Math.max(0, (t - t0 - delay) / dur) * total);
-      let k = 0;
-      nodes.forEach(([n, orig]) => {
-        let out = '';
-        for (const ch of orig) { out += k < shown || ch === ' ' || ch === '&' ? ch : POOL[(Math.random() * POOL.length) | 0]; k++; }
-        n.nodeValue = out;
-      });
-      if (shown < total) requestAnimationFrame(frame);
-      else finish();
-    };
-    requestAnimationFrame(frame);
-    setTimeout(finish, delay + dur + 600);
+    const box = document.querySelector('.hv-eyebrow');
+    const el = box && box.querySelector('.ey-t');
+    if (!el) return;
+    const badge = box.querySelector('.ey-coal');
+    const HTML = el.innerHTML, TEXT = el.textContent;
+    const INITIALS = new Set([0, 9, 24, 33]); // C, O, A, L
+    const done = () => box.classList.add('decoded');
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { done(); return; }
+
+    let paused = false;
+    const sleep = (ms) => new Promise((res) => { const t0 = Date.now(); const go = () => (paused ? setTimeout(go, 200) : Date.now() - t0 >= ms ? res() : setTimeout(go, Math.min(60, ms - (Date.now() - t0)))); go(); });
+    const restore = () => { el.innerHTML = HTML; box.className = 'hv-eyebrow decoded'; };
+    const rand = (pool) => pool[(Math.random() * pool.length) | 0];
+    const setBadge = (chars) => { badge.innerHTML = chars.map((c, i) => `<i style="--i:${i}">${c}</i>`).join(''); badge.classList.remove('swap'); void badge.offsetWidth; badge.classList.add('swap'); };
+
+    // 1. decode: random hex settles into the text, left to right
+    async function decode(pool = '01ABCDEF', start = null) {
+      const total = TEXT.length;
+      for (let f = 0; f <= 24; f++) {
+        const shown = Math.floor((f / 24) * total);
+        el.textContent = [...TEXT].map((ch, k) => (k < shown || ch === ' ' || ch === '&' ? ch : start ? start[k] || rand(pool) : rand(pool))).join('');
+        await sleep(45);
+      }
+      restore();
+    }
+    // 2. typewriter: erase, then type it back with a caret
+    async function typewriter() {
+      box.classList.add('typing');
+      for (let n = TEXT.length; n >= 0; n -= 2) { el.textContent = TEXT.slice(0, n); await sleep(14); }
+      await sleep(200);
+      for (let n = 0; n <= TEXT.length; n++) { el.textContent = TEXT.slice(0, n); await sleep(32); }
+      await sleep(300);
+      restore();
+    }
+    // 3. wave: every letter rises and glows in turn
+    async function wave() {
+      el.innerHTML = [...TEXT].map((ch, k) => (ch === ' ' ? ' ' : `<span class="lt${INITIALS.has(k) ? ' ac' : ''}" style="--n:${k}">${ch === '&' ? '&amp;' : ch}</span>`)).join('');
+      box.classList.add('wave');
+      await sleep(TEXT.length * 28 + 700);
+      restore();
+    }
+    // 4. binary: the ASCII codes of C O A L, then back to text
+    async function binary() {
+      badge.classList.add('hex'); setBadge(['43', '4F', '41', '4C']);
+      const bin = '01000011 01001111 01000001 01001100';
+      box.classList.add('bin');
+      for (let f = 0; f < 10; f++) { el.textContent = [...bin].map((c) => (c === ' ' ? ' ' : Math.random() < 0.15 ? (c === '0' ? '1' : '0') : c)).join(''); await sleep(70); }
+      el.textContent = bin; await sleep(900);
+      box.classList.remove('bin');
+      await decode('01');
+      await sleep(400);
+      badge.classList.remove('hex'); setBadge(['C', 'O', 'A', 'L']);
+    }
+    // 5. spotlight: everything dims except the four initials
+    async function spotlight() {
+      box.classList.add('spot');
+      await sleep(1900);
+      restore();
+    }
+
+    const effects = [decode, spotlight, typewriter, wave, binary];
+    if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => { paused = !e.isIntersecting || document.hidden; }).observe(box);
+    document.addEventListener('visibilitychange', () => { paused = document.hidden; });
+    (async () => {
+      await decode();
+      done();
+      for (let i = 1; ; i = (i + 1) % effects.length) { await sleep(4200); await effects[i](); }
+    })();
   }
 
   /* ---------- Boot ---------- */
