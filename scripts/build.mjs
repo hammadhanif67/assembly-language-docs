@@ -24,7 +24,7 @@ const CDN = {
   mermaid: 'https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js',
   typed: 'https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js',
   fonts:
-    'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Space+Grotesk:wght@500;700&family=VT323&display=swap',
+    'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap',
 };
 
 // ---------- helpers ----------
@@ -161,15 +161,14 @@ const LOGO = fs.readFileSync(path.join(SRC, 'logo.svg'), 'utf8');
 
 function head({ title, description, prefix, extraHead = '' }) {
   return `<!doctype html>
-<html lang="en" data-theme="terminal">
+<html lang="en" data-theme="fusion">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description || SITE.tagline)}">
-<meta name="theme-color" content="#0b0f0c">
+<meta name="theme-color" content="#050b09">
 <link rel="icon" href="${prefix}assets/favicon.svg" type="image/svg+xml">
-<script>(function(){try{var t=localStorage.getItem('coal-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="${CDN.fonts}">
@@ -178,14 +177,6 @@ function head({ title, description, prefix, extraHead = '' }) {
 ${extraHead}
 </head>`;
 }
-
-const THEMES = [
-  ['terminal', 'Dark Terminal', 'terminal-square'],
-  ['clean', 'Clean Docs', 'book-open'],
-  ['crt', 'Retro CRT', 'monitor'],
-  ['glass', 'Glassmorphism', 'gem'],
-  ['paper', 'Paper / Book', 'book-text'],
-];
 
 const SVG_DEFS = `<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
 <marker id="d-arrowhead" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--d-stroke)"/></marker>
@@ -197,10 +188,6 @@ const SVG_DEFS = `<svg width="0" height="0" style="position:absolute" aria-hidde
 </defs></svg>`;
 
 function header(prefix) {
-  const opts = THEMES.map(
-    ([id, name, icon]) =>
-      `<li role="none"><button role="menuitemradio" aria-checked="false" type="button" data-theme-choice="${id}"><span class="swatch swatch--${id}" aria-hidden="true"></span><i data-lucide="${icon}" aria-hidden="true"></i><span>${name}</span></button></li>`
-  ).join('');
   return `${SVG_DEFS}<a class="skip-link" href="#main">Skip to content</a>
 <div class="progress" aria-hidden="true"><div class="progress-bar"></div></div>
 <header class="site-header">
@@ -208,10 +195,6 @@ function header(prefix) {
   <a class="brand" href="${prefix}index.html" aria-label="${SITE.name} — home">${LOGO}<span class="brand-text"><span class="brand-name">C<span class="brand-zero">0</span>AL<span class="brand-cursor" aria-hidden="true">_</span></span><span class="brand-sub">Documentation</span></span></a>
   <button class="search-trigger" type="button" aria-label="Search documentation" data-search-open><i data-lucide="search"></i><span class="search-trigger-text">Search docs…</span><kbd>Ctrl K</kbd></button>
   <div class="header-actions">
-    <div class="theme-menu">
-      <button class="icon-btn theme-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Change theme"><i data-lucide="palette"></i><span class="theme-current">Theme</span></button>
-      <ul class="theme-list" role="menu" aria-label="Themes">${opts}</ul>
-    </div>
     <a class="icon-btn" href="${SITE.repo}" target="_blank" rel="noopener" aria-label="GitHub repository"><i data-lucide="github"></i></a>
   </div>
 </header>`;
@@ -361,9 +344,9 @@ ${sidebar(prefix, null)}
     <div class="hero-copy">
       <p class="eyebrow"><span class="dot"></span>Computer Organization &amp; Assembly Language</p>
       <h1 class="hero-title">Read the machine,<br><span class="hero-accent">one register at a time.</span></h1>
-      <p class="hero-lede">Lecture notes on processors, registers, memory, buses, the 8085 and 8086, turned into searchable pages with diagrams you can read in any theme. Extra topics on writing x86 assembly fill in what the slides don't cover.</p>
+      <p class="hero-lede">Lecture notes on processors, registers, memory, buses, the 8085 and 8086, turned into searchable pages with every slide diagram redrawn. Extra topics on writing x86 assembly fill in what the slides don't cover.</p>
       <div class="hero-cta"><a class="btn btn--primary" href="${prefix}${pages[0].url}"><i data-lucide="book-open"></i>Start reading</a><button class="btn btn--ghost" type="button" data-search-open><i data-lucide="search"></i>Search topics</button></div>
-      <dl class="hero-stats"><div><dt>Pages from slides</dt><dd>${pdfCount}</dd></div><div><dt>Researched pages</dt><dd>${resCount}</dd></div><div><dt>Diagrams</dt><dd>${diagramCount}</dd></div><div><dt>Themes</dt><dd>5</dd></div></dl>
+      <dl class="hero-stats"><div><dt>Pages from slides</dt><dd>${pdfCount}</dd></div><div><dt>Researched pages</dt><dd>${resCount}</dd></div><div><dt>Diagrams</dt><dd>${diagramCount}</dd></div><div><dt>Interactive widgets</dt><dd>4</dd></div></dl>
     </div>
     <div class="hero-term" aria-label="Example assembly session">
       <div class="term-bar"><span></span><span></span><span></span><em>hello.asm — 8086</em></div>
@@ -379,11 +362,6 @@ int 21h</noscript></code></pre>
   <section class="home-section">
     <h2 class="section-title" data-reveal>Chapters</h2>
     <div class="chapter-grid">${cards}</div>
-  </section>
-  <section class="home-section home-themes" data-reveal>
-    <h2 class="section-title">Five ways to read</h2>
-    <p>Same content, five designs. Your choice is remembered on this device.</p>
-    <div class="theme-cards">${THEMES.map(([id, name, icon]) => `<button class="theme-card theme-card--${id}" type="button" data-theme-choice="${id}"><span class="theme-card-preview" aria-hidden="true"><span></span><span></span><span></span></span><i data-lucide="${icon}" aria-hidden="true"></i><span>${name}</span></button>`).join('')}</div>
   </section>
 </main>
 </div>

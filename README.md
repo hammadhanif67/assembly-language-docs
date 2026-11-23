@@ -24,7 +24,7 @@ with a slashed zero and a blinking cursor.
 | 7. Advanced Assembly | stack & procedures, interrupts & I/O, string instructions, macros, debugging | 🔬 researched |
 
 - **38 pages** (24 from the course material, 14 marked *Added by research* with cited sources)
-- **37 theme-aware SVG diagrams**, each linked to the original slide image
+- **37 SVG diagrams** drawn with the site palette, each linked to the original slide image
 - Interactive widgets: program-execution stepper, segment:offset calculator, number converter, stack visualizer
 - See [`CONTENT_MAP.md`](CONTENT_MAP.md) (source → page mapping, OCR notes, overlaps) and [`MISSING_TOPICS.md`](MISSING_TOPICS.md)
 
@@ -35,24 +35,22 @@ with a slashed zero and a blinking cursor.
 - Breadcrumbs, previous/next links, reading-progress bar, back-to-top button
 - Full-text search (Fuse.js), opened with **Ctrl K** or **/**
 - Syntax highlighting (Prism.js) with x86 mnemonics, line numbers and copy buttons
-- Mermaid flowcharts on the researched pages, re-themed live
+- Mermaid flowcharts on the researched pages, styled to match the site
 - Subtle GSAP entrance and scroll animations, all disabled under `prefers-reduced-motion`
 - Responsive from 320 px phones to wide desktops; keyboard navigable; alt text on all images; skip link
 
-## Themes
+## Design
 
-Switch from the palette button in the header. The choice is saved in `localStorage`.
+One design that mixes three styles:
 
-| Theme | Look |
+| Ingredient | What it contributes |
 |---|---|
-| **Dark Terminal** (default) | black, phosphor-green and amber monospace, `##` heading prompts |
-| **Clean Docs** | white, Inter, minimal (GitBook/Docusaurus style) |
-| **Retro CRT** | amber phosphor glow, scanlines, rolling refresh bar, VT323 headings |
-| **Glassmorphism** | gradient mesh, frosted blurred cards, Space Grotesk |
-| **Paper / Book** | warm paper, Literata serif, drop caps, small-caps headings |
+| **Glassmorphism** | dark gradient-mesh background, frosted translucent cards, sidebar and header with backdrop blur |
+| **Dark Terminal** | phosphor-green and amber palette, JetBrains Mono headings with `>` / `##` prompts, a dotted grid |
+| **Retro CRT** | scanlines and phosphor glow on the hero terminal and every code block |
 
-All five share one HTML structure. Each theme is just a set of CSS variables in `src/css/main.css`.
-Diagrams use the same variables, so they re-color with the theme.
+Body text uses Inter for readability. All colors are CSS variables in `src/css/main.css`
+(section 1), and the diagrams use the same variables.
 
 ## Run locally
 
@@ -75,10 +73,10 @@ content/
   …
   07-advanced/*.md
 src/
-  css/main.css             layout + 5 themes
-  js/main.js               theme switcher, sidebar, TOC, search, copy, lightbox, animations
+  css/main.css             layout + design tokens
+  js/main.js               sidebar, TOC, search, copy, lightbox, animations
   js/widgets.js            interactive widgets
-  diagrams/*.svg           theme-aware diagrams (+ _meta.json: original slide, “illustration” flag)
+  diagrams/*.svg           diagrams (+ _meta.json: original slide, “illustration” flag)
   assets/img/              photos extracted from the PDFs
   assets/originals/        original slide images for “View original slide”
   logo.svg
@@ -127,7 +125,7 @@ scripts/
 4. Run `npm run check`, commit, push. GitHub Actions rebuilds and deploys.
 
 Diagrams should use the `d-*` classes (`d-box`, `d-text`, `d-line d-arrow`, …) instead of hard-coded
-colors, so they work in every theme.
+colors, so they match the site palette.
 
 ## Source material
 
@@ -147,7 +145,7 @@ and figures live in `content/` and `src/assets/`. To commit the originals as wel
 - Libraries (all via CDN): [Prism.js](https://prismjs.com) (MIT), [Fuse.js](https://fusejs.io) (Apache-2.0),
   [GSAP](https://gsap.com) (GreenSock standard license, free), [Lucide](https://lucide.dev) (ISC),
   [Mermaid](https://mermaid.js.org) (MIT), [marked](https://marked.js.org) (MIT, build-time).
-- Fonts: Inter, JetBrains Mono, Literata, Space Grotesk, VT323 (Google Fonts, SIL OFL).
+- Fonts: Inter, JetBrains Mono (Google Fonts, SIL OFL).
 - Layout ideas inspired by open-source docs sites such as Docusaurus and VitePress. No code was copied.
 
 ## License

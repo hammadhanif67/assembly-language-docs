@@ -33,46 +33,6 @@
   /* ---------- Icons ---------- */
   function icons() { if (window.lucide) lucide.createIcons({ attrs: { 'aria-hidden': 'true' } }); }
 
-  /* ---------- Theme switcher ---------- */
-  const THEME_NAMES = { terminal: 'Dark Terminal', clean: 'Clean Docs', crt: 'Retro CRT', glass: 'Glassmorphism', paper: 'Paper / Book' };
-  const THEME_COLORS = { terminal: '#070a08', clean: '#ffffff', crt: '#140b02', glass: '#0d0b1f', paper: '#f4ecdd' };
-  function applyTheme(t, persist) {
-    if (!THEME_NAMES[t]) t = 'terminal';
-    document.documentElement.setAttribute('data-theme', t);
-    if (persist) store.set('coal-theme', t);
-    $$('[data-theme-choice]').forEach((b) => {
-      const on = b.dataset.themeChoice === t;
-      if (b.getAttribute('role') === 'menuitemradio') b.setAttribute('aria-checked', String(on));
-      else b.setAttribute('aria-pressed', String(on));
-    });
-    const cur = $('.theme-current'); if (cur) cur.textContent = THEME_NAMES[t];
-    const meta = $('meta[name="theme-color"]'); if (meta) meta.setAttribute('content', THEME_COLORS[t]);
-    if (persist) rerenderMermaid();
-  }
-  function setupThemes() {
-    applyTheme(document.documentElement.getAttribute('data-theme') || 'terminal', false);
-    const menu = $('.theme-menu'), toggle = $('.theme-toggle');
-    if (!menu) return;
-    const close = () => { menu.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); };
-    toggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const open = menu.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(open));
-      if (open) { const sel = $('[aria-checked="true"]', menu) || $('button', menu.querySelector('.theme-list')); sel && sel.focus(); }
-    });
-    document.addEventListener('click', (e) => { if (!menu.contains(e.target)) close(); });
-    menu.addEventListener('keydown', (e) => {
-      const items = $$('.theme-list button', menu); const i = items.indexOf(document.activeElement);
-      if (e.key === 'Escape') { close(); toggle.focus(); }
-      if (e.key === 'ArrowDown') { e.preventDefault(); items[(i + 1) % items.length].focus(); }
-      if (e.key === 'ArrowUp') { e.preventDefault(); items[(i - 1 + items.length) % items.length].focus(); }
-    });
-    $$('[data-theme-choice]').forEach((b) => b.addEventListener('click', () => {
-      applyTheme(b.dataset.themeChoice, true);
-      if (menu.contains(b)) { close(); toggle.focus(); }
-    }));
-  }
-
   /* ---------- Sidebar ---------- */
   function setupSidebar() {
     $$('.nav-group-btn').forEach((btn) => btn.addEventListener('click', () => {
@@ -319,7 +279,6 @@
   document.addEventListener('DOMContentLoaded', () => {
     setupPrism();
     icons();
-    setupThemes();
     setupSidebar();
     setupScroll();
     setupCopy();

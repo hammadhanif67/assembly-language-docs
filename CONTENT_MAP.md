@@ -83,7 +83,7 @@ They are excluded from the Git repository by `.gitignore` (see README → *Sourc
 
 ## Figures
 
-- **37 diagrams** recreated as theme-aware inline SVG (`src/diagrams/*.svg`). Each one from a slide has a
+- **37 diagrams** recreated as inline SVG using the site palette (`src/diagrams/*.svg`). Each one from a slide has a
   **“View original slide”** button showing the untouched source image (`src/assets/originals/`).
   Three are marked *illustration* because they visualise text that had no figure
   (`arch-vs-org`, `flags-8085`, `interrupt-priority-8085`).
