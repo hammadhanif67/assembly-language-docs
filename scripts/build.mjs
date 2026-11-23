@@ -315,7 +315,15 @@ ${footer(prefix, mermaidScript)}`;
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   fs.writeFileSync(dest, out);
 
-  const text = decode(stripTags(html.replace(/<svg[\s\S]*?<\/svg>/g, ' '))).replace(/\s+/g, ' ').trim();
+  const text = decode(
+    stripTags(
+      html
+        .replace(/<svg[\s\S]*?<\/svg>/g, ' ')
+        .replace(/<div class="mermaid-wrap">[\s\S]*?<\/div>/g, ' ')
+        .replace(/<a class="h-anchor"[^>]*>#<\/a>/g, '')
+        .replace(/<\/(p|li|h\d|td|th|figcaption)>/g, ' ')
+    )
+  ).replace(/\s+/g, ' ').trim();
   searchIndex.push({
     t: page.title,
     u: page.url,

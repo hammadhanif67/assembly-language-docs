@@ -583,9 +583,9 @@ pre[class*="language-"], code[class*="language-"] {
   color: var(--code-text); background: none; text-shadow: none;
   tab-size: 8; hyphens: none; white-space: pre; word-spacing: normal;
 }
-pre[class*="language-"] { margin: 0; padding: 14px 16px 14px 3.6em; overflow: auto; }
+pre[class*="language-"] { margin: 0; padding: 14px 16px 14px 3.6em; overflow-x: auto; overflow-y: hidden; }
 pre.line-numbers { padding-left: 3.6em; counter-reset: linenumber; }
-.line-numbers .line-numbers-rows { border-right: 1px solid var(--code-border) !important; top: 14px !important; }
+.line-numbers .line-numbers-rows { border-right: 1px solid var(--code-border) !important; }
 .line-numbers-rows > span::before { color: var(--tk-comment) !important; opacity: .7; }
 .token.comment, .token.prolog, .token.doctype, .token.cdata { color: var(--tk-comment); font-style: italic; }
 .token.keyword, .token.directive, .token.important { color: var(--tk-keyword); }
@@ -884,3 +884,6 @@ figcaption > span { flex: 1 1 260px; }
   .layout, .content { display: block; padding: 0; }
   body::before, body::after { display: none !important; }
 }
+
+/* Technical text needs lining figures (Literata defaults to old-style numerals) */
+[data-theme="paper"] body { font-variant-numeric: lining-nums tabular-nums; }

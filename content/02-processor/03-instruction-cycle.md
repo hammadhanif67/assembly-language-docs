@@ -58,8 +58,10 @@ Figure: Computer Components — Top Level View
 ## Example Program Execution
 
 :::widget program-execution
-Figure: Example Program Execution (Steps 1–6). Use the buttons to step through the original six panels.
+Figure: Example Program Execution (Steps 1–6). Use the buttons to step through the six panels of the slide.
 :::
+
+<small>The memory and register values are exactly those on the slide. The step-by-step explanations in the widget are added for clarity; they follow the standard description of this figure (opcode 1 = load AC from memory, 5 = add to AC from memory, 2 = store AC to memory) in W. Stallings, <em>Computer Organization and Architecture</em>, Fig. 3.5. <a href="../assets/originals/bp-17.jpg">View the original slide</a>.</small>
 
 ## Instruction Execution Cycle
 
