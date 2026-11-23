@@ -523,7 +523,7 @@ figcaption > span { flex: 1 1 260px; }
 [data-theme="fusion"] .doc-body .table-wrap,
 [data-theme="fusion"] .deck-banner,
 [data-theme="fusion"] .callout { backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); }
-[data-theme="fusion"] .doc { padding: 34px 38px; border-radius: var(--radius-lg); background: rgba(255, 255, 255, .045); border: 1px solid var(--border); box-shadow: var(--shadow); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); }
+[data-theme="fusion"] .doc { padding: 34px 38px; border-radius: 0; background: rgba(255, 255, 255, .045); border: 1px solid var(--border); box-shadow: var(--shadow); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); }
 [data-theme="fusion"] .site-header { border-bottom-color: var(--border-strong); box-shadow: 0 1px 0 rgba(57, 255, 122, .08); }
 [data-theme="fusion"] ::selection { background: #39ff7a; color: #031207; }
 
@@ -559,7 +559,7 @@ figcaption > span { flex: 1 1 260px; }
   .stepper-panel { grid-template-columns: minmax(0, 1fr); }
   .diagram-canvas { padding: 10px; }
   .h-anchor { display: none; }
-  [data-theme="fusion"] .doc{ padding: 20px 14px; border-radius: var(--radius); }
+  [data-theme="fusion"] .doc{ padding: 20px 14px; }
   }
 
 /* ---------- 14. Motion & print ---------- */
