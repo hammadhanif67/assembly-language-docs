@@ -49,7 +49,7 @@ Inputs accept `200`, `-56`, `0C8h`, `0xC8`, `11001000b`, `310o` or `'A'`. The co
 **Swiss design** (International Typographic Style): white space, a strict 12-column grid, one red accent
 (`#E30613`), Inter / Inter Tight type, and no decoration that does not carry information.
 
-- **No sidebar.** On phones a menu button (☰) opens quick links and the full index. Navigation is an **Index** menu in the header (every chapter and lesson), a page per
+- **No sidebar.** On phones a menu button (☰) slides in a side menu with quick links and collapsible chapters. Navigation is an **Index** menu in the header (every chapter and lesson), a page per
   chapter, a lesson strip at the top of each lesson, “On this page” in the left margin and large
   Previous / Next links.
 - Search everything with **Ctrl K** or **/** (Fuse.js).

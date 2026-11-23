@@ -206,14 +206,15 @@ function head({ title, description, prefix }) {
 function indexPanel(prefix, current) {
   const cols = chs
     .map(
-      (c) => `<section class="ix-chapter${current && current.chapter === c ? ' is-current' : ''}">
-  <a class="ix-head" href="${prefix}${c.url}"><span class="ix-num">${pad(c.num)}</span><span class="ix-title">${esc(c.title)}</span></a>
+      (c) => `<section class="ix-chapter${current && current.chapter === c ? ' is-current is-open' : ''}">
+  <div class="ix-row"><a class="ix-head" href="${prefix}${c.url}"><span class="ix-num">${pad(c.num)}</span><span class="ix-title">${esc(c.title)}</span></a><button class="ix-exp" type="button" aria-expanded="${current && current.chapter === c ? 'true' : 'false'}" aria-label="Lessons in ${esc(c.title)}"><i data-lucide="chevron-down" aria-hidden="true"></i></button></div>
   <ol class="ix-lessons">${c.pages.map((p) => `<li><a href="${prefix}${p.url}"${current === p ? ' aria-current="page"' : ''}>${esc(p.title)}</a></li>`).join('')}</ol>
 </section>`
     )
     .join('');
   return `<div class="index-panel" id="index-panel" hidden>
   <div class="index-inner">
+    <div class="ix-drawer-head"><a class="brand" href="${prefix}index.html">${LOGO.replaceAll('coal-logo', 'coal-logo-d')}<span class="brand-name">COAL<span class="brand-docs">Docs</span></span></a><button class="ix-drawer-close" type="button" aria-label="Close menu"><i data-lucide="x"></i></button></div>
     <nav class="ix-quick" aria-label="Quick links"><a href="${prefix}index.html"><i data-lucide="house"></i>Home</a><a href="${prefix}index.html#chapters"><i data-lucide="list"></i>Chapters</a><a href="${prefix}tools/index.html"><i data-lucide="calculator"></i>Calculators</a><a href="${prefix}solved-problems/index.html"><i data-lucide="pencil-ruler"></i>Solved problems</a><button type="button" data-search-open><i data-lucide="search"></i>Search</button></nav>
     <div class="index-top"><p class="eyebrow">Index · ${chs.length} chapters · ${pages.length} lessons</p><button class="index-close" type="button" aria-label="Close index"><i data-lucide="x"></i></button></div>
     <div class="index-grid">${cols}</div>
@@ -243,12 +244,33 @@ function header(prefix, current = null) {
 }
 
 function footer(prefix, extraScripts = '') {
-  const cols = chs.map((c) => `<li><a href="${prefix}${c.url}"><span>${pad(c.num)}</span>${esc(c.title)}</a></li>`).join('');
+  const link = (c) => `<li><a href="${prefix}${c.url}"><span>${pad(c.num)}</span>${esc(c.title)}</a></li>`;
+  const learn = chs.filter((c) => c.num <= 5).map(link).join('');
+  const program = chs.filter((c) => c.num > 5).map(link).join('');
+  const solvedCh = chs.find((c) => c.dir === '09-solved-problems');
+  const formula = solvedCh && solvedCh.pages[0];
+  const mark = LOGO.replaceAll('coal-logo', 'coal-logo-m').replace('<svg', '<svg class="ftr-mark-svg" aria-hidden="true" focusable="false"');
   return `<footer class="site-footer">
-  <div class="ftr">
-    <div class="ftr-brand"><a class="brand" href="${prefix}index.html">${LOGO.replaceAll('coal-logo', 'coal-logo-f')}<span class="brand-name">COAL<span class="brand-docs">Docs</span></span></a><p>${SITE.full}. Lessons, diagrams and interactive tools for learning how a computer works, down to the 8086 instruction set.</p></div>
-    <nav class="ftr-nav" aria-label="Chapters"><p class="eyebrow">Chapters</p><ol>${cols}</ol></nav>
-    <nav class="ftr-nav" aria-label="More"><p class="eyebrow">More</p><ul><li><a href="${prefix}index.html">Home</a></li><li><a href="${prefix}${pages[0].url}">Start learning</a></li><li><a href="${prefix}tools/index.html">Calculators &amp; tools</a></li><li><button type="button" class="link-btn" data-search-open>Search</button></li><li><a href="${SITE.repo}" target="_blank" rel="noopener">GitHub</a></li></ul></nav>
+  <div class="ftr-mark" aria-hidden="true">${mark}</div>
+  <div class="ftr-top">
+    <div class="ftr-brand">
+      <a class="brand" href="${prefix}index.html">${LOGO.replaceAll('coal-logo', 'coal-logo-f')}<span class="brand-name">COAL<span class="brand-docs">Docs</span></span></a>
+      <p>${SITE.full}. Lessons, diagrams, calculators and solved problems — from computer generations down to the 8086 instruction set.</p>
+      <div class="ftr-cta"><a class="btn btn--primary" href="${prefix}${pages[0].url}">Start learning<i data-lucide="arrow-right"></i></a><button class="btn btn--dark" type="button" data-search-open><i data-lucide="search"></i>Search</button></div>
+    </div>
+    <nav class="ftr-nav" aria-label="Computer organization chapters"><p class="eyebrow">Learn</p><ol>${learn}</ol></nav>
+    <nav class="ftr-nav" aria-label="Assembly chapters"><p class="eyebrow">Program &amp; practise</p><ol>${program}</ol></nav>
+    <nav class="ftr-nav" aria-label="Resources"><p class="eyebrow">Resources</p><ul>
+      <li><a href="${prefix}tools/index.html"><i data-lucide="calculator" aria-hidden="true"></i>Calculators</a></li>
+      ${formula ? `<li><a href="${prefix}${formula.url}"><i data-lucide="sigma" aria-hidden="true"></i>Formula sheet</a></li>` : ''}
+      ${solvedCh ? `<li><a href="${prefix}${solvedCh.url}"><i data-lucide="pencil-ruler" aria-hidden="true"></i>Solved problems</a></li>` : ''}
+      <li><button type="button" class="link-btn" data-index-open><i data-lucide="list-tree" aria-hidden="true"></i>Full index</button></li>
+      <li><a href="${SITE.repo}" target="_blank" rel="noopener"><i data-lucide="github" aria-hidden="true"></i>Source on GitHub</a></li>
+    </ul></nav>
+  </div>
+  <div class="ftr-bottom">
+    <p>© ${new Date().getFullYear()} COAL Docs · Code MIT · Photos from Wikimedia Commons, credited on each page</p>
+    <a class="ftr-top-link" href="#main"><i data-lucide="arrow-up" aria-hidden="true"></i>Back to top</a>
   </div>
 </footer>
 <button class="back-to-top" type="button" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
@@ -440,59 +462,99 @@ ${footer(prefix, `<script src="${prefix}js/tools.js" defer></script>`)}`;
 function renderHome() {
   const prefix = './';
   const totalMin = pages.reduce((s, p) => s + p.minutes, 0);
-  const rows = chs
-    .map(
-      (c) => `<li><a class="chapter-row" href="${prefix}${c.url}">
-  <span class="cr-num">${pad(c.num)}</span>
-  <span class="cr-body"><span class="cr-title">${esc(c.title)}</span><span class="cr-desc">${esc(c.summary || '')}</span></span>
-  <span class="cr-lessons">${c.pages.length} lessons</span>
-  <i data-lucide="arrow-right" aria-hidden="true"></i>
-</a></li>`
-    )
+  const allTools = TOOL_GROUPS.flatMap(([, t]) => t);
+  const byDir = (d) => chs.find((c) => c.dir === d);
+  const solved = byDir('09-solved-problems');
+
+  // chapter cards
+  const cards = chs
+    .map((c) => {
+      const min = c.pages.reduce((s, p) => s + p.minutes, 0);
+      const first = c.pages.slice(0, 3).map((p) => `<li><a href="${prefix}${p.url}">${esc(p.title)}</a></li>`).join('');
+      const more = c.pages.length > 3 ? `<li class="cc-more"><a href="${prefix}${c.url}">+ ${c.pages.length - 3} more</a></li>` : '';
+      return `<li class="ch-card${c === solved ? ' ch-card--practice' : ''}">
+  <a class="cc-head" href="${prefix}${c.url}"><span class="cc-num">${pad(c.num)}</span><i data-lucide="${esc(c.icon || 'book-open')}" aria-hidden="true"></i></a>
+  <h3 class="cc-title"><a href="${prefix}${c.url}">${esc(c.title)}</a></h3>
+  <p class="cc-desc">${esc(c.summary || '')}</p>
+  <ul class="cc-lessons">${first}${more}</ul>
+  <p class="cc-meta"><span>${c.pages.length} lessons · ${min} min</span><i data-lucide="arrow-right" aria-hidden="true"></i></p>
+</li>`;
+    })
     .join('');
-  const tools = TOOL_GROUPS.flatMap(([, t]) => t).slice(0, 8)
+
+  // learning path (three stages)
+  const chip = (c) => `<a class="lp-chip" href="${prefix}${c.url}"><span>${pad(c.num)}</span>${esc(c.title)}</a>`;
+  const stage = (n, title, text, list, cta) => `<li class="lp-step"><span class="lp-n">${n}</span><h3>${title}</h3><p>${text}</p><div class="lp-chips">${list.map(chip).join('')}${cta || ''}</div></li>`;
+  const path1 = chs.filter((c) => c.num <= 5), path2 = chs.filter((c) => c.num >= 6 && c.num <= 8);
+  const tools = allTools.slice(0, 8)
     .map(([id, , t, d, i]) => `<li><a class="tool" href="${prefix}tools/index.html#${id}"><i data-lucide="${i}" aria-hidden="true"></i><span class="tool-title">${t}</span><span class="tool-desc">${d}</span></a></li>`)
     .join('');
-  const out = `${head({ title: `${SITE.name} — ${SITE.full}`, description: 'Learn Computer Organization & Assembly Language: processors, registers, memory, the 8085 and 8086, and x86 assembly programming — with clear diagrams and interactive tools.', prefix })}
+
+  const out = `${head({ title: `${SITE.name} — ${SITE.full}`, description: 'Learn Computer Organization & Assembly Language: processors, registers, memory, the 8085 and 8086, and x86 assembly programming — with clear diagrams, step-by-step calculators and solved problems.', prefix })}
 <body class="home-page">
 ${header(prefix)}
 <main id="main" tabindex="-1">
   <section class="hero">
     <div class="wrap hero-grid">
-      <p class="eyebrow hero-eyebrow">A course in ${chs.length} chapters</p>
-      <h1 class="hero-title">Computer Organization <span>&amp; Assembly Language</span></h1>
-      <div class="hero-side">
-        <p class="hero-lede">How a computer actually works — from the instruction cycle and registers to memory, buses and the 8086 — and how to program it in assembly.</p>
-        <div class="hero-cta"><a class="btn btn--primary" href="${prefix}${pages[0].url}">Start learning<i data-lucide="arrow-right"></i></a><a class="btn" href="#chapters">Browse chapters</a></div>
+      <div class="hero-main">
+        <p class="eyebrow hero-eyebrow"><span class="dot" aria-hidden="true"></span>Free course · ${chs.length} chapters · ${pages.length} lessons</p>
+        <h1 class="hero-title">Computer Organization <span>&amp; Assembly Language</span></h1>
+        <p class="hero-lede">How a computer really works — the instruction cycle, registers, memory and buses of the 8086 — and how to program it in assembly, one clear step at a time.</p>
+        <div class="hero-cta"><a class="btn btn--primary" href="${prefix}${pages[0].url}">Start learning<i data-lucide="arrow-right"></i></a><a class="btn" href="${prefix}${solved ? solved.url : 'tools/index.html'}">Solved problems</a></div>
+        <button class="hero-search" type="button" data-search-open><i data-lucide="search" aria-hidden="true"></i><span>Search lessons, registers, instructions…</span><span class="keys"><kbd>Ctrl</kbd><kbd>K</kbd></span></button>
       </div>
+      <figure class="hero-card" aria-label="Example: a loop that adds 5 + 4 + 3 + 2 + 1 in the AX register">
+        <div class="hc-bar"><span class="hc-file">sum.asm</span><span class="hc-tag">8086</span></div>
+<pre class="hc-code"><span class="hc-ln"><b>1</b><i>mov</i>  cx, <em>5</em>       <u>; counter</u></span><span class="hc-ln"><b>2</b><i>mov</i>  ax, <em>0</em>       <u>; total</u></span><span class="hc-ln"><b>3</b>L1: <i>add</i>  ax, cx  <u>; ax = ax + cx</u></span><span class="hc-ln"><b>4</b>    <i>loop</i> L1      <u>; cx−1, repeat</u></span><span class="hc-ln"><b>5</b><u>; ax = 5+4+3+2+1</u></span></pre>
+        <div class="hc-regs">
+          <div><span>AX</span><b>000F</b></div><div><span>BX</span><b>0000</b></div><div><span>CX</span><b>0000</b></div><div><span>DX</span><b>0000</b></div>
+          <div><span>SI</span><b>0000</b></div><div><span>DI</span><b>0000</b></div><div><span>IP</span><b>000B</b></div><div><span>SP</span><b>0100</b></div>
+        </div>
+        <figcaption class="hc-flags"><span>Flags</span><b class="on">ZF</b><b>CF</b><b>SF</b><b>OF</b><b class="on">PF</b></figcaption>
+      </figure>
       <dl class="hero-stats">
         <div><dt>Chapters</dt><dd>${chs.length}</dd></div>
         <div><dt>Lessons</dt><dd>${pages.length}</dd></div>
         <div><dt>Diagrams</dt><dd>${usedDiagrams.size}</dd></div>
+        <div><dt>Calculators</dt><dd>${allTools.length}</dd></div>
         <div><dt>Reading time</dt><dd>${Math.round(totalMin / 60)}<small>h</small></dd></div>
       </dl>
     </div>
   </section>
-  <section class="home-block" id="chapters">
+
+  <section class="home-block home-block--path" aria-labelledby="path-h">
     <div class="wrap">
-      <div class="block-head"><p class="eyebrow">Contents</p><h2>Chapters</h2></div>
-      <ol class="chapter-list">${rows}</ol>
+      <div class="sec-head"><p class="eyebrow">Learning path</p><h2 id="path-h">Three steps from zero to assembly</h2></div>
+      <ol class="lp">
+        ${stage('01', 'Understand the machine', 'Generations, number systems, the processor, registers, memory and the 8085/8086.', path1)}
+        ${stage('02', 'Program the 8086', 'Program structure, directives, addressing modes, the instruction set, procedures, strings and interrupts.', path2)}
+        ${stage('03', 'Practise and check', 'Exam-style questions solved step by step, and calculators that show their working.', solved ? [solved] : [], `<a class="lp-chip lp-chip--tools" href="${prefix}tools/index.html"><i data-lucide="calculator" aria-hidden="true"></i>${allTools.length} calculators</a>`)}
+      </ol>
     </div>
   </section>
-  <section class="home-block home-block--alt">
+
+  <section class="home-block" id="chapters" aria-labelledby="chapters-h">
     <div class="wrap">
-      <div class="block-head"><p class="eyebrow">Workbench</p><h2>Calculators &amp; tools</h2></div>
+      <div class="sec-head sec-head--row"><div><p class="eyebrow">Contents</p><h2 id="chapters-h">All chapters</h2></div><button class="btn btn--ghost" type="button" data-index-open><i data-lucide="list-tree" aria-hidden="true"></i>Open the full index</button></div>
+      <ol class="ch-cards">${cards}</ol>
+    </div>
+  </section>
+
+  <section class="home-block home-block--alt" aria-labelledby="tools-h">
+    <div class="wrap">
+      <div class="sec-head sec-head--row"><div><p class="eyebrow">Workbench</p><h2 id="tools-h">Calculators that show their working</h2></div><a class="btn" href="${prefix}tools/index.html">All ${allTools.length} calculators<i data-lucide="arrow-right"></i></a></div>
       <ul class="tool-grid">${tools}</ul>
-      <p class="more-tools"><a class="btn" href="${prefix}tools/index.html">Open all ${TOOL_GROUPS.flatMap(([, t]) => t).length} calculators<i data-lucide="arrow-right"></i></a></p>
     </div>
   </section>
-  <section class="home-block">
-    <div class="wrap how-grid">
-      <div class="block-head"><p class="eyebrow">How to use</p><h2>Find anything fast</h2></div>
-      <ul class="how-list">
-        <li><kbd>Ctrl</kbd> <kbd>K</kbd><span>Search every lesson, register and instruction.</span></li>
-        <li><strong>Index</strong><span>The full table of contents, one click away in the header.</span></li>
-        <li><strong>On this page</strong><span>Jump between sections of a long lesson.</span></li>
+
+  <section class="home-block home-block--how" aria-labelledby="how-h">
+    <div class="wrap">
+      <div class="sec-head"><p class="eyebrow">How to use</p><h2 id="how-h">Find anything fast</h2></div>
+      <ul class="how-tiles">
+        <li><button class="how-tile" type="button" data-search-open><span class="ht-ico"><i data-lucide="search" aria-hidden="true"></i></span><span class="ht-title">Search <span class="keys"><kbd>Ctrl</kbd><kbd>K</kbd></span></span><span class="ht-text">Every lesson, register and instruction — results as you type. <kbd>/</kbd> works too.</span></button></li>
+        <li><button class="how-tile" type="button" data-index-open><span class="ht-ico"><i data-lucide="list-tree" aria-hidden="true"></i></span><span class="ht-title">Index</span><span class="ht-text">The full table of contents, one click away in the header — or the ☰ menu on a phone.</span></button></li>
+        <li><a class="how-tile" href="${prefix}${pages[0].url}"><span class="ht-ico"><i data-lucide="text-quote" aria-hidden="true"></i></span><span class="ht-title">On this page</span><span class="ht-text">Jump between the sections of a long lesson; the current one is highlighted.</span></a></li>
+        <li><a class="how-tile" href="${prefix}tools/index.html"><span class="ht-ico"><i data-lucide="calculator" aria-hidden="true"></i></span><span class="ht-title">Check your answer</span><span class="ht-text">Type your own numbers into a calculator and compare every step.</span></a></li>
       </ul>
     </div>
   </section>

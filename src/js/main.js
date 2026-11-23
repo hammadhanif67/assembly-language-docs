@@ -35,7 +35,7 @@
 
   /* ---------- Index menu (replaces the sidebar) & lesson strip ---------- */
   function setupNav() {
-    const toggles = $$('.index-toggle, .menu-toggle'), panel = $('#index-panel');
+    const toggles = $$('.index-toggle, .menu-toggle'), openers = $$('[data-index-open]'), panel = $('#index-panel');
     if (toggles.length && panel) {
       let opener = toggles[0];
       const set = (open, from) => {
@@ -43,13 +43,25 @@
         toggles.forEach((t) => t.setAttribute('aria-expanded', String(open)));
         const mt = $('.menu-toggle'); if (mt) mt.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
         document.body.classList.toggle('index-open', open);
-        if (open) { if (from) opener = from; const cur = $('[aria-current="page"]', panel) || $('a', panel); if (cur) { cur.focus({ preventScroll: true }); cur.scrollIntoView({ block: 'nearest' }); } }
+        if (open) {
+          if (from) opener = from;
+          const cur = $('[aria-current="page"]', panel);
+          const first = cur || $('.ix-quick a, .ix-head', panel);
+          if (first) { first.focus({ preventScroll: true }); if (cur) cur.scrollIntoView({ block: 'nearest' }); }
+        }
       };
+      const shut = () => { set(false); if (opener) opener.focus(); };
       toggles.forEach((t) => t.addEventListener('click', (e) => { e.stopPropagation(); set(panel.hidden, t); }));
-      const close = $('.index-close', panel); if (close) close.addEventListener('click', () => { set(false); opener.focus(); });
+      openers.forEach((t) => t.addEventListener('click', (e) => { e.stopPropagation(); set(true, t); }));
+      $$('.index-close, .ix-drawer-close', panel).forEach((c) => c.addEventListener('click', shut));
+      // a click on the dimmed backdrop (or anywhere outside) closes it
       document.addEventListener('click', (e) => { if (!panel.hidden && !panel.contains(e.target) && !toggles.some((t) => t.contains(e.target))) set(false); });
-      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden) { set(false); opener.focus(); } });
-      panel.addEventListener('click', (e) => { if (e.target.closest('a, [data-search-open]')) set(false); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !panel.hidden) shut(); });
+      panel.addEventListener('click', (e) => {
+        const exp = e.target.closest('.ix-exp');
+        if (exp) { const sec = exp.closest('.ix-chapter'); const open = !sec.classList.contains('is-open'); sec.classList.toggle('is-open', open); exp.setAttribute('aria-expanded', String(open)); return; }
+        if (e.target.closest('a, [data-search-open]')) set(false);
+      });
     }
     // keep the current lesson visible in the horizontal lesson strip
     const strip = $('.lesson-strip ol'), cur = $('.lesson-strip [aria-current="page"]');
