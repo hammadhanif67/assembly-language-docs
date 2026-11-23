@@ -169,6 +169,8 @@ function head({ title, description, prefix, extraHead = '' }) {
 <meta name="description" content="${esc(description || SITE.tagline)}">
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" href="${prefix}assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="${prefix}assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="${prefix}assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="${CDN.fonts}">
@@ -192,7 +194,7 @@ function header(prefix) {
 <div class="progress" aria-hidden="true"><div class="progress-bar"></div></div>
 <header class="site-header">
   <button class="icon-btn nav-toggle" type="button" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false"><i data-lucide="menu"></i></button>
-  <a class="brand" href="${prefix}index.html" aria-label="${SITE.name} — home">${LOGO}<span class="brand-text"><span class="brand-name">C<span class="brand-zero">0</span>AL<span class="brand-cursor" aria-hidden="true">_</span></span><span class="brand-sub">Documentation</span></span></a>
+  <a class="brand" href="${prefix}index.html" aria-label="${SITE.name} — home">${LOGO}<span class="brand-name">COAL <span class="brand-docs">Docs</span></span></a>
   <button class="search-trigger" type="button" aria-label="Search documentation" data-search-open><i data-lucide="search"></i><span class="search-trigger-text">Search docs…</span><kbd>Ctrl K</kbd></button>
   <div class="header-actions">
     <a class="icon-btn" href="${SITE.repo}" target="_blank" rel="noopener" aria-label="GitHub repository"><i data-lucide="github"></i></a>
@@ -218,7 +220,7 @@ function sidebar(prefix, current) {
 }
 
 function footer(prefix, extraScripts = '') {
-  return `<footer class="site-footer"><div class="footer-inner"><div class="footer-brand">${LOGO}<div><strong>${SITE.name}</strong><p>${SITE.tagline}. Built from course lecture PDFs &amp; slides, plus researched topics.</p></div></div><nav class="footer-links" aria-label="Footer"><a href="${prefix}index.html">Home</a><a href="${prefix}${pages[0].url}">Start reading</a><a href="${SITE.repo}" target="_blank" rel="noopener">GitHub</a></nav></div></footer>
+  return `<footer class="site-footer"><div class="footer-inner"><div class="footer-brand">${LOGO.replaceAll("coal-logo-g", "coal-logo-f")}<div><strong class="brand-name">COAL <span class="brand-docs">Docs</span></strong><p>${SITE.tagline}. Built from course lecture PDFs &amp; slides, plus researched topics.</p></div></div><nav class="footer-links" aria-label="Footer"><a href="${prefix}index.html">Home</a><a href="${prefix}${pages[0].url}">Start reading</a><a href="${SITE.repo}" target="_blank" rel="noopener">GitHub</a></nav></div></footer>
 <button class="back-to-top" type="button" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
 <div class="search-modal" role="dialog" aria-modal="true" aria-label="Search" hidden>
   <div class="search-panel">

@@ -5,11 +5,10 @@ course's lecture PDFs and slides and extended with researched assembly-programmi
 
 🔗 **Live site:** https://hammadhanif67.github.io/assembly-language-docs/
 
-<p align="center"><img src="src/assets/favicon.svg" width="96" alt="COAL logo: a faceted lump of coal with a glowing CPU die at its core"></p>
+<p align="center"><img src="src/assets/favicon.svg" width="96" alt="COAL Docs logo: a CPU chip with a C in the middle on an indigo-to-violet tile"></p>
 
-The logo takes the course acronym literally: a lump of **coal** cut into facets, with a glowing CPU
-die at its core and circuit traces running out like ember cracks. The wordmark writes it `C0AL_`
-with a slashed zero and a blinking cursor.
+The logo is a CPU chip (with pins on all four sides) holding a bold **C**, on an indigo-to-violet
+rounded tile. The wordmark is **COAL Docs**, with “Docs” in the indigo accent color.
 
 ## What's inside
 
