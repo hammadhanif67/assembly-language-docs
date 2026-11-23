@@ -43,14 +43,14 @@ specs['i8086-organization'] = () => {
 };
 specs['i8086-block'] = () => {
   const d = new Diagram(760, 470, { minw: 640 });
-  d.box(20, 20, 720, 170, { kind: 'group', label: 'BIU, fetches instructions, computes addresses' });
+  d.box(20, 20, 720, 170, { kind: 'group', label: 'BIU: fetches instructions and computes addresses' });
   d.cells(40, 50, 110, 125, ['CS', 'SS', 'DS', 'ES', 'IP'], { kinds: ['box', 'box', 'box', 'box', 'tint'] });
   const sum = d.box(190, 70, 160, 80, { label: 'Σ', sub: ['physical address =', 'segment × 10h + offset'], kind: 'alt' });
   d.text(450, 52, '6-BYTE PRE-FETCH QUEUE', { cls: 'd-caps', anchor: 'start' });
   d.cells(450, 66, 270, 44, ['1', '2', '3', '4', '5', '6'], { dir: 'row', kinds: ['tint'] });
   d.path([[150, 110], sum.left]);
   d.path([sum.right, [420, 110], [420, 88], [450, 88]], { label: 'to memory / I/O', labelAt: [420, 140] });
-  d.box(20, 220, 720, 230, { kind: 'group', label: 'EU, decodes and executes' });
+  d.box(20, 220, 720, 230, { kind: 'group', label: 'EU: decodes and executes' });
   const gp = [['AH', 'AL', 'AX'], ['BH', 'BL', 'BX'], ['CH', 'CL', 'CX'], ['DH', 'DL', 'DX']];
   gp.forEach(([h, l, n], i) => { d.box(70, 250 + i * 26, 60, 26, { label: h, mono: true, r: 0, kind: 'tint' }); d.box(130, 250 + i * 26, 60, 26, { label: l, mono: true, r: 0, kind: 'tint' }); d.text(56, 263 + i * 26, n, { cls: 'd-mono', anchor: 'end' }); });
   d.cells(70, 356, 120, 80, ['SP', 'BP', 'SI', 'DI'], {});
@@ -165,16 +165,22 @@ specs['system-bus'] = () => {
 
 // ---------- Interconnection structure ----------
 specs['interconnection'] = () => {
-  const d = new Diagram(980, 300, { minw: 760 });
-  const mod = (x, title, ins, outs, kind) => {
-    d.box(x + 100, 40, 110, 200, { title, kind });
-    ins.forEach((t, i) => { const y = 70 + i * 34; d.path([[x, y], [x + 100, y]]); d.text(x + 2, y - 9, t, { cls: 'd-small', anchor: 'start' }); });
-    outs.forEach((t, i) => { const y = 70 + i * 34; d.path([[x + 210, y], [x + 300, y]]); d.text(x + 298, y - 9, t, { cls: 'd-small', anchor: 'end' }); });
-  };
-  mod(10, 'Memory', ['Read', 'Write', 'Address', 'Data'], ['Data'], 'tint');
-  mod(335, 'I/O module', ['Read', 'Write', 'Address', 'Internal data', 'External data'], ['Internal data', 'External data', 'Interrupt signals'], 'alt');
-  mod(660, 'CPU', ['Instructions', 'Data', 'Interrupt signals'], ['Address', 'Control signals', 'Data'], 'red');
-  d.text(490, 280, 'Inputs enter on the left of each module and outputs leave on the right; the bus carries one module’s outputs to another’s inputs.', { cls: 'd-small' });
+  const mods = [['Memory', ['Read', 'Write', 'Address', 'Data'], ['Data'], 'tint'],
+    ['I/O module', ['Read', 'Write', 'Address', 'Internal data', 'External data'], ['Internal data', 'External data', 'Interrupt signals'], 'alt'],
+    ['CPU', ['Instructions', 'Data', 'Interrupt signals'], ['Address', 'Control signals', 'Data'], 'red']];
+  const rowH = (m) => Math.max(m[1].length, m[2].length) * 30 + 20;
+  const H = mods.reduce((s, m) => s + rowH(m) + 24, 20) + 30;
+  const d = new Diagram(660, H, { minw: 520 });
+  let y0 = 20;
+  mods.forEach(([title, ins, outs, kind]) => {
+    const h = rowH([title, ins, outs]);
+    d.box(250, y0, 160, h, { title, kind });
+    const line = (list, x1, x2, tx, anchor) => list.forEach((t, i) => { const y = y0 + h / 2 + (i - (list.length - 1) / 2) * 30; d.path([[x1, y], [x2, y]]); d.text(tx, y - 11, t, { cls: 'd-text', anchor }); });
+    line(ins, 60, 250, 64, 'start');
+    line(outs, 410, 600, 596, 'end');
+    y0 += h + 24;
+  });
+  d.text(330, H - 14, 'Inputs enter on the left, outputs leave on the right; the bus links one module’s outputs to another’s inputs.', { cls: 'd-small' });
   return d;
 };
 
@@ -239,7 +245,7 @@ specs['gp-registers'] = () => {
 };
 specs['segment-registers'] = () => {
   const d = new Diagram(560, 420, { minw: 420 });
-  d.box(200, 20, 200, 380, { r: 0 });
+  d.box(200, 30, 200, 370, { r: 0 });
   [['CS', 'Code segment', 70], ['DS', 'Data segment', 160], ['SS', 'Stack segment', 250], ['ES', 'Extra segment', 340]].forEach(([n, t, y], i) => {
     d.box(200, y, 200, 46, { label: t, r: 0, kind: i === 0 ? 'tint' : 'alt' });
     const r = d.box(60, y + 6, 70, 34, { label: n, mono: true, kind: 'dark' });
@@ -266,8 +272,8 @@ specs['flags-8086'] = () => {
     d.path([[x, 100], [x, y - 8]], { cls: 'd-line-mut', arrow: null });
     d.text(x, y, names[b], { cls: status.has(b) ? 'd-label d-red' : 'd-label' });
   });
-  d.box(40, 250, 20, 20, { kind: 'red', r: 0 }); d.text(68, 260, 'status flags (6), result of the last operation', { cls: 'd-small', anchor: 'start' });
-  d.box(380, 250, 20, 20, { kind: 'dark', r: 0 }); d.text(408, 260, 'control flags (3), change how the CPU runs', { cls: 'd-small', anchor: 'start' });
+  d.box(40, 250, 20, 20, { kind: 'red', r: 0 }); d.text(68, 260, 'status flags (6): result of the last operation', { cls: 'd-small', anchor: 'start' });
+  d.box(380, 250, 20, 20, { kind: 'dark', r: 0 }); d.text(408, 260, 'control flags (3): change how the CPU runs', { cls: 'd-small', anchor: 'start' });
   return d;
 };
 
@@ -292,11 +298,11 @@ specs['i8085-architecture'] = () => {
   const dec = d.box(300, 190, 150, 70, { label: ['Instruction decoder', '& machine cycle', 'encoding'] });
   d.path([[375, 104], ir.top]); d.path([ir.bottom, dec.top]);
   // register array
-  d.box(500, 120, 260, 260, { kind: 'group', label: 'Register array' });
+  d.box(500, 112, 260, 268, { kind: 'group', label: 'Register array' });
   const pairs = [['W (temp)', 'Z (temp)'], ['B', 'C'], ['D', 'E'], ['H', 'L']];
   pairs.forEach(([a, b], i) => { d.box(520, 140 + i * 34, 110, 34, { label: a, mono: true, r: 0, kind: i ? 'box' : 'alt' }); d.box(630, 140 + i * 34, 110, 34, { label: b, mono: true, r: 0, kind: i ? 'box' : 'alt' }); });
   d.cells(520, 280, 220, 90, ['Stack pointer (16)', 'Program counter (16)', 'Incr/decr latch (16)'], { mono: false });
-  d.path([[630, 104], [630, 140]], { arrow: 'both' });
+  d.path([[690, 104], [690, 140]], { arrow: 'both' });
   // timing & control
   const tc = d.box(20, 340, 430, 70, { title: 'Timing & control', sub: 'CLK · READY · RD · WR · ALE · S0 S1 · IO/M · HOLD · HLDA · RESET', kind: 'alt' });
   d.path([dec.bottom, [375, 340]]);
@@ -309,10 +315,10 @@ specs['i8085-architecture'] = () => {
   return d;
 };
 specs['flags-8085'] = () => {
-  const d = new Diagram(560, 150, { minw: 440 });
+  const d = new Diagram(560, 176, { minw: 440 });
   const f = [['S', 'Sign'], ['Z', 'Zero'], ['-', ''], ['AC', 'Aux. carry'], ['-', ''], ['P', 'Parity'], ['-', ''], ['CY', 'Carry']];
   f.forEach(([b, n], i) => { const x = 40 + i * 60; d.text(x + 30, 22, `D${7 - i}`, { cls: 'd-small' }); d.box(x, 34, 60, 44, { label: b, mono: true, r: 0, kind: n ? 'red' : 'box' }); if (n) d.text(x + 30, 96, n, { cls: 'd-small' }); });
-  d.text(40, 132, ',  = unused bit. The ALU sets these five flags after arithmetic and logic operations.', { cls: 'd-small', anchor: 'start' });
+  d.text(40, 138, ['Cells marked - are unused bits.', 'The ALU sets these five flags after arithmetic and logic operations.'], { cls: 'd-small', anchor: 'start' });
   return d;
 };
 specs['interrupt-priority-8085'] = () => {
@@ -325,13 +331,13 @@ specs['interrupt-priority-8085'] = () => {
   return d;
 };
 specs['pipelining-8086'] = () => {
-  const d = new Diagram(640, 300, { minw: 520 });
+  const d = new Diagram(640, 326, { minw: 520 });
   d.text(20, 24, 'NON-PIPELINED (8085)', { cls: 'd-caps', anchor: 'start' });
   ['fetch 1', 'exec 1', 'fetch 2', 'exec 2', 'fetch 3', 'exec 3'].forEach((t, i) => d.box(140 + i * 80, 40, 80, 40, { label: t, r: 0, kind: t.startsWith('f') ? 'alt' : 'tint' }));
-  d.text(20, 120, 'PIPELINED (8086)', { cls: 'd-caps', anchor: 'start' });
-  [0, 1, 2].forEach((i) => { const y = 136 + i * 46; d.box(140 + i * 80, y, 80, 40, { label: `fetch ${i + 1}`, r: 0, kind: 'alt' }); d.box(220 + i * 80, y, 80, 40, { label: `exec ${i + 1}`, r: 0, kind: 'tint' }); });
-  d.dim(140, 620, 98, '6 time slots');
-  d.path([[140, 284], [380, 284]], { cls: 'd-line-acc', arrow: 'both' });
-  d.text(390, 284, '4 time slots for the same 3 instructions', { cls: 'd-small', anchor: 'start' });
+  d.text(20, 146, 'PIPELINED (8086)', { cls: 'd-caps', anchor: 'start' });
+  [0, 1, 2].forEach((i) => { const y = 162 + i * 46; d.box(140 + i * 80, y, 80, 40, { label: `fetch ${i + 1}`, r: 0, kind: 'alt' }); d.box(220 + i * 80, y, 80, 40, { label: `exec ${i + 1}`, r: 0, kind: 'tint' }); });
+  d.dim(140, 620, 98, '6 time slots', { below: true });
+  d.path([[140, 310], [380, 310]], { cls: 'd-line-acc', arrow: 'both' });
+  d.text(390, 310, '4 time slots for the same 3 instructions', { cls: 'd-small', anchor: 'start' });
   return d;
 };

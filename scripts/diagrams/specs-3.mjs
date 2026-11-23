@@ -105,7 +105,7 @@ specs['pipeline-hazard'] = () => {
   rows.forEach(([ins, st, off], r) => {
     const y = 44 + r * 54;
     d.text(X0 - 10, y + 18, ins, { cls: 'd-mono', anchor: 'end' });
-    st.forEach((s, k) => d.box(X0 + (off + k) * cw, y, cw, 36, { label: s === 'stall' ? 'bubble' : s, mono: s !== 'stall', kind: s === 'stall' ? 'tint' : s === 'WB' && r === 0 ? 'red' : 'alt', r: 0 }));
+    st.forEach((s, k) => d.box(X0 + (off + k) * cw, y, cw, 36, { label: s === 'stall' ? 'bubble' : s, mono: true, kind: s === 'stall' ? 'tint' : s === 'WB' && r === 0 ? 'red' : 'alt', r: 0 }));
   });
   d.text(X0 + 4 * cw, 180, 'R1 is written in cycle 5 (WB of ADD) but SUB needs R1 when it decodes.', { cls: 'd-small' });
   d.text(X0 + 4 * cw, 200, 'Without forwarding the pipeline inserts two bubbles (stalls).', { cls: 'd-small' });
@@ -115,27 +115,27 @@ specs['pipeline-hazard'] = () => {
 
 // ---------- Direct-mapped cache ----------
 specs['cache-direct'] = () => {
-  const d = new Diagram(780, 440, { minw: 640 });
+  const d = new Diagram(780, 452, { minw: 640 });
   d.text(40, 24, '16-BIT ADDRESS  =  3A7Ch', { cls: 'd-caps', anchor: 'start' });
   const t = d.box(40, 40, 160, 50, { label: 'Tag · 4 bits', sub: '0011 = 3', kind: 'red', r: 0 });
   const ix = d.box(200, 40, 320, 50, { label: 'Line (index) · 8 bits', sub: '1010 0111 = A7h = 167', kind: 'tint', r: 0 });
   const of = d.box(520, 40, 160, 50, { label: 'Offset · 4 bits', sub: '1100 = 12', kind: 'alt', r: 0 });
   // cache table
-  d.text(200, 132, 'CACHE, 256 LINES × 16 BYTES = 4 KB', { cls: 'd-caps', anchor: 'start' });
+  d.text(200, 138, 'CACHE: 256 LINES × 16 BYTES = 4 KB', { cls: 'd-caps', anchor: 'start' });
   const cols = [['Line', 60], ['V', 40], ['Tag', 70], ['Data block (16 bytes)', 250]];
-  let x = 200; cols.forEach(([h, w]) => { d.box(x, 146, w, 30, { label: h, kind: 'dark', r: 0 }); x += w; });
+  let x = 200; cols.forEach(([h, w]) => { d.box(x, 152, w, 30, { label: h, kind: 'dark', r: 0 }); x += w; });
   const rows = [['0', '0', '-', '-'], ['⋮', '', '', ''], ['166', '1', '7', '…'], ['167', '1', '3', 'byte 0 … byte 12 … byte 15'], ['168', '0', '-', '-'], ['⋮', '', '', ''], ['255', '1', '0', '…']];
   rows.forEach(([n, v, tg, data], i) => {
-    const y = 176 + i * 28, hl = n === '167';
+    const y = 182 + i * 28, hl = n === '167';
     d.box(200, y, 60, 28, { label: n, mono: true, r: 0, kind: hl ? 'tint' : 'alt' });
     d.box(260, y, 40, 28, { label: v, mono: true, r: 0, kind: hl ? 'tint' : 'box' });
     d.box(300, y, 70, 28, { label: tg, mono: true, r: 0, kind: hl ? 'red' : 'box' });
     d.box(370, y, 250, 28, { label: data, mono: true, r: 0, kind: hl ? 'tint' : 'box' });
   });
-  d.path([ix.bottom, [360, 116], [170, 116], [170, 274], [200, 274]], { cls: 'd-line-acc', label: 'index selects line 167', labelAt: [265, 116] });
-  d.path([of.bottom, [600, 116], [660, 116], [660, 274], [620, 274]], { cls: 'd-line-mut', label: 'offset picks byte 12', labelAt: [700, 200] });
-  d.box(200, 386, 420, 40, { kind: 'alt', label: 'stored tag 3 = address tag 3 and V = 1  →  cache HIT' });
-  d.path([t.bottom, [120, 406], [200, 406]], { cls: 'd-line-mut', label: 'compare tags', labelAt: [120, 300] });
+  d.path([ix.bottom, [360, 116], [170, 116], [170, 280], [200, 280]], { cls: 'd-line-acc', label: 'index selects line 167', labelAt: [250, 116] });
+  d.path([of.bottom, [600, 116], [660, 116], [660, 280], [620, 280]], { cls: 'd-line-mut', label: 'offset picks byte 12', labelAt: [700, 200] });
+  d.box(200, 396, 420, 40, { kind: 'alt', label: 'stored tag 3 = address tag 3 and V = 1  →  cache HIT' });
+  d.path([t.bottom, [120, 416], [200, 416]], { cls: 'd-line-mut', label: 'compare tags', labelAt: [120, 300] });
   return d;
 };
 

@@ -13,10 +13,10 @@ specs['data-layout'] = () => {
     d.box(x, 60, 100, 50, { label: b, mono: true, r: 0, kind: v === 'w' ? 'tint' : 'alt' });
     d.text(x + 50, 128, `offset ${String(i).padStart(4, '0')}`, { cls: 'd-small' });
   });
-  d.dim(40, 240, 160, 'w = 1234h  (low byte first)');
-  d.dim(240, 640, 160, 'd = A1B2C3D4h  (lowest byte at the lowest address)');
-  d.path([[40, 200], [560, 200]], { cls: 'd-line-mut', arrow: 'end' });
-  d.text(572, 200, 'higher addresses', { cls: 'd-small', anchor: 'start' });
+  d.dim(40, 240, 152, 'w = 1234h  (low byte first)', { below: true });
+  d.dim(240, 640, 152, 'd = A1B2C3D4h  (lowest byte at the lowest address)', { below: true });
+  d.path([[40, 206], [560, 206]], { cls: 'd-line-mut', arrow: 'end' });
+  d.text(572, 206, 'higher addresses', { cls: 'd-small', anchor: 'start' });
   return d;
 };
 
@@ -129,11 +129,11 @@ specs['ivt'] = () => {
     d.text(100, y + 17, a, { cls: 'd-mono', anchor: 'end' });
     d.box(110, y, 120, 34, { label: n ? 'IP (offset)' : '', mono: !!n, r: 0, kind: hl ? 'red' : 'box' });
     d.box(230, y, 120, 34, { label: n ? 'CS (segment)' : '', mono: !!n, r: 0, kind: hl ? 'red' : 'box' });
-    if (n) d.text(366, y + 17, `${n} · ${t}`.replace(/ · $/, ''), { cls: hl ? 'd-label d-red' : 'd-small', anchor: 'start' });
+    if (n) d.text(366, hl ? y + 11 : y + 17, `${n} · ${t}`.replace(/ · $/, ''), { cls: hl ? 'd-label d-red' : 'd-small', anchor: 'start' });
   });
   const h = d.box(560, 236, 170, 60, { title: 'DOS handler', sub: 'interrupt service routine', kind: 'tint' });
-  d.path([[350, 261], [500, 261], [500, 266], h.left], { cls: 'd-line-acc' });
-  d.text(530, 222, 'CS:IP of the handler', { cls: 'd-small' });
+  d.path([[350, 270], [520, 270], [520, 266], h.left], { cls: 'd-line-acc' });
+  d.text(645, 222, 'CS:IP of the handler', { cls: 'd-small' });
   d.text(560, 330, ['vector address = n × 4', '21h × 4 = 84h'], { cls: 'd-mono', anchor: 'start' });
   return d;
 };

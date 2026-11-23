@@ -1,62 +1,64 @@
-<svg viewBox="0 0 760 310" xmlns="http://www.w3.org/2000/svg" style="min-width:640px">
-<rect class="d-box-2" x="64" y="50" width="80" height="34" rx="2"/>
-<rect class="d-box-2" x="64" y="130" width="80" height="34" rx="2"/>
-<rect class="d-box-2" x="14" y="210" width="80" height="34" rx="2"/>
-<rect class="d-box-2" x="110" y="210" width="80" height="34" rx="2"/>
-<path class="d-line-mut" d="M104.0 84.0 L104.0 130.0"/>
-<path class="d-line-mut" d="M64.0 147.0 L54.0 147.0 L54.0 210.0"/>
-<path class="d-line-mut" d="M144.0 147.0 L150.0 147.0 L150.0 210.0"/>
+<svg viewBox="0 0 830 320" xmlns="http://www.w3.org/2000/svg" style="min-width:680px">
+<rect class="d-box-2" x="62" y="50" width="96" height="34" rx="2"/>
+<rect class="d-box-2" x="62" y="130" width="96" height="34" rx="2"/>
+<rect class="d-box-2" x="12" y="210" width="90" height="34" rx="2"/>
+<rect class="d-box-2" x="110" y="210" width="96" height="34" rx="2"/>
+<path class="d-line-mut" d="M110.0 84.0 L110.0 130.0"/>
+<path class="d-line-mut" d="M62.0 147.0 L57.0 147.0 L57.0 210.0"/>
+<path class="d-line-mut" d="M158.0 147.0 L158.0 147.0 L158.0 210.0"/>
 <path class="d-line-acc d-arr-acc" d="M90.0 12.0 L90.0 50.0"/>
 <path class="d-line-acc d-arr-acc" d="M118.0 50.0 L118.0 12.0"/>
-<rect class="d-box-2" x="252" y="50" width="80" height="34" rx="2"/>
-<rect class="d-box-2" x="252" y="130" width="80" height="34" rx="2"/>
-<rect class="d-box-2" x="202" y="210" width="80" height="34" rx="2"/>
-<rect class="d-box-2" x="298" y="210" width="80" height="34" rx="2"/>
-<path class="d-line-mut" d="M292.0 84.0 L292.0 130.0"/>
-<path class="d-line-mut" d="M252.0 147.0 L242.0 147.0 L242.0 210.0"/>
-<path class="d-line-mut" d="M332.0 147.0 L338.0 147.0 L338.0 210.0"/>
-<path class="d-line-acc d-arr-acc" d="M278.0 12.0 L278.0 50.0"/>
-<path class="d-line-acc d-arr-acc" d="M302.0 84.0 L302.0 130.0"/>
-<path class="d-line-acc d-arr-acc" d="M258.0 164.0 L258.0 186.0 L228.0 186.0 L228.0 210.0"/>
-<rect class="d-box-2" x="440" y="50" width="80" height="34" rx="2"/>
-<rect class="d-box-2" x="440" y="130" width="80" height="34" rx="2"/>
-<rect class="d-box-2" x="390" y="210" width="80" height="34" rx="2"/>
-<rect class="d-box-2" x="486" y="210" width="80" height="34" rx="2"/>
-<path class="d-line-mut" d="M480.0 84.0 L480.0 130.0"/>
-<path class="d-line-mut" d="M440.0 147.0 L430.0 147.0 L430.0 210.0"/>
-<path class="d-line-mut" d="M520.0 147.0 L526.0 147.0 L526.0 210.0"/>
-<path class="d-line-acc d-arr-acc" d="M406.0 210.0 L406.0 176.0 L450.0 176.0 L450.0 164.0"/>
-<path class="d-line-acc d-arr-acc" d="M510.0 164.0 L510.0 186.0 L542.0 186.0 L542.0 210.0"/>
-<path class="d-line-acc d-arr-acc" d="M526.0 244.0 L526.0 262.0 L430.0 262.0 L430.0 244.0"/>
-<rect class="d-box-2" x="628" y="50" width="80" height="34" rx="2"/>
-<rect class="d-box-2" x="628" y="130" width="80" height="34" rx="2"/>
-<rect class="d-box-2" x="578" y="210" width="80" height="34" rx="2"/>
-<rect class="d-box-2" x="674" y="210" width="80" height="34" rx="2"/>
-<path class="d-line-mut" d="M668.0 84.0 L668.0 130.0"/>
-<path class="d-line-mut" d="M628.0 147.0 L618.0 147.0 L618.0 210.0"/>
-<path class="d-line-mut" d="M708.0 147.0 L714.0 147.0 L714.0 210.0"/>
-<path class="d-line-acc d-arr-acc" d="M594.0 210.0 L594.0 176.0 L638.0 176.0 L638.0 164.0"/>
-<path class="d-line-acc d-arr-acc" d="M698.0 164.0 L698.0 186.0 L730.0 186.0 L730.0 210.0"/>
-<path class="d-line-acc d-arr-acc" d="M750.0 210.0 L750.0 67.0 L708.0 67.0"/>
-<path class="d-line-acc d-arr-acc" d="M682.0 50.0 L682.0 12.0"/>
-<text class="d-label" x="104" y="67.0" text-anchor="middle" dominant-baseline="central">Movement</text>
-<text class="d-label" x="104" y="147.0" text-anchor="middle" dominant-baseline="central">Control</text>
-<text class="d-label" x="54" y="227.0" text-anchor="middle" dominant-baseline="central">Storage</text>
-<text class="d-label" x="150" y="227.0" text-anchor="middle" dominant-baseline="central">Processing</text>
-<text class="d-small" x="104" y="292.0" text-anchor="middle" dominant-baseline="central">(a) Data movement</text>
-<text class="d-label" x="292" y="67.0" text-anchor="middle" dominant-baseline="central">Movement</text>
-<text class="d-label" x="292" y="147.0" text-anchor="middle" dominant-baseline="central">Control</text>
-<text class="d-label" x="242" y="227.0" text-anchor="middle" dominant-baseline="central">Storage</text>
-<text class="d-label" x="338" y="227.0" text-anchor="middle" dominant-baseline="central">Processing</text>
-<text class="d-small" x="292" y="292.0" text-anchor="middle" dominant-baseline="central">(b) Storage</text>
-<text class="d-label" x="480" y="67.0" text-anchor="middle" dominant-baseline="central">Movement</text>
-<text class="d-label" x="480" y="147.0" text-anchor="middle" dominant-baseline="central">Control</text>
-<text class="d-label" x="430" y="227.0" text-anchor="middle" dominant-baseline="central">Storage</text>
-<text class="d-label" x="526" y="227.0" text-anchor="middle" dominant-baseline="central">Processing</text>
-<text class="d-small" x="480" y="292.0" text-anchor="middle" dominant-baseline="central">(c) Processing from / to storage</text>
-<text class="d-label" x="668" y="67.0" text-anchor="middle" dominant-baseline="central">Movement</text>
-<text class="d-label" x="668" y="147.0" text-anchor="middle" dominant-baseline="central">Control</text>
-<text class="d-label" x="618" y="227.0" text-anchor="middle" dominant-baseline="central">Storage</text>
-<text class="d-label" x="714" y="227.0" text-anchor="middle" dominant-baseline="central">Processing</text>
-<text class="d-small" x="668" y="292.0" text-anchor="middle" dominant-baseline="central">(d) Processing from storage to I/O</text>
+<rect class="d-box-2" x="266" y="50" width="96" height="34" rx="2"/>
+<rect class="d-box-2" x="266" y="130" width="96" height="34" rx="2"/>
+<rect class="d-box-2" x="216" y="210" width="90" height="34" rx="2"/>
+<rect class="d-box-2" x="314" y="210" width="96" height="34" rx="2"/>
+<path class="d-line-mut" d="M314.0 84.0 L314.0 130.0"/>
+<path class="d-line-mut" d="M266.0 147.0 L261.0 147.0 L261.0 210.0"/>
+<path class="d-line-mut" d="M362.0 147.0 L362.0 147.0 L362.0 210.0"/>
+<path class="d-line-acc d-arr-acc" d="M294.0 12.0 L294.0 50.0"/>
+<path class="d-line-acc d-arr-acc" d="M318.0 84.0 L318.0 130.0"/>
+<path class="d-line-acc d-arr-acc" d="M274.0 164.0 L274.0 186.0 L244.0 186.0 L244.0 210.0"/>
+<rect class="d-box-2" x="470" y="50" width="96" height="34" rx="2"/>
+<rect class="d-box-2" x="470" y="130" width="96" height="34" rx="2"/>
+<rect class="d-box-2" x="420" y="210" width="90" height="34" rx="2"/>
+<rect class="d-box-2" x="518" y="210" width="96" height="34" rx="2"/>
+<path class="d-line-mut" d="M518.0 84.0 L518.0 130.0"/>
+<path class="d-line-mut" d="M470.0 147.0 L465.0 147.0 L465.0 210.0"/>
+<path class="d-line-mut" d="M566.0 147.0 L566.0 147.0 L566.0 210.0"/>
+<path class="d-line-acc d-arr-acc" d="M438.0 210.0 L438.0 176.0 L482.0 176.0 L482.0 164.0"/>
+<path class="d-line-acc d-arr-acc" d="M542.0 164.0 L542.0 186.0 L574.0 186.0 L574.0 210.0"/>
+<path class="d-line-acc d-arr-acc" d="M566.0 244.0 L566.0 262.0 L465.0 262.0 L465.0 244.0"/>
+<rect class="d-box-2" x="674" y="50" width="96" height="34" rx="2"/>
+<rect class="d-box-2" x="674" y="130" width="96" height="34" rx="2"/>
+<rect class="d-box-2" x="624" y="210" width="90" height="34" rx="2"/>
+<rect class="d-box-2" x="722" y="210" width="96" height="34" rx="2"/>
+<path class="d-line-mut" d="M722.0 84.0 L722.0 130.0"/>
+<path class="d-line-mut" d="M674.0 147.0 L669.0 147.0 L669.0 210.0"/>
+<path class="d-line-mut" d="M770.0 147.0 L770.0 147.0 L770.0 210.0"/>
+<path class="d-line-acc d-arr-acc" d="M642.0 210.0 L642.0 176.0 L686.0 176.0 L686.0 164.0"/>
+<path class="d-line-acc d-arr-acc" d="M746.0 164.0 L746.0 186.0 L778.0 186.0 L778.0 210.0"/>
+<path class="d-line-acc d-arr-acc" d="M802.0 210.0 L802.0 67.0 L770.0 67.0"/>
+<path class="d-line-acc d-arr-acc" d="M730.0 50.0 L730.0 12.0"/>
+<text class="d-label" x="110" y="67.0" text-anchor="middle" dominant-baseline="central">Movement</text>
+<text class="d-label" x="110" y="147.0" text-anchor="middle" dominant-baseline="central">Control</text>
+<text class="d-label" x="57" y="227.0" text-anchor="middle" dominant-baseline="central">Storage</text>
+<text class="d-label" x="158" y="227.0" text-anchor="middle" dominant-baseline="central">Processing</text>
+<text class="d-small" x="108" y="286.0" text-anchor="middle" dominant-baseline="central">(a) Data movement</text>
+<text class="d-label" x="314" y="67.0" text-anchor="middle" dominant-baseline="central">Movement</text>
+<text class="d-label" x="314" y="147.0" text-anchor="middle" dominant-baseline="central">Control</text>
+<text class="d-label" x="261" y="227.0" text-anchor="middle" dominant-baseline="central">Storage</text>
+<text class="d-label" x="362" y="227.0" text-anchor="middle" dominant-baseline="central">Processing</text>
+<text class="d-small" x="312" y="286.0" text-anchor="middle" dominant-baseline="central">(b) Storage</text>
+<text class="d-label" x="518" y="67.0" text-anchor="middle" dominant-baseline="central">Movement</text>
+<text class="d-label" x="518" y="147.0" text-anchor="middle" dominant-baseline="central">Control</text>
+<text class="d-label" x="465" y="227.0" text-anchor="middle" dominant-baseline="central">Storage</text>
+<text class="d-label" x="566" y="227.0" text-anchor="middle" dominant-baseline="central">Processing</text>
+<text class="d-small" x="516" y="278.5" text-anchor="middle" dominant-baseline="central">(c) Processing</text>
+<text class="d-small" x="516" y="293.5" text-anchor="middle" dominant-baseline="central">from / to storage</text>
+<text class="d-label" x="722" y="67.0" text-anchor="middle" dominant-baseline="central">Movement</text>
+<text class="d-label" x="722" y="147.0" text-anchor="middle" dominant-baseline="central">Control</text>
+<text class="d-label" x="669" y="227.0" text-anchor="middle" dominant-baseline="central">Storage</text>
+<text class="d-label" x="770" y="227.0" text-anchor="middle" dominant-baseline="central">Processing</text>
+<text class="d-small" x="720" y="278.5" text-anchor="middle" dominant-baseline="central">(d) Processing from</text>
+<text class="d-small" x="720" y="293.5" text-anchor="middle" dominant-baseline="central">storage to I/O</text>
 </svg>

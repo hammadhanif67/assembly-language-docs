@@ -27,12 +27,12 @@ specs['generations-timeline'] = () => {
 
 // ---------- Architecture vs organization ----------
 specs['arch-vs-org'] = () => {
-  const d = new Diagram(700, 300, { minw: 560 });
-  d.box(20, 20, 660, 110, { kind: 'group', label: 'Architecture, what the programmer sees' });
-  ['Instruction set', 'Data representation', 'I/O mechanisms', 'Memory addressing'].forEach((t, i) => d.box(40 + i * 160, 56, 140, 52, { label: t, kind: 'tint' }));
-  d.path([[350, 132], [350, 166]], { cls: 'd-line-acc', arrow: 'end', label: 'is implemented by', labelAt: [430, 149] });
-  d.box(20, 170, 660, 110, { kind: 'group', label: 'Organization, how it is built (hidden from the programmer)' });
-  ['Control signals', 'Peripheral interfaces', 'Memory technology', 'Operational units'].forEach((t, i) => d.box(40 + i * 160, 206, 140, 52, { label: t, kind: 'alt' }));
+  const d = new Diagram(780, 300, { minw: 600 });
+  d.box(20, 20, 740, 110, { kind: 'group', label: 'Architecture: what the programmer sees' });
+  ['Instruction set', 'Data representation', 'I/O mechanisms', 'Memory addressing'].forEach((t, i) => d.box(40 + i * 178, 56, 166, 52, { label: t, kind: 'tint' }));
+  d.path([[390, 132], [390, 166]], { cls: 'd-line-acc', arrow: 'end', label: 'is implemented by', labelAt: [470, 149] });
+  d.box(20, 170, 740, 110, { kind: 'group', label: 'Organization: how it is built (hidden from the programmer)' });
+  ['Control signals', 'Peripheral interfaces', 'Memory technology', 'Operational units'].forEach((t, i) => d.box(40 + i * 178, 206, 166, 52, { label: t, kind: 'alt' }));
   return d;
 };
 
@@ -53,14 +53,14 @@ specs['top-level-structure'] = () => {
 
 // ---------- Four possible computer operations ----------
 specs['computer-operations'] = () => {
-  const d = new Diagram(760, 310, { minw: 640 });
-  const titles = ['(a) Data movement', '(b) Storage', '(c) Processing from / to storage', '(d) Processing from storage to I/O'];
+  const d = new Diagram(830, 320, { minw: 680 });
+  const titles = [['(a) Data movement'], ['(b) Storage'], ['(c) Processing', 'from / to storage'], ['(d) Processing from', 'storage to I/O']];
   titles.forEach((title, i) => {
-    const x = 10 + i * 188;
-    const mv = d.box(x + 54, 50, 80, 34, { label: 'Movement', kind: 'alt' });
-    const ctl = d.box(x + 54, 130, 80, 34, { label: 'Control', kind: 'alt' });
-    const st = d.box(x + 4, 210, 80, 34, { label: 'Storage', kind: 'alt' });
-    const pr = d.box(x + 100, 210, 80, 34, { label: 'Processing', kind: 'alt' });
+    const x = 10 + i * 204;
+    const mv = d.box(x + 52, 50, 96, 34, { label: 'Movement', kind: 'alt' });
+    const ctl = d.box(x + 52, 130, 96, 34, { label: 'Control', kind: 'alt' });
+    const st = d.box(x + 2, 210, 90, 34, { label: 'Storage', kind: 'alt' });
+    const pr = d.box(x + 100, 210, 96, 34, { label: 'Processing', kind: 'alt' });
     d.path([mv.bottom, ctl.top], { cls: 'd-line-mut', arrow: null });
     d.path([ctl.at('left', 0.5), [st.cx, ctl.cy], st.top], { cls: 'd-line-mut', arrow: null });
     d.path([ctl.at('right', 0.5), [pr.cx, ctl.cy], pr.top], { cls: 'd-line-mut', arrow: null });
@@ -69,8 +69,8 @@ specs['computer-operations'] = () => {
     if (i === 0) { R(IN); R(OUT); }
     if (i === 1) { R(IN); R([[x + 104, 84], [x + 104, 130]]); R([[x + 60, 164], [x + 60, 186], [x + 30, 186], [x + 30, 210]]); }
     if (i === 2) { R([[x + 20, 210], [x + 20, 176], [x + 64, 176], [x + 64, 164]]); R([[x + 124, 164], [x + 124, 186], [x + 156, 186], [x + 156, 210]]); R([[pr.cx, 244], [pr.cx, 262], [st.cx, 262], [st.cx, 244]]); }
-    if (i === 3) { R([[x + 20, 210], [x + 20, 176], [x + 64, 176], [x + 64, 164]]); R([[x + 124, 164], [x + 124, 186], [x + 156, 186], [x + 156, 210]]); R([[x + 176, 210], [x + 176, 67], mv.right]); R(OUT); }
-    d.text(x + 94, 292, title, { cls: 'd-small' });
+    if (i === 3) { R([[x + 20, 210], [x + 20, 176], [x + 64, 176], [x + 64, 164]]); R([[x + 124, 164], [x + 124, 186], [x + 156, 186], [x + 156, 210]]); R([[x + 180, 210], [x + 180, 67], mv.right]); R(OUT); }
+    d.text(x + 98, 286, title, { cls: 'd-small' });
   });
   return d;
 };
@@ -110,17 +110,17 @@ specs['harvard'] = () => {
 
 // ---------- Instruction format ----------
 specs['instruction-format'] = () => {
-  const d = new Diagram(640, 250, { minw: 520 });
-  d.text(40, 24, 'Format A, two operands', { cls: 'd-caps', anchor: 'start' });
+  const d = new Diagram(640, 256, { minw: 520 });
+  d.text(40, 24, 'Format A: two operands', { cls: 'd-caps', anchor: 'start' });
   const parts = [['Opcode', 4, 'tint'], ['Operand reference', 6, 'alt'], ['Operand reference', 6, 'alt']];
   let x = 40;
   parts.forEach(([t, bits, k]) => { const w = bits * 32; d.box(x, 54, w, 46, { label: t, kind: k, r: 0 }); d.text(x + w / 2, 42, `${bits} bits`, { cls: 'd-small' }); x += w; });
-  d.dim(40, x, 116, '16 bits');
-  d.text(40, 160, 'Format B, one operand', { cls: 'd-caps', anchor: 'start' });
-  d.box(40, 190, 128, 46, { label: 'Opcode', kind: 'tint', r: 0 });
-  d.box(168, 190, 384, 46, { label: 'Operand', kind: 'alt', r: 0 });
-  d.text(104, 178, '4 bits', { cls: 'd-small' });
-  d.text(360, 178, '12 bits', { cls: 'd-small' });
+  d.dim(40, x, 114, '16 bits', { below: true });
+  d.text(40, 166, 'Format B: one operand', { cls: 'd-caps', anchor: 'start' });
+  d.box(40, 198, 128, 46, { label: 'Opcode', kind: 'tint', r: 0 });
+  d.box(168, 198, 384, 46, { label: 'Operand', kind: 'alt', r: 0 });
+  d.text(104, 186, '4 bits', { cls: 'd-small' });
+  d.text(360, 186, '12 bits', { cls: 'd-small' });
   return d;
 };
 
@@ -250,21 +250,21 @@ specs['instruction-cycle-state'] = () => {
 
 // ---------- Pipelining: laundry analogy ----------
 const laundry = (rows, top, endMin) => {
-  const d = new Diagram(720, 330, { minw: 600 });
+  const d = new Diagram(720, 350, { minw: 600 });
   const X0 = 110, W = 580, px = W / 360;
   ['6 PM', '7', '8', '9', '10', '11', '12'].forEach((t, i) => d.text(X0 + i * 60 * px, 22, t, { cls: 'd-mono' }));
   d.path([[X0, 40], [X0 + W, 40]], { cls: 'd-line-mut', arrow: 'end' });
-  for (let i = 0; i <= 6; i++) d.path([[X0 + i * 60 * px, 36], [X0 + i * 60 * px, 300]], { cls: 'd-line-mut', arrow: null, dash: true, layer: 'back' });
+  for (let i = 0; i <= 6; i++) d.path([[X0 + i * 60 * px, 36], [X0 + i * 60 * px, 282]], { cls: 'd-line-mut', arrow: null, dash: true, layer: 'back' });
   const names = { w: '30', r: '40', f: '20' }, K = { w: 'dark', r: 'red', f: 'alt' };
-  [['dark', 'Wash'], ['red', 'Dry'], ['alt', 'Fold']].forEach(([k, t], i) => { d.box(460 + i * 80, 302, 14, 14, { kind: k, r: 0 }); d.text(480 + i * 80, 309, t, { cls: 'd-small', anchor: 'start' }); });
+  [['dark', 'Wash'], ['red', 'Dry'], ['alt', 'Fold']].forEach(([k, t], i) => { d.box(X0 + i * 80, 322, 14, 14, { kind: k, r: 0 }); d.text(X0 + 20 + i * 80, 329, t, { cls: 'd-small', anchor: 'start' }); });
   rows.forEach(([name, segs], r) => {
     const y = 66 + r * 56;
     d.text(70, y + 18, `Load ${name}`, { cls: 'd-label', anchor: 'end' });
     segs.forEach(([s, e, k]) => d.box(X0 + s * px, y, (e - s) * px, 36, { label: names[k], kind: K[k], r: 0 }));
   });
-  d.path([[X0 + endMin * px, 280], [X0 + endMin * px, 300]], { cls: 'd-line-acc', arrow: null });
   const ex = X0 + endMin * px, nearEnd = ex > 560;
-  d.text(nearEnd ? ex - 6 : ex + 6, 292, `done at ${top}`, { cls: 'd-small', anchor: nearEnd ? 'end' : 'start' });
+  d.path([[ex, 274], [ex, 300]], { cls: 'd-line-acc', arrow: null });
+  d.text(nearEnd ? ex - 8 : ex + 8, 296, `done at ${top}`, { cls: 'd-label d-red', anchor: nearEnd ? 'end' : 'start' });
   return d;
 };
 specs['laundry-sequential'] = () => laundry(['A', 'B', 'C', 'D'].map((n, i) => { const o = i * 90; return [n, [[o, o + 30, 'w'], [o + 30, o + 70, 'r'], [o + 70, o + 90, 'f']]]; }), 'midnight, 6 hours', 360);
@@ -293,8 +293,8 @@ specs['code-size'] = () => {
   d.text(470, 24, 'RISC', { cls: 'd-title' });
   d.box(110, 60, 120, 120, { kind: 'tint', r: 0, label: ['fewer, more', 'complex', 'instructions'] });
   d.dim(110, 230, 46);
-  d.box(430, 60, 80, 190, { kind: 'alt', r: 0, label: ['more,', 'simpler', 'instr.'] });
-  d.dim(430, 510, 46);
+  d.box(415, 60, 110, 190, { kind: 'alt', r: 0, label: ['more,', 'simpler', 'instructions'] });
+  d.dim(415, 525, 46);
   d.text(170, 210, 'Code size is smaller but complicated.', { cls: 'd-text' });
   d.text(470, 276, 'Code size is larger but simpler.', { cls: 'd-text' });
   return d;

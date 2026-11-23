@@ -3,10 +3,10 @@
 <path class="d-line-mut d-arr2" d="M110.0 46.0 L230.0 46.0"/>
 <path class="d-line-mut" d="M110.0 40.0 L110.0 52.0"/>
 <path class="d-line-mut" d="M230.0 40.0 L230.0 52.0"/>
-<rect class="d-box-2" x="430" y="60" width="80" height="190" rx="0"/>
-<path class="d-line-mut d-arr2" d="M430.0 46.0 L510.0 46.0"/>
-<path class="d-line-mut" d="M430.0 40.0 L430.0 52.0"/>
-<path class="d-line-mut" d="M510.0 40.0 L510.0 52.0"/>
+<rect class="d-box-2" x="415" y="60" width="110" height="190" rx="0"/>
+<path class="d-line-mut d-arr2" d="M415.0 46.0 L525.0 46.0"/>
+<path class="d-line-mut" d="M415.0 40.0 L415.0 52.0"/>
+<path class="d-line-mut" d="M525.0 40.0 L525.0 52.0"/>
 <text class="d-title" x="170" y="24.0" text-anchor="middle" dominant-baseline="central">CISC</text>
 <text class="d-title" x="470" y="24.0" text-anchor="middle" dominant-baseline="central">RISC</text>
 <text class="d-label" x="170" y="102.0" text-anchor="middle" dominant-baseline="central">fewer, more</text>
@@ -14,7 +14,7 @@
 <text class="d-label" x="170" y="138.0" text-anchor="middle" dominant-baseline="central">instructions</text>
 <text class="d-label" x="470" y="137.0" text-anchor="middle" dominant-baseline="central">more,</text>
 <text class="d-label" x="470" y="155.0" text-anchor="middle" dominant-baseline="central">simpler</text>
-<text class="d-label" x="470" y="173.0" text-anchor="middle" dominant-baseline="central">instr.</text>
+<text class="d-label" x="470" y="173.0" text-anchor="middle" dominant-baseline="central">instructions</text>
 <text class="d-text" x="170" y="210.0" text-anchor="middle" dominant-baseline="central">Code size is smaller but complicated.</text>
 <text class="d-text" x="470" y="276.0" text-anchor="middle" dominant-baseline="central">Code size is larger but simpler.</text>
 </svg>

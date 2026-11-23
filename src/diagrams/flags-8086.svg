@@ -67,6 +67,6 @@
 <text class="d-label d-red" x="500" y="130.0" text-anchor="middle" dominant-baseline="central">Auxiliary carry</text>
 <text class="d-label d-red" x="580" y="164.0" text-anchor="middle" dominant-baseline="central">Parity</text>
 <text class="d-label d-red" x="660" y="198.0" text-anchor="middle" dominant-baseline="central">Carry</text>
-<text class="d-small" x="68" y="260.0" text-anchor="start" dominant-baseline="central">status flags (6), result of the last operation</text>
-<text class="d-small" x="408" y="260.0" text-anchor="start" dominant-baseline="central">control flags (3), change how the CPU runs</text>
+<text class="d-small" x="68" y="260.0" text-anchor="start" dominant-baseline="central">status flags (6): result of the last operation</text>
+<text class="d-small" x="408" y="260.0" text-anchor="start" dominant-baseline="central">control flags (3): change how the CPU runs</text>
 </svg>

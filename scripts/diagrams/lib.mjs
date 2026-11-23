@@ -105,11 +105,11 @@ export class Diagram {
   }
 
   // horizontal dimension line with end ticks and a centered label
-  dim(x1, x2, y, label) {
+  dim(x1, x2, y, label, opts = {}) {
     this.path([[x1, y], [x2, y]], { cls: 'd-line-mut', arrow: 'both' });
     this.path([[x1, y - 6], [x1, y + 6]], { cls: 'd-line-mut', arrow: null });
     this.path([[x2, y - 6], [x2, y + 6]], { cls: 'd-line-mut', arrow: null });
-    if (label) this.text((x1 + x2) / 2, y - 13, label, { cls: 'd-small' });
+    if (label) this.text((x1 + x2) / 2, opts.below ? y + 16 : y - 13, label, { cls: 'd-small' });
     return this;
   }
 

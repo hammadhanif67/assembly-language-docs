@@ -5,13 +5,13 @@
 <rect class="d-box-2" x="340" y="60" width="100" height="50" rx="0"/>
 <rect class="d-box-2" x="440" y="60" width="100" height="50" rx="0"/>
 <rect class="d-box-2" x="540" y="60" width="100" height="50" rx="0"/>
-<path class="d-line-mut d-arr2" d="M40.0 160.0 L240.0 160.0"/>
-<path class="d-line-mut" d="M40.0 154.0 L40.0 166.0"/>
-<path class="d-line-mut" d="M240.0 154.0 L240.0 166.0"/>
-<path class="d-line-mut d-arr2" d="M240.0 160.0 L640.0 160.0"/>
-<path class="d-line-mut" d="M240.0 154.0 L240.0 166.0"/>
-<path class="d-line-mut" d="M640.0 154.0 L640.0 166.0"/>
-<path class="d-line-mut d-arr-mut" d="M40.0 200.0 L560.0 200.0"/>
+<path class="d-line-mut d-arr2" d="M40.0 152.0 L240.0 152.0"/>
+<path class="d-line-mut" d="M40.0 146.0 L40.0 158.0"/>
+<path class="d-line-mut" d="M240.0 146.0 L240.0 158.0"/>
+<path class="d-line-mut d-arr2" d="M240.0 152.0 L640.0 152.0"/>
+<path class="d-line-mut" d="M240.0 146.0 L240.0 158.0"/>
+<path class="d-line-mut" d="M640.0 146.0 L640.0 158.0"/>
+<path class="d-line-mut d-arr-mut" d="M40.0 206.0 L560.0 206.0"/>
 <text class="d-mono" x="40" y="24.0" text-anchor="start" dominant-baseline="central">w  DW 1234h          d  DD 0A1B2C3D4h</text>
 <text class="d-mono" x="90" y="85.0" text-anchor="middle" dominant-baseline="central">34</text>
 <text class="d-small" x="90" y="128.0" text-anchor="middle" dominant-baseline="central">offset 0000</text>
@@ -25,7 +25,7 @@
 <text class="d-small" x="490" y="128.0" text-anchor="middle" dominant-baseline="central">offset 0004</text>
 <text class="d-mono" x="590" y="85.0" text-anchor="middle" dominant-baseline="central">A1</text>
 <text class="d-small" x="590" y="128.0" text-anchor="middle" dominant-baseline="central">offset 0005</text>
-<text class="d-small" x="140" y="147.0" text-anchor="middle" dominant-baseline="central">w = 1234h  (low byte first)</text>
-<text class="d-small" x="440" y="147.0" text-anchor="middle" dominant-baseline="central">d = A1B2C3D4h  (lowest byte at the lowest address)</text>
-<text class="d-small" x="572" y="200.0" text-anchor="start" dominant-baseline="central">higher addresses</text>
+<text class="d-small" x="140" y="168.0" text-anchor="middle" dominant-baseline="central">w = 1234h  (low byte first)</text>
+<text class="d-small" x="440" y="168.0" text-anchor="middle" dominant-baseline="central">d = A1B2C3D4h  (lowest byte at the lowest address)</text>
+<text class="d-small" x="572" y="206.0" text-anchor="start" dominant-baseline="central">higher addresses</text>
 </svg>

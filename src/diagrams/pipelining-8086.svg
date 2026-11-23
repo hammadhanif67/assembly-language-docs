@@ -1,20 +1,20 @@
-<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" style="min-width:520px">
+<svg viewBox="0 0 640 326" xmlns="http://www.w3.org/2000/svg" style="min-width:520px">
 <rect class="d-box-2" x="140" y="40" width="80" height="40" rx="0"/>
 <rect class="d-box-3" x="220" y="40" width="80" height="40" rx="0"/>
 <rect class="d-box-2" x="300" y="40" width="80" height="40" rx="0"/>
 <rect class="d-box-3" x="380" y="40" width="80" height="40" rx="0"/>
 <rect class="d-box-2" x="460" y="40" width="80" height="40" rx="0"/>
 <rect class="d-box-3" x="540" y="40" width="80" height="40" rx="0"/>
-<rect class="d-box-2" x="140" y="136" width="80" height="40" rx="0"/>
-<rect class="d-box-3" x="220" y="136" width="80" height="40" rx="0"/>
-<rect class="d-box-2" x="220" y="182" width="80" height="40" rx="0"/>
-<rect class="d-box-3" x="300" y="182" width="80" height="40" rx="0"/>
-<rect class="d-box-2" x="300" y="228" width="80" height="40" rx="0"/>
-<rect class="d-box-3" x="380" y="228" width="80" height="40" rx="0"/>
+<rect class="d-box-2" x="140" y="162" width="80" height="40" rx="0"/>
+<rect class="d-box-3" x="220" y="162" width="80" height="40" rx="0"/>
+<rect class="d-box-2" x="220" y="208" width="80" height="40" rx="0"/>
+<rect class="d-box-3" x="300" y="208" width="80" height="40" rx="0"/>
+<rect class="d-box-2" x="300" y="254" width="80" height="40" rx="0"/>
+<rect class="d-box-3" x="380" y="254" width="80" height="40" rx="0"/>
 <path class="d-line-mut d-arr2" d="M140.0 98.0 L620.0 98.0"/>
 <path class="d-line-mut" d="M140.0 92.0 L140.0 104.0"/>
 <path class="d-line-mut" d="M620.0 92.0 L620.0 104.0"/>
-<path class="d-line-acc d-arr2-acc" d="M140.0 284.0 L380.0 284.0"/>
+<path class="d-line-acc d-arr2-acc" d="M140.0 310.0 L380.0 310.0"/>
 <text class="d-caps" x="20" y="24.0" text-anchor="start" dominant-baseline="central">NON-PIPELINED (8085)</text>
 <text class="d-label" x="180" y="60.0" text-anchor="middle" dominant-baseline="central">fetch 1</text>
 <text class="d-label" x="260" y="60.0" text-anchor="middle" dominant-baseline="central">exec 1</text>
@@ -22,13 +22,13 @@
 <text class="d-label" x="420" y="60.0" text-anchor="middle" dominant-baseline="central">exec 2</text>
 <text class="d-label" x="500" y="60.0" text-anchor="middle" dominant-baseline="central">fetch 3</text>
 <text class="d-label" x="580" y="60.0" text-anchor="middle" dominant-baseline="central">exec 3</text>
-<text class="d-caps" x="20" y="120.0" text-anchor="start" dominant-baseline="central">PIPELINED (8086)</text>
-<text class="d-label" x="180" y="156.0" text-anchor="middle" dominant-baseline="central">fetch 1</text>
-<text class="d-label" x="260" y="156.0" text-anchor="middle" dominant-baseline="central">exec 1</text>
-<text class="d-label" x="260" y="202.0" text-anchor="middle" dominant-baseline="central">fetch 2</text>
-<text class="d-label" x="340" y="202.0" text-anchor="middle" dominant-baseline="central">exec 2</text>
-<text class="d-label" x="340" y="248.0" text-anchor="middle" dominant-baseline="central">fetch 3</text>
-<text class="d-label" x="420" y="248.0" text-anchor="middle" dominant-baseline="central">exec 3</text>
-<text class="d-small" x="380" y="85.0" text-anchor="middle" dominant-baseline="central">6 time slots</text>
-<text class="d-small" x="390" y="284.0" text-anchor="start" dominant-baseline="central">4 time slots for the same 3 instructions</text>
+<text class="d-caps" x="20" y="146.0" text-anchor="start" dominant-baseline="central">PIPELINED (8086)</text>
+<text class="d-label" x="180" y="182.0" text-anchor="middle" dominant-baseline="central">fetch 1</text>
+<text class="d-label" x="260" y="182.0" text-anchor="middle" dominant-baseline="central">exec 1</text>
+<text class="d-label" x="260" y="228.0" text-anchor="middle" dominant-baseline="central">fetch 2</text>
+<text class="d-label" x="340" y="228.0" text-anchor="middle" dominant-baseline="central">exec 2</text>
+<text class="d-label" x="340" y="274.0" text-anchor="middle" dominant-baseline="central">fetch 3</text>
+<text class="d-label" x="420" y="274.0" text-anchor="middle" dominant-baseline="central">exec 3</text>
+<text class="d-small" x="380" y="114.0" text-anchor="middle" dominant-baseline="central">6 time slots</text>
+<text class="d-small" x="390" y="310.0" text-anchor="start" dominant-baseline="central">4 time slots for the same 3 instructions</text>
 </svg>

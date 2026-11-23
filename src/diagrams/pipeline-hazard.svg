@@ -28,8 +28,8 @@
 <text class="d-mono d-on-accent" x="480" y="62.0" text-anchor="middle" dominant-baseline="central">WB</text>
 <text class="d-mono" x="200" y="116.0" text-anchor="end" dominant-baseline="central">SUB R4, R1, R5</text>
 <text class="d-mono" x="300" y="116.0" text-anchor="middle" dominant-baseline="central">IF</text>
-<text class="d-label" x="360" y="116.0" text-anchor="middle" dominant-baseline="central">bubble</text>
-<text class="d-label" x="420" y="116.0" text-anchor="middle" dominant-baseline="central">bubble</text>
+<text class="d-mono" x="360" y="116.0" text-anchor="middle" dominant-baseline="central">bubble</text>
+<text class="d-mono" x="420" y="116.0" text-anchor="middle" dominant-baseline="central">bubble</text>
 <text class="d-mono" x="480" y="116.0" text-anchor="middle" dominant-baseline="central">ID</text>
 <text class="d-mono" x="540" y="116.0" text-anchor="middle" dominant-baseline="central">EX</text>
 <text class="d-mono" x="600" y="116.0" text-anchor="middle" dominant-baseline="central">MEM</text>
