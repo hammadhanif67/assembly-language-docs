@@ -90,6 +90,25 @@
     heads.forEach((h) => io.observe(h));
   }
 
+  /* ---------- Smooth scrolling for in-page links (TOC, heading anchors) ---------- */
+  function setupSmoothAnchors() {
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a[href^="#"]');
+      if (!a || e.ctrlKey || e.metaKey || e.shiftKey) return;
+      const id = decodeURIComponent(a.getAttribute('href').slice(1));
+      const target = id && document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      const header = $('.site-header');
+      const y = target.getBoundingClientRect().top + window.scrollY - ((header ? header.offsetHeight : 64) + 16);
+      window.scrollTo({ top: y, behavior: reduceMotion ? 'auto' : 'smooth' });
+      history.pushState(null, '', '#' + encodeURIComponent(id));
+      if (a.closest('.toc')) { $$('.toc a').forEach((l) => l.classList.toggle('active', l === a)); }
+      target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+    });
+  }
+
   /* ---------- Copy buttons ---------- */
   function setupCopy() {
     $$('.copy-btn').forEach((btn) => btn.addEventListener('click', async () => {
@@ -195,7 +214,7 @@
   function cssVar(n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
   function mermaidTheme() {
     const solid = (v, fb) => (/rgba|transparent/.test(v) || !v ? fb : v);
-    const dark = !/clean|paper/.test(document.documentElement.dataset.theme);
+    const dark = false;
     return {
       startOnLoad: false, securityLevel: 'strict', theme: 'base',
       themeVariables: {
@@ -234,19 +253,6 @@
       gsap.from('.hero-copy > *', { y: 22, opacity: 0, duration: .7, stagger: .08, ease: 'power3.out', clearProps: 'all' });
       gsap.from('.hero-term', { x: 30, opacity: 0, duration: .9, delay: .2, ease: 'power3.out', clearProps: 'all' });
     }
-    if (!window.ScrollTrigger) return;
-    $$('.doc-body figure, .doc-body .code-block, .doc-body .table-wrap, [data-reveal]').forEach((el) => {
-      gsap.from(el, { y: 24, opacity: 0, duration: .6, ease: 'power2.out', clearProps: 'transform,opacity', scrollTrigger: { trigger: el, start: 'top 90%', once: true } });
-    });
-    // draw connector lines inside diagrams when they scroll into view
-    $$('.diagram-canvas svg').forEach((svg) => {
-      const lines = $$('.d-line, .d-line-thick', svg).filter((l) => typeof l.getTotalLength === 'function');
-      if (!lines.length) return;
-      lines.forEach((l) => { const len = l.getTotalLength(); if (!len || len > 4000) return; l.style.strokeDasharray = l.classList.contains('d-dash') ? '' : len; if (!l.classList.contains('d-dash') && !l.classList.contains('d-dot')) l.style.strokeDashoffset = len; });
-      ScrollTrigger.create({ trigger: svg, start: 'top 85%', once: true, onEnter: () => {
-        gsap.to(lines.filter((l) => l.style.strokeDashoffset), { strokeDashoffset: 0, duration: 1.1, stagger: .03, ease: 'power1.inOut', onComplete() { lines.forEach((l) => { l.style.strokeDasharray = ''; l.style.strokeDashoffset = ''; }); } });
-      } });
-    });
   }
 
   /* ---------- Home: typed terminal ---------- */
@@ -281,6 +287,7 @@
     icons();
     setupSidebar();
     setupScroll();
+    setupSmoothAnchors();
     setupCopy();
     setupSearch();
     setupLightbox();

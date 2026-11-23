@@ -36,21 +36,14 @@ with a slashed zero and a blinking cursor.
 - Full-text search (Fuse.js), opened with **Ctrl K** or **/**
 - Syntax highlighting (Prism.js) with x86 mnemonics, line numbers and copy buttons
 - Mermaid flowcharts on the researched pages, styled to match the site
-- Subtle GSAP entrance and scroll animations, all disabled under `prefers-reduced-motion`
+- Smooth scrolling for “On this page” links; subtle GSAP entrance animation on titles (disabled under `prefers-reduced-motion`)
 - Responsive from 320 px phones to wide desktops; keyboard navigable; alt text on all images; skip link
 
 ## Design
 
-One design that mixes three styles:
-
-| Ingredient | What it contributes |
-|---|---|
-| **Glassmorphism** | dark gradient-mesh background, frosted translucent cards, sidebar and header with backdrop blur |
-| **Dark Terminal** | phosphor-green and amber palette, JetBrains Mono headings with `>` / `##` prompts, a dotted grid |
-| **Retro CRT** | scanlines and phosphor glow on the hero terminal and every code block |
-
-Body text uses Inter for readability. All colors are CSS variables in `src/css/main.css`
-(section 1), and the diagrams use the same variables.
+**Modern Light**: a white page, soft gray sidebar with uppercase chapter labels, an indigo accent
+(`#6366f1`), rounded indigo buttons, dark code blocks and Inter for all text (JetBrains Mono for code).
+All colors are CSS variables at the top of `src/css/main.css`, and the diagrams use the same variables.
 
 ## Run locally
 

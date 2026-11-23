@@ -161,13 +161,13 @@ const LOGO = fs.readFileSync(path.join(SRC, 'logo.svg'), 'utf8');
 
 function head({ title, description, prefix, extraHead = '' }) {
   return `<!doctype html>
-<html lang="en" data-theme="fusion">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description || SITE.tagline)}">
-<meta name="theme-color" content="#050b09">
+<meta name="theme-color" content="#ffffff">
 <link rel="icon" href="${prefix}assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
