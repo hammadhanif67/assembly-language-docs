@@ -409,6 +409,33 @@
     setTimeout(go, 900);
   }
 
+  /* ---------- Home hero: the eyebrow decodes from hex, then spells COAL ---------- */
+  function setupEyebrow() {
+    const el = document.querySelector('.hv-eyebrow .ey-t');
+    if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) { if (el) el.closest('.hv-eyebrow').classList.add('decoded'); return; }
+    const nodes = [];
+    const walk = (n) => n.childNodes.forEach((c) => (c.nodeType === 3 ? nodes.push([c, c.nodeValue]) : walk(c)));
+    walk(el);
+    const total = nodes.reduce((s, [, t]) => s + t.length, 0), POOL = '01ABCDEF';
+    const t0 = performance.now(), dur = 1100, delay = 150;
+    let finished = false;
+    const finish = () => { if (finished) return; finished = true; nodes.forEach(([n, orig]) => { n.nodeValue = orig; }); el.closest('.hv-eyebrow').classList.add('decoded'); };
+    const frame = (t) => {
+      if (finished) return;
+      const shown = Math.floor(Math.max(0, (t - t0 - delay) / dur) * total);
+      let k = 0;
+      nodes.forEach(([n, orig]) => {
+        let out = '';
+        for (const ch of orig) { out += k < shown || ch === ' ' || ch === '&' ? ch : POOL[(Math.random() * POOL.length) | 0]; k++; }
+        n.nodeValue = out;
+      });
+      if (shown < total) requestAnimationFrame(frame);
+      else finish();
+    };
+    requestAnimationFrame(frame);
+    setTimeout(finish, delay + dur + 600);
+  }
+
   /* ---------- Boot ---------- */
   document.addEventListener('DOMContentLoaded', () => {
     setupPrism();
@@ -422,6 +449,7 @@
     setupToolsSpy();
     setupHeroDemo();
     setupCountUp();
+    setupEyebrow();
     renderMermaid();
     if (window.COAL_WIDGETS) window.COAL_WIDGETS.init();
     icons();

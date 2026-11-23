@@ -518,7 +518,7 @@ ${header(prefix)}
   <section class="hv hv-a">
     <div class="wrap hv-grid">
       <div class="hv-main">
-        <p class="hv-eyebrow">Computer Organization &amp; Assembly Language</p>
+        <p class="hv-eyebrow" aria-label="Computer Organization and Assembly Language (COAL)"><span class="ey-t" aria-hidden="true"><span class="ac">C</span>omputer <span class="ac">O</span>rganization &amp; <span class="ac">A</span>ssembly <span class="ac">L</span>anguage</span><span class="ey-coal" aria-hidden="true"><i style="--i:0">C</i><i style="--i:1">O</i><i style="--i:2">A</i><i style="--i:3">L</i></span></p>
         <h1 aria-label="Understand the machine. Then program it."><span class="w"><span style="--i:0">Understand</span></span> <span class="w"><span style="--i:1">the</span></span> <span class="w"><span style="--i:2">machine.</span></span> <span class="hv-red"><span class="w"><span style="--i:3">Then</span></span> <span class="w"><span style="--i:4">program</span></span> <span class="w"><span style="--i:5">it.</span></span><span class="hv-caret" aria-hidden="true"></span></span></h1>
         <p class="hv-lede">From the instruction cycle and registers to memory, buses and the 8086, explained clearly, drawn as diagrams and solved step by step.</p>
         <div class="hv-cta"><a class="btn btn--primary" href="${prefix}${pages[0].url}">Start learning<i data-lucide="arrow-right"></i></a><a class="btn hv-btn2" href="${prefix}${solved ? solved.url : 'tools/index.html'}">Solved problems</a></div>

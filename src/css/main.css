@@ -1073,3 +1073,17 @@ p.t-math { margin: 4px 0; }
 .cd-traces .tr { stroke: #222225; stroke-width: 1.5; }
 .cd-traces .tr-p { stroke-width: 2; filter: drop-shadow(0 0 3px rgba(255, 42, 54, .8)); }
 @media (max-width: 900px) { .cd-wrap { display: none; } .hv-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- 34. Hero eyebrow: no leading line; decodes, then the initials spell COAL ---------- */
+.hv-eyebrow::before { content: none; display: none; }
+.hv-eyebrow { flex-wrap: wrap; gap: 10px 14px; font-variant-numeric: tabular-nums; }
+.hv-eyebrow .ac { transition: color .4s, text-shadow .4s; }
+.hv-eyebrow.decoded .ac { color: #fff; text-shadow: 0 0 14px rgba(255, 77, 87, .9); animation: ac-pop .5s ease both; }
+.hv-eyebrow.decoded .ac:nth-child(2) { animation-delay: .12s; } .hv-eyebrow.decoded .ac:nth-child(3) { animation-delay: .24s; } .hv-eyebrow.decoded .ac:nth-child(4) { animation-delay: .36s; }
+@keyframes ac-pop { 0% { color: #ff4d57; text-shadow: none; } 50% { color: #fff; text-shadow: 0 0 22px rgba(255, 77, 87, 1); } }
+.ey-coal { display: inline-flex; gap: 2px; padding: 3px 8px; border: 1px solid rgba(255, 77, 87, .45); border-radius: 6px; background: rgba(227, 6, 19, .12); letter-spacing: .12em; opacity: 0; }
+.ey-coal i { font-style: normal; color: #fff; opacity: 0; transform: translateY(6px); display: inline-block; }
+.hv-eyebrow.decoded .ey-coal { opacity: 1; transition: opacity .3s .45s; }
+.hv-eyebrow.decoded .ey-coal i { animation: coal-in .45s cubic-bezier(.2, .8, .2, 1) both; animation-delay: calc(.55s + var(--i) * .1s); }
+@keyframes coal-in { to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .hv-eyebrow.decoded .ac, .hv-eyebrow.decoded .ey-coal i { animation: none; } .ey-coal, .ey-coal i { opacity: 1; transform: none; } }
