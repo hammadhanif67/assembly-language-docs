@@ -35,8 +35,8 @@
 <text class="d-mono" x="98" y="371.0" text-anchor="end" dominant-baseline="central">20000</text>
 <text class="d-mono" x="98" y="397.0" text-anchor="end" dominant-baseline="central">10000</text>
 <text class="d-mono" x="98" y="423.0" text-anchor="end" dominant-baseline="central">00000</text>
-<text class="d-label" x="495" y="207.0" text-anchor="middle" dominant-baseline="central">One segment</text>
-<text class="d-small" x="495" y="223.0" text-anchor="middle" dominant-baseline="central">64 KB = 2¹⁶ bytes</text>
+<text class="d-label" x="495" y="206.0" text-anchor="middle" dominant-baseline="central">One segment</text>
+<text class="d-small" x="495" y="224.0" text-anchor="middle" dominant-baseline="central">64 KB = 2¹⁶ bytes</text>
 <text class="d-mono" x="495" y="152.0" text-anchor="middle" dominant-baseline="central">8000:FFFF  (last byte)</text>
 <text class="d-mono" x="495" y="278.0" text-anchor="middle" dominant-baseline="central">8000:0000  (first byte)</text>
 <text class="d-small" x="430" y="320.0" text-anchor="middle" dominant-baseline="central">segment</text>

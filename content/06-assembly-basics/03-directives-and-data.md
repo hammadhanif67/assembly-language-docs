@@ -43,6 +43,10 @@ d   dd 0A1B2C3D4h     ; at offset 0002
 | Byte | `34` | `12` | `D4` | `C3` | `B2` | `A1` |
 | Belongs to | w (low) | w (high) | d byte 0 | d byte 1 | d byte 2 | d byte 3 |
 
+:::diagram data-layout
+Little-endian storage: the least significant byte is at the lowest address
+:::
+
 ## Constants: EQU and =
 
 ```asm

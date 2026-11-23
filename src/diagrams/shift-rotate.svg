@@ -1,0 +1,101 @@
+<svg viewBox="0 0 760 470" xmlns="http://www.w3.org/2000/svg" style="min-width:620px">
+<rect class="d-box-2" x="230" y="30" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="260" y="30" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="290" y="30" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="320" y="30" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="350" y="30" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="380" y="30" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="410" y="30" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="440" y="30" width="30" height="36" rx="0"/>
+<rect class="d-box-a" x="160" y="30" width="44" height="36" rx="0"/>
+<path class="d-line-acc d-arr-acc" d="M230.0 48.0 L204.0 48.0"/>
+<path class="d-line d-arr" d="M520.0 48.0 L470.0 48.0"/>
+<rect class="d-box-2" x="230" y="100" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="260" y="100" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="290" y="100" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="320" y="100" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="350" y="100" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="380" y="100" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="410" y="100" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="440" y="100" width="30" height="36" rx="0"/>
+<rect class="d-box-a" x="520" y="100" width="44" height="36" rx="0"/>
+<path class="d-line-acc d-arr-acc" d="M470.0 118.0 L520.0 118.0"/>
+<path class="d-line d-arr" d="M180.0 118.0 L230.0 118.0"/>
+<rect class="d-box-2" x="230" y="170" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="260" y="170" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="290" y="170" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="320" y="170" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="350" y="170" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="380" y="170" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="410" y="170" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="440" y="170" width="30" height="36" rx="0"/>
+<rect class="d-box-a" x="520" y="170" width="44" height="36" rx="0"/>
+<path class="d-line-acc d-arr-acc" d="M470.0 188.0 L520.0 188.0"/>
+<path class="d-line d-arr" d="M180.0 188.0 L230.0 188.0"/>
+<rect class="d-box-2" x="230" y="250" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="260" y="250" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="290" y="250" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="320" y="250" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="350" y="250" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="380" y="250" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="410" y="250" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="440" y="250" width="30" height="36" rx="0"/>
+<rect class="d-box-a" x="160" y="250" width="44" height="36" rx="0"/>
+<path class="d-line-acc d-arr-acc" d="M230.0 268.0 L204.0 268.0"/>
+<path class="d-line d-arr" d="M245.0 250.0 L245.0 240.0 L455.0 240.0 L455.0 250.0"/>
+<rect class="d-box-2" x="230" y="320" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="260" y="320" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="290" y="320" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="320" y="320" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="350" y="320" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="380" y="320" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="410" y="320" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="440" y="320" width="30" height="36" rx="0"/>
+<rect class="d-box-a" x="520" y="320" width="44" height="36" rx="0"/>
+<path class="d-line-acc d-arr-acc" d="M470.0 338.0 L520.0 338.0"/>
+<path class="d-line d-arr" d="M455.0 320.0 L455.0 310.0 L245.0 310.0 L245.0 320.0"/>
+<rect class="d-box-2" x="230" y="390" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="260" y="390" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="290" y="390" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="320" y="390" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="350" y="390" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="380" y="390" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="410" y="390" width="30" height="36" rx="0"/>
+<rect class="d-box-2" x="440" y="390" width="30" height="36" rx="0"/>
+<rect class="d-box-a" x="160" y="390" width="44" height="36" rx="0"/>
+<path class="d-line-acc d-arr-acc" d="M230.0 408.0 L204.0 408.0"/>
+<path class="d-line d-arr" d="M182.0 426.0 L182.0 438.0 L455.0 438.0 L455.0 426.0"/>
+<text class="d-mono" x="20" y="48.0" text-anchor="start" dominant-baseline="central">SHL / SAL</text>
+<text class="d-mono" x="245" y="48.0" text-anchor="middle" dominant-baseline="central">b7</text>
+<text class="d-mono" x="455" y="48.0" text-anchor="middle" dominant-baseline="central">b0</text>
+<text class="d-mono d-on-accent" x="182" y="48.0" text-anchor="middle" dominant-baseline="central">CF</text>
+<text class="d-small" x="530" y="48.0" text-anchor="start" dominant-baseline="central">0</text>
+<text class="d-small" x="600" y="48.0" text-anchor="start" dominant-baseline="central">× 2 (unsigned &amp; signed)</text>
+<text class="d-mono" x="20" y="118.0" text-anchor="start" dominant-baseline="central">SHR</text>
+<text class="d-mono" x="245" y="118.0" text-anchor="middle" dominant-baseline="central">b7</text>
+<text class="d-mono" x="455" y="118.0" text-anchor="middle" dominant-baseline="central">b0</text>
+<text class="d-mono d-on-accent" x="542" y="118.0" text-anchor="middle" dominant-baseline="central">CF</text>
+<text class="d-small" x="174" y="118.0" text-anchor="end" dominant-baseline="central">0</text>
+<text class="d-small" x="600" y="118.0" text-anchor="start" dominant-baseline="central">÷ 2 unsigned</text>
+<text class="d-mono" x="20" y="188.0" text-anchor="start" dominant-baseline="central">SAR</text>
+<text class="d-mono" x="245" y="188.0" text-anchor="middle" dominant-baseline="central">b7</text>
+<text class="d-mono" x="455" y="188.0" text-anchor="middle" dominant-baseline="central">b0</text>
+<text class="d-mono d-on-accent" x="542" y="188.0" text-anchor="middle" dominant-baseline="central">CF</text>
+<text class="d-small" x="174" y="188.0" text-anchor="end" dominant-baseline="central">sign</text>
+<text class="d-small" x="600" y="188.0" text-anchor="start" dominant-baseline="central">÷ 2 signed</text>
+<text class="d-mono" x="20" y="268.0" text-anchor="start" dominant-baseline="central">ROL</text>
+<text class="d-mono" x="245" y="268.0" text-anchor="middle" dominant-baseline="central">b7</text>
+<text class="d-mono" x="455" y="268.0" text-anchor="middle" dominant-baseline="central">b0</text>
+<text class="d-mono d-on-accent" x="182" y="268.0" text-anchor="middle" dominant-baseline="central">CF</text>
+<text class="d-small" x="600" y="268.0" text-anchor="start" dominant-baseline="central">b7 → b0 and CF</text>
+<text class="d-mono" x="20" y="338.0" text-anchor="start" dominant-baseline="central">ROR</text>
+<text class="d-mono" x="245" y="338.0" text-anchor="middle" dominant-baseline="central">b7</text>
+<text class="d-mono" x="455" y="338.0" text-anchor="middle" dominant-baseline="central">b0</text>
+<text class="d-mono d-on-accent" x="542" y="338.0" text-anchor="middle" dominant-baseline="central">CF</text>
+<text class="d-small" x="600" y="338.0" text-anchor="start" dominant-baseline="central">b0 → b7 and CF</text>
+<text class="d-mono" x="20" y="408.0" text-anchor="start" dominant-baseline="central">RCL</text>
+<text class="d-mono" x="245" y="408.0" text-anchor="middle" dominant-baseline="central">b7</text>
+<text class="d-mono" x="455" y="408.0" text-anchor="middle" dominant-baseline="central">b0</text>
+<text class="d-mono d-on-accent" x="182" y="408.0" text-anchor="middle" dominant-baseline="central">CF</text>
+<text class="d-small" x="600" y="408.0" text-anchor="start" dominant-baseline="central">9-bit rotate through CF</text>
+</svg>

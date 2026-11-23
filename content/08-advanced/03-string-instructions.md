@@ -20,6 +20,10 @@ use exactly those registers and move through memory one byte or word at a time.
 
 “Advance” means **+1/+2 if DF = 0** (`CLD`, forward) or **−1/−2 if DF = 1** (`STD`, backward).
 
+:::diagram movsb
+MOVSB copies a byte from DS:SI to ES:DI and steps both pointers
+:::
+
 ## Repeat prefixes
 
 | Prefix | Repeats while | Use with |

@@ -12,23 +12,23 @@
 <path class="d-line-acc d-arr2-acc" d="M440.0 78.0 L440.0 140.0"/>
 <rect class="d-box" x="170" y="390" width="300" height="50" rx="2"/>
 <path class="d-line d-arr2" d="M320.0 330.0 L320.0 390.0"/>
-<text class="d-title" x="155" y="40.0" text-anchor="middle" dominant-baseline="central">Instruction memory</text>
-<text class="d-small" x="155" y="56.0" text-anchor="middle" dominant-baseline="central">ROM / Flash</text>
-<text class="d-title" x="485" y="40.0" text-anchor="middle" dominant-baseline="central">Data memory</text>
-<text class="d-small" x="485" y="56.0" text-anchor="middle" dominant-baseline="central">RAM</text>
+<text class="d-title" x="155" y="39.0" text-anchor="middle" dominant-baseline="central">Instruction memory</text>
+<text class="d-small" x="155" y="57.0" text-anchor="middle" dominant-baseline="central">ROM / Flash</text>
+<text class="d-title" x="485" y="39.0" text-anchor="middle" dominant-baseline="central">Data memory</text>
+<text class="d-small" x="485" y="57.0" text-anchor="middle" dominant-baseline="central">RAM</text>
 <text class="d-caps" x="180" y="154.0" text-anchor="start" dominant-baseline="central">Central processing unit</text>
 <text class="d-label" x="250" y="196.0" text-anchor="middle" dominant-baseline="central">Registers</text>
 <text class="d-label" x="250" y="246.0" text-anchor="middle" dominant-baseline="central">Program counter</text>
-<text class="d-label" x="390" y="213.0" text-anchor="middle" dominant-baseline="central">Arithmetic &amp;</text>
-<text class="d-label" x="390" y="229.0" text-anchor="middle" dominant-baseline="central">logic unit</text>
+<text class="d-label" x="390" y="212.0" text-anchor="middle" dominant-baseline="central">Arithmetic &amp;</text>
+<text class="d-label" x="390" y="230.0" text-anchor="middle" dominant-baseline="central">logic unit</text>
 <text class="d-label" x="320" y="297.0" text-anchor="middle" dominant-baseline="central">Control unit</text>
-<rect x="150.9" y="100.3" width="98.2" height="17.5" fill="var(--d-canvas)"/>
-<text class="d-small" x="200" y="109.0" text-anchor="middle" dominant-baseline="central">instr. address</text>
-<rect x="210.6" y="100.3" width="78.8" height="17.5" fill="var(--d-canvas)"/>
-<text class="d-small" x="250" y="109.0" text-anchor="middle" dominant-baseline="central">instruction</text>
-<rect x="347.4" y="100.3" width="85.3" height="17.5" fill="var(--d-canvas)"/>
-<text class="d-small" x="390" y="109.0" text-anchor="middle" dominant-baseline="central">data address</text>
-<rect x="423.1" y="100.3" width="33.8" height="17.5" fill="var(--d-canvas)"/>
-<text class="d-small" x="440" y="109.0" text-anchor="middle" dominant-baseline="central">data</text>
+<rect x="150.9" y="89.3" width="98.2" height="17.5" fill="var(--d-canvas)"/>
+<text class="d-small" x="200" y="98.0" text-anchor="middle" dominant-baseline="central">instr. address</text>
+<rect x="216.6" y="113.3" width="78.8" height="17.5" fill="var(--d-canvas)"/>
+<text class="d-small" x="256" y="122.0" text-anchor="middle" dominant-baseline="central">instruction</text>
+<rect x="347.4" y="89.3" width="85.3" height="17.5" fill="var(--d-canvas)"/>
+<text class="d-small" x="390" y="98.0" text-anchor="middle" dominant-baseline="central">data address</text>
+<rect x="427.1" y="113.3" width="33.8" height="17.5" fill="var(--d-canvas)"/>
+<text class="d-small" x="444" y="122.0" text-anchor="middle" dominant-baseline="central">data</text>
 <text class="d-title" x="320" y="415.0" text-anchor="middle" dominant-baseline="central">Input / Output</text>
 </svg>

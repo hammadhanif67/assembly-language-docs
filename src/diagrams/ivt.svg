@@ -1,0 +1,55 @@
+<svg viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" style="min-width:620px">
+<rect class="d-box" x="110" y="40" width="120" height="34" rx="0"/>
+<rect class="d-box" x="230" y="40" width="120" height="34" rx="0"/>
+<rect class="d-box" x="110" y="74" width="120" height="34" rx="0"/>
+<rect class="d-box" x="230" y="74" width="120" height="34" rx="0"/>
+<rect class="d-box" x="110" y="108" width="120" height="34" rx="0"/>
+<rect class="d-box" x="230" y="108" width="120" height="34" rx="0"/>
+<rect class="d-box" x="110" y="142" width="120" height="34" rx="0"/>
+<rect class="d-box" x="230" y="142" width="120" height="34" rx="0"/>
+<rect class="d-box" x="110" y="176" width="120" height="34" rx="0"/>
+<rect class="d-box" x="230" y="176" width="120" height="34" rx="0"/>
+<rect class="d-box" x="110" y="210" width="120" height="34" rx="0"/>
+<rect class="d-box" x="230" y="210" width="120" height="34" rx="0"/>
+<rect class="d-box-a" x="110" y="244" width="120" height="34" rx="0"/>
+<rect class="d-box-a" x="230" y="244" width="120" height="34" rx="0"/>
+<rect class="d-box" x="110" y="278" width="120" height="34" rx="0"/>
+<rect class="d-box" x="230" y="278" width="120" height="34" rx="0"/>
+<rect class="d-box" x="110" y="312" width="120" height="34" rx="0"/>
+<rect class="d-box" x="230" y="312" width="120" height="34" rx="0"/>
+<rect class="d-box-3" x="560" y="236" width="170" height="60" rx="2"/>
+<path class="d-line-acc d-arr-acc" d="M350.0 261.0 L500.0 261.0 L500.0 266.0 L560.0 266.0"/>
+<text class="d-caps" x="40" y="24.0" text-anchor="start" dominant-baseline="central">INTERRUPT VECTOR TABLE  0000:0000 – 0000:03FF</text>
+<text class="d-mono" x="100" y="57.0" text-anchor="end" dominant-baseline="central">0000</text>
+<text class="d-mono" x="170" y="57.0" text-anchor="middle" dominant-baseline="central">IP (offset)</text>
+<text class="d-mono" x="290" y="57.0" text-anchor="middle" dominant-baseline="central">CS (segment)</text>
+<text class="d-small" x="366" y="57.0" text-anchor="start" dominant-baseline="central">INT 00h · divide error</text>
+<text class="d-mono" x="100" y="91.0" text-anchor="end" dominant-baseline="central">0004</text>
+<text class="d-mono" x="170" y="91.0" text-anchor="middle" dominant-baseline="central">IP (offset)</text>
+<text class="d-mono" x="290" y="91.0" text-anchor="middle" dominant-baseline="central">CS (segment)</text>
+<text class="d-small" x="366" y="91.0" text-anchor="start" dominant-baseline="central">INT 01h · single step</text>
+<text class="d-mono" x="100" y="125.0" text-anchor="end" dominant-baseline="central">0008</text>
+<text class="d-mono" x="170" y="125.0" text-anchor="middle" dominant-baseline="central">IP (offset)</text>
+<text class="d-mono" x="290" y="125.0" text-anchor="middle" dominant-baseline="central">CS (segment)</text>
+<text class="d-small" x="366" y="125.0" text-anchor="start" dominant-baseline="central">INT 02h · NMI</text>
+<text class="d-mono" x="100" y="159.0" text-anchor="end" dominant-baseline="central">⋮</text>
+<text class="d-mono" x="100" y="193.0" text-anchor="end" dominant-baseline="central">0040</text>
+<text class="d-mono" x="170" y="193.0" text-anchor="middle" dominant-baseline="central">IP (offset)</text>
+<text class="d-mono" x="290" y="193.0" text-anchor="middle" dominant-baseline="central">CS (segment)</text>
+<text class="d-small" x="366" y="193.0" text-anchor="start" dominant-baseline="central">INT 10h · BIOS video</text>
+<text class="d-mono" x="100" y="227.0" text-anchor="end" dominant-baseline="central">⋮</text>
+<text class="d-mono" x="100" y="261.0" text-anchor="end" dominant-baseline="central">0084</text>
+<text class="d-mono d-on-accent" x="170" y="261.0" text-anchor="middle" dominant-baseline="central">IP (offset)</text>
+<text class="d-mono d-on-accent" x="290" y="261.0" text-anchor="middle" dominant-baseline="central">CS (segment)</text>
+<text class="d-label d-red" x="366" y="261.0" text-anchor="start" dominant-baseline="central">INT 21h · DOS services</text>
+<text class="d-mono" x="100" y="295.0" text-anchor="end" dominant-baseline="central">⋮</text>
+<text class="d-mono" x="100" y="329.0" text-anchor="end" dominant-baseline="central">03FC</text>
+<text class="d-mono" x="170" y="329.0" text-anchor="middle" dominant-baseline="central">IP (offset)</text>
+<text class="d-mono" x="290" y="329.0" text-anchor="middle" dominant-baseline="central">CS (segment)</text>
+<text class="d-small" x="366" y="329.0" text-anchor="start" dominant-baseline="central">INT FFh</text>
+<text class="d-title" x="645" y="257.0" text-anchor="middle" dominant-baseline="central">DOS handler</text>
+<text class="d-small" x="645" y="275.0" text-anchor="middle" dominant-baseline="central">interrupt service routine</text>
+<text class="d-small" x="530" y="222.0" text-anchor="middle" dominant-baseline="central">CS:IP of the handler</text>
+<text class="d-mono" x="560" y="321.0" text-anchor="start" dominant-baseline="central">vector address = n × 4</text>
+<text class="d-mono" x="560" y="339.0" text-anchor="start" dominant-baseline="central">21h × 4 = 84h</text>
+</svg>

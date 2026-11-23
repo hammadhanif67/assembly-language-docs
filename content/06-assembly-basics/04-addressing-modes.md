@@ -41,6 +41,10 @@ EA = [ BX | BP ] + [ SI | DI ] + [ 8- or 16-bit displacement ]      (any part ma
 Physical address = segment × 10h + EA
 ```
 
+:::diagram ea-calc
+From addressing-mode parts to the effective address and then the physical address
+:::
+
 ## Default segment registers
 
 | EA uses… | Default segment |

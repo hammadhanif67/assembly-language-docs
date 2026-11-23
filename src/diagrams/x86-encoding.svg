@@ -15,16 +15,16 @@
 <rect class="d-box-3" x="420" y="140" width="80" height="40" rx="0"/>
 <rect class="d-box-3" x="500" y="140" width="120" height="40" rx="0"/>
 <rect class="d-box-3" x="620" y="140" width="120" height="40" rx="0"/>
-<text class="d-label" x="85" y="49.0" text-anchor="middle" dominant-baseline="central">Prefix</text>
-<text class="d-small" x="85" y="65.0" text-anchor="middle" dominant-baseline="central">0–4 bytes</text>
-<text class="d-label d-on-accent" x="190" y="49.0" text-anchor="middle" dominant-baseline="central">Opcode</text>
-<text class="d-small d-on-accent" x="190" y="65.0" text-anchor="middle" dominant-baseline="central">1–2 bytes</text>
-<text class="d-label" x="310" y="49.0" text-anchor="middle" dominant-baseline="central">ModR/M</text>
-<text class="d-small" x="310" y="65.0" text-anchor="middle" dominant-baseline="central">0–1 byte</text>
-<text class="d-label" x="450" y="49.0" text-anchor="middle" dominant-baseline="central">Displacement</text>
-<text class="d-small" x="450" y="65.0" text-anchor="middle" dominant-baseline="central">0, 1 or 2 bytes</text>
-<text class="d-label" x="610" y="49.0" text-anchor="middle" dominant-baseline="central">Immediate data</text>
-<text class="d-small" x="610" y="65.0" text-anchor="middle" dominant-baseline="central">0, 1 or 2 bytes</text>
+<text class="d-label" x="85" y="48.0" text-anchor="middle" dominant-baseline="central">Prefix</text>
+<text class="d-small" x="85" y="66.0" text-anchor="middle" dominant-baseline="central">0–4 bytes</text>
+<text class="d-label d-on-accent" x="190" y="48.0" text-anchor="middle" dominant-baseline="central">Opcode</text>
+<text class="d-small d-on-accent" x="190" y="66.0" text-anchor="middle" dominant-baseline="central">1–2 bytes</text>
+<text class="d-label" x="310" y="48.0" text-anchor="middle" dominant-baseline="central">ModR/M</text>
+<text class="d-small" x="310" y="66.0" text-anchor="middle" dominant-baseline="central">0–1 byte</text>
+<text class="d-label" x="450" y="48.0" text-anchor="middle" dominant-baseline="central">Displacement</text>
+<text class="d-small" x="450" y="66.0" text-anchor="middle" dominant-baseline="central">0, 1 or 2 bytes</text>
+<text class="d-label" x="610" y="48.0" text-anchor="middle" dominant-baseline="central">Immediate data</text>
+<text class="d-small" x="610" y="66.0" text-anchor="middle" dominant-baseline="central">0, 1 or 2 bytes</text>
 <text class="d-caps" x="40" y="126.0" text-anchor="start" dominant-baseline="central">OPCODE BYTE</text>
 <text class="d-mono" x="60" y="160.0" text-anchor="middle" dominant-baseline="central">1</text>
 <text class="d-mono" x="100" y="160.0" text-anchor="middle" dominant-baseline="central">0</text>

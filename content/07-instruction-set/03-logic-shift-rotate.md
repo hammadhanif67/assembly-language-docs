@@ -37,21 +37,10 @@ jz  is_even
 
 The count is `1` or the register **CL** on the 8086 (`shl ax, 3` needs an 80186+).
 
-```mermaid
-flowchart LR
-  subgraph SHL["SHL / SAL (left)"]
-    direction LR
-    C1[CF] --- A1["b7 … b0"] --- Z1["0 in"]
-  end
-  subgraph SHR["SHR (logical right)"]
-    direction LR
-    Z2["0 in"] --- A2["b7 … b0"] --- C2[CF]
-  end
-  subgraph SAR["SAR (arithmetic right)"]
-    direction LR
-    S3["sign bit copied in"] --- A3["b7 … b0"] --- C3[CF]
-  end
-```
+:::diagram shift-rotate
+How each shift and rotate moves the bits of a byte
+:::
+
 
 | Instruction | Effect | Arithmetic meaning |
 |---|---|---|

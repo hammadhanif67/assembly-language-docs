@@ -48,9 +48,9 @@
 <text class="d-label" x="205" y="210.0" text-anchor="middle" dominant-baseline="central">Flag flip-flops</text>
 <text class="d-label d-on-accent" x="140" y="275.0" text-anchor="middle" dominant-baseline="central">ALU</text>
 <text class="d-label" x="375" y="150.0" text-anchor="middle" dominant-baseline="central">Instruction register</text>
-<text class="d-label" x="375" y="209.0" text-anchor="middle" dominant-baseline="central">Instruction decoder</text>
+<text class="d-label" x="375" y="207.0" text-anchor="middle" dominant-baseline="central">Instruction decoder</text>
 <text class="d-label" x="375" y="225.0" text-anchor="middle" dominant-baseline="central">&amp; machine cycle</text>
-<text class="d-label" x="375" y="241.0" text-anchor="middle" dominant-baseline="central">encoding</text>
+<text class="d-label" x="375" y="243.0" text-anchor="middle" dominant-baseline="central">encoding</text>
 <text class="d-caps" x="510" y="134.0" text-anchor="start" dominant-baseline="central">Register array</text>
 <text class="d-mono" x="575" y="157.0" text-anchor="middle" dominant-baseline="central">W (temp)</text>
 <text class="d-mono" x="685" y="157.0" text-anchor="middle" dominant-baseline="central">Z (temp)</text>
@@ -63,11 +63,11 @@
 <text class="d-label" x="630" y="295.0" text-anchor="middle" dominant-baseline="central">Stack pointer (16)</text>
 <text class="d-label" x="630" y="325.0" text-anchor="middle" dominant-baseline="central">Program counter (16)</text>
 <text class="d-label" x="630" y="355.0" text-anchor="middle" dominant-baseline="central">Incr/decr latch (16)</text>
-<text class="d-title" x="235" y="367.0" text-anchor="middle" dominant-baseline="central">Timing &amp; control</text>
-<text class="d-small" x="235" y="383.0" text-anchor="middle" dominant-baseline="central">CLK · READY · RD · WR · ALE · S0 S1 · IO/M · HOLD · HLDA · RESET</text>
+<text class="d-title" x="235" y="366.0" text-anchor="middle" dominant-baseline="central">Timing &amp; control</text>
+<text class="d-small" x="235" y="384.0" text-anchor="middle" dominant-baseline="central">CLK · READY · RD · WR · ALE · S0 S1 · IO/M · HOLD · HLDA · RESET</text>
 <text class="d-label" x="562.5" y="430.0" text-anchor="middle" dominant-baseline="central">Address buffer</text>
-<text class="d-label" x="705" y="422.0" text-anchor="middle" dominant-baseline="central">Data / address</text>
-<text class="d-label" x="705" y="438.0" text-anchor="middle" dominant-baseline="central">buffer</text>
+<text class="d-label" x="705" y="421.0" text-anchor="middle" dominant-baseline="central">Data / address</text>
+<text class="d-label" x="705" y="439.0" text-anchor="middle" dominant-baseline="central">buffer</text>
 <text class="d-small" x="560" y="476.0" text-anchor="middle" dominant-baseline="central">A15–A8 address bus</text>
 <text class="d-small" x="705" y="476.0" text-anchor="middle" dominant-baseline="central">AD7–AD0 address/data bus</text>
 </svg>

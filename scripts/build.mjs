@@ -117,9 +117,14 @@ function makeMarked(toc) {
 
 function preprocess(body, prefix, raws) {
   const keep = (html) => `\n\nCOALRAW${raws.push(html) - 1}X\n\n`;
-  return body.replace(/^:::(diagram|figure|widget|note|tip|warning)(?:[ \t]+([^\n]+))?\n([\s\S]*?)\n:::[ \t]*$/gm, (_, kind, arg = '', text) => {
+  const photo = (file, caption) =>
+    `<figure class="photo"><button class="photo-zoom" type="button" data-src="${prefix}assets/img/${esc(file)}" data-caption="${esc(caption)}" aria-label="Enlarge image: ${esc(caption)}"><img src="${prefix}assets/img/${esc(file)}" alt="${esc(caption)}" loading="lazy" decoding="async"></button><figcaption>${esc(caption)}</figcaption></figure>`;
+  return body.replace(/^:::(diagram|figures|figure|widget|note|tip|warning)(?:[ \t]+([^\n]+))?\n([\s\S]*?)\n:::[ \t]*$/gm, (_, kind, arg = '', text) => {
     const caption = text.trim().replace(/^Figure:\s*/, '');
     arg = arg.trim();
+    // :::figures — one row of photos, each line "file.jpg | caption"
+    if (kind === 'figures')
+      return keep(`<div class="photo-row">${caption.split('\n').map((l) => l.split('|').map((x) => x.trim())).map(([f, c]) => photo(f, c || '')).join('')}</div>`);
     if (kind === 'diagram') return keep(renderDiagram(arg, caption));
     if (kind === 'figure')
       return keep(`<figure class="photo"><button class="photo-zoom" type="button" data-src="${prefix}assets/img/${esc(arg)}" data-caption="${esc(caption)}" aria-label="Enlarge image: ${esc(caption)}"><img src="${prefix}assets/img/${esc(arg)}" alt="${esc(caption)}" loading="lazy" decoding="async"></button><figcaption>${esc(caption)}</figcaption></figure>`);
@@ -218,6 +223,7 @@ function header(prefix, current = null) {
     <nav class="hdr-nav" aria-label="Main">
       <button class="index-toggle" type="button" aria-expanded="false" aria-controls="index-panel"><span>Index</span><i data-lucide="chevron-down" aria-hidden="true"></i></button>
       <a class="hdr-link" href="${prefix}index.html#chapters">Chapters</a>
+      <a class="hdr-link" href="${prefix}tools/index.html">Tools</a>
       <a class="hdr-link" href="${prefix}${pages[0].url}">Start</a>
     </nav>
     <button class="search-trigger" type="button" aria-label="Search" data-search-open><i data-lucide="search" aria-hidden="true"></i><span class="search-trigger-text">Search</span><kbd>Ctrl K</kbd></button>
@@ -233,7 +239,7 @@ function footer(prefix, extraScripts = '') {
   <div class="ftr">
     <div class="ftr-brand"><a class="brand" href="${prefix}index.html">${LOGO.replaceAll('coal-logo', 'coal-logo-f')}<span class="brand-name">COAL<span class="brand-docs">Docs</span></span></a><p>${SITE.full}. Lessons, diagrams and interactive tools for learning how a computer works, down to the 8086 instruction set.</p></div>
     <nav class="ftr-nav" aria-label="Chapters"><p class="eyebrow">Chapters</p><ol>${cols}</ol></nav>
-    <nav class="ftr-nav" aria-label="More"><p class="eyebrow">More</p><ul><li><a href="${prefix}index.html">Home</a></li><li><a href="${prefix}${pages[0].url}">Start learning</a></li><li><button type="button" class="link-btn" data-search-open>Search</button></li><li><a href="${SITE.repo}" target="_blank" rel="noopener">GitHub</a></li></ul></nav>
+    <nav class="ftr-nav" aria-label="More"><p class="eyebrow">More</p><ul><li><a href="${prefix}index.html">Home</a></li><li><a href="${prefix}${pages[0].url}">Start learning</a></li><li><a href="${prefix}tools/index.html">Calculators &amp; tools</a></li><li><button type="button" class="link-btn" data-search-open>Search</button></li><li><a href="${SITE.repo}" target="_blank" rel="noopener">GitHub</a></li></ul></nav>
   </div>
 </footer>
 <button class="back-to-top" type="button" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
@@ -252,8 +258,8 @@ function footer(prefix, extraScripts = '') {
 <script src="${CDN.prism}/prism.min.js" data-manual defer></script>
 <script src="${CDN.prism}/components/prism-nasm.min.js" defer></script>
 <script src="${CDN.prism}/plugins/line-numbers/prism-line-numbers.min.js" defer></script>
-${extraScripts}
 <script src="${prefix}js/widgets.js" defer></script>
+${extraScripts}
 <script src="${prefix}js/main.js" defer></script>
 </body>
 </html>`;
@@ -356,6 +362,64 @@ ${footer(prefix)}`;
   writePage(ch.url, out);
 }
 
+// ---------- tools (calculator workbench) ----------
+const TOOL_GROUPS = [
+  ['Numbers', [
+    ['base', 'tool-base', 'Number converter', 'Decimal, hexadecimal, binary and octal in one place, for 8, 16 or 32 bits — with clickable bits.', 'binary'],
+    ['twos', 'tool-twos', 'Two’s complement', 'See how a negative number is stored, step by step: invert the bits, add one.', 'minus'],
+    ['ieee', 'tool-ieee', 'IEEE 754 floating point', 'Turn a decimal number into its sign, exponent and fraction bits — or back again.', 'sigma'],
+    ['ascii', 'tool-ascii', 'ASCII codes', 'Characters to codes and codes to characters, ready to paste into a DB directive.', 'type'],
+  ]],
+  ['Instructions', [
+    ['alu', 'tool-alu', 'ALU & flags', 'Run ADD, SUB, CMP, AND, OR, XOR, INC, DEC or NEG and see CF, ZF, SF, OF, PF and AF.', 'flag'],
+    ['shift', 'tool-shift', 'Shift & rotate', 'SHL, SHR, SAR, ROL, ROR, RCL and RCR, bit by bit with the carry flag.', 'arrow-left-right'],
+    ['muldiv', 'tool-muldiv', 'MUL & DIV', 'Exactly which registers hold the product, quotient and remainder — and when division overflows.', 'divide'],
+  ]],
+  ['Memory & addressing', [
+    ['segoff', 'tool-segoff', 'Segment : offset', 'Physical address from segment and offset, or solve for the missing one.', 'map-pin'],
+    ['ea', 'tool-ea', 'Effective address', 'Pick an 8086 addressing mode and register values; get the EA, segment and physical address.', 'crosshair'],
+    ['memory', 'tool-memory', 'Address bus & memory size', 'How much memory n address lines can reach, and how many lines a memory needs.', 'memory-stick'],
+    ['cache', 'tool-cache', 'Cache address split', 'Break an address into tag, index and offset for any cache size and mapping.', 'layers'],
+  ]],
+];
+
+function renderTools() {
+  const prefix = '../';
+  const all = TOOL_GROUPS.flatMap(([, t]) => t);
+  const nav = TOOL_GROUPS.map(([g, list]) => `<p class="eyebrow">${g}</p><ol>${list.map(([id, , title]) => `<li><a href="#${id}">${title}</a></li>`).join('')}</ol>`).join('');
+  let n = 0;
+  const panels = TOOL_GROUPS.map(([g, list]) => `<h2 class="tools-group">${g}</h2>` + list.map(([id, widget, title, desc, icon]) => {
+    n++;
+    return `<section class="tool-panel" id="${id}" aria-labelledby="${id}-t">
+  <header class="tp-head"><span class="tp-num">${pad(n)}</span><div><h3 id="${id}-t"><i data-lucide="${icon}" aria-hidden="true"></i>${title}</h3><p>${desc}</p></div></header>
+  <div class="widget tool-widget" data-widget="${widget}"></div>
+</section>`;
+  }).join('')).join('');
+  const out = `${head({ title: `Calculators & Tools — ${SITE.name}`, description: 'Calculators for computer organization and assembly: number bases, two’s complement, flags, shifts, MUL/DIV, segment:offset, effective address, IEEE 754, ASCII, memory size and cache mapping.', prefix })}
+<body class="tools-page">
+${header(prefix)}
+<main id="main" tabindex="-1">
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="${prefix}index.html">Home</a></li><li aria-current="page">Tools</li></ol></nav>
+    <header class="chapter-head tools-head">
+      <p class="ch-big" aria-hidden="true">±</p>
+      <div>
+        <p class="eyebrow">Workbench · ${all.length} calculators</p>
+        <h1>Calculators &amp; Tools</h1>
+        <p class="lede">Every calculation you meet in COAL — number bases, signed numbers, flags, shifts, multiplication and division, addresses, floating point and caches. Results update as you type.</p>
+      </div>
+    </header>
+    <div class="tools-layout">
+      <aside class="tools-nav" aria-label="Tools"><nav>${nav}</nav></aside>
+      <div class="tools-main">${panels}</div>
+    </div>
+  </div>
+</main>
+${footer(prefix, `<script src="${prefix}js/tools.js" defer></script>`)}`;
+  writePage('tools/index.html', out);
+  searchIndex.push({ t: 'Calculators & Tools', u: 'tools/index.html', c: 'Tools', r: false, h: all.map((t) => t[2]).join(' · '), hs: all.map((t) => [t[2], t[0]]), x: all.map((t) => `${t[2]}. ${t[3]}`).join(' ') + ' binary decimal hexadecimal octal convert calculator flags carry overflow physical address' });
+}
+
 // ---------- home ----------
 function renderHome() {
   const prefix = './';
@@ -370,13 +434,8 @@ function renderHome() {
 </a></li>`
     )
     .join('');
-  const tools = [
-    ['Program execution', 'Step through a real fetch–decode–execute example, one register at a time.', 'processor/instruction-cycle.html#example-program-execution', 'play'],
-    ['Address calculator', 'Turn a segment:offset pair into a 20-bit physical address.', 'registers-memory/memory-segmentation.html#segment-offset-address', 'calculator'],
-    ['Number converter', 'Convert between decimal, hex, binary and octal, with two’s complement.', 'data-representation/number-systems.html#try-it', 'binary'],
-    ['Stack simulator', 'PUSH and POP values and watch SP move.', 'advanced/stack-and-procedures.html#how-the-stack-works', 'layers'],
-  ]
-    .map(([t, d, u, i]) => `<li><a class="tool" href="${prefix}${u}"><i data-lucide="${i}" aria-hidden="true"></i><span class="tool-title">${t}</span><span class="tool-desc">${d}</span></a></li>`)
+  const tools = TOOL_GROUPS.flatMap(([, t]) => t).slice(0, 8)
+    .map(([id, , t, d, i]) => `<li><a class="tool" href="${prefix}tools/index.html#${id}"><i data-lucide="${i}" aria-hidden="true"></i><span class="tool-title">${t}</span><span class="tool-desc">${d}</span></a></li>`)
     .join('');
   const out = `${head({ title: `${SITE.name} — ${SITE.full}`, description: 'Learn Computer Organization & Assembly Language: processors, registers, memory, the 8085 and 8086, and x86 assembly programming — with clear diagrams and interactive tools.', prefix })}
 <body class="home-page">
@@ -406,8 +465,9 @@ ${header(prefix)}
   </section>
   <section class="home-block home-block--alt">
     <div class="wrap">
-      <div class="block-head"><p class="eyebrow">Learn by doing</p><h2>Interactive tools</h2></div>
+      <div class="block-head"><p class="eyebrow">Workbench</p><h2>Calculators &amp; tools</h2></div>
       <ul class="tool-grid">${tools}</ul>
+      <p class="more-tools"><a class="btn" href="${prefix}tools/index.html">Open all ${TOOL_GROUPS.flatMap(([, t]) => t).length} calculators<i data-lucide="arrow-right"></i></a></p>
     </div>
   </section>
   <section class="home-block">
@@ -443,6 +503,7 @@ copyDir(path.join(SRC, 'js'), path.join(DIST, 'js'));
 copyDir(path.join(SRC, 'assets'), path.join(DIST, 'assets'));
 pages.forEach(renderLesson);
 chs.forEach(renderChapter);
+renderTools();
 renderHome();
 render404();
 fs.writeFileSync(path.join(DIST, 'search-index.js'), `window.COAL_SEARCH=${JSON.stringify(searchIndex)};`);

@@ -9,13 +9,13 @@
 <path class="d-line-acc d-arr2-acc" d="M340.0 78.0 L340.0 140.0"/>
 <rect class="d-box" x="130" y="390" width="300" height="50" rx="2"/>
 <path class="d-line d-arr2" d="M280.0 330.0 L280.0 390.0"/>
-<text class="d-title" x="280" y="40.0" text-anchor="middle" dominant-baseline="central">Main memory</text>
-<text class="d-small" x="280" y="56.0" text-anchor="middle" dominant-baseline="central">instructions + data together</text>
+<text class="d-title" x="280" y="39.0" text-anchor="middle" dominant-baseline="central">Main memory</text>
+<text class="d-small" x="280" y="57.0" text-anchor="middle" dominant-baseline="central">instructions + data together</text>
 <text class="d-caps" x="140" y="154.0" text-anchor="start" dominant-baseline="central">Central processing unit</text>
 <text class="d-label" x="210" y="196.0" text-anchor="middle" dominant-baseline="central">Registers</text>
 <text class="d-label" x="210" y="246.0" text-anchor="middle" dominant-baseline="central">Program counter</text>
-<text class="d-label" x="350" y="213.0" text-anchor="middle" dominant-baseline="central">Arithmetic &amp;</text>
-<text class="d-label" x="350" y="229.0" text-anchor="middle" dominant-baseline="central">logic unit</text>
+<text class="d-label" x="350" y="212.0" text-anchor="middle" dominant-baseline="central">Arithmetic &amp;</text>
+<text class="d-label" x="350" y="230.0" text-anchor="middle" dominant-baseline="central">logic unit</text>
 <text class="d-label" x="280" y="297.0" text-anchor="middle" dominant-baseline="central">Control unit</text>
 <rect x="193.5" y="100.3" width="53.1" height="17.5" fill="var(--d-canvas)"/>
 <text class="d-small" x="220" y="109.0" text-anchor="middle" dominant-baseline="central">address</text>

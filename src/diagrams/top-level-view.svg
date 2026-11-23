@@ -38,8 +38,8 @@
 <text class="d-mono" x="225" y="111.0" text-anchor="middle" dominant-baseline="central">MBR</text>
 <text class="d-mono" x="225" y="155.0" text-anchor="middle" dominant-baseline="central">I/O AR</text>
 <text class="d-mono" x="225" y="199.0" text-anchor="middle" dominant-baseline="central">I/O BR</text>
-<text class="d-label" x="85" y="172.0" text-anchor="middle" dominant-baseline="central">Execution</text>
-<text class="d-label" x="85" y="188.0" text-anchor="middle" dominant-baseline="central">unit</text>
+<text class="d-label" x="85" y="171.0" text-anchor="middle" dominant-baseline="central">Execution</text>
+<text class="d-label" x="85" y="189.0" text-anchor="middle" dominant-baseline="central">unit</text>
 <text class="d-caps" x="30" y="284.0" text-anchor="start" dominant-baseline="central">I/O module</text>
 <text class="d-label" x="155" y="373.5" text-anchor="middle" dominant-baseline="central">buffers</text>
 <text class="d-caps" x="480" y="34.0" text-anchor="start" dominant-baseline="central">Main memory</text>

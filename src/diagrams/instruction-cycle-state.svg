@@ -20,22 +20,22 @@
 <path class="d-line-acc d-arr-acc" d="M365.0 320.0 L365.0 268.0"/>
 <text class="d-caps" x="20" y="24.0" text-anchor="start" dominant-baseline="central">CPU ACCESS TO MEMORY OR I/O</text>
 <text class="d-caps" x="150" y="292.0" text-anchor="start" dominant-baseline="central">INTERNAL CPU OPERATIONS</text>
-<text class="d-label" x="81" y="63.0" text-anchor="middle" dominant-baseline="central">Instruction</text>
-<text class="d-label" x="81" y="79.0" text-anchor="middle" dominant-baseline="central">fetch</text>
-<text class="d-label" x="365" y="63.0" text-anchor="middle" dominant-baseline="central">Operand</text>
-<text class="d-label" x="365" y="79.0" text-anchor="middle" dominant-baseline="central">fetch</text>
-<text class="d-label" x="649" y="63.0" text-anchor="middle" dominant-baseline="central">Operand</text>
-<text class="d-label" x="649" y="79.0" text-anchor="middle" dominant-baseline="central">store</text>
-<text class="d-label" x="81" y="233.0" text-anchor="middle" dominant-baseline="central">Instruction</text>
-<text class="d-label" x="81" y="249.0" text-anchor="middle" dominant-baseline="central">address calc.</text>
-<text class="d-label" x="223" y="233.0" text-anchor="middle" dominant-baseline="central">Instruction</text>
-<text class="d-label" x="223" y="249.0" text-anchor="middle" dominant-baseline="central">decoding</text>
-<text class="d-label" x="365" y="233.0" text-anchor="middle" dominant-baseline="central">Operand</text>
-<text class="d-label" x="365" y="249.0" text-anchor="middle" dominant-baseline="central">address calc.</text>
-<text class="d-label d-on-accent" x="507" y="233.0" text-anchor="middle" dominant-baseline="central">Data</text>
-<text class="d-label d-on-accent" x="507" y="249.0" text-anchor="middle" dominant-baseline="central">operation</text>
-<text class="d-label" x="649" y="233.0" text-anchor="middle" dominant-baseline="central">Operand</text>
-<text class="d-label" x="649" y="249.0" text-anchor="middle" dominant-baseline="central">address calc.</text>
+<text class="d-label" x="81" y="62.0" text-anchor="middle" dominant-baseline="central">Instruction</text>
+<text class="d-label" x="81" y="80.0" text-anchor="middle" dominant-baseline="central">fetch</text>
+<text class="d-label" x="365" y="62.0" text-anchor="middle" dominant-baseline="central">Operand</text>
+<text class="d-label" x="365" y="80.0" text-anchor="middle" dominant-baseline="central">fetch</text>
+<text class="d-label" x="649" y="62.0" text-anchor="middle" dominant-baseline="central">Operand</text>
+<text class="d-label" x="649" y="80.0" text-anchor="middle" dominant-baseline="central">store</text>
+<text class="d-label" x="81" y="232.0" text-anchor="middle" dominant-baseline="central">Instruction</text>
+<text class="d-label" x="81" y="250.0" text-anchor="middle" dominant-baseline="central">address calc.</text>
+<text class="d-label" x="223" y="232.0" text-anchor="middle" dominant-baseline="central">Instruction</text>
+<text class="d-label" x="223" y="250.0" text-anchor="middle" dominant-baseline="central">decoding</text>
+<text class="d-label" x="365" y="232.0" text-anchor="middle" dominant-baseline="central">Operand</text>
+<text class="d-label" x="365" y="250.0" text-anchor="middle" dominant-baseline="central">address calc.</text>
+<text class="d-label d-on-accent" x="507" y="232.0" text-anchor="middle" dominant-baseline="central">Data</text>
+<text class="d-label d-on-accent" x="507" y="250.0" text-anchor="middle" dominant-baseline="central">operation</text>
+<text class="d-label" x="649" y="232.0" text-anchor="middle" dominant-baseline="central">Operand</text>
+<text class="d-label" x="649" y="250.0" text-anchor="middle" dominant-baseline="central">address calc.</text>
 <rect x="376.6" y="147.3" width="117.5" height="17.5" fill="var(--d-canvas)"/>
 <text class="d-small" x="435.3" y="156.0" text-anchor="middle" dominant-baseline="central">multiple operands</text>
 <rect x="561.8" y="147.3" width="111.0" height="17.5" fill="var(--d-canvas)"/>

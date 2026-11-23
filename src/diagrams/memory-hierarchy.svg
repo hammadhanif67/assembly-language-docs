@@ -6,16 +6,16 @@
 <rect class="d-box" x="90" y="254" width="500" height="46" rx="0"/>
 <path class="d-line-acc d-arr-acc" d="M50.0 300.0 L50.0 40.0"/>
 <path class="d-line-mut d-arr-mut" d="M630.0 40.0 L630.0 300.0"/>
-<text class="d-label d-on-accent" x="340" y="45.0" text-anchor="middle" dominant-baseline="central">Registers</text>
-<text class="d-small d-on-accent" x="340" y="61.0" text-anchor="middle" dominant-baseline="central">inside the CPU</text>
-<text class="d-label" x="340" y="101.0" text-anchor="middle" dominant-baseline="central">Cache</text>
-<text class="d-small" x="340" y="117.0" text-anchor="middle" dominant-baseline="central">SRAM, on/near the chip</text>
-<text class="d-label" x="340" y="157.0" text-anchor="middle" dominant-baseline="central">Main memory (RAM)</text>
-<text class="d-small" x="340" y="173.0" text-anchor="middle" dominant-baseline="central">DRAM</text>
-<text class="d-label" x="340" y="213.0" text-anchor="middle" dominant-baseline="central">Disk</text>
-<text class="d-small" x="340" y="229.0" text-anchor="middle" dominant-baseline="central">magnetic / SSD</text>
-<text class="d-label" x="340" y="269.0" text-anchor="middle" dominant-baseline="central">Removable media</text>
-<text class="d-small" x="340" y="285.0" text-anchor="middle" dominant-baseline="central">tape, optical, USB</text>
+<text class="d-label d-on-accent" x="340" y="44.0" text-anchor="middle" dominant-baseline="central">Registers</text>
+<text class="d-small d-on-accent" x="340" y="62.0" text-anchor="middle" dominant-baseline="central">inside the CPU</text>
+<text class="d-label" x="340" y="100.0" text-anchor="middle" dominant-baseline="central">Cache</text>
+<text class="d-small" x="340" y="118.0" text-anchor="middle" dominant-baseline="central">SRAM, on/near the chip</text>
+<text class="d-label" x="340" y="156.0" text-anchor="middle" dominant-baseline="central">Main memory (RAM)</text>
+<text class="d-small" x="340" y="174.0" text-anchor="middle" dominant-baseline="central">DRAM</text>
+<text class="d-label" x="340" y="212.0" text-anchor="middle" dominant-baseline="central">Disk</text>
+<text class="d-small" x="340" y="230.0" text-anchor="middle" dominant-baseline="central">magnetic / SSD</text>
+<text class="d-label" x="340" y="268.0" text-anchor="middle" dominant-baseline="central">Removable media</text>
+<text class="d-small" x="340" y="286.0" text-anchor="middle" dominant-baseline="central">tape, optical, USB</text>
 <text class="d-small" x="36" y="170.0" text-anchor="middle" dominant-baseline="central" transform="rotate(-90 36 170)">faster · smaller · more cost per bit</text>
 <text class="d-small" x="644" y="170.0" text-anchor="middle" dominant-baseline="central" transform="rotate(90 644 170)">slower · larger · cheaper per bit</text>
 </svg>

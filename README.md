@@ -1,7 +1,7 @@
 # COAL Docs
 
 **Computer Organization & Assembly Language** — a course-style documentation site: 42 lessons in
-8 chapters, 46 diagrams and 4 interactive tools, from computer generations to 8086 assembly programming.
+8 chapters, 53 diagrams and a calculator workbench with 11 tools, from computer generations to 8086 assembly programming.
 
 🔗 **Live site:** https://hammadhanif67.github.io/assembly-language-docs/
 
@@ -26,6 +26,18 @@ the core.
 Lessons marked **Researched topic** were written to complete the curriculum and end with a References
 section. See [`CONTENT_MAP.md`](CONTENT_MAP.md) and [`MISSING_TOPICS.md`](MISSING_TOPICS.md).
 
+## Calculators & tools
+
+`tools/index.html` is a separate workbench (also linked as **Tools** in the header):
+
+| Group | Calculators |
+|---|---|
+| Numbers | number converter (8/16/32-bit, clickable bits) · two’s complement step by step · IEEE 754 float ⇄ bits · ASCII ⇄ codes |
+| Instructions | ALU & flags (ADD, ADC, SUB, SBB, CMP, AND, OR, XOR, TEST, INC, DEC, NEG → CF ZF SF OF PF AF) · shift & rotate with CF per step · MUL/IMUL/DIV/IDIV registers and overflow |
+| Memory & addressing | segment:offset ⇄ physical · effective address for every 8086 mode · address lines ⇄ memory size · cache tag/index/offset split |
+
+Inputs accept `200`, `-56`, `0C8h`, `0xC8`, `11001000b`, `310o` or `'A'`. The code is in `src/js/tools.js`.
+
 ## Design
 
 **Swiss design** (International Typographic Style): white space, a strict 12-column grid, one red accent
@@ -41,7 +53,7 @@ section. See [`CONTENT_MAP.md`](CONTENT_MAP.md) and [`MISSING_TOPICS.md`](MISSIN
 
 ## Diagrams
 
-All diagrams are **generated** SVG, so they share one visual language and use the CSS colour variables.
+All diagrams are **generated** SVG (and checked so no label overflows its box), so they share one visual language and use the CSS colour variables.
 Each diagram is a short spec in `scripts/diagrams/specs-*.mjs` built with a small toolkit
 (`scripts/diagrams/lib.mjs`): boxes, cell rows, orthogonal connectors routed between box edges, labels
 with a white backing so lines never cut through text.
@@ -76,7 +88,8 @@ scripts/
 src/
   css/main.css             Swiss design (tokens at the top)
   js/main.js               index menu, search, TOC, copy, lightbox, Mermaid
-  js/widgets.js            interactive tools
+  js/widgets.js            in-lesson interactive widgets
+  js/tools.js              calculator workbench (tools page)
   assets/                  logo, favicons, photos
 .github/workflows/pages.yml  build + deploy to GitHub Pages on every push to main
 ```

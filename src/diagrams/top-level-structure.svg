@@ -27,6 +27,7 @@
 <text class="d-label" x="380" y="261.0" text-anchor="middle" dominant-baseline="central">Internal bus</text>
 <text class="d-caps" x="530" y="34.0" text-anchor="start" dominant-baseline="central">Control unit</text>
 <text class="d-label" x="630" y="75.0" text-anchor="middle" dominant-baseline="central">Sequencing logic</text>
-<text class="d-label" x="630" y="137.0" text-anchor="middle" dominant-baseline="central">Control unit registers &amp; decoders</text>
+<text class="d-label" x="630" y="128.0" text-anchor="middle" dominant-baseline="central">Control unit registers</text>
+<text class="d-label" x="630" y="146.0" text-anchor="middle" dominant-baseline="central">&amp; decoders</text>
 <text class="d-label" x="630" y="199.0" text-anchor="middle" dominant-baseline="central">Control memory</text>
 </svg>

@@ -52,8 +52,8 @@
 <text class="d-small" x="220" y="123.0" text-anchor="middle" dominant-baseline="central">nums[1]</text>
 <text class="d-small" x="340" y="123.0" text-anchor="middle" dominant-baseline="central">nums[2]</text>
 <text class="d-small" x="460" y="123.0" text-anchor="middle" dominant-baseline="central">nums[3]</text>
-<text class="d-label" x="560" y="52.0" text-anchor="start" dominant-baseline="central">element k is at</text>
-<text class="d-label" x="560" y="68.0" text-anchor="start" dominant-baseline="central">offset nums + k × 2</text>
+<text class="d-label" x="560" y="51.0" text-anchor="start" dominant-baseline="central">element k is at</text>
+<text class="d-label" x="560" y="69.0" text-anchor="start" dominant-baseline="central">offset nums + k × 2</text>
 <text class="d-caps" x="40" y="182.0" text-anchor="start" dominant-baseline="central">2-D ARRAY  3 × 4 BYTES, ROW-MAJOR</text>
 <text class="d-mono" x="65" y="220.0" text-anchor="middle" dominant-baseline="central">0,0</text>
 <text class="d-mono" x="115" y="220.0" text-anchor="middle" dominant-baseline="central">0,1</text>

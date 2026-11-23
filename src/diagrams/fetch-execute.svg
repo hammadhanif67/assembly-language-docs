@@ -8,10 +8,10 @@
 <path class="d-line d-arr" d="M540.0 84.0 L590.0 84.0"/>
 <path class="d-line-acc d-arr-acc" d="M470.0 56.0 L470.0 24.0 L160.0 24.0 L160.0 84.0 L190.0 84.0"/>
 <text class="d-label d-on-accent" x="70" y="84.0" text-anchor="middle" dominant-baseline="central">START</text>
-<text class="d-label" x="260" y="76.0" text-anchor="middle" dominant-baseline="central">Fetch next</text>
-<text class="d-label" x="260" y="92.0" text-anchor="middle" dominant-baseline="central">instruction</text>
-<text class="d-label" x="470" y="76.0" text-anchor="middle" dominant-baseline="central">Execute</text>
-<text class="d-label" x="470" y="92.0" text-anchor="middle" dominant-baseline="central">instruction</text>
+<text class="d-label" x="260" y="75.0" text-anchor="middle" dominant-baseline="central">Fetch next</text>
+<text class="d-label" x="260" y="93.0" text-anchor="middle" dominant-baseline="central">instruction</text>
+<text class="d-label" x="470" y="75.0" text-anchor="middle" dominant-baseline="central">Execute</text>
+<text class="d-label" x="470" y="93.0" text-anchor="middle" dominant-baseline="central">instruction</text>
 <text class="d-label d-on-accent" x="625" y="84.0" text-anchor="middle" dominant-baseline="central">HALT</text>
 <rect x="304.5" y="15.3" width="111.0" height="17.5" fill="var(--d-canvas)"/>
 <text class="d-small" x="360" y="24.0" text-anchor="middle" dominant-baseline="central">next instruction</text>

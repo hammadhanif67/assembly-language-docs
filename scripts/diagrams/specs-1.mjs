@@ -45,7 +45,7 @@ specs['top-level-structure'] = () => {
   };
   const a = col(20, 'Computer', ['Central processing unit', 'Main memory', 'I/O', 'System bus'], 0);
   const b = col(270, 'CPU', ['Control unit', 'Arithmetic & logic unit', 'Registers', 'Internal bus'], 0);
-  const c = col(520, 'Control unit', ['Sequencing logic', 'Control unit registers & decoders', 'Control memory'], -1);
+  const c = col(520, 'Control unit', ['Sequencing logic', ['Control unit registers', '& decoders'], 'Control memory'], -1);
   d.path([a[0].right, [270, a[0].cy]], { cls: 'd-line-acc', arrow: 'end' });
   d.path([b[0].right, [520, b[0].cy]], { cls: 'd-line-acc', arrow: 'end' });
   return d;
@@ -99,10 +99,10 @@ specs['harvard'] = () => {
   d.box(20, 20, 270, 56, { title: 'Instruction memory', sub: 'ROM / Flash', kind: 'tint' });
   d.box(350, 20, 270, 56, { title: 'Data memory', sub: 'RAM', kind: 'alt' });
   cpuBlock(d, 170, 140);
-  d.path([[200, 140], [200, 78]], { cls: 'd-line', arrow: 'end', label: 'instr. address' });
-  d.path([[250, 78], [250, 140]], { cls: 'd-line-acc', arrow: 'end', label: 'instruction' });
-  d.path([[390, 140], [390, 78]], { cls: 'd-line', arrow: 'end', label: 'data address' });
-  d.path([[440, 78], [440, 140]], { cls: 'd-line-acc', arrow: 'both', label: 'data' });
+  d.path([[200, 140], [200, 78]], { cls: 'd-line', arrow: 'end', label: 'instr. address', labelAt: [200, 98] });
+  d.path([[250, 78], [250, 140]], { cls: 'd-line-acc', arrow: 'end', label: 'instruction', labelAt: [256, 122] });
+  d.path([[390, 140], [390, 78]], { cls: 'd-line', arrow: 'end', label: 'data address', labelAt: [390, 98] });
+  d.path([[440, 78], [440, 140]], { cls: 'd-line-acc', arrow: 'both', label: 'data', labelAt: [444, 122] });
   d.box(170, 390, 300, 50, { title: 'Input / Output' });
   d.path([[320, 330], [320, 390]], { arrow: 'both' });
   return d;

@@ -14,5 +14,4 @@
 <text class="d-label" x="490" y="65.0" text-anchor="middle" dominant-baseline="central">Main memory</text>
 <text class="d-label" x="620" y="175.0" text-anchor="middle" dominant-baseline="central">Cache</text>
 <text class="d-label d-on-accent" x="440" y="175.0" text-anchor="middle" dominant-baseline="central">CPU</text>
-<text class="d-small" x="20" y="214.0" text-anchor="start" dominant-baseline="central">Main memory talks to the CPU directly and to auxiliary memory through an I/O processor; cache sits between CPU and main memory.</text>
 </svg>

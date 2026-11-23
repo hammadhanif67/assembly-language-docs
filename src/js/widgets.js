@@ -128,6 +128,7 @@
 
   const registry = { 'program-execution': programExecution, 'address-calculator': addressCalculator, 'number-converter': numberConverter, 'stack-visualizer': stackVisualizer };
   window.COAL_WIDGETS = {
+    register(name, fn) { registry[name] = fn; },
     init() {
       document.querySelectorAll('.widget[data-widget]').forEach((el) => {
         const fn = registry[el.dataset.widget];

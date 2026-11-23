@@ -71,6 +71,10 @@ CF and OF are set if the high half (AH or DX) holds significant bits.
 | byte: `div bl` | AX | AL | AH |
 | word: `div bx` | DX:AX | AX | DX |
 
+:::diagram mul-div
+Where MUL and DIV take their operands and leave their results
+:::
+
 ```asm
 mov ax, 100
 mov bl, 7

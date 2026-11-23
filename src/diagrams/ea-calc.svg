@@ -1,0 +1,29 @@
+<svg viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg" style="min-width:620px">
+<rect class="d-box-3" x="20" y="40" width="130" height="70" rx="2"/>
+<rect class="d-box-3" x="190" y="40" width="130" height="70" rx="2"/>
+<rect class="d-box-3" x="360" y="40" width="130" height="70" rx="2"/>
+<rect class="d-box-a" x="560" y="40" width="170" height="70" rx="2"/>
+<path class="d-line-acc d-arr-acc" d="M490.0 75.0 L560.0 75.0"/>
+<rect class="d-box-2" x="20" y="160" width="200" height="70" rx="2"/>
+<rect class="d-box" x="260" y="160" width="160" height="70" rx="2"/>
+<rect class="d-box-k" x="560" y="160" width="170" height="70" rx="2"/>
+<path class="d-line d-arr" d="M420.0 195.0 L560.0 195.0"/>
+<path class="d-line-mut d-arr-mut" d="M645.0 110.0 L645.0 135.0 L340.0 135.0 L340.0 160.0"/>
+<text class="d-title" x="85" y="66.0" text-anchor="middle" dominant-baseline="central">Base</text>
+<text class="d-small" x="85" y="84.0" text-anchor="middle" dominant-baseline="central">BX or BP (optional)</text>
+<text class="d-title" x="170" y="75.0" text-anchor="middle" dominant-baseline="central">+</text>
+<text class="d-title" x="255" y="66.0" text-anchor="middle" dominant-baseline="central">Index</text>
+<text class="d-small" x="255" y="84.0" text-anchor="middle" dominant-baseline="central">SI or DI (optional)</text>
+<text class="d-title" x="340" y="75.0" text-anchor="middle" dominant-baseline="central">+</text>
+<text class="d-title" x="425" y="66.0" text-anchor="middle" dominant-baseline="central">Displacement</text>
+<text class="d-small" x="425" y="84.0" text-anchor="middle" dominant-baseline="central">8 / 16-bit (optional)</text>
+<text class="d-title d-on-accent" x="645" y="66.0" text-anchor="middle" dominant-baseline="central">Effective address</text>
+<text class="d-small d-on-accent" x="645" y="84.0" text-anchor="middle" dominant-baseline="central">16-bit offset</text>
+<text class="d-title" x="120" y="186.0" text-anchor="middle" dominant-baseline="central">Segment × 10h</text>
+<text class="d-small" x="120" y="204.0" text-anchor="middle" dominant-baseline="central">DS (SS if BP is used)</text>
+<text class="d-title" x="240" y="195.0" text-anchor="middle" dominant-baseline="central">+</text>
+<text class="d-title" x="340" y="186.0" text-anchor="middle" dominant-baseline="central">Effective address</text>
+<text class="d-small" x="340" y="204.0" text-anchor="middle" dominant-baseline="central">from above</text>
+<text class="d-title d-on-accent" x="645" y="186.0" text-anchor="middle" dominant-baseline="central">Physical address</text>
+<text class="d-small d-on-accent" x="645" y="204.0" text-anchor="middle" dominant-baseline="central">20-bit</text>
+</svg>

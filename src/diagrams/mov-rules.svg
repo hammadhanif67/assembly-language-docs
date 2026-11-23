@@ -1,0 +1,26 @@
+<svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg" style="min-width:580px">
+<rect class="d-box-3" x="260" y="40" width="200" height="60" rx="2"/>
+<rect class="d-box-2" x="500" y="230" width="180" height="60" rx="2"/>
+<rect class="d-box-2" x="40" y="230" width="180" height="60" rx="2"/>
+<rect class="d-box" x="260" y="240" width="160" height="50" rx="2"/>
+<path class="d-line d-arr2" d="M430.0 100.0 L430.0 165.0 L590.0 165.0 L590.0 230.0"/>
+<path class="d-line d-arr2" d="M290.0 100.0 L290.0 165.0 L130.0 165.0 L130.0 230.0"/>
+<path class="d-line-acc d-arr-acc" d="M340.0 240.0 L340.0 100.0"/>
+<path class="d-line-acc d-arr-acc" d="M420.0 265.0 L500.0 265.0"/>
+<text class="d-title" x="360" y="61.0" text-anchor="middle" dominant-baseline="central">General register</text>
+<text class="d-small" x="360" y="79.0" text-anchor="middle" dominant-baseline="central">AX BX CX DX SI DI BP SP</text>
+<text class="d-title" x="590" y="251.0" text-anchor="middle" dominant-baseline="central">Memory</text>
+<text class="d-small" x="590" y="269.0" text-anchor="middle" dominant-baseline="central">[BX], var, [BP+4] …</text>
+<text class="d-title" x="130" y="251.0" text-anchor="middle" dominant-baseline="central">Segment register</text>
+<text class="d-small" x="130" y="269.0" text-anchor="middle" dominant-baseline="central">DS ES SS (CS read-only)</text>
+<text class="d-title" x="340" y="256.0" text-anchor="middle" dominant-baseline="central">Immediate</text>
+<text class="d-small" x="340" y="274.0" text-anchor="middle" dominant-baseline="central">a constant: 5, 1234h</text>
+<rect x="527.0" y="156.3" width="66.0" height="17.5" fill="var(--d-canvas)"/>
+<text class="d-small" x="560" y="165.0" text-anchor="middle" dominant-baseline="central">reg ↔ mem</text>
+<rect x="157.0" y="156.3" width="66.0" height="17.5" fill="var(--d-canvas)"/>
+<text class="d-small" x="190" y="165.0" text-anchor="middle" dominant-baseline="central">reg ↔ seg</text>
+<rect x="307.0" y="191.3" width="66.0" height="17.5" fill="var(--d-canvas)"/>
+<text class="d-small" x="340" y="200.0" text-anchor="middle" dominant-baseline="central">imm → reg</text>
+<text class="d-small" x="460" y="248.0" text-anchor="middle" dominant-baseline="central">imm → mem</text>
+<text class="d-label d-red" x="40" y="318.0" text-anchor="start" dominant-baseline="central">✗ not allowed: memory → memory · immediate → segment · segment → segment · anything → CS</text>
+</svg>

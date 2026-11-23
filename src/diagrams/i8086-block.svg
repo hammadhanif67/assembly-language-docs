@@ -41,9 +41,9 @@
 <text class="d-mono" x="95" y="112.5" text-anchor="middle" dominant-baseline="central">DS</text>
 <text class="d-mono" x="95" y="137.5" text-anchor="middle" dominant-baseline="central">ES</text>
 <text class="d-mono" x="95" y="162.5" text-anchor="middle" dominant-baseline="central">IP</text>
-<text class="d-label" x="270" y="94.0" text-anchor="middle" dominant-baseline="central">Σ</text>
+<text class="d-label" x="270" y="92.0" text-anchor="middle" dominant-baseline="central">Σ</text>
 <text class="d-small" x="270" y="110.0" text-anchor="middle" dominant-baseline="central">physical address =</text>
-<text class="d-small" x="270" y="126.0" text-anchor="middle" dominant-baseline="central">segment × 10h + offset</text>
+<text class="d-small" x="270" y="128.0" text-anchor="middle" dominant-baseline="central">segment × 10h + offset</text>
 <text class="d-caps" x="450" y="52.0" text-anchor="start" dominant-baseline="central">6-BYTE PRE-FETCH QUEUE</text>
 <text class="d-mono" x="472.5" y="88.0" text-anchor="middle" dominant-baseline="central">1</text>
 <text class="d-mono" x="517.5" y="88.0" text-anchor="middle" dominant-baseline="central">2</text>

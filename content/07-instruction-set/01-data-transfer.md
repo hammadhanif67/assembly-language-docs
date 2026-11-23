@@ -32,6 +32,10 @@ mov ds, ax          ; segment   ← register
 | `mov al, bx` | operand sizes must match |
 | `mov 5, al` | the destination can't be an immediate |
 
+:::diagram mov-rules
+Which operand combinations MOV allows
+:::
+
 ## XCHG — swap
 
 ```asm

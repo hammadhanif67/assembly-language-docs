@@ -38,7 +38,7 @@ specs['i8086-organization'] = () => {
   d.path([[130, 370], [130, 440]], { arrow: 'both' });
   d.path([[590, 356], [590, 440]], { arrow: 'both' });
   d.path([biu.bus.right, [756, biu.bus.cy]], { arrow: 'both' });
-  d.text(700, biu.bus.cy + 16, 'external bus', { cls: 'd-small' });
+  d.text(700, biu.bus.y + biu.bus.h + 14, 'external bus', { cls: 'd-small' });
   return d;
 };
 specs['i8086-block'] = () => {
@@ -126,7 +126,6 @@ specs['memory-connections'] = () => {
   d.path([[440, 90], [440, 150]], { arrow: 'both' });
   d.path([[540, 90], [540, 120], [620, 120], [620, 150]], { arrow: 'both' });
   d.path([cpu.right, cache.left], { arrow: 'both', cls: 'd-line-acc' });
-  d.text(20, 214, 'Main memory talks to the CPU directly and to auxiliary memory through an I/O processor; cache sits between CPU and main memory.', { cls: 'd-small', anchor: 'start' });
   return d;
 };
 
@@ -147,7 +146,7 @@ specs['memory-segments'] = () => {
 
 // ---------- System bus ----------
 specs['system-bus'] = () => {
-  const d = new Diagram(780, 280, { minw: 600 });
+  const d = new Diagram(860, 280, { minw: 640 });
   const cpu = d.box(40, 30, 150, 60, { label: 'CPU', kind: 'red' });
   const mem = d.box(265, 30, 150, 60, { label: 'Memory', kind: 'tint' });
   const io = d.box(490, 30, 150, 60, { label: 'I/O', kind: 'alt' });

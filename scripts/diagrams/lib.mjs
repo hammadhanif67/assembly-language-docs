@@ -18,7 +18,7 @@ export class Diagram {
 
   text(x, y, s, { cls = 'd-text', anchor = 'middle', layer = 'front', rotate } = {}) {
     const lines = Array.isArray(s) ? s : [s];
-    const lh = /d-small|d-caps/.test(cls) ? 14 : /d-title/.test(cls) ? 18 : 16;
+    const lh = /d-small|d-caps/.test(cls) ? 15 : /d-title/.test(cls) ? 21 : 18;
     const y0 = y - ((lines.length - 1) * lh) / 2;
     const tr = rotate ? ` transform="rotate(${rotate} ${x} ${y})"` : '';
     lines.forEach((ln, i) => this[layer].push(`<text class="${cls}" x="${x}" y="${(y0 + i * lh).toFixed(1)}" text-anchor="${anchor}" dominant-baseline="central"${tr}>${esc(ln)}</text>`));
@@ -47,7 +47,7 @@ export class Diagram {
       if (o.title) lines.push(...[].concat(o.title).map((t) => ['d-title', t]));
       if (o.label) lines.push(...[].concat(o.label).map((t) => [o.mono ? 'd-mono' : 'd-label', t]));
       if (o.sub) lines.push(...[].concat(o.sub).map((t) => ['d-small', t]));
-      const lh = 16, y0 = cy - ((lines.length - 1) * lh) / 2;
+      const lh = 18, y0 = cy - ((lines.length - 1) * lh) / 2;
       const ax = o.align === 'left' ? x + 10 : cx;
       lines.forEach(([cls, t], i) => this.text(ax, y0 + i * lh, t, { cls: cls + (onDark ? ' d-on-accent' : ''), anchor: o.align === 'left' ? 'start' : 'middle' }));
     }

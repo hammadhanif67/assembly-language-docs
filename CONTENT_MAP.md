@@ -59,7 +59,7 @@ interrupts-and-io, macros, debugging. Each ends with a References section. See
 
 ## Figures
 
-- **46 generated SVG diagrams** (`scripts/diagrams/specs-*.mjs` → `src/diagrams/`), redrawn from the
+- **53 generated SVG diagrams** (`scripts/diagrams/specs-*.mjs` → `src/diagrams/`), redrawn from the
   slides plus new ones for the researched lessons.
-- **13 photos** from Computer Generation.pdf and RISC and CISC.pdf (`src/assets/img/`).
-- **4 interactive tools**: program-execution stepper, segment:offset calculator, number converter, stack simulator.
+- **12 photos**, shown in uniform 4:3 frames (generation photos paired side by side), from Computer Generation.pdf and RISC and CISC.pdf (`src/assets/img/`).
+- **4 in-lesson widgets** (program-execution stepper, segment:offset calculator, number converter, stack simulator) and an **11-calculator workbench** at `tools/index.html`.

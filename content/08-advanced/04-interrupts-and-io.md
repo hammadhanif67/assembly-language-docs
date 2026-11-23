@@ -26,6 +26,10 @@ The first 1 KB of memory (`0000:0000` – `0000:03FF`) holds 256 **vectors**, 4 
 int 21h  →  vector at 21h × 4 = 0084h  →  [0000:0084] = handler IP, [0000:0086] = handler CS
 ```
 
+:::diagram ivt
+Each interrupt type has a 4-byte vector holding the handler’s IP and CS
+:::
+
 ## What `INT n` does
 
 ```mermaid

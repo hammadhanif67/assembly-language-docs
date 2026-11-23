@@ -21,7 +21,7 @@
 <text class="d-label" x="300" y="363.0" text-anchor="middle" dominant-baseline="central">Extra segment</text>
 <text class="d-mono d-on-accent" x="95" y="363.0" text-anchor="middle" dominant-baseline="central">ES</text>
 <text class="d-caps" x="300" y="14.0" text-anchor="middle" dominant-baseline="central">MEMORY</text>
-<text class="d-small" x="440" y="196.0" text-anchor="start" dominant-baseline="central">each register holds</text>
+<text class="d-small" x="440" y="195.0" text-anchor="start" dominant-baseline="central">each register holds</text>
 <text class="d-small" x="440" y="210.0" text-anchor="start" dominant-baseline="central">the starting address</text>
-<text class="d-small" x="440" y="224.0" text-anchor="start" dominant-baseline="central">of its segment</text>
+<text class="d-small" x="440" y="225.0" text-anchor="start" dominant-baseline="central">of its segment</text>
 </svg>

@@ -19,9 +19,9 @@
 <text class="d-label" x="610" y="40.0" text-anchor="middle" dominant-baseline="central">instructions</text>
 <text class="d-label" x="610" y="72.0" text-anchor="middle" dominant-baseline="central">program</text>
 <text class="d-title" x="540" y="172.0" text-anchor="middle" dominant-baseline="central">CISC</text>
-<text class="d-text" x="540" y="202.0" text-anchor="middle" dominant-baseline="central">minimizes instructions per program,</text>
-<text class="d-text" x="540" y="218.0" text-anchor="middle" dominant-baseline="central">sacrificing cycles per instruction</text>
+<text class="d-text" x="540" y="201.0" text-anchor="middle" dominant-baseline="central">minimizes instructions per program,</text>
+<text class="d-text" x="540" y="219.0" text-anchor="middle" dominant-baseline="central">sacrificing cycles per instruction</text>
 <text class="d-title" x="180" y="172.0" text-anchor="middle" dominant-baseline="central">RISC</text>
-<text class="d-text" x="180" y="202.0" text-anchor="middle" dominant-baseline="central">reduces cycles per instruction,</text>
-<text class="d-text" x="180" y="218.0" text-anchor="middle" dominant-baseline="central">at the cost of instructions per program</text>
+<text class="d-text" x="180" y="201.0" text-anchor="middle" dominant-baseline="central">reduces cycles per instruction,</text>
+<text class="d-text" x="180" y="219.0" text-anchor="middle" dominant-baseline="central">at the cost of instructions per program</text>
 </svg>

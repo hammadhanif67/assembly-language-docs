@@ -39,12 +39,12 @@
 <rect class="d-box-2" x="200" y="386" width="420" height="40" rx="2"/>
 <path class="d-line-mut d-arr-mut" d="M120.0 90.0 L120.0 406.0 L200.0 406.0"/>
 <text class="d-caps" x="40" y="24.0" text-anchor="start" dominant-baseline="central">16-BIT ADDRESS  =  3A7Ch</text>
-<text class="d-label d-on-accent" x="120" y="57.0" text-anchor="middle" dominant-baseline="central">Tag · 4 bits</text>
-<text class="d-small d-on-accent" x="120" y="73.0" text-anchor="middle" dominant-baseline="central">0011 = 3</text>
-<text class="d-label" x="360" y="57.0" text-anchor="middle" dominant-baseline="central">Line (index) · 8 bits</text>
-<text class="d-small" x="360" y="73.0" text-anchor="middle" dominant-baseline="central">1010 0111 = A7h = 167</text>
-<text class="d-label" x="600" y="57.0" text-anchor="middle" dominant-baseline="central">Offset · 4 bits</text>
-<text class="d-small" x="600" y="73.0" text-anchor="middle" dominant-baseline="central">1100 = 12</text>
+<text class="d-label d-on-accent" x="120" y="56.0" text-anchor="middle" dominant-baseline="central">Tag · 4 bits</text>
+<text class="d-small d-on-accent" x="120" y="74.0" text-anchor="middle" dominant-baseline="central">0011 = 3</text>
+<text class="d-label" x="360" y="56.0" text-anchor="middle" dominant-baseline="central">Line (index) · 8 bits</text>
+<text class="d-small" x="360" y="74.0" text-anchor="middle" dominant-baseline="central">1010 0111 = A7h = 167</text>
+<text class="d-label" x="600" y="56.0" text-anchor="middle" dominant-baseline="central">Offset · 4 bits</text>
+<text class="d-small" x="600" y="74.0" text-anchor="middle" dominant-baseline="central">1100 = 12</text>
 <text class="d-caps" x="200" y="132.0" text-anchor="start" dominant-baseline="central">CACHE — 256 LINES × 16 BYTES = 4 KB</text>
 <text class="d-label d-on-accent" x="230" y="161.0" text-anchor="middle" dominant-baseline="central">Line</text>
 <text class="d-label d-on-accent" x="280" y="161.0" text-anchor="middle" dominant-baseline="central">V</text>
