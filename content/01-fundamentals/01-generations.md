@@ -6,7 +6,7 @@ description: What a computer is, and the five generations of computers, technolo
 ## Computer
 
 :::figure img-computer.jpg side
-IBM Personal Computer 5150 (1981), screen, system unit and keyboard
+A modern desktop computer (2024): multi-core processor, graphics card, fast memory and liquid cooling
 :::
 
 A computer is a machine that manipulates data according to a set of instructions. A computer is a programmable machine that receives input, stores and provides output in a useful format, they can be constructed out of almost anything.

@@ -65,21 +65,32 @@
     }
     // keep the current lesson visible in the horizontal lesson strip
     const strip = $('.lesson-strip ol'), cur = $('.lesson-strip [aria-current="page"]');
-    if (strip && cur) strip.scrollLeft = cur.offsetLeft - strip.clientWidth / 2 + cur.clientWidth / 2;
+    if (strip && cur) strip.scrollTo({ left: Math.max(0, cur.offsetLeft - strip.clientWidth / 2 + cur.clientWidth / 2), behavior: 'instant' });
+    // lesson tabs: arrow buttons scroll the row; they disable at either end
+    const tabs = $('.ls-tabs');
+    if (tabs) {
+      const arrows = $$('.ls-arrow');
+      const upd = () => arrows.forEach((b) => { b.disabled = +b.dataset.dir < 0 ? tabs.scrollLeft <= 2 : tabs.scrollLeft + tabs.clientWidth >= tabs.scrollWidth - 2; });
+      arrows.forEach((b) => b.addEventListener('click', () => tabs.scrollBy({ left: +b.dataset.dir * tabs.clientWidth * 0.7, behavior: 'smooth' })));
+      tabs.addEventListener('scroll', upd, { passive: true });
+      window.addEventListener('resize', upd);
+      upd();
+    }
     // close the mobile TOC after choosing a section
     $$('.toc-mobile, .tools-jump').forEach((d) => d.addEventListener('click', (e) => { if (e.target.closest('a')) d.open = false; }));
   }
 
   /* ---------- Progress, back to top, TOC scrollspy ---------- */
   function setupScroll() {
-    const bar = $('.progress-bar'), top = $('.back-to-top');
+    const bar = $('.progress-bar'), top = $('.back-to-top'), ring = $('.btt-prog'), RING = 2 * Math.PI * 22;
+    if (ring) ring.style.strokeDasharray = String(RING);
     let ticking = false;
     const update = () => {
       const h = document.documentElement;
       const max = h.scrollHeight - h.clientHeight;
       const p = max > 0 ? Math.min(1, h.scrollTop / max) : 0;
       if (bar) bar.style.transform = `scaleX(${p})`;
-      if (top) top.classList.toggle('show', h.scrollTop > 600);
+      if (top) { top.classList.toggle('show', h.scrollTop > 600); if (ring) ring.style.strokeDashoffset = String(RING * (1 - p)); }
       ticking = false;
     };
     window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });

@@ -271,7 +271,7 @@ function footer(prefix, extraScripts = '') {
     <p>© ${new Date().getFullYear()} COAL Docs · Code MIT · Photos from Wikimedia Commons, credited on each page</p>
   </div>
 </footer>
-<button class="back-to-top" type="button" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
+<button class="back-to-top" type="button" aria-label="Back to top"><svg class="btt-ring" viewBox="0 0 48 48" aria-hidden="true"><circle class="btt-track" cx="24" cy="24" r="22"/><circle class="btt-prog" cx="24" cy="24" r="22"/></svg><i data-lucide="arrow-up"></i></button>
 <div class="search-modal" role="dialog" aria-modal="true" aria-label="Search" hidden>
   <div class="search-panel">
     <div class="search-box"><i data-lucide="search" aria-hidden="true"></i><input type="search" placeholder="Search lessons, registers, instructions…" aria-label="Search" autocomplete="off" spellcheck="false"><button class="icon-btn" type="button" data-search-close aria-label="Close search"><kbd>Esc</kbd></button></div>
@@ -310,8 +310,11 @@ function renderLesson(page, i) {
   const prev = pages[i - 1], next = pages[i + 1];
   const tocItems = page.toc.map((t) => `<li class="toc-l${t.depth}"><a href="#${t.id}">${esc(t.text)}</a></li>`).join('');
   const tocHtml = page.toc.length ? `<nav class="toc" aria-label="On this page"><p class="eyebrow">On this page</p><ol>${tocItems}</ol></nav>` : '';
-  const strip = `<nav class="lesson-strip" aria-label="Lessons in ${esc(ch.title)}"><ol>${ch.pages
-    .map((p, k) => `<li><a href="${prefix}${p.url}"${p === page ? ' aria-current="page"' : ''} title="${esc(p.title)}"><span class="ls-n">${pad(k + 1)}</span><span class="ls-t">${esc(p.title)}</span></a></li>`)
+  const strip = `<nav class="lesson-strip" aria-label="Lessons in ${esc(ch.title)}">
+  <div class="ls-bar"><span class="ls-label">Lessons in this chapter</span>
+    <span class="ls-arrows"><button class="ls-arrow" type="button" data-dir="-1" aria-label="Scroll lessons left"><i data-lucide="chevron-left"></i></button><button class="ls-arrow" type="button" data-dir="1" aria-label="Scroll lessons right"><i data-lucide="chevron-right"></i></button></span></div>
+  <ol class="ls-tabs">${ch.pages
+    .map((p, k) => `<li><a href="${prefix}${p.url}"${p === page ? ' aria-current="page"' : k < idx ? ' class="is-done"' : ''}><span class="ls-n">${pad(k + 1)}</span><span class="ls-t">${esc(p.title)}</span></a></li>`)
     .join('')}</ol></nav>`;
   const pager = `<nav class="pager" aria-label="Previous and next lesson">${
     prev ? `<a class="pager-link" href="${prefix}${prev.url}" rel="prev"><span class="eyebrow"><i data-lucide="arrow-left"></i>Previous</span><span class="pager-title">${esc(prev.title)}</span></a>` : '<span></span>'
@@ -331,7 +334,7 @@ ${header(prefix, page)}
       <div class="lh-main">
         <h1>${esc(page.title)}</h1>
         ${page.description ? `<p class="lede">${esc(page.description)}</p>` : ''}
-        <p class="lh-facts"><span>${page.minutes} min read</span>${page.sections ? `<span>${page.sections} sections</span>` : ''}${page.research ? '<span class="tag-research">Researched topic</span>' : ''}</p>
+        <p class="lh-facts">${page.sections ? `<span>${page.sections} sections</span>` : ''}${page.research ? '<span class="tag-research">Researched topic</span>' : ''}</p>
       </div>
     </header>
     ${strip}
@@ -360,7 +363,6 @@ function renderChapter(ch, ci) {
       (p, k) => `<li><a class="lesson-row" href="${prefix}${p.url}">
   <span class="lr-num">${pad(ch.num)}.${k + 1}</span>
   <span class="lr-body"><span class="lr-title">${esc(p.title)}${p.research ? ' <span class="tag-research">Researched</span>' : ''}</span><span class="lr-desc">${esc(p.description || '')}</span></span>
-  <span class="lr-time">${p.minutes} min</span>
   <i data-lucide="arrow-right" aria-hidden="true"></i>
 </a></li>`
     )
@@ -377,7 +379,7 @@ ${header(prefix)}
         <p class="eyebrow">Chapter ${pad(ch.num)} of ${pad(chs.length)}</p>
         <h1>${esc(ch.title)}</h1>
         <p class="lede">${esc(ch.summary || '')}</p>
-        <p class="lh-facts"><span>${ch.pages.length} lessons</span><span>≈ ${total} min</span></p>
+        <p class="lh-facts"><span>${ch.pages.length} lessons</span></p>
         <a class="btn btn--primary" href="${prefix}${ch.pages[0].url}">Start chapter<i data-lucide="arrow-right"></i></a>
       </div>
     </header>
@@ -496,7 +498,7 @@ function renderHome() {
   <h3 class="cc-title"><a href="${prefix}${c.url}">${esc(c.title)}</a></h3>
   <p class="cc-desc">${esc(c.summary || '')}</p>
   <ul class="cc-lessons">${first}${more}</ul>
-  <p class="cc-meta"><span>${c.pages.length} lessons · ${min} min</span><i data-lucide="arrow-right" aria-hidden="true"></i></p>
+  <p class="cc-meta"><span>${c.pages.length} lessons</span><i data-lucide="arrow-right" aria-hidden="true"></i></p>
 </li>`;
     })
     .join('');
@@ -513,29 +515,16 @@ function renderHome() {
 <body class="home-page">
 ${header(prefix)}
 <main id="main" tabindex="-1">
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-main">
-        <p class="eyebrow hero-eyebrow"><span class="dot" aria-hidden="true"></span>Free course · ${chs.length} chapters · ${pages.length} lessons</p>
-        <h1 class="hero-title">Computer Organization <span>&amp; Assembly Language</span></h1>
-        <p class="hero-lede">How a computer really works, the instruction cycle, registers, memory and buses of the 8086, and how to program it in assembly, one clear step at a time.</p>
-        <div class="hero-cta"><a class="btn btn--primary" href="${prefix}${pages[0].url}">Start learning<i data-lucide="arrow-right"></i></a><a class="btn" href="${prefix}${solved ? solved.url : 'tools/index.html'}">Solved problems</a></div>
+  <section class="hv hv-a">
+    <div class="wrap hv-grid">
+      <div class="hv-main">
+        <p class="hv-eyebrow">Computer Organization &amp; Assembly Language</p>
+        <h1>Understand the machine. <span>Then program it.</span></h1>
+        <p class="hv-lede">From the instruction cycle and registers to memory, buses and the 8086, explained clearly, drawn as diagrams and solved step by step.</p>
+        <div class="hv-cta"><a class="btn btn--primary" href="${prefix}${pages[0].url}">Start learning<i data-lucide="arrow-right"></i></a><a class="btn hv-btn2" href="${prefix}${solved ? solved.url : 'tools/index.html'}">Solved problems</a></div>
+        <dl class="hv-stats"><div><dt>Chapters</dt><dd>${chs.length}</dd></div><div><dt>Lessons</dt><dd>${pages.length}</dd></div><div><dt>Diagrams</dt><dd>${usedDiagrams.size}</dd></div><div><dt>Calculators</dt><dd>${allTools.length}</dd></div></dl>
       </div>
-      <figure class="hero-photo">
-        <img src="${prefix}assets/img/img-8086.jpg" alt="The Intel 8086 microprocessor, a 40-pin chip" width="880" height="660" decoding="async">
-        <figcaption>
-          <p class="hp-name"><span>Intel 8086</span><span>1978</span></p>
-          <dl class="hp-specs"><div><dt>Data bus</dt><dd>16-bit</dd></div><div><dt>Address</dt><dd>20-bit</dd></div><div><dt>Memory</dt><dd>1 MB</dd></div><div><dt>Pins</dt><dd>40</dd></div></dl>
-          <p class="hp-credit">Photo: ${esc(IMAGE_CREDITS['img-8086.jpg'].artist)}, ${esc(IMAGE_CREDITS['img-8086.jpg'].license)}</p>
-        </figcaption>
-      </figure>
-      <dl class="hero-stats">
-        <div><dt>Chapters</dt><dd>${chs.length}</dd></div>
-        <div><dt>Lessons</dt><dd>${pages.length}</dd></div>
-        <div><dt>Diagrams</dt><dd>${usedDiagrams.size}</dd></div>
-        <div><dt>Calculators</dt><dd>${allTools.length}</dd></div>
-        <div><dt>Reading time</dt><dd>${Math.round(totalMin / 60)}<small>h</small></dd></div>
-      </dl>
+      <figure class="hv-img"><img src="${prefix}assets/img/img-computer.jpg" alt="A modern desktop computer with a glass side panel, liquid cooling and a graphics card" width="880" height="660" decoding="async"><figcaption>Photo: ${esc(IMAGE_CREDITS['img-computer.jpg'].artist)}, ${esc(IMAGE_CREDITS['img-computer.jpg'].license)}</figcaption></figure>
     </div>
   </section>
 
