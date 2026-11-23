@@ -1004,3 +1004,45 @@ p.t-math { margin: 4px 0; }
 @media (max-width: 900px) { .cd-traces, .cd-pad { display: none; } }
 @media (prefers-reduced-motion: reduce) { .cd-traces .tr-p, .cd-pad, .cd-line { animation: none; } .cd-traces .tr-p { stroke-dasharray: none; opacity: .3; } }
 .cd-tab.on::after { content: ".asm"; color: #8a8a85; }
+
+/* =====================================================================
+   32. Hero: steady card size + entrance motion for the text
+   ===================================================================== */
+/* card never changes height: 7 code rows and the result row are always reserved */
+.cd-line { height: 34px; padding-top: 0; padding-bottom: 0; }
+.cd-code { height: calc(7 * 34px + 20px); min-height: 0; overflow: hidden; }
+.cd-result { max-height: none; height: 44px; padding: 0 16px; display: flex; align-items: center; border-top: 1px solid #232326; color: #2fd36b; opacity: 0; transform: translateY(4px); transition: opacity .35s, transform .35s; }
+.cpu-demo.done .cd-result { max-height: none; padding: 0 16px; opacity: 1; transform: none; }
+.cd-result::before { content: "▸"; margin-right: 8px; color: #2fd36b; }
+.cd-wrap { animation: card-in 1s cubic-bezier(.2, .8, .2, 1) .5s both; }
+@keyframes card-in { from { opacity: 0; transform: translateY(24px) scale(.98); } }
+
+/* text: eyebrow line grows, words rise one by one, the rest fades up */
+.hv-eyebrow { display: flex; align-items: center; gap: 12px; animation: hv-fade .7s ease .05s both; }
+.hv-eyebrow::before { content: ""; width: 32px; height: 2px; background: currentColor; transform-origin: left; animation: hv-line .8s cubic-bezier(.2, .8, .2, 1) .15s both; }
+@keyframes hv-line { from { transform: scaleX(0); } }
+.hv-a h1 .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .08em; margin-bottom: -.08em; }
+.hv-a h1 .w > span { display: inline-block; animation: hv-word .9s cubic-bezier(.2, .8, .2, 1) both; animation-delay: calc(.15s + var(--i) * .09s); }
+@keyframes hv-word { from { transform: translateY(105%); } }
+.hv-a h1 .hv-red { display: block; color: var(--red); }
+.hv-caret { display: inline-block; width: .09em; height: .82em; margin-left: .08em; vertical-align: -.04em; background: var(--red); animation: hv-blink 1s steps(2) 1.3s infinite; }
+@keyframes hv-blink { 50% { opacity: 0; } }
+.hv-lede { animation: hv-fade .8s ease .75s both; }
+.hv-cta { animation: hv-fade .8s ease .9s both; }
+.hv-stats { animation: hv-fade .8s ease 1.05s both; }
+@keyframes hv-fade { from { opacity: 0; transform: translateY(14px); } }
+.hv-cta .btn--primary { position: relative; overflow: hidden; }
+.hv-cta .btn--primary::after { content: ""; position: absolute; inset: 0; background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, .35) 50%, transparent 65%); transform: translateX(-120%); animation: hv-shine 3.8s ease 2s infinite; }
+@keyframes hv-shine { 0%, 70% { transform: translateX(-120%); } 100% { transform: translateX(120%); } }
+@media (prefers-reduced-motion: reduce) {
+  .cd-wrap, .hv-eyebrow, .hv-eyebrow::before, .hv-a h1 .w > span, .hv-lede, .hv-cta, .hv-stats, .hv-caret, .hv-cta .btn--primary::after { animation: none; }
+}
+.hv-a h1 .w { display: inline-block; color: inherit; }
+.hv-a h1 .w > span { display: inline-block; color: inherit; }
+.hv-a h1 .hv-red { display: block; color: var(--red); }
+.hv-a h1 .hv-caret { display: inline-block; width: .09em; height: .78em; margin-left: .06em; vertical-align: baseline; background: var(--red); }
+.cd-result { opacity: 1; transform: none; color: #5f5f5b; font-weight: 500; }
+.cd-result::before { color: #5f5f5b; }
+.cpu-demo.done .cd-result { color: #2fd36b; font-weight: 600; animation: res-in .4s ease; }
+.cpu-demo.done .cd-result::before { color: #2fd36b; }
+@keyframes res-in { from { opacity: 0; transform: translateY(4px); } }

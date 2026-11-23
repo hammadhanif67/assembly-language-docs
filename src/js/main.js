@@ -355,7 +355,7 @@
       tabs.forEach((t, i) => t.classList.toggle('on', i === k));
       const state = { ...p.init, cyc: 0 };
       render(p, state);
-      resEl.textContent = p.result; demo.classList.remove('done');
+      resEl.textContent = 'Result appears at hlt'; demo.classList.remove('done');
       codeEl.innerHTML = p.lines.map((l) => `<li class="cd-line"><span class="cd-addr">${l.addr}</span><span class="cd-bytes">${l.bytes}</span><code></code></li>`).join('');
       const items = $$('.cd-line', codeEl);
       if (still) { items.forEach((li, i) => { $('code', li).innerHTML = color(p.lines[i].code); }); }
@@ -379,7 +379,7 @@
         if (still) continue;
         if (!(await sleep(950, g))) return;
       }
-      demo.classList.add('done'); setLive('Done', 'done');
+      resEl.textContent = p.result; demo.classList.add('done'); setLive('Done', 'done');
       if (still) return;
       if (!(await sleep(2600, g))) return;
       run((k + 1) % PROGRAMS.length, g);
@@ -389,6 +389,24 @@
     if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => { paused = !e.isIntersecting || document.hidden; }).observe(demo);
     document.addEventListener('visibilitychange', () => { paused = document.hidden; });
     restart(0);
+  }
+
+  /* ---------- Home hero: numbers count up ---------- */
+  function setupCountUp() {
+    const els = Array.from(document.querySelectorAll('.hv-stats [data-count]'));
+    if (!els.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    els.forEach((el) => { el.textContent = '0'; });
+    const go = () => {
+      const t0 = performance.now(), dur = 1400;
+      const step = (t) => {
+        const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+        els.forEach((el) => { el.textContent = String(Math.round(+el.dataset.count * e)); });
+        if (k < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+      setTimeout(() => els.forEach((el) => { el.textContent = el.dataset.count; }), dur + 200);
+    };
+    setTimeout(go, 900);
   }
 
   /* ---------- Boot ---------- */
@@ -403,6 +421,7 @@
     setupLightbox();
     setupToolsSpy();
     setupHeroDemo();
+    setupCountUp();
     renderMermaid();
     if (window.COAL_WIDGETS) window.COAL_WIDGETS.init();
     icons();
