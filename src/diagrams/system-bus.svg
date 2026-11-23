@@ -1,0 +1,17 @@
+<svg viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg">
+  <text class="d-text" x="320" y="22" text-anchor="middle">Address Bus</text>
+  <path class="d-line-thick d-acc" d="M110 92 V44 H530 V92" style="stroke-width:8;fill:none"/>
+  <path class="d-fill-acc" d="M310 78 L330 78 L320 96 Z"/>
+  <path class="d-fill-acc" d="M520 78 L540 78 L530 96 Z"/>
+  <rect class="d-box-a" x="40" y="96" width="140" height="64" style="opacity:.85"/><text class="d-title" x="110" y="134" text-anchor="middle" style="fill:var(--on-accent)">CPU</text>
+  <rect class="d-box-a" x="250" y="96" width="140" height="64" style="opacity:.85"/><text class="d-title" x="320" y="134" text-anchor="middle" style="fill:var(--on-accent)">Memory</text>
+  <rect class="d-box-a" x="460" y="96" width="140" height="64" style="opacity:.85"/><text class="d-title" x="530" y="134" text-anchor="middle" style="fill:var(--on-accent)">I/O</text>
+  <path class="d-line-thick d-acc-2" d="M96 166 V200 H530 V166" style="stroke-width:8;fill:none"/>
+  <path class="d-fill-acc-2" d="M86 180 L106 180 L96 162 Z"/><path class="d-fill-acc-2" d="M296 180 L316 180 L306 162 Z"/><path class="d-fill-acc-2" d="M520 180 L540 180 L530 162 Z"/>
+  <text class="d-text" x="200" y="190" text-anchor="middle">Control Bus</text>
+  <path class="d-line-thick d-acc-3" d="M126 166 V232 H560 V166" style="stroke-width:8;fill:none"/>
+  <path class="d-fill-acc-3" d="M116 180 L136 180 L126 162 Z"/><path class="d-fill-acc-3" d="M324 180 L344 180 L334 162 Z"/><path class="d-fill-acc-3" d="M550 180 L570 180 L560 162 Z"/>
+  <path class="d-line-thick d-acc-3" d="M334 166 V232" style="stroke-width:8"/>
+  <path class="d-line-thick d-acc-2" d="M306 166 V200" style="stroke-width:8"/>
+  <text class="d-text" x="320" y="260" text-anchor="middle">Data Bus</text>
+</svg>

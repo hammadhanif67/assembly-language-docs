@@ -1,0 +1,77 @@
+<svg viewBox="0 0 680 330" xmlns="http://www.w3.org/2000/svg">
+<text class="d-title" x="110.0" y="22" text-anchor="middle">6 PM</text>
+<text class="d-title" x="196.7" y="22" text-anchor="middle">7</text>
+<text class="d-title" x="283.3" y="22" text-anchor="middle">8</text>
+<text class="d-title" x="370.0" y="22" text-anchor="middle">9</text>
+<text class="d-title" x="456.7" y="22" text-anchor="middle">10</text>
+<text class="d-title" x="543.3" y="22" text-anchor="middle">11</text>
+<text class="d-title" x="630.0" y="22" text-anchor="middle">Midnight</text>
+<line class="d-line d-arrow" x1="110" y1="34" x2="650" y2="34"/>
+<text class="d-text" x="370.0" y="52" text-anchor="middle" font-style="italic">Time</text>
+<rect class="d-fill-acc-2" x="111.0" y="60" width="41.3" height="4"/>
+<text class="d-mono" x="131.7" y="82" text-anchor="middle">30</text>
+<line class="d-line" x1="153.3" y1="58" x2="153.3" y2="86"/>
+<rect class="d-fill-acc-3" x="154.3" y="60" width="55.8" height="4"/>
+<text class="d-mono" x="182.2" y="82" text-anchor="middle">40</text>
+<line class="d-line" x1="211.1" y1="58" x2="211.1" y2="86"/>
+<rect class="d-fill-acc-4" x="212.1" y="60" width="26.9" height="4"/>
+<text class="d-mono" x="225.6" y="82" text-anchor="middle">20</text>
+<line class="d-line" x1="240.0" y1="58" x2="240.0" y2="86"/>
+<rect class="d-fill-acc-2" x="241.0" y="60" width="41.3" height="4"/>
+<text class="d-mono" x="261.7" y="82" text-anchor="middle">30</text>
+<line class="d-line" x1="283.3" y1="58" x2="283.3" y2="86"/>
+<rect class="d-fill-acc-3" x="284.3" y="60" width="55.8" height="4"/>
+<text class="d-mono" x="312.2" y="82" text-anchor="middle">40</text>
+<line class="d-line" x1="341.1" y1="58" x2="341.1" y2="86"/>
+<rect class="d-fill-acc-4" x="342.1" y="60" width="26.9" height="4"/>
+<text class="d-mono" x="355.6" y="82" text-anchor="middle">20</text>
+<line class="d-line" x1="370.0" y1="58" x2="370.0" y2="86"/>
+<rect class="d-fill-acc-2" x="371.0" y="60" width="41.3" height="4"/>
+<text class="d-mono" x="391.7" y="82" text-anchor="middle">30</text>
+<line class="d-line" x1="413.3" y1="58" x2="413.3" y2="86"/>
+<rect class="d-fill-acc-3" x="414.3" y="60" width="55.8" height="4"/>
+<text class="d-mono" x="442.2" y="82" text-anchor="middle">40</text>
+<line class="d-line" x1="471.1" y1="58" x2="471.1" y2="86"/>
+<rect class="d-fill-acc-4" x="472.1" y="60" width="26.9" height="4"/>
+<text class="d-mono" x="485.6" y="82" text-anchor="middle">20</text>
+<line class="d-line" x1="500.0" y1="58" x2="500.0" y2="86"/>
+<rect class="d-fill-acc-2" x="501.0" y="60" width="41.3" height="4"/>
+<text class="d-mono" x="521.7" y="82" text-anchor="middle">30</text>
+<line class="d-line" x1="543.3" y1="58" x2="543.3" y2="86"/>
+<rect class="d-fill-acc-3" x="544.3" y="60" width="55.8" height="4"/>
+<text class="d-mono" x="572.2" y="82" text-anchor="middle">40</text>
+<line class="d-line" x1="601.1" y1="58" x2="601.1" y2="86"/>
+<rect class="d-fill-acc-4" x="602.1" y="60" width="26.9" height="4"/>
+<text class="d-mono" x="615.6" y="82" text-anchor="middle">20</text>
+<line class="d-line" x1="630.0" y1="58" x2="630.0" y2="86"/>
+<text class="d-small" x="18" y="200" transform="rotate(-90 18 200)" text-anchor="middle">Task Order</text>
+<line class="d-line d-arrow" x1="34" y1="100" x2="34" y2="320"/>
+<circle class="d-box-3" cx="70" cy="122" r="17"/><text class="d-title" x="70" y="127" text-anchor="middle">A</text>
+<rect class="d-fill-acc-2" x="110.0" y="104" width="43.3" height="36" rx="3" style="opacity:.9"/>
+<text class="d-small d-on-accent" x="131.7" y="127" text-anchor="middle" style="fill:var(--on-accent);font-weight:700">Wash</text>
+<rect class="d-fill-acc-3" x="153.3" y="104" width="57.8" height="36" rx="3" style="opacity:.9"/>
+<text class="d-small d-on-accent" x="182.2" y="127" text-anchor="middle" style="fill:var(--on-accent);font-weight:700">Dry</text>
+<rect class="d-fill-acc-4" x="211.1" y="104" width="28.9" height="36" rx="3" style="opacity:.9"/>
+<text class="d-small d-on-accent" x="225.6" y="127" text-anchor="middle" style="fill:var(--on-accent);font-weight:700">Fold</text>
+<circle class="d-box-3" cx="70" cy="176" r="17"/><text class="d-title" x="70" y="181" text-anchor="middle">B</text>
+<rect class="d-fill-acc-2" x="240.0" y="158" width="43.3" height="36" rx="3" style="opacity:.9"/>
+<text class="d-small d-on-accent" x="261.7" y="181" text-anchor="middle" style="fill:var(--on-accent);font-weight:700">Wash</text>
+<rect class="d-fill-acc-3" x="283.3" y="158" width="57.8" height="36" rx="3" style="opacity:.9"/>
+<text class="d-small d-on-accent" x="312.2" y="181" text-anchor="middle" style="fill:var(--on-accent);font-weight:700">Dry</text>
+<rect class="d-fill-acc-4" x="341.1" y="158" width="28.9" height="36" rx="3" style="opacity:.9"/>
+<text class="d-small d-on-accent" x="355.6" y="181" text-anchor="middle" style="fill:var(--on-accent);font-weight:700">Fold</text>
+<circle class="d-box-3" cx="70" cy="230" r="17"/><text class="d-title" x="70" y="235" text-anchor="middle">C</text>
+<rect class="d-fill-acc-2" x="370.0" y="212" width="43.3" height="36" rx="3" style="opacity:.9"/>
+<text class="d-small d-on-accent" x="391.7" y="235" text-anchor="middle" style="fill:var(--on-accent);font-weight:700">Wash</text>
+<rect class="d-fill-acc-3" x="413.3" y="212" width="57.8" height="36" rx="3" style="opacity:.9"/>
+<text class="d-small d-on-accent" x="442.2" y="235" text-anchor="middle" style="fill:var(--on-accent);font-weight:700">Dry</text>
+<rect class="d-fill-acc-4" x="471.1" y="212" width="28.9" height="36" rx="3" style="opacity:.9"/>
+<text class="d-small d-on-accent" x="485.6" y="235" text-anchor="middle" style="fill:var(--on-accent);font-weight:700">Fold</text>
+<circle class="d-box-3" cx="70" cy="284" r="17"/><text class="d-title" x="70" y="289" text-anchor="middle">D</text>
+<rect class="d-fill-acc-2" x="500.0" y="266" width="43.3" height="36" rx="3" style="opacity:.9"/>
+<text class="d-small d-on-accent" x="521.7" y="289" text-anchor="middle" style="fill:var(--on-accent);font-weight:700">Wash</text>
+<rect class="d-fill-acc-3" x="543.3" y="266" width="57.8" height="36" rx="3" style="opacity:.9"/>
+<text class="d-small d-on-accent" x="572.2" y="289" text-anchor="middle" style="fill:var(--on-accent);font-weight:700">Dry</text>
+<rect class="d-fill-acc-4" x="601.1" y="266" width="28.9" height="36" rx="3" style="opacity:.9"/>
+<text class="d-small d-on-accent" x="615.6" y="289" text-anchor="middle" style="fill:var(--on-accent);font-weight:700">Fold</text>
+</svg>

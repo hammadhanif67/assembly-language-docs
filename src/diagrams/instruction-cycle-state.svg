@@ -1,0 +1,38 @@
+<svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <circle class="d-box-2" cx="80" cy="80" r="46"/>
+    <circle class="d-box-2" cx="320" cy="80" r="46"/>
+    <circle class="d-box-2" cx="560" cy="80" r="46"/>
+    <circle class="d-box" cx="80" cy="250" r="46"/>
+    <circle class="d-box" cx="200" cy="250" r="46"/>
+    <circle class="d-box" cx="320" cy="250" r="46"/>
+    <circle class="d-box-3" cx="440" cy="250" r="46"/>
+    <circle class="d-box" cx="560" cy="250" r="46"/>
+  </g>
+  <g class="d-text" text-anchor="middle" style="font-size:12.5px">
+    <text x="80" y="76">Instruction</text><text x="80" y="92">fetch</text>
+    <text x="320" y="76">Operand</text><text x="320" y="92">fetch</text>
+    <text x="560" y="76">Operand</text><text x="560" y="92">store</text>
+    <text x="80" y="238">Instruction</text><text x="80" y="254">address</text><text x="80" y="270">calculation</text>
+    <text x="200" y="238">Instruction</text><text x="200" y="254">operation</text><text x="200" y="270">decoding</text>
+    <text x="320" y="238">Operand</text><text x="320" y="254">address</text><text x="320" y="270">calculation</text>
+    <text x="440" y="246">Data</text><text x="440" y="262">Operation</text>
+    <text x="560" y="238">Operand</text><text x="560" y="254">address</text><text x="560" y="270">calculation</text>
+  </g>
+  <line class="d-line d-arrow" x1="80" y1="204" x2="80" y2="128"/>
+  <line class="d-line d-arrow" x1="110" y1="115" x2="174" y2="210"/>
+  <line class="d-line d-arrow" x1="246" y1="250" x2="272" y2="250"/>
+  <line class="d-line d-arrow" x1="308" y1="205" x2="308" y2="128"/>
+  <line class="d-line d-arrow" x1="334" y1="126" x2="334" y2="203"/>
+  <text class="d-small" x="346" y="160">Multiple</text><text class="d-small" x="346" y="174">operands</text>
+  <path class="d-line d-arrow" d="M366 80 H400 L430 204"/>
+  <line class="d-line d-arrow" x1="486" y1="250" x2="512" y2="250"/>
+  <line class="d-line d-arrow" x1="548" y1="205" x2="548" y2="128"/>
+  <line class="d-line d-arrow" x1="574" y1="126" x2="574" y2="203"/>
+  <text class="d-small" x="586" y="160">Multiple</text><text class="d-small" x="586" y="174">results</text>
+  <path class="d-line d-acc" d="M606 80 H650 L670 340 H118"/>
+  <line class="d-line d-arrow d-acc" style="marker-end:url(#d-ah-acc)" x1="118" y1="340" x2="94" y2="296"/>
+  <line class="d-line d-arrow d-acc-2" style="marker-end:url(#d-ah-acc2)" x1="380" y1="340" x2="338" y2="296"/>
+  <text class="d-small" x="104" y="362" style="fill:var(--d-text)">Instruction complete, fetch next instruction</text>
+  <text class="d-small" x="436" y="362" style="fill:var(--d-text)">Return for string or vector data</text>
+</svg>

@@ -1,0 +1,27 @@
+<svg viewBox="0 0 700 290" xmlns="http://www.w3.org/2000/svg">
+  <g class="d-text" text-anchor="middle" style="font-size:17px">
+    <text x="150" y="44">time</text><line class="d-line" x1="110" y1="52" x2="190" y2="52"/><text x="150" y="74">program</text>
+    <text x="220" y="62">=</text>
+    <text x="290" y="44">time</text><line class="d-line" x1="255" y1="52" x2="325" y2="52"/><text x="290" y="74">cycle</text>
+    <text x="350" y="62">×</text>
+    <text x="430" y="44">cycles</text><line class="d-line d-acc-2" x1="375" y1="52" x2="485" y2="52"/><text x="430" y="74">instruction</text>
+    <text x="510" y="62">×</text>
+    <text x="590" y="44">instructions</text><line class="d-line d-acc" x1="535" y1="52" x2="645" y2="52"/><text x="590" y="74">program</text>
+  </g>
+  <path class="d-box-2" d="M20 190 L110 110 V140 H330 V240 H110 V270 Z" style="stroke:var(--d-accent)"/>
+  <g class="d-small" text-anchor="middle" style="fill:var(--d-text);font-size:12.5px">
+    <text x="220" y="166">The CISC approach attempts to</text>
+    <text x="220" y="184" style="font-weight:700">minimize the number of</text>
+    <text x="220" y="202" style="font-weight:700">instructions per program,</text>
+    <text x="220" y="220">sacrificing the number of</text>
+    <text x="220" y="238">cycles per instruction.</text>
+  </g>
+  <path class="d-box-3" d="M680 190 L590 110 V140 H370 V240 H590 V270 Z" style="stroke:var(--d-accent-2)"/>
+  <g class="d-small" text-anchor="middle" style="fill:var(--d-text);font-size:12.5px">
+    <text x="480" y="166">RISC does the opposite,</text>
+    <text x="480" y="184" style="font-weight:700">reducing the cycles per</text>
+    <text x="480" y="202" style="font-weight:700">instruction at the cost of the</text>
+    <text x="480" y="220">number of instructions per</text>
+    <text x="480" y="238">program.</text>
+  </g>
+</svg>

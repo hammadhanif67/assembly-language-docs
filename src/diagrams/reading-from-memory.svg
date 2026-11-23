@@ -1,0 +1,24 @@
+<svg viewBox="0 0 680 270" xmlns="http://www.w3.org/2000/svg">
+  <rect class="d-frame" x="10" y="10" width="330" height="230" style="stroke-dasharray:none"/>
+  <text class="d-title" x="175" y="226" text-anchor="middle">Microprocessor</text>
+  <rect class="d-box-2" x="26" y="26" width="128" height="52" rx="4"/>
+  <text class="d-title" x="90" y="48" text-anchor="middle">Control Unit</text>
+  <text class="d-text" x="90" y="68" text-anchor="middle">(CU)</text>
+  <rect class="d-box-2" x="190" y="90" width="134" height="38" rx="4"/>
+  <text class="d-title" x="257" y="115" text-anchor="middle">PC</text>
+  <rect class="d-box-2" x="190" y="160" width="134" height="38" rx="4"/>
+  <text class="d-title" x="257" y="185" text-anchor="middle">Data Buffer</text>
+  <rect class="d-frame" x="500" y="10" width="170" height="230" style="stroke-dasharray:none"/>
+  <text class="d-text" x="520" y="58">Read</text>
+  <text class="d-text" x="520" y="113">Address</text>
+  <text class="d-text" x="520" y="183">Data</text>
+  <text class="d-title" x="585" y="226" text-anchor="middle">Memory</text>
+  <line class="d-line d-arrow" x1="154" y1="52" x2="508" y2="52"/>
+  <text class="d-text" x="420" y="40" text-anchor="middle">Memory</text>
+  <text class="d-text" x="420" y="88" text-anchor="middle">Read</text>
+  <line class="d-line-thick d-acc" x1="324" y1="109" x2="496" y2="109" style="marker-end:url(#d-ah-acc)"/>
+  <text class="d-text" x="420" y="142" text-anchor="middle">Memory address</text>
+  <line class="d-line-thick d-acc-2" x1="508" y1="179" x2="336" y2="179" style="marker-end:url(#d-ah-acc2)"/>
+  <text class="d-text" x="420" y="214" text-anchor="middle">Data from Memory</text>
+  <text class="d-title" x="340" y="262" text-anchor="middle">Figure: Reading from memory</text>
+</svg>

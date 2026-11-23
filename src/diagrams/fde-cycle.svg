@@ -1,0 +1,11 @@
+<svg viewBox="0 0 440 340" class="d-compact" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="fde-ah" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="30" markerHeight="30" orient="auto"><path d="M0 0L10 5L0 10z" style="fill:var(--d-accent)"/></marker>
+  </defs>
+  <path class="d-line d-acc" style="stroke-width:10;marker-end:url(#fde-ah)" d="M262 50 A130 130 0 0 1 340 184"/>
+  <path class="d-line d-acc" style="stroke-width:10;marker-end:url(#fde-ah)" d="M300 274 A130 130 0 0 1 140 274"/>
+  <path class="d-line d-acc" style="stroke-width:10;marker-end:url(#fde-ah)" d="M100 184 A130 130 0 0 1 178 50"/>
+  <rect class="d-box" x="170" y="14" width="100" height="40" style="stroke:var(--d-accent);stroke-width:2.5"/><text class="d-title" x="220" y="40" text-anchor="middle" style="font-size:18px">Fetch</text>
+  <rect class="d-box" x="304" y="206" width="110" height="40" style="stroke:var(--d-accent);stroke-width:2.5"/><text class="d-title" x="359" y="232" text-anchor="middle" style="font-size:18px">Decode</text>
+  <rect class="d-box" x="26" y="206" width="110" height="40" style="stroke:var(--d-accent);stroke-width:2.5"/><text class="d-title" x="81" y="232" text-anchor="middle" style="font-size:18px">Execute</text>
+</svg>

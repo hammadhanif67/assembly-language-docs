@@ -1,0 +1,57 @@
+<svg viewBox="0 0 700 560" xmlns="http://www.w3.org/2000/svg">
+  <rect class="d-box-2" x="40" y="8" width="190" height="46"/><text class="d-text" x="135" y="28" text-anchor="middle">To memory and</text><text class="d-text" x="135" y="46" text-anchor="middle">Input/ Output</text>
+  <rect class="d-frame" x="10" y="64" width="680" height="226"/>
+  <text class="d-title" x="22" y="88" style="font-size:20px">BIU</text>
+  <path class="d-line d-arrow-both" style="stroke-width:3" d="M135 58 V84"/>
+  <path class="d-line d-arrow" style="stroke-width:3" d="M135 74 H560 V90"/>
+  <path class="d-box-3" d="M60 94 H210 L240 150 H30 Z"/>
+  <text class="d-title" x="135" y="118" text-anchor="middle" style="font-size:20px">Σ</text>
+  <text class="d-mono" x="135" y="140" text-anchor="middle" style="fill:var(--d-accent-2);font-size:13px">PA = Seg × 10H + offset</text>
+  <g class="d-mono" text-anchor="middle">
+    <rect class="d-box-2" x="50" y="160" width="170" height="22"/><text x="135" y="176">CS</text>
+    <rect class="d-box-2" x="50" y="182" width="170" height="22"/><text x="135" y="198">SS</text>
+    <rect class="d-box-2" x="50" y="204" width="170" height="22"/><text x="135" y="220">DS</text>
+    <rect class="d-box-2" x="50" y="226" width="170" height="22"/><text x="135" y="242">ES</text>
+    <rect class="d-box-2" x="50" y="248" width="170" height="22"/><text x="135" y="264">IP</text>
+  </g>
+  <line class="d-line d-arrow" x1="90" y1="160" x2="90" y2="146"/><line class="d-line d-arrow" x1="180" y1="160" x2="180" y2="146"/>
+  <g class="d-mono" text-anchor="middle">
+    <rect class="d-box" x="520" y="92" width="80" height="24"/><text x="560" y="109">6</text>
+    <rect class="d-box" x="520" y="116" width="80" height="24"/><text x="560" y="133">5</text>
+    <rect class="d-box" x="520" y="140" width="80" height="24"/><text x="560" y="157">4</text>
+    <rect class="d-box" x="520" y="164" width="80" height="24"/><text x="560" y="181">3</text>
+    <rect class="d-box" x="520" y="188" width="80" height="24"/><text x="560" y="205">2</text>
+    <rect class="d-box" x="520" y="212" width="80" height="24"/><text x="560" y="229">1</text>
+  </g>
+  <text class="d-text" x="614" y="140">6-Byte</text><text class="d-text" x="614" y="160">pre-fetch</text><text class="d-text" x="614" y="180">queue</text>
+  <path class="d-line d-arrow" style="stroke-width:2" d="M560 236 V300"/>
+  <rect class="d-box-a" x="450" y="302" width="220" height="50"/><text class="d-title" x="560" y="333" text-anchor="middle" style="fill:var(--on-accent);font-size:18px">Control Unit</text>
+  <line class="d-line d-arrow-both" style="stroke-width:3" x1="135" y1="272" x2="135" y2="312"/>
+  <path class="d-line" style="stroke-width:6;opacity:.6" d="M120 320 H680"/>
+  <path class="d-line d-arrow" d="M400 320 V250 H520"/>
+  <rect class="d-frame" x="10" y="296" width="680" height="240"/>
+  <text class="d-title" x="22" y="348" style="font-size:20px">EU</text>
+  <g class="d-mono" text-anchor="middle">
+    <rect x="80" y="340" width="60" height="22" style="fill:#fff3b0;stroke:var(--d-stroke)"/><text x="110" y="356" style="fill:#111">AH</text><rect x="140" y="340" width="60" height="22" style="fill:#fff3b0;stroke:var(--d-stroke)"/><text x="170" y="356" style="fill:#111">AL</text>
+    <rect x="80" y="362" width="60" height="22" style="fill:#d4f5c9;stroke:var(--d-stroke)"/><text x="110" y="378" style="fill:#111">BH</text><rect x="140" y="362" width="60" height="22" style="fill:#d4f5c9;stroke:var(--d-stroke)"/><text x="170" y="378" style="fill:#111">BL</text>
+    <rect x="80" y="384" width="60" height="22" style="fill:#c9e9f5;stroke:var(--d-stroke)"/><text x="110" y="400" style="fill:#111">CH</text><rect x="140" y="384" width="60" height="22" style="fill:#c9e9f5;stroke:var(--d-stroke)"/><text x="170" y="400" style="fill:#111">CL</text>
+    <rect x="80" y="406" width="60" height="22" style="fill:#f7c6d0;stroke:var(--d-stroke)"/><text x="110" y="422" style="fill:#111">DH</text><rect x="140" y="406" width="60" height="22" style="fill:#f7c6d0;stroke:var(--d-stroke)"/><text x="170" y="422" style="fill:#111">DL</text>
+    <rect x="80" y="428" width="120" height="22" style="fill:#f7c6d0;stroke:var(--d-stroke)"/><text x="140" y="444" style="fill:#111">SP</text>
+    <rect x="80" y="450" width="120" height="22" style="fill:#fff3b0;stroke:var(--d-stroke)"/><text x="140" y="466" style="fill:#111">BP</text>
+    <rect x="80" y="472" width="120" height="22" style="fill:#f1e0c0;stroke:var(--d-stroke)"/><text x="140" y="488" style="fill:#111">SI</text>
+    <rect x="80" y="494" width="120" height="22" style="fill:#d4f5c9;stroke:var(--d-stroke)"/><text x="140" y="510" style="fill:#111">DI</text>
+    <text x="232" y="356" style="fill:var(--d-accent-2)">→AX</text><text x="232" y="378" style="fill:var(--d-accent-2)">→BX</text><text x="232" y="400" style="fill:var(--d-accent-2)">→CX</text><text x="232" y="422" style="fill:var(--d-accent-2)">→DX</text>
+  </g>
+  <path class="d-line" d="M256 344 Q264 344 264 352 V412 Q264 420 256 420"/>
+  <text class="d-text" x="276" y="372">General</text><text class="d-text" x="276" y="390">Purpose</text><text class="d-text" x="276" y="408">Registers</text>
+  <path class="d-box-3" d="M440 370 H520 L540 400 L560 370 H640 L600 450 H480 Z"/>
+  <text class="d-title" x="540" y="438" text-anchor="middle" style="font-size:20px">ALU</text>
+  <line class="d-line d-arrow" x1="470" y1="322" x2="470" y2="366"/><line class="d-line d-arrow" x1="610" y1="322" x2="610" y2="366"/>
+  <rect x="470" y="462" width="140" height="28" style="fill:#f5a76b;stroke:var(--d-stroke)"/><text x="540" y="481" text-anchor="middle" style="fill:#111;font-family:var(--font-body);font-weight:600">Operands</text>
+  <rect x="470" y="490" width="140" height="28" style="fill:#a9bdf0;stroke:var(--d-stroke)"/><text x="540" y="509" text-anchor="middle" style="fill:#111;font-family:var(--font-body);font-weight:600">Flags</text>
+  <line class="d-line d-arrow" x1="480" y1="452" x2="480" y2="460"/>
+  <path class="d-line d-arrow" d="M600 452 V440 H660 V320"/>
+  <path class="d-line d-arrow-both" d="M612 504 H670"/>
+  <line class="d-line d-arrow-both" style="stroke-width:3" x1="140" y1="322" x2="140" y2="338"/>
+  <text class="d-title" x="350" y="552" text-anchor="middle" style="font-size:14px">Block Diagram of 8086 Microprocessor</text>
+</svg>

@@ -1,0 +1,14 @@
+<svg viewBox="0 0 660 260" xmlns="http://www.w3.org/2000/svg">
+  <g class="d-text" text-anchor="middle" style="font-size:13.5px">
+    <rect class="d-box" x="10" y="30" width="130" height="44"/><text x="75" y="57">Auxiliary memory</text>
+    <rect class="d-box" x="200" y="30" width="130" height="44"/><text x="265" y="57">I/O processor</text>
+    <rect class="d-box-2" x="390" y="30" width="130" height="44"/><text x="455" y="57">Main Memory</text>
+    <rect class="d-box-3" x="520" y="130" width="130" height="44"/><text x="585" y="157">Cache</text>
+    <rect class="d-box-a" x="390" y="200" width="130" height="44"/><text x="455" y="227" class="d-on-accent" style="fill:var(--on-accent)">CPU</text>
+  </g>
+  <line class="d-line d-arrow-both" x1="142" y1="52" x2="198" y2="52"/>
+  <line class="d-line d-arrow-both" x1="332" y1="52" x2="388" y2="52"/>
+  <line class="d-line d-arrow-both" x1="455" y1="78" x2="455" y2="196"/>
+  <line class="d-line d-arrow-both" x1="522" y1="70" x2="580" y2="126"/>
+  <line class="d-line d-arrow-both" x1="575" y1="178" x2="524" y2="214"/>
+</svg>

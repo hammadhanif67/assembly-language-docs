@@ -1,0 +1,48 @@
+<svg viewBox="0 0 640 470" xmlns="http://www.w3.org/2000/svg">
+  <text class="d-title" x="150" y="22" text-anchor="middle">CPU</text>
+  <rect class="d-box-2" x="40" y="30" width="220" height="200"/>
+  <rect class="d-box" x="60" y="48" width="72" height="28"/><text class="d-mono" x="96" y="67" text-anchor="middle">PC</text>
+  <rect class="d-box" x="168" y="48" width="72" height="28"/><text class="d-mono" x="204" y="67" text-anchor="middle">MAR</text>
+  <rect class="d-box" x="60" y="94" width="72" height="28"/><text class="d-mono" x="96" y="113" text-anchor="middle">IR</text>
+  <rect class="d-box" x="168" y="94" width="72" height="28"/><text class="d-mono" x="204" y="113" text-anchor="middle">MBR</text>
+  <rect class="d-box" x="168" y="136" width="72" height="28"/><text class="d-mono" x="204" y="155" text-anchor="middle">I/O AR</text>
+  <rect class="d-box" x="168" y="178" width="72" height="28"/><text class="d-mono" x="204" y="197" text-anchor="middle">I/O BR</text>
+  <path class="d-box" d="M54 146 H142 L124 190 H72 Z"/>
+  <text class="d-small" x="98" y="165" text-anchor="middle" style="fill:var(--d-text)">Execution</text>
+  <text class="d-small" x="98" y="179" text-anchor="middle" style="fill:var(--d-text)">unit</text>
+  <text class="d-title" x="140" y="282" text-anchor="middle">I/O Module</text>
+  <rect class="d-box-2" x="40" y="290" width="210" height="140"/>
+  <rect class="d-box" x="110" y="310" width="80" height="80"/>
+  <line class="d-line" x1="110" y1="322" x2="190" y2="322"/><line class="d-line" x1="110" y1="334" x2="190" y2="334"/><line class="d-line" x1="110" y1="346" x2="190" y2="346"/>
+  <text class="d-small" x="150" y="372" text-anchor="middle">⋮</text>
+  <text class="d-small" x="150" y="415" text-anchor="middle" style="fill:var(--d-text)">Buffers</text>
+  <text class="d-text" x="330" y="52" text-anchor="middle">System</text>
+  <text class="d-text" x="330" y="70" text-anchor="middle">Bus</text>
+  <path class="d-line-thick d-acc" d="M268 90 H330 V350 H258" style="stroke-width:7"/>
+  <path class="d-line-thick d-acc" d="M330 190 H410" style="stroke-width:7"/>
+  <path class="d-fill-acc" d="M262 80 L262 100 L246 90 Z"/>
+  <path class="d-fill-acc" d="M252 340 L252 360 L236 350 Z"/>
+  <path class="d-fill-acc" d="M410 180 L410 200 L426 190 Z"/>
+  <text class="d-title" x="500" y="22" text-anchor="middle">Main Memory</text>
+  <rect class="d-box" x="430" y="30" width="140" height="300"/>
+  <text class="d-small" x="580" y="44">0</text><text class="d-small" x="580" y="58">1</text><text class="d-small" x="580" y="72">2</text>
+  <text class="d-small" x="500" y="66" text-anchor="middle">⋮</text>
+  <rect class="d-box-3" x="430" y="80" width="140" height="18"/><text class="d-small" x="500" y="93" text-anchor="middle" style="fill:var(--d-text)">Instruction</text>
+  <rect class="d-box-3" x="430" y="98" width="140" height="18"/><text class="d-small" x="500" y="111" text-anchor="middle" style="fill:var(--d-text)">Instruction</text>
+  <rect class="d-box-3" x="430" y="116" width="140" height="18"/><text class="d-small" x="500" y="129" text-anchor="middle" style="fill:var(--d-text)">Instruction</text>
+  <text class="d-small" x="500" y="158" text-anchor="middle">⋮</text>
+  <rect class="d-box-2" x="430" y="180" width="140" height="18"/><text class="d-small" x="500" y="193" text-anchor="middle" style="fill:var(--d-text)">Data</text>
+  <rect class="d-box-2" x="430" y="198" width="140" height="18"/><text class="d-small" x="500" y="211" text-anchor="middle" style="fill:var(--d-text)">Data</text>
+  <rect class="d-box-2" x="430" y="216" width="140" height="18"/><text class="d-small" x="500" y="229" text-anchor="middle" style="fill:var(--d-text)">Data</text>
+  <rect class="d-box-2" x="430" y="234" width="140" height="18"/><text class="d-small" x="500" y="247" text-anchor="middle" style="fill:var(--d-text)">Data</text>
+  <text class="d-small" x="500" y="282" text-anchor="middle">⋮</text>
+  <text class="d-small" x="580" y="306">n - 2</text><text class="d-small" x="580" y="322">n - 1</text>
+  <g class="d-small" style="fill:var(--d-text)">
+    <text x="290" y="380">PC</text><text x="350" y="380">=  Program counter</text>
+    <text x="290" y="396">IR</text><text x="350" y="396">=  Instruction register</text>
+    <text x="290" y="412">MAR</text><text x="350" y="412">=  Memory address register</text>
+    <text x="290" y="428">MBR</text><text x="350" y="428">=  Memory buffer register</text>
+    <text x="290" y="444">I/O AR</text><text x="350" y="444">=  Input/output address register</text>
+    <text x="290" y="460">I/O BR</text><text x="350" y="460">=  Input/output buffer register</text>
+  </g>
+</svg>

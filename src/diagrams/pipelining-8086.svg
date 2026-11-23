@@ -1,0 +1,22 @@
+<svg viewBox="0 0 620 350" xmlns="http://www.w3.org/2000/svg">
+  <text class="d-title" x="310" y="28" text-anchor="middle" style="font-size:20px">Pipelining in 8086</text>
+  <text class="d-title" x="40" y="66" style="font-size:13px">Nonpipelined 8085</text>
+  <g class="d-mono" text-anchor="middle" style="font-size:14px">
+    <rect class="d-box-2" x="130" y="80" width="90" height="38"/><text x="175" y="104">fetch1</text>
+    <rect class="d-box-3" x="220" y="80" width="90" height="38"/><text x="265" y="104">exe1</text>
+    <rect class="d-box-2" x="310" y="80" width="90" height="38"/><text x="355" y="104">fetch2</text>
+    <rect class="d-box-3" x="400" y="80" width="90" height="38"/><text x="445" y="104">exe2</text>
+  </g>
+  <line class="d-line" x1="30" y1="138" x2="590" y2="138"/>
+  <g class="d-mono" text-anchor="middle" style="font-size:14px">
+    <rect class="d-box-2" x="130" y="154" width="90" height="38"/><text x="175" y="178">fetch1</text>
+    <rect class="d-box-3" x="220" y="154" width="90" height="38"/><text x="265" y="178">exe1</text>
+    <rect class="d-box-2" x="220" y="200" width="90" height="38"/><text x="265" y="224">fetch2</text>
+    <rect class="d-box-3" x="310" y="200" width="90" height="38"/><text x="355" y="224">exe2</text>
+    <rect class="d-box-2" x="310" y="246" width="90" height="38"/><text x="355" y="270">fetch3</text>
+    <rect class="d-box-3" x="400" y="246" width="90" height="38"/><text x="445" y="270">exe3</text>
+  </g>
+  <text class="d-title" x="40" y="214" style="font-size:15px">Pipelined</text>
+  <text class="d-title" x="40" y="234" style="font-size:15px">8086</text>
+  <text class="d-text" x="310" y="318" text-anchor="middle" style="font-weight:600">Pipelined  in 8086 microprocessor</text>
+</svg>

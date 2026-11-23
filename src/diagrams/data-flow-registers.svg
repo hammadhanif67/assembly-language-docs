@@ -1,0 +1,14 @@
+<svg viewBox="0 0 680 210" xmlns="http://www.w3.org/2000/svg">
+  <text class="d-title" x="340" y="28" text-anchor="middle" style="font-size:20px">Flow of Data Through Registers</text>
+  <rect class="d-box-2" x="486" y="52" width="180" height="146" rx="10"/>
+  <text class="d-title" x="576" y="82" text-anchor="middle" style="font-size:20px">CPU</text>
+  <g text-anchor="middle" style="font-family:var(--font-head);font-weight:700;font-size:16px">
+    <rect x="16" y="110" width="118" height="56" rx="8" style="fill:#f28c28;stroke:var(--d-stroke)"/><text x="75" y="144" style="fill:#111">Hard Disk</text>
+    <rect x="170" y="110" width="100" height="56" rx="8" style="fill:#9a9a9a;stroke:var(--d-stroke)"/><text x="220" y="144" style="fill:#111">RAM</text>
+    <rect x="306" y="110" width="120" height="56" rx="8" style="fill:#7cc142;stroke:var(--d-stroke)"/><text x="366" y="144" style="fill:#111">Cache</text>
+    <rect x="502" y="110" width="148" height="56" rx="8" style="fill:#111;stroke:var(--d-stroke)"/><text x="576" y="144" style="fill:#fff">Registers</text>
+  </g>
+  <line class="d-line d-acc-2" style="stroke-width:3;marker-end:url(#d-ah-acc2)" x1="136" y1="138" x2="166" y2="138"/>
+  <line class="d-line d-acc-2" style="stroke-width:3;marker-end:url(#d-ah-acc2)" x1="272" y1="138" x2="302" y2="138"/>
+  <line class="d-line d-acc-2" style="stroke-width:3;marker-end:url(#d-ah-acc2)" x1="428" y1="138" x2="498" y2="138"/>
+</svg>

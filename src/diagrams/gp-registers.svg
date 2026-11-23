@@ -1,0 +1,26 @@
+<svg viewBox="0 0 560 450" xmlns="http://www.w3.org/2000/svg">
+  <text class="d-title" x="270" y="22" text-anchor="middle" style="fill:var(--d-accent-2)">16 bits</text>
+  <line class="d-line d-arrow-both" x1="162" y1="32" x2="378" y2="32"/>
+  <text class="d-title" x="216" y="56" text-anchor="middle" style="fill:var(--d-accent-2)">8 bits</text>
+  <text class="d-title" x="324" y="56" text-anchor="middle" style="fill:var(--d-accent-2)">8 bits</text>
+  <line class="d-line d-arrow-both" x1="162" y1="66" x2="268" y2="66"/>
+  <line class="d-line d-arrow-both" x1="272" y1="66" x2="378" y2="66"/>
+  <g class="d-mono" text-anchor="middle" style="font-size:16px">
+    <rect class="d-box-2" x="160" y="78" width="110" height="40"/><text x="215" y="104">AH</text><rect class="d-box-2" x="270" y="78" width="110" height="40"/><text x="325" y="104">AL</text>
+    <rect class="d-box-2" x="160" y="118" width="110" height="40"/><text x="215" y="144">BH</text><rect class="d-box-2" x="270" y="118" width="110" height="40"/><text x="325" y="144">BL</text>
+    <rect class="d-box-2" x="160" y="158" width="110" height="40"/><text x="215" y="184">CH</text><rect class="d-box-2" x="270" y="158" width="110" height="40"/><text x="325" y="184">CL</text>
+    <rect class="d-box-2" x="160" y="198" width="110" height="40"/><text x="215" y="224">DH</text><rect class="d-box-2" x="270" y="198" width="110" height="40"/><text x="325" y="224">DL</text>
+    <rect class="d-box-3" x="160" y="238" width="220" height="40"/><text x="270" y="264">SP</text>
+    <rect class="d-box-3" x="160" y="278" width="220" height="40"/><text x="270" y="304">BP</text>
+    <rect class="d-box" x="160" y="318" width="220" height="40"/><text x="270" y="344">SI</text>
+    <rect class="d-box" x="160" y="358" width="220" height="40"/><text x="270" y="384">DI</text>
+  </g>
+  <g class="d-title" style="font-size:15px">
+    <text x="140" y="104" text-anchor="end">AX</text><text x="140" y="144" text-anchor="end">BX</text><text x="140" y="184" text-anchor="end">CX</text><text x="140" y="224" text-anchor="end">DX</text>
+    <text x="392" y="104">Accumulator</text><text x="392" y="144">Base</text><text x="392" y="184">Count</text><text x="392" y="224">Data</text>
+    <text x="392" y="264">Stack Pointer</text><text x="392" y="304">Base Pointer</text><text x="392" y="344">Source Index</text><text x="392" y="384">Destination Index</text>
+    <text x="90" y="284" text-anchor="end">Pointer</text><text x="90" y="364" text-anchor="end">Index</text>
+  </g>
+  <path class="d-line d-acc-2" d="M108 242 Q98 242 98 252 V306 Q98 316 108 316"/>
+  <path class="d-line d-acc-3" d="M108 322 Q98 322 98 332 V386 Q98 396 108 396"/>
+</svg>

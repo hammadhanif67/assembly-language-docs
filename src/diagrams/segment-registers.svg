@@ -1,0 +1,13 @@
+<svg viewBox="0 0 440 420" class="d-compact" xmlns="http://www.w3.org/2000/svg">
+  <text class="d-title" x="220" y="26" text-anchor="middle" style="fill:var(--d-accent)">Segment Registers</text>
+  <rect class="d-box" x="130" y="44" width="200" height="360" style="stroke:var(--d-accent);stroke-width:2.5"/>
+  <g class="d-text" text-anchor="middle">
+    <rect class="d-box-2" x="130" y="92" width="200" height="34"/><text x="230" y="114">Code Segment</text>
+    <rect class="d-box-2" x="130" y="176" width="200" height="34"/><text x="230" y="198">Data Segment</text>
+    <rect class="d-box-2" x="130" y="264" width="200" height="34"/><text x="230" y="286">Stack Segment</text>
+    <rect class="d-box-2" x="130" y="348" width="200" height="34"/><text x="230" y="370">Extra Segment</text>
+  </g>
+  <g class="d-mono" text-anchor="end" style="font-size:15px">
+    <text x="110" y="114">CS</text><text x="110" y="198">DS</text><text x="110" y="286">SS</text><text x="110" y="370">ES</text>
+  </g>
+</svg>

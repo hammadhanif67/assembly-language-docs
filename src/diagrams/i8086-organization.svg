@@ -1,0 +1,61 @@
+<svg viewBox="0 0 680 592" xmlns="http://www.w3.org/2000/svg">
+  <rect class="d-box" x="10" y="10" width="660" height="540" style="fill:none"/>
+  <line class="d-line d-dash" x1="320" y1="14" x2="320" y2="546"/>
+  <text class="d-title" x="24" y="36">Execution Unit (EU)</text>
+  <text class="d-title" x="656" y="36" text-anchor="end">BUS Interface Unit (BIU)</text>
+  <g class="d-mono" text-anchor="middle">
+    <rect class="d-box-2" x="120" y="54" width="110" height="24"/><text x="175" y="71">AX</text>
+    <rect class="d-box-2" x="120" y="78" width="110" height="24"/><text x="175" y="95">BX</text>
+    <rect class="d-box-2" x="120" y="102" width="110" height="24"/><text x="175" y="119">CX</text>
+    <rect class="d-box-2" x="120" y="126" width="110" height="24"/><text x="175" y="143">DX</text>
+    <rect class="d-box-3" x="120" y="150" width="110" height="24"/><text x="175" y="167">SP</text>
+    <rect class="d-box-3" x="120" y="174" width="110" height="24"/><text x="175" y="191">BP</text>
+    <rect class="d-box" x="120" y="198" width="110" height="24"/><text x="175" y="215">SI</text>
+    <rect class="d-box" x="120" y="222" width="110" height="24"/><text x="175" y="239">DI</text>
+  </g>
+  <g class="d-small" style="fill:var(--d-text)" text-anchor="end">
+    <text x="104" y="96">Data</text><text x="104" y="110">Register</text>
+    <text x="104" y="170">Pointer</text><text x="104" y="184">Register</text>
+    <text x="104" y="218">Index</text><text x="104" y="232">Register</text>
+  </g>
+  <path class="d-line" d="M112 58 Q106 58 106 64 V140 Q106 146 112 146"/>
+  <path class="d-line" d="M112 154 Q108 154 108 160 V190 Q108 196 112 196"/>
+  <path class="d-line" d="M112 202 Q108 202 108 208 V238 Q108 244 112 244"/>
+  <g class="d-mono" text-anchor="middle">
+    <rect class="d-box-2" x="430" y="110" width="110" height="24"/><text x="485" y="127">CS</text>
+    <rect class="d-box-2" x="430" y="134" width="110" height="24"/><text x="485" y="151">DS</text>
+    <rect class="d-box-2" x="430" y="158" width="110" height="24"/><text x="485" y="175">SS</text>
+    <rect class="d-box-2" x="430" y="182" width="110" height="24"/><text x="485" y="199">ES</text>
+    <rect class="d-box-3" x="430" y="206" width="110" height="24"/><text x="485" y="223">IP</text>
+  </g>
+  <path class="d-line" d="M548 114 Q556 114 556 120 V220 Q556 226 548 226"/>
+  <text class="d-small" x="566" y="166" style="fill:var(--d-text)">Segment</text><text class="d-small" x="566" y="180" style="fill:var(--d-text)">Register</text>
+  <path class="d-box-a" d="M30 290 L50 270 V280 H460 V270 L480 290 L460 310 V300 H50 V310 Z" style="opacity:.35"/>
+  <text class="d-text" x="250" y="295" text-anchor="middle" style="font-size:12.5px">Internal BUS</text>
+  <line class="d-line d-arrow-both" x1="175" y1="250" x2="175" y2="276"/>
+  <path class="d-line d-arrow" d="M400 278 V80 H485 V106"/>
+  <line class="d-line d-arrow" x1="485" y1="232" x2="485" y2="300"/>
+  <rect class="d-box" x="440" y="304" width="90" height="64"/>
+  <text class="d-small" x="485" y="326" text-anchor="middle" style="fill:var(--d-text)">BUS</text><text class="d-small" x="485" y="341" text-anchor="middle" style="fill:var(--d-text)">Control</text><text class="d-small" x="485" y="356" text-anchor="middle" style="fill:var(--d-text)">Logic</text>
+  <line class="d-line d-arrow-both" x1="534" y1="336" x2="600" y2="336"/>
+  <text class="d-small" x="606" y="340" style="fill:var(--d-text)">External BUS</text>
+  <line class="d-line d-arrow-both" x1="140" y1="312" x2="140" y2="350"/>
+  <line class="d-line d-arrow-both" x1="220" y1="312" x2="220" y2="350"/>
+  <rect class="d-box" x="110" y="352" width="140" height="30"/><text class="d-small" x="180" y="372" text-anchor="middle" style="fill:var(--d-text)">Temporary Registers</text>
+  <line class="d-line d-arrow-both" x1="140" y1="384" x2="140" y2="420"/>
+  <line class="d-line d-arrow-both" x1="220" y1="384" x2="220" y2="420"/>
+  <path class="d-box-a" d="M110 422 H160 L180 444 L200 422 H250 L220 480 H140 Z"/>
+  <text class="d-title d-on-accent" x="180" y="468" text-anchor="middle" style="fill:var(--on-accent)">ALU</text>
+  <line class="d-line d-arrow-both" x1="190" y1="482" x2="190" y2="504"/>
+  <rect class="d-box-3" x="150" y="506" width="80" height="30"/><text class="d-small" x="190" y="526" text-anchor="middle" style="fill:var(--d-text)">Flags</text>
+  <path class="d-line d-arrow" d="M150 521 H40 V312"/>
+  <path class="d-line d-arrow" d="M150 490 H66 V312"/>
+  <g>
+    <rect class="d-box-2" x="350" y="420" width="130" height="64"/>
+    <line class="d-line" x1="372" y1="420" x2="372" y2="484"/><line class="d-line" x1="394" y1="420" x2="394" y2="484"/><line class="d-line" x1="416" y1="420" x2="416" y2="484"/><line class="d-line" x1="438" y1="420" x2="438" y2="484"/><line class="d-line" x1="460" y1="420" x2="460" y2="484"/>
+    <text class="d-small" x="415" y="502" text-anchor="middle" style="fill:var(--d-text)">Instruction Queue</text>
+  </g>
+  <path class="d-line d-arrow" d="M530 352 H560 V452 H484"/>
+  <path class="d-line d-arrow" d="M350 452 H228"/>
+  <text class="d-title" x="340" y="580" text-anchor="middle" style="font-size:13px">Intel 8086 Microprocessor Organization</text>
+</svg>

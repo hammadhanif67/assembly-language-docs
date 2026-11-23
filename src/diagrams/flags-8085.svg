@@ -1,0 +1,15 @@
+<svg viewBox="0 0 520 130" class="d-compact" xmlns="http://www.w3.org/2000/svg">
+  <g class="d-small" text-anchor="middle"><text x="50" y="18">D7</text><text x="110" y="18">D6</text><text x="170" y="18">D5</text><text x="230" y="18">D4</text><text x="290" y="18">D3</text><text x="350" y="18">D2</text><text x="410" y="18">D1</text><text x="470" y="18">D0</text></g>
+  <g class="d-mono" text-anchor="middle" style="font-size:16px">
+    <rect class="d-box-3" x="20" y="26" width="60" height="44"/><text x="50" y="54">S</text>
+    <rect class="d-box-3" x="80" y="26" width="60" height="44"/><text x="110" y="54">Z</text>
+    <rect class="d-box" x="140" y="26" width="60" height="44"/><text x="170" y="54" class="d-muted">–</text>
+    <rect class="d-box-3" x="200" y="26" width="60" height="44"/><text x="230" y="54">AC</text>
+    <rect class="d-box" x="260" y="26" width="60" height="44"/><text x="290" y="54" class="d-muted">–</text>
+    <rect class="d-box-3" x="320" y="26" width="60" height="44"/><text x="350" y="54">P</text>
+    <rect class="d-box" x="380" y="26" width="60" height="44"/><text x="410" y="54" class="d-muted">–</text>
+    <rect class="d-box-3" x="440" y="26" width="60" height="44"/><text x="470" y="54">CY</text>
+  </g>
+  <g class="d-small" text-anchor="middle"><text x="50" y="90">Sign</text><text x="110" y="90">Zero</text><text x="230" y="90">Aux. Carry</text><text x="350" y="90">Parity</text><text x="470" y="90">Carry</text></g>
+  <text class="d-small" x="260" y="118" text-anchor="middle">– = unused/reserved bit</text>
+</svg>

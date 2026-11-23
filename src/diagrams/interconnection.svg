@@ -1,0 +1,49 @@
+<svg viewBox="0 0 700 560" xmlns="http://www.w3.org/2000/svg">
+  <g class="d-small" style="fill:var(--d-text)">
+    <rect class="d-box-2" x="300" y="20" width="140" height="130"/>
+    <text class="d-title" x="370" y="42" text-anchor="middle" style="font-size:13px">Memory</text>
+    <text x="370" y="70" text-anchor="middle" font-style="italic">N Words</text>
+    <text x="318" y="90">0</text><rect class="d-box" x="330" y="82" width="90" height="10"/>
+    <text x="370" y="112" text-anchor="middle">⋮</text>
+    <text x="304" y="132">N–1</text><rect class="d-box" x="330" y="124" width="90" height="10"/>
+    <text x="250" y="34">Read</text><line class="d-line d-arrow" x1="240" y1="40" x2="298" y2="40"/>
+    <text x="250" y="64">Write</text><line class="d-line d-arrow" x1="240" y1="70" x2="298" y2="70"/>
+    <text x="242" y="100">Address</text><line class="d-line d-arrow" x1="240" y1="106" x2="298" y2="106"/>
+    <text x="252" y="134">Data</text><line class="d-line d-arrow" x1="240" y1="140" x2="298" y2="140"/>
+    <text x="452" y="94">Data</text><line class="d-line d-arrow" x1="442" y1="100" x2="500" y2="100"/>
+
+    <rect class="d-box-2" x="300" y="220" width="140" height="130"/>
+    <text class="d-title" x="370" y="242" text-anchor="middle" style="font-size:13px">I/O Module</text>
+    <text x="370" y="290" text-anchor="middle" font-style="italic">M Ports</text>
+    <text x="250" y="234">Read</text><line class="d-line d-arrow" x1="240" y1="240" x2="298" y2="240"/>
+    <text x="250" y="260">Write</text><line class="d-line d-arrow" x1="240" y1="266" x2="298" y2="266"/>
+    <text x="242" y="286">Address</text><line class="d-line d-arrow" x1="240" y1="292" x2="298" y2="292"/>
+    <text x="236" y="312">Internal Data</text><line class="d-line d-arrow" x1="240" y1="318" x2="298" y2="318"/>
+    <text x="236" y="338">External Data</text><line class="d-line d-arrow" x1="240" y1="344" x2="298" y2="344"/>
+    <text x="452" y="244">Internal Data</text><line class="d-line d-arrow" x1="442" y1="250" x2="530" y2="250"/>
+    <text x="452" y="284">External Data</text><line class="d-line d-arrow" x1="442" y1="290" x2="530" y2="290"/>
+    <text x="452" y="324">Interrupt Signals</text><line class="d-line d-arrow" x1="442" y1="330" x2="540" y2="330"/>
+
+    <rect class="d-box-3" x="300" y="410" width="140" height="130"/>
+    <text class="d-title" x="370" y="480" text-anchor="middle" style="font-size:13px">CPU</text>
+    <text x="232" y="430">Instructions</text><line class="d-line d-arrow" x1="240" y1="436" x2="298" y2="436"/>
+    <text x="252" y="474">Data</text><line class="d-line d-arrow" x1="240" y1="480" x2="298" y2="480"/>
+    <text x="230" y="518">Interrupt Signals</text><line class="d-line d-arrow" x1="240" y1="524" x2="298" y2="524"/>
+    <text x="452" y="430">Address</text><line class="d-line d-arrow" x1="442" y1="436" x2="510" y2="436"/>
+    <text x="452" y="474">Control Signals</text><line class="d-line d-arrow" x1="442" y1="480" x2="540" y2="480"/>
+    <text x="452" y="518">Data</text><line class="d-line d-arrow" x1="442" y1="524" x2="500" y2="524"/>
+  </g>
+  <path class="d-line d-acc-3" style="stroke-width:2.2;marker-end:url(#d-ah-acc3)" d="M510 436 Q600 420 560 360 L190 300 L236 106"/>
+  <path class="d-line d-acc-3" style="stroke-width:2.2;marker-end:url(#d-ah-acc3)" d="M190 300 L236 292"/>
+  <path class="d-line d-dash" style="stroke:#2f80ed;stroke-width:2;marker-end:url(#d-arrowhead)" d="M500 100 Q560 200 400 380 L150 430 L236 436"/>
+  <path class="d-line d-dash" style="stroke:#2f80ed;stroke-width:2;marker-end:url(#d-arrowhead)" d="M530 250 Q540 300 420 390 L150 430 L236 480"/>
+  <path class="d-line d-dot" style="stroke-width:2.2;marker-end:url(#d-arrowhead)" d="M500 524 Q620 520 590 400 L160 296 L236 140"/>
+  <path class="d-line d-dot" style="stroke-width:2.2;marker-end:url(#d-arrowhead)" d="M160 296 L236 318"/>
+  <path class="d-line d-dash d-acc-4" style="stroke-width:2;marker-end:url(#d-ah-acc4)" d="M540 330 Q520 450 236 524"/>
+  <g class="d-title" style="font-size:14px">
+    <text x="560" y="40" style="fill:var(--d-accent-3)">Address</text>
+    <text x="560" y="62" style="fill:#2f80ed">Data Read</text>
+    <text x="560" y="84">Data Write</text>
+    <text x="560" y="106" style="fill:var(--d-accent-4)">Interrupt Signals</text>
+  </g>
+</svg>
