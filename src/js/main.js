@@ -52,7 +52,39 @@
     scrim && scrim.addEventListener('click', () => set(false));
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && document.body.classList.contains('nav-open')) { set(false); toggle.focus(); } });
     const active = $('.sidebar a.active');
-    if (active) { const sb = $('.sidebar'); sb.scrollTop = active.offsetTop - sb.clientHeight / 2; }
+    const scroller = $('.sidebar nav');
+    if (active && scroller) {
+      const r = active.getBoundingClientRect(), s = scroller.getBoundingClientRect();
+      scroller.scrollTop += r.top - s.top - s.height / 2 + r.height / 2;
+    }
+
+    // Filter lessons: hide non-matching lessons, open chapters that contain matches
+    const filter = $('.nav-filter input'), empty = $('.nav-empty');
+    if (filter) {
+      const groups = $$('.nav-group');
+      const state = groups.map((g) => g.classList.contains('open'));
+      filter.addEventListener('input', () => {
+        const q = filter.value.trim().toLowerCase();
+        let any = false;
+        groups.forEach((g, gi) => {
+          const chTitle = $('.ch-title', g).textContent.toLowerCase();
+          const chMatch = q && chTitle.includes(q);
+          let hits = 0;
+          $$('.nav-items li', g).forEach((li) => {
+            const show = !q || chMatch || li.textContent.toLowerCase().includes(q);
+            li.classList.toggle('filtered-out', !show);
+            if (show) hits++;
+          });
+          g.classList.toggle('filtered-out', !!q && hits === 0);
+          const open = q ? hits > 0 : state[gi];
+          g.classList.toggle('open', open);
+          $('.nav-group-btn', g).setAttribute('aria-expanded', String(open));
+          if (hits) any = true;
+        });
+        if (empty) empty.hidden = !q || any;
+      });
+      filter.addEventListener('keydown', (e) => { if (e.key === 'Escape') { filter.value = ''; filter.dispatchEvent(new Event('input')); } });
+    }
   }
 
   /* ---------- Progress, back to top, TOC scrollspy ---------- */

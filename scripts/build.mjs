@@ -99,7 +99,11 @@ function makeMarked(toc) {
         if (n) id = `${id}-${n}`;
         if (depth === 2 || depth === 3) toc.push({ id, text: stripTags(text), depth });
         const anchor = depth > 1 ? `<a class="h-anchor" href="#${id}" aria-label="Link to this section">#</a>` : '';
-        return `<h${depth} id="${id}">${text}${anchor}</h${depth}>\n`;
+        if (depth === 2 && !/^sources$/i.test(stripTags(text).trim())) {
+          const n = toc.filter((t) => t.depth === 2 && !/^sources$/i.test(t.text.trim())).length;
+          return `<h2 id="${id}" class="sec-h2"><span class="sec-num" aria-hidden="true">${String(n).padStart(2, '0')}</span><span class="sec-text">${text}</span>${anchor}</h2>\n`;
+        }
+        return `<h${depth} id="${id}"${depth === 2 ? ' class="sources-h2"' : ''}>${text}${anchor}</h${depth}>\n`;
       },
       code(code, lang) {
         const l = (lang || '').trim().toLowerCase();
@@ -203,20 +207,32 @@ function header(prefix) {
 }
 
 function sidebar(prefix, current) {
+  const curIndex = current ? pages.indexOf(current) : -1;
   const groups = chaptersWithPages
     .map((ch, ci) => {
       const open = current ? current.chapter === ch : ci === 0;
+      const hasCurrent = current && current.chapter === ch;
       const items = ch.pages
         .map((p) => {
           const active = current === p;
+          const done = curIndex >= 0 && pages.indexOf(p) < curIndex;
           const badge = p.research ? '<span class="nav-badge" title="Added by research">R</span>' : '';
-          return `<li><a href="${prefix}${p.url}"${active ? ' aria-current="page" class="active"' : ''}>${esc(p.title)}${badge}</a></li>`;
+          return `<li><a href="${prefix}${p.url}"${active ? ' aria-current="page" class="active"' : done ? ' class="done"' : ''}><span class="node" aria-hidden="true"></span><span class="nav-label">${esc(p.title)}</span>${badge}</a></li>`;
         })
         .join('');
-      return `<li class="nav-group${open ? ' open' : ''}"><button class="nav-group-btn" type="button" aria-expanded="${open}"><i data-lucide="${ch.icon}" aria-hidden="true"></i><span>${esc(ch.title)}</span><i class="chev" data-lucide="chevron-down" aria-hidden="true"></i></button><ul class="nav-items">${items}</ul></li>`;
+      const num = String(ci + 1).padStart(2, '0');
+      return `<li class="nav-group${open ? ' open' : ''}${hasCurrent ? ' current' : ''}"><button class="nav-group-btn" type="button" aria-expanded="${open}"><span class="ch-num" aria-hidden="true">${num}</span><span class="ch-text"><span class="ch-title">${esc(ch.title)}</span><span class="ch-meta">${ch.pages.length} lesson${ch.pages.length > 1 ? 's' : ''}</span></span><i class="chev" data-lucide="chevron-down" aria-hidden="true"></i></button><ul class="nav-items">${items}</ul></li>`;
     })
     .join('');
-  return `<aside class="sidebar" id="sidebar" aria-label="Documentation navigation"><nav><ul class="nav-root">${groups}</ul></nav><div class="sidebar-foot"><span class="legend"><span class="nav-badge">R</span> Added by research</span></div></aside><div class="scrim" hidden></div>`;
+  const pct = curIndex >= 0 ? Math.round(((curIndex + 1) / pages.length) * 100) : 0;
+  const progress =
+    curIndex >= 0
+      ? `<div class="course-progress"><div class="cp-row"><span>Lesson <b>${curIndex + 1}</b> of ${pages.length}</span><span>${pct}%</span></div><div class="cp-bar" role="progressbar" aria-label="Course progress" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><span style="width:${pct}%"></span></div></div>`
+      : `<div class="course-progress"><div class="cp-row"><span><b>${pages.length}</b> lessons · ${chaptersWithPages.length} chapters</span></div></div>`;
+  return `<aside class="sidebar" id="sidebar" aria-label="Course map">
+<div class="sidebar-top"><p class="sidebar-kicker">Course map</p>${progress}<label class="nav-filter"><i data-lucide="filter" aria-hidden="true"></i><input type="search" placeholder="Filter lessons…" aria-label="Filter lessons" autocomplete="off" spellcheck="false"></label></div>
+<nav><ul class="nav-root">${groups}</ul><p class="nav-empty" hidden>No lessons match.</p></nav>
+<div class="sidebar-foot"><span class="legend"><span class="nav-badge">R</span> Added by research</span></div></aside><div class="scrim" hidden></div>`;
 }
 
 function footer(prefix, extraScripts = '') {
@@ -268,9 +284,16 @@ function renderPage(page, i) {
         .map((t) => `<li class="toc-l${t.depth}"><a href="#${t.id}">${esc(t.text)}</a></li>`)
         .join('')}</ul></nav>`
     : '';
-  const pager = `<nav class="pager" aria-label="Previous and next pages">${
-    prev ? `<a class="pager-link prev" href="${prefix}${prev.url}" rel="prev"><span class="pager-dir"><i data-lucide="arrow-left"></i>Previous</span><span class="pager-title">${esc(prev.title)}</span></a>` : '<span></span>'
-  }${next ? `<a class="pager-link next" href="${prefix}${next.url}" rel="next"><span class="pager-dir">Next<i data-lucide="arrow-right"></i></span><span class="pager-title">${esc(next.title)}</span></a>` : '<span></span>'}</nav>`;
+  const pager = `<nav class="pager" aria-label="Previous and next lessons">${
+    next
+      ? `<a class="up-next" href="${prefix}${next.url}" rel="next"><span class="un-kicker">Up next · ${esc(next.chapter.title)}</span><span class="un-title">${esc(next.title)}</span>${next.description ? `<span class="un-desc">${esc(next.description)}</span>` : ''}<span class="un-go" aria-hidden="true"><i data-lucide="arrow-right"></i></span></a>`
+      : `<div class="up-next up-next--done"><span class="un-kicker">Course complete</span><span class="un-title">You've reached the last lesson 🎉</span></div>`
+  }${prev ? `<a class="pager-prev" href="${prefix}${prev.url}" rel="prev"><i data-lucide="arrow-left"></i><span>Previous: <b>${esc(prev.title)}</b></span></a>` : ''}</nav>`;
+  const chIndex = chaptersWithPages.indexOf(page.chapter) + 1;
+  const lessonNo = page.chapter.pages.indexOf(page) + 1;
+  const words = decode(stripTags(html.replace(/<svg[\s\S]*?<\/svg>/g, ' '))).split(/\s+/).filter(Boolean).length;
+  const minutes = Math.max(1, Math.round(words / 200));
+  const sections = toc.filter((t) => t.depth === 2).length;
   const mermaidScript = usesMermaid ? `<script src="${CDN.mermaid}" defer></script>` : '';
 
   const out = `${head({ title: `${page.title} · ${SITE.name}`, description: page.description, prefix })}
@@ -281,11 +304,16 @@ ${sidebar(prefix, page)}
 <main id="main" class="content" tabindex="-1">
   <article class="doc">
     <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="${prefix}index.html"><i data-lucide="house" aria-hidden="true"></i><span class="sr-only">Home</span></a></li><li><a href="${prefix}${page.chapter.pages[0].url}">${esc(page.chapter.title)}</a></li><li aria-current="page">${esc(page.title)}</li></ol></nav>
-    <header class="doc-head">
-      <div class="badges">${badge}${ocr}</div>
+    <header class="doc-head lesson-hero${page.research ? ' lesson-hero--research' : ''}">
+      <p class="lesson-kicker"><span class="lk-chapter">Chapter ${String(chIndex).padStart(2, '0')} · ${esc(page.chapter.title)}</span><span class="lk-lesson">Lesson ${lessonNo} of ${page.chapter.pages.length}</span></p>
       <h1>${esc(page.title)}</h1>
       ${page.description ? `<p class="lede">${esc(page.description)}</p>` : ''}
-      ${page.source ? `<p class="source-line"><i data-lucide="${page.research ? 'globe' : 'paperclip'}" aria-hidden="true"></i><span>Source: ${esc(page.source)}</span></p>` : ''}
+      <ul class="lesson-meta">
+        <li><i data-lucide="clock" aria-hidden="true"></i>${minutes} min read</li>
+        ${sections ? `<li><i data-lucide="layout-list" aria-hidden="true"></i>${sections} section${sections > 1 ? 's' : ''}</li>` : ''}
+        ${page.source ? `<li class="lm-source"><i data-lucide="${page.research ? 'globe' : 'paperclip'}" aria-hidden="true"></i>${esc(page.source)}</li>` : ''}
+      </ul>
+      <div class="badges">${badge}${ocr}</div>
     </header>
     <div class="doc-body">
 ${html}
