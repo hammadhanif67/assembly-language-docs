@@ -5,10 +5,10 @@ course's lecture PDFs and slides and extended with researched assembly-programmi
 
 🔗 **Live site:** https://hammadhanif67.github.io/assembly-language-docs/
 
-<p align="center"><img src="src/assets/favicon.svg" width="96" alt="COAL Docs logo: a CPU chip with a C in the middle on an indigo-to-violet tile"></p>
+<p align="center"><img src="src/assets/favicon.svg" width="96" alt="COAL Docs logo: a black block with an orange offset shadow holding a CPU chip with an orange C"></p>
 
-The logo is a CPU chip (with pins on all four sides) holding a bold **C**, on an indigo-to-violet
-rounded tile. The wordmark is **COAL Docs**, with “Docs” in the indigo accent color.
+The logo is a black square block with a hard orange offset shadow, holding a paper-colored CPU chip
+with an orange **C**. The wordmark is **COAL DOCS**, with “DOCS” on an orange block.
 
 ## What's inside
 
@@ -35,13 +35,19 @@ rounded tile. The wordmark is **COAL Docs**, with “Docs” in the indigo accen
 - Full-text search (Fuse.js), opened with **Ctrl K** or **/**
 - Syntax highlighting (Prism.js) with x86 mnemonics, line numbers and copy buttons
 - Mermaid flowcharts on the researched pages, styled to match the site
-- Smooth scrolling for “On this page” links; subtle GSAP entrance animation on titles (disabled under `prefers-reduced-motion`)
+- Smooth scrolling for “On this page” links; hard “press-down” button motion instead of fades
 - Responsive from 320 px phones to wide desktops; keyboard navigable; alt text on all images; skip link
 
 ## Design
 
-**Modern Light**: a white page, soft gray sidebar with uppercase chapter labels, an indigo accent
-(`#6366f1`), rounded indigo buttons, dark code blocks and Inter for all text (JetBrains Mono for code).
+**Brutalist Editorial.** Newsprint paper with a faint grid, black ink, thick black rules and hard
+offset shadows (no blur, no rounded corners), plus a signal-orange accent (`#FF4D00`). Researched
+lessons use blue instead of orange.
+
+- **Type:** condensed uppercase **Archivo** headlines, **Newsreader** serif for reading, **JetBrains Mono** for labels and metadata
+- **Sidebar:** a “Course map” with numbered chapter blocks, square lesson nodes on a rail, a progress bar and a lesson filter
+- **Lesson pages:** a framed headline block (chapter / lesson strip, reading time, sections), a drop cap, outlined section numbers, “FIG.01” captions and a black “Up next” slab
+
 All colors are CSS variables at the top of `src/css/main.css`, and the diagrams use the same variables.
 
 ## Run locally
@@ -135,9 +141,9 @@ and figures live in `content/` and `src/assets/`. To commit the originals as wel
   *Art of Assembly*, UMBC CMSC 211 notes, R. Duncan's *MS-DOS Functions* and Wikipedia. Each page has
   its own Sources section.
 - Libraries (all via CDN): [Prism.js](https://prismjs.com) (MIT), [Fuse.js](https://fusejs.io) (Apache-2.0),
-  [GSAP](https://gsap.com) (GreenSock standard license, free), [Lucide](https://lucide.dev) (ISC),
+  [Lucide](https://lucide.dev) (ISC),
   [Mermaid](https://mermaid.js.org) (MIT), [marked](https://marked.js.org) (MIT, build-time).
-- Fonts: Inter, JetBrains Mono (Google Fonts, SIL OFL).
+- Fonts: Archivo, Newsreader, JetBrains Mono (Google Fonts, SIL OFL).
 - Layout ideas inspired by open-source docs sites such as Docusaurus and VitePress. No code was copied.
 
 ## License

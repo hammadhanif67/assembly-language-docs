@@ -326,7 +326,6 @@
     renderMermaid();
     setupHero();
     if (window.COAL_WIDGETS) window.COAL_WIDGETS.init();
-    setupAnimations();
     icons();
   });
 })();

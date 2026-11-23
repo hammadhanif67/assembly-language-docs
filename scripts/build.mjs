@@ -24,7 +24,7 @@ const CDN = {
   mermaid: 'https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js',
   typed: 'https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js',
   fonts:
-    'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap',
+    'https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=JetBrains+Mono:wght@400;500;600;700&display=swap',
 };
 
 // ---------- helpers ----------
@@ -165,13 +165,13 @@ const LOGO = fs.readFileSync(path.join(SRC, 'logo.svg'), 'utf8');
 
 function head({ title, description, prefix, extraHead = '' }) {
   return `<!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="brutalist">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description || SITE.tagline)}">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#f2efe6">
 <link rel="icon" href="${prefix}assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="${prefix}assets/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="${prefix}assets/apple-touch-icon.png">
@@ -250,8 +250,6 @@ function footer(prefix, extraScripts = '') {
 <script src="${prefix}search-index.js" defer></script>
 <script src="${CDN.lucide}" defer></script>
 <script src="${CDN.fuse}" defer></script>
-<script src="${CDN.gsap}" defer></script>
-<script src="${CDN.scrollTrigger}" defer></script>
 <script src="${CDN.prism}/prism.min.js" data-manual defer></script>
 <script src="${CDN.prism}/components/prism-nasm.min.js" defer></script>
 <script src="${CDN.prism}/components/prism-c.min.js" defer></script>
