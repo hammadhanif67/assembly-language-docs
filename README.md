@@ -5,6 +5,8 @@
 
 🔗 **Live site:** https://hammadhanif67.github.io/assembly-language-docs/
 
+![COAL Docs: screenshot of the live site](.github/assets/preview.jpg)
+
 <p align="center"><img src="src/assets/favicon.svg" width="88" alt="COAL Docs logo: a 3×3 grid of squares forming a C, with a red centre square"></p>
 
 The logo is a 3×3 grid of cells, like memory cells: the black cells form a **C** and the centre cell is red, the core.
